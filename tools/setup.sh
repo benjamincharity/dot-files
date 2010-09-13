@@ -25,3 +25,5 @@ chsh -s /bin/zsh
 echo "\n\n Setup is complete"
 zsh
 source ~/.zshrc
+
+echo "\n\n You may need to restart your terminal for changes to take effect."
