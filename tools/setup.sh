@@ -3,7 +3,7 @@ echo "Cloning Oh My Zsh..."
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 echo "Cloning dot-files..."
-git clone git@github.com:mpeck/dot-files.git ~/.dot-files
+git clone git://github.com/mpeck/dot-files.git ~/.dot-files
 
 echo "Creating links..."
 echo ".zshrc"
