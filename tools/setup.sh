@@ -18,6 +18,9 @@ ln -s ~/.dot-files/vim/vimrc ~/.vimrc
 echo ".gvimrc"
 ln -s ~/.dot-files/vim/gvimrc ~/.gvimrc
 
+echo ".gitconfig"
+ln -s ~/.dot-files/vim/gitconfig ~/.gitconfig
+
 
 echo "Changing Shells..."
 chsh -s /bin/zsh
