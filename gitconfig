@@ -1,0 +1,21 @@
+[user]
+	name = Matthew Peck
+	email = mpeck@maxmedia.com
+[alias]
+	co = checkout
+	log = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	br = branch
+[apply]
+	whitespace = nowarn
+[github]
+	user = mpeck
+	token = 3bef0bfa57a879749e16703a8a49ae38
+[core]
+	excludesfile = /Users/mpeck/.gitignore
+[color]
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+[merge]
+  keepBackup = false
