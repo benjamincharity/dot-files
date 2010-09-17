@@ -16,7 +16,7 @@ export ZSH_THEME="robbyrussell"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git lighthouse)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -27,4 +27,4 @@ source $ZSH/oh-my-zsh.sh
   alias commit='git commit'
   alias add='git add'
 
-  [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
