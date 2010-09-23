@@ -27,10 +27,10 @@ if has("gui_running")
   highlight Comment guifg=#AEAEAE
   highlight Constant guifg=#CAFE1E
   highlight Keyword guifg=#FFDE00
-  highlight String guifg=#00D42D
+  highlight String guifg=#97E1A7
   highlight Type guifg=#84A7C1
   highlight Identifier guifg=#00D42D gui=NONE
-  highlight Function guifg=#FF5600 gui=NONE
+  highlight Function guifg=#fb9c6c gui=NONE
   highlight clear Search
   highlight Search guibg=#1C3B79
   highlight PreProc guifg=Grey
