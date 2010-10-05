@@ -27,4 +27,6 @@ source $ZSH/oh-my-zsh.sh
   alias commit='git commit'
   alias add='git add'
 
+  export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
+
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
