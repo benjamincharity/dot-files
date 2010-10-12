@@ -28,5 +28,6 @@ source $ZSH/oh-my-zsh.sh
   alias add='git add'
 
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
+  export EDITOR=vim
 
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
