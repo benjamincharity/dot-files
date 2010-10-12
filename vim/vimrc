@@ -67,7 +67,7 @@ set mat=5
 set cursorline
 set listchars=tab:>\ ,trail:•,extends:>,precedes:<,nbsp:+
 set list
-set scrolloff=15
+set scrolloff=10
 
 "if has('gui_running')
 	"set guioptions-=T
