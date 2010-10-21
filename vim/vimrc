@@ -69,12 +69,6 @@ set listchars=tab:>\ ,trail:•,extends:>,precedes:<,nbsp:+
 set list
 set scrolloff=10
 
-"if has('gui_running')
-	"set guioptions-=T
-	"set guioptions-=m
-	"set mousehide
-"endif
-
 "Add line numbers
 set number
 set numberwidth=5
