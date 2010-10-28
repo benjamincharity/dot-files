@@ -22,6 +22,9 @@ nnoremap <C-w>> 20<C-w>>
 nnoremap <C-w>+ 20<C-w>+
 nnoremap <C-w>- 20<C-w>-
 
+"Set to auto read when a file is changed from the outside
+set autoread
+
 "TextMate style cmd-return and cmd-shift-return
 nnoremap <D-CR> o
 nnoremap <D-S-CR> <S-A>;<CR>
@@ -98,4 +101,15 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 "set cinkeys=0{,0},:,0#,!,!^F
+
+
+"ConqueTerm
+map <leader>zs :ConqueTermSplit zsh<CR>
+map <leader>vs :ConqueTermVSplit zsh <CR>
+
+autocmd BufEnter *zsh* setlocal nolist
+autocmd BufEnter *zsh* setlocal nocursorline
+
+let g:ConqueTerm_InsertOnEnter = 1
+let g:ConqueTerm_CWInsert = 1
 
