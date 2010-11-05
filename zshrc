@@ -26,6 +26,7 @@ source $ZSH/oh-my-zsh.sh
   alias ss='script/server'
   alias commit='git commit'
   alias add='git add'
+  alias use='rvm gemset use'
 
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
   export EDITOR=vim

@@ -43,15 +43,13 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 "Close xhtml tags
-inoremap ,/ <esc>f>a</<C-X><C-O><esc><S-f><i
+"inoremap ,/ <esc>f>a</<C-X><C-O><esc><S-f><i
 
 "Toggle NERDTree
 noremap <C-T> :NERDTreeToggle<CR>
 
 "Get rid of trailing spaces
 nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
-set tabstop=2 shiftwidth=2 expandtab
 
 set ttimeoutlen=50
 
