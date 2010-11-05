@@ -74,10 +74,11 @@ set scrolloff=10
 
 "Add line numbers
 set number
-set numberwidth=5
+set numberwidth=3
 
 "Set theme
-color blackboard
+"color blackboard
+color krunktastic
 
 set hlsearch
 set incsearch
