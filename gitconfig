@@ -15,4 +15,5 @@
   interactive = auto
   status = auto
 [merge]
+  tool = vimdiff
   keepBackup = false
