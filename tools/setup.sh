@@ -21,6 +21,9 @@ ln -s ~/.dot-files/vim/gvimrc ~/.gvimrc
 echo ".gitconfig"
 ln -s ~/.dot-files/vim/gitconfig ~/.gitconfig
 
+echo ".tmux.conf"
+ln -s ~/.dot-files/tmux.conf ~/.tmux.conf
+
 
 echo "Changing Shells..."
 chsh -s /bin/zsh
