@@ -19,7 +19,7 @@ echo ".gvimrc"
 ln -s ~/.dot-files/vim/gvimrc ~/.gvimrc
 
 echo ".gitconfig"
-ln -s ~/.dot-files/vim/gitconfig ~/.gitconfig
+ln -s ~/.dot-files/gitconfig ~/.gitconfig
 
 echo ".tmux.conf"
 ln -s ~/.dot-files/tmux.conf ~/.tmux.conf

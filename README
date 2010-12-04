@@ -1,3 +1,3 @@
  Nothing to interesting, just my dot files.
 
- curl http://github.com/mpeck/dot-files/raw/master/tools/setup.sh | sh
+ curl https://github.com/mpeck/dot-files/raw/master/tools/setup.sh | sh
