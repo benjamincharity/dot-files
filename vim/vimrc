@@ -31,6 +31,8 @@ nnoremap <D-S-CR> <S-A>;<CR>
 inoremap <D-CR> <esc>o
 inoremap <D-S-CR> <esc>A;<CR>
 
+inoremap <S-CR> <CR><esc><S-o>
+
 " Tab mappings.
 map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
@@ -45,8 +47,16 @@ map <leader>tm :tabmove
 "Close xhtml tags
 "inoremap ,/ <esc>f>a</<C-X><C-O><esc><S-f><i
 
+"NERDTree
+
 "Toggle NERDTree
 noremap <C-T> :NERDTreeToggle<CR>
+
+"Make bookmarks Visible
+let NERDTreeShowBookmarks = 1
+
+"Enable Colors
+let NERDChristmasTree = 1
 
 "Get rid of trailing spaces
 nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
@@ -56,6 +66,7 @@ set ttimeoutlen=50
 "Turn cursor column on for haml and sass
 autocmd BufEnter *.haml setlocal cursorcolumn
 autocmd BufEnter *.sass setlocal cursorcolumn
+autocmd BufEnter *.scss setlocal cursorcolumn
 
 silent execute '!mkdir -p ~/.vim_backups'
 set backupdir=~/.vim_backups//
@@ -72,10 +83,11 @@ set scrolloff=10
 
 "Add line numbers
 set number
-set numberwidth=5
+set numberwidth=3
 
 "Set theme
 color blackboard
+"color krunktastic
 
 set hlsearch
 set incsearch

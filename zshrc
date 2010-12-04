@@ -31,6 +31,7 @@ source $ZSH/oh-my-zsh.sh
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
   export EDITOR=vim
 
+  # Stuff for rvm
   unsetopt auto_name_dirs
-
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
+
