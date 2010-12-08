@@ -123,3 +123,8 @@ autocmd BufEnter *zsh* setlocal nocursorline
 let g:ConqueTerm_InsertOnEnter = 1
 let g:ConqueTerm_CWInsert = 1
 
+"Taglist
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
+map <F8> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>
