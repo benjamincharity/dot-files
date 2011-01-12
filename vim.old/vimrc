@@ -1,0 +1,131 @@
+set nocompatible
+filetype plugin indent on
+runtime macros/matchit.vim
+set wildmode=list:longest
+set wildignore=*.o,*.obj,*~,*.swp
+set backspace=indent,eol,start
+set shortmess=atI
+set visualbell
+set clipboard=unnamed
+set t_Co=256
+
+"un-highlight searched text
+nnoremap <C-L> :nohls<CR><C-L>
+inoremap <C-L> <C-O>:nohls<CR>
+
+"Make <C-e> and <C-y> scroll 5 lines instead of two
+nnoremap <C-e> 5<C-e>
+nnoremap <C-y> 5<C-y>
+
+"Increase default window resize lines
+nnoremap <C-w>< 20<C-w><
+nnoremap <C-w>> 20<C-w>>
+nnoremap <C-w>+ 20<C-w>+
+nnoremap <C-w>- 20<C-w>-
+
+"Set to auto read when a file is changed from the outside
+set autoread
+
+"TextMate style cmd-return and cmd-shift-return
+nnoremap <D-CR> o
+nnoremap <D-S-CR> <S-A>;<CR>
+inoremap <D-CR> <esc>o
+inoremap <D-S-CR> <esc>A;<CR>
+
+inoremap <S-CR> <CR><esc><S-o>
+
+" Tab mappings.
+map <leader>tt :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
+
+"Close xhtml tags
+"inoremap ,/ <esc>f>a</<C-X><C-O><esc><S-f><i
+
+"NERDTree
+
+"Toggle NERDTree
+noremap <C-T> :NERDTreeToggle<CR>
+
+"Make bookmarks Visible
+let NERDTreeShowBookmarks = 1
+
+"Enable Colors
+let NERDChristmasTree = 1
+
+"Get rid of trailing spaces
+nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+
+set ttimeoutlen=50
+
+"Turn cursor column on for haml and sass
+autocmd BufEnter *.haml setlocal cursorcolumn
+autocmd BufEnter *.sass setlocal cursorcolumn
+autocmd BufEnter *.scss setlocal cursorcolumn
+
+silent execute '!mkdir -p ~/.vim_backups'
+set backupdir=~/.vim_backups//
+set directory=~/.vim_backups//
+
+syntax on
+set ruler
+set showmatch
+set mat=5
+set cursorline
+set listchars=tab:>\ ,trail:•,extends:>,precedes:<,nbsp:+
+set list
+set scrolloff=10
+
+"Add line numbers
+set number
+set numberwidth=3
+
+"Set theme
+color blackboard
+"color krunktastic
+
+set hlsearch
+set incsearch
+
+"Move lines with alt + direction
+nnoremap ∆ :m+<CR>==
+nnoremap ˚ :m-2<CR>==
+vnoremap ∆ :m'>+<CR>gv=gv
+vnoremap ˚ :m-2<CR>gv=gv
+
+au BufNewFile,BufRead Gemfile set filetype=ruby
+au BufNewFile,BufRead *.j set filetype=objj
+
+au BufNewFile,BufRead *.as set filetype=actionscript
+
+"Autoindent
+set cindent
+set smartindent
+set autoindent
+set expandtab
+set tabstop=2
+set shiftwidth=2
+"set cinkeys=0{,0},:,0#,!,!^F
+
+
+"ConqueTerm
+map <leader>zs :ConqueTermSplit zsh<CR>
+map <leader>vs :ConqueTermVSplit zsh <CR>
+
+autocmd BufEnter *zsh* setlocal nolist
+autocmd BufEnter *zsh* setlocal nocursorline
+
+let g:ConqueTerm_InsertOnEnter = 1
+let g:ConqueTerm_CWInsert = 1
+
+"Taglist
+let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+let Tlist_WinWidth = 50
+map <F4> :TlistToggle<cr>
+map <F8> :!/usr/local/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<cr>
