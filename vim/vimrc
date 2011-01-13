@@ -100,3 +100,7 @@ au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.j set filetype=objj
 
 au BufNewFile,BufRead *.as set filetype=actionscript
+
+"un-highlight searched text
+nnoremap <C-L> :nohls<CR><C-L>
+inoremap <C-L> <C-O>:nohls<CR>
