@@ -42,6 +42,12 @@ set nobackup
 set nowritebackup
 set directory=~/.vim_backups//
 
+"Pane resize
+nnoremap OA <C-w>+
+nnoremap OB <C-w>-
+nnoremap OC <C-w>>
+nnoremap OD <C-w><
+
 "Theme
 color molokai
 
@@ -56,8 +62,8 @@ set cindent
 set smartindent
 set autoindent
 set expandtab
-set tabstop=2
 set shiftwidth=2
+set tabstop=2
 
 "Set to auto read when a file is changed from the outside
 set autoread
