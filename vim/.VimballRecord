@@ -1,0 +1,1 @@
+html5.vim-0.26.vba: call delete('/Users/mpeck/.vim/autoload/xml/aria.vim')
