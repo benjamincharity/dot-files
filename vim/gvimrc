@@ -6,5 +6,10 @@ if has("gui_macvim")
   set guioptions-=L
   set fu
   set mousehide
+  "Pane resize
+  nnoremap <up> <C-w>+
+  nnoremap <down> <C-w>-
+  nnoremap <right> <C-w>>
+  nnoremap <left> <C-w><
 end
 
