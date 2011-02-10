@@ -11,5 +11,8 @@ if has("gui_macvim")
   nnoremap <down> <C-w>-
   nnoremap <right> <C-w>>
   nnoremap <left> <C-w><
+
+  "Remap Command-T
+  map <D-t> :CommandT<CR>
 end
 
