@@ -30,6 +30,7 @@ source $ZSH/oh-my-zsh.sh
   alias t='tmux -u'
   alias gd='pwd | pbcopy'
   alias pd='cd `pbpaste`'
+  alias cr='cmus-remote'
 
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
   export EDITOR=vim
