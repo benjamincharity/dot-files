@@ -40,7 +40,11 @@ set visualbell
 
 set nobackup
 set nowritebackup
+set backupdir=~/.vim_backups//
 set directory=~/.vim_backups//
+
+" Command-T configuration
+let g:CommandTMaxHeight=20
 
 "Pane resize
 nnoremap OA <C-w>+
