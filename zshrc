@@ -31,6 +31,7 @@ source $ZSH/oh-my-zsh.sh
   alias gd='pwd | pbcopy'
   alias pd='cd `pbpaste`'
   alias cr='cmus-remote'
+  alias growl='growlnotify'
   alias mg='mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf'
 
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
