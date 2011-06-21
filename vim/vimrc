@@ -118,3 +118,6 @@ inoremap <C-L> <C-O>:nohls<CR>
 
 "Show Registerr
 map <leader>rr :reg<cr>
+
+"Yank Rest of line
+noremap Y y$
