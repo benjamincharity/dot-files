@@ -1,4 +1,5 @@
 set nocompatible
+set shell=/bin/sh
 silent! call pathogen#runtime_append_all_bundles()
 
 syntax on
@@ -73,7 +74,7 @@ set tabstop=2
 set autoread
 
 set laststatus=2
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{rvm#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>

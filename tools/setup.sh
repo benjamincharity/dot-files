@@ -8,6 +8,8 @@ git clone git://github.com/mpeck/dot-files.git ~/.dot-files
 echo "Creating links..."
 echo ".zshrc"
 ln -s ~/.dot-files/zshrc ~/.zshrc
+echo ".zshenv"
+ln -s ~/.dot-files/zshenv ~/.zshenv
 
 echo ".vim"
 ln -s ~/.dot-files/vim ~/.vim
