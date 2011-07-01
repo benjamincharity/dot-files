@@ -1,6 +1,6 @@
 [user]
 	name = Matthew Peck
-	email = mpeck@maxmedia.com
+	email = matthewdpeck@gmail.com
 [alias]
   co = checkout
   lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
