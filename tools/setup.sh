@@ -3,13 +3,11 @@ echo "Cloning Oh My Zsh..."
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 
 echo "Cloning dot-files..."
-git clone git://github.com/mpeck/dot-files.git ~/.dot-files
+git clone git://github.com/benjamincharity/dot-files.git ~/.dot-files
 
 echo "Creating links..."
 echo ".zshrc"
 ln -s ~/.dot-files/zshrc ~/.zshrc
-echo ".zshenv"
-ln -s ~/.dot-files/zshenv ~/.zshenv
 
 echo ".vim"
 ln -s ~/.dot-files/vim ~/.vim
@@ -23,8 +21,6 @@ ln -s ~/.dot-files/vim/gvimrc ~/.gvimrc
 echo ".gitconfig"
 ln -s ~/.dot-files/gitconfig ~/.gitconfig
 
-echo ".tmux.conf"
-ln -s ~/.dot-files/tmux.conf ~/.tmux.conf
 
 
 echo "Changing Shells..."

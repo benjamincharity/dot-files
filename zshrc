@@ -38,4 +38,7 @@ source $ZSH/oh-my-zsh.sh
   export EDITOR=vim
   export NODE_PATH=/usr/local/lib/node
 
+  # Stuff for rvm
+  unsetopt auto_name_dirs
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
