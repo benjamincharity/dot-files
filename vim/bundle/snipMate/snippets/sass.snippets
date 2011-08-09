@@ -7,7 +7,7 @@ snippet mt
 snippet mb
 	margin-bottom: ${1}px${2}
 snippet m
-	margin: ${1:`0 auto`}${2}
+	margin: ${1:0 auto}${2}
 snippet pr
 	padding-right: ${1}px${2}
 snippet pl
@@ -19,10 +19,82 @@ snippet pb
 snippet p
 	padding: ${1}px${2}
 snippet c
-	color: ${1:`peachPuff`}
+	color: ${1:peachPuff}
 snippet bg
-	background: url("../images${1:`image.png`}
+	background: url("../images${1:image.png}) no-repeat${2}
 snippet bgc
-	background-color: ${1:`peachpuff`}
+	background-color: ${1:peachpuff}${2}
 snippet bgp
-	background-position: ${1:`0 0`}
+	background-position: ${1:0 0}
+snippet trans
+	@include transition
+snippet brad
+	@include brad
+snippet bs
+	@include box-shadow
+snippet bb
+	border-bottom: ${1:1}px ${2:solid} ${3:red}
+snippet bl
+	border-left: ${1:1}px ${2:solid} ${3:red}
+snippet br
+	border-right: ${1:1}px ${2:solid} ${3:red}
+snippet bt
+	border-top: ${1:1}px ${2:solid} ${3:red}
+snippet h
+	height: ${1}
+snippet w
+	width: ${1}
+snippet pos
+	position: ${1:absolute}
+snippet posr
+	position: ${1:relative}
+snippet b
+	bottom: ${1}px${2}
+snippet l
+	left: ${1}px${2}
+snippet r
+	right: ${1}px${2}
+snippet t
+	top: ${1}px${2}
+snippet z
+	z-index: ${1:5}
+snippet lh
+	line-height: ${1:1}em${2}
+snippet d
+	display: none
+snippet db
+	display: block
+snippet di
+	display: inline
+snippet dib
+	display: inline-block
+snippet fw
+	font-weight: ${1:bold}
+snippet fs
+	font-size: ${1:16}px${2}
+snippet ff
+	font-family: Arial, Helvetica, Verdana, sans-serif
+snippet ffserif
+	font-family: Georgia, Times New Roman, Times, serif
+snippet ti
+	text-indent: ${1:-9999}px${2}
+snippet cl
+	clear: left
+snippet cr
+	clear: right
+snippet cb
+	clear: both
+snippet cont
+	content "${1: }"${2}
+snippet o
+	overflow: hidden
+snippet ov
+	overflow: visible
+snippet ta
+	text-align: ${1:center}
+snippet td
+	text-decoration: none
+snippet tdu
+	text-decoration: underline
+snippet ts
+	text-shadow: ${1:1}px ${2:1}px ${3:0} ${4:rgb(51,51,51)}

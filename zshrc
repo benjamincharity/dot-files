@@ -32,12 +32,17 @@ source $ZSH/oh-my-zsh.sh
   alias pd='cd `pbpaste`'
   alias cr='cmus-remote'
   alias growl='growlnotify'
-  alias mg='mongod run --config /usr/local/Cellar/mongodb/1.6.5-x86_64/mongod.conf'
+  alias mg='mongod run --config /usr/local/Cellar/mongodb/1.8.2-x86_64/mongod.conf'
+  alias mate='/usr/local.old/bin/mate'
 
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
   export EDITOR=vim
   export NODE_PATH=/usr/local/lib/node
-
+  export PATH=$PATH:/usr/local/bin:/AdobeAIRSDK/bin
+  
+  # Patient pad sdk
+  export PATH=$PATH:/Developer/android-sdk-mac_x86/tools
+  
   # Stuff for rvm
   unsetopt auto_name_dirs
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
