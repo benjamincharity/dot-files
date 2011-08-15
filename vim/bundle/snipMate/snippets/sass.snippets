@@ -21,7 +21,7 @@ snippet p
 snippet c
 	color: ${1:peachPuff}
 snippet bg
-	background: url("../images${1:image.png}) no-repeat${2}
+	background: url("../images/${1:image.png}") no-repeat${2}
 snippet bgc
 	background-color: ${1:peachpuff}${2}
 snippet bgp
@@ -32,6 +32,8 @@ snippet brad
 	@include brad
 snippet bs
 	@include box-shadow
+snippet bo
+	border: 1px solid ${1:red}
 snippet bb
 	border-bottom: ${1:1}px ${2:solid} ${3:red}
 snippet bl
@@ -49,13 +51,13 @@ snippet pos
 snippet posr
 	position: ${1:relative}
 snippet b
-	bottom: ${1}px${2}
+	bottom: ${1:0}
 snippet l
-	left: ${1}px${2}
+	left: ${1:0}
 snippet r
-	right: ${1}px${2}
+	right: ${1:0}
 snippet t
-	top: ${1}px${2}
+	top: ${1:0}
 snippet z
 	z-index: ${1:5}
 snippet lh
@@ -90,6 +92,12 @@ snippet o
 	overflow: hidden
 snippet ov
 	overflow: visible
+snippet fl
+	float: left
+snippet fr
+	float: right
+snippet fn
+	float: none
 snippet ta
 	text-align: ${1:center}
 snippet td
@@ -98,3 +106,9 @@ snippet tdu
 	text-decoration: underline
 snippet ts
 	text-shadow: ${1:1}px ${2:1}px ${3:0} ${4:rgb(51,51,51)}
+snippet tt
+	text-transform: uppercase
+snippet ttl
+	text-transform: lowercase
+snippet cu
+	cursor: ${1:pointer}

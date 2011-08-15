@@ -122,3 +122,11 @@ map <leader>rr :reg<cr>
 
 "Yank Rest of line
 noremap Y y$
+
+" Reload snippets
+fun! ReloadSnippets(snippets_dir, ft)
+  call ResetSnippets()
+  call GetSnippets(a:snippets_dir, a:ft)
+endfun
+
+map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
