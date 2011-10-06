@@ -1,6 +1,6 @@
 [user]
-	name = Benjamin Charity
-	email = ben@benjamincharity.com
+  name = Benjamin Charity
+  email = ben@benjamincharity.com
 [alias]
   co = checkout
   lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -9,7 +9,7 @@
 [apply]
   whitespace = nowarn
 [core]
-  excludesfile = /Users/benjamincharity/.gitignore
+	excludesfile = /Users/bc/.dot-files/.gitignore_global
 [color]
   branch = auto
   diff = auto
