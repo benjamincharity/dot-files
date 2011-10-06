@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/Users/bc/toto'
+let g:netrw_dirhist_2='/Users/bc/Dropbox/Freelance/Projects/toto-site'
+let g:netrw_dirhist_3='/Users/bc/Dropbox/Freelance/Projects/gordon county/mm-test'
+let g:netrw_dirhist_4='/Users/bc/Dropbox/Freelance/Projects/toto-site'
+let g:netrw_dirhist_5='/Users/bc/toto'
