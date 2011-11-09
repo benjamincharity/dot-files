@@ -9,7 +9,7 @@
 [apply]
   whitespace = nowarn
 [core]
-	excludesfile = /Users/bc/.gitignore_global
+  excludesfile = /Users/bc/.gitignore_global
 [color]
   branch = auto
   diff = auto
