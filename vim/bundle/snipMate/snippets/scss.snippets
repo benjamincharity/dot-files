@@ -21,35 +21,49 @@ snippet p
 snippet c
 	color: ${1:#bada55};
 snippet bg
-	background: url("../images/${1:image.png}") no-repeat;${2}
+	background: url("../i/${1:image.png}") no-repeat;${2}
 snippet bgc
 	background-color: ${1:#bada55};${2}
 snippet bgp
 	background-position: ${1:0 0};
 snippet trans
-	@include single-transition;
+	@include transition;
 snippet brad
 	@include border-radius;
 snippet bs
-	@include single-box-shadow;
+	@include box-shadow;
 snippet bo
 	border: 1px solid ${1:red};
+snippet bon
+	border: none;
 snippet bb
 	border-bottom: ${1:1}px ${2:solid} ${3:red};
+snippet bbn
+	border-bottom: none;
 snippet bl
 	border-left: ${1:1}px ${2:solid} ${3:red};
+snippet bln
+	border-left: none;
 snippet br
 	border-right: ${1:1}px ${2:solid} ${3:red};
+snippet brn
+	border-right: none;
 snippet bt
 	border-top: ${1:1}px ${2:solid} ${3:red};
+snippet btn
+	border-top: none;
 snippet h
 	height: ${1};
 snippet w
 	width: ${1};
 snippet pos
-	position: ${1:absolute};
+	position: absolute;${1}
 snippet posr
-	position: ${1:relative};
+	position: relative;${1}
+snippet posf
+	position: fixed;${1}
+snippet poss
+	position: static;${1}
 snippet b
 	bottom: ${1:0};
 snippet l
@@ -74,6 +88,8 @@ snippet fw
 	font-weight: ${1:bold};
 snippet fs
 	font-size: ${1:16}px;${2}
+snippet fst
+	font-style: italic;
 snippet ff
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 snippet ffserif
@@ -87,7 +103,7 @@ snippet cr
 snippet cb
 	clear: both;
 snippet cont
-	content "${1:}";${2}
+	content "";${1}
 snippet o
 	overflow: hidden;
 snippet ov
@@ -120,19 +136,19 @@ snippet v
 	visibility: ${1:hidden};
 snippet vv
 	visibility: visible;
-snippet trans
+snippet transfull
 	-webkit-transition: all 0.2s ease-in-out;
 		 -moz-transition: all 0.2s ease-in-out;
 			-ms-transition: all 0.2s ease-in-out;
 			 -o-transition: all 0.2s ease-in-out;
 					transition: all 0.2s ease-in-out;
-snippet bs
+snippet bsfull
 	-webkit-box-shadow: 0 0 10px rgb(51,51,51);
 		 -moz-box-shadow: 0 0 10px rgb(51,51,51);
 			-ms-box-shadow: 0 0 10px rgb(51,51,51);
 			 -o-box-shadow: 0 0 10px rgb(51,51,51);
 					box-shadow: 0 0 10px rgb(51,51,51);
-snippet brad
+snippet bradfull
 	-webkit-border-radius: 4px;
 		 -moz-border-radius: 4px;
 			-ms-border-radius: 4px;

@@ -33,7 +33,7 @@ unsetopt correct_all
   alias pd='cd `pbpaste`'
   alias cr='cmus-remote'
   alias growl='growlnotify'
-  alias mg='mongod run --config /usr/local/Cellar/mongodb/1.8.2-x86_64/mongod.conf'
+  alias mg='mongod run --config /usr/local/Cellar/mongodb/2.0.1-x86_64/mongod.conf'
   alias mate='/usr/local.old/bin/mate'
   alias mg145='~/mongo/mongo-1.4.5/bin/mongod --dbpath ~/mongo/mongo-1.4.5/data/'
 

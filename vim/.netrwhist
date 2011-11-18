@@ -1,7 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =8
 let g:netrw_dirhist_1='/Users/bc/Dropbox/Freelance/Projects/benjamin-charity/toto-site'
 let g:netrw_dirhist_2='/Users/bc/Dropbox/Freelance/Projects/favicon-generator'
 let g:netrw_dirhist_3='/Users/bc/Dropbox/Freelance/Projects/favicon-finder'
 let g:netrw_dirhist_4='/Users/bc/Dropbox/freelance/projects/nesta'
 let g:netrw_dirhist_5='/Users/bc/Dropbox/freelance/projects/favicon-finder'
+let g:netrw_dirhist_6='/Users/bc/Dropbox/freelance/projects/mxm21'
+let g:netrw_dirhist_7='/Users/bc/Dropbox/freelance/projects/arborWoodProducts/web'
+let g:netrw_dirhist_8='/Users/bc/.dot-files/vim/bundle/snipMate/snippets'
