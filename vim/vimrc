@@ -133,3 +133,7 @@ endfun
 map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
 
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+
+" Zen Coding
+let g:user_zen_expandabbr_key = '<c-e>' 
+let g:use_zen_complete_tag = 1
