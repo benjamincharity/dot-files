@@ -33,12 +33,9 @@ unsetopt correct_all
   alias pd='cd `pbpaste`'
   alias cr='cmus-remote'
   alias growl='growlnotify'
-<<<<<<< Updated upstream
   alias mg='mongod run --config /usr/local/Cellar/mongodb/2.0.1-x86_64/mongod.conf'
   alias mate='/usr/local.old/bin/mate'
-=======
-  alias mg='mongod run --config /usr/local/Cellar/mongodb/1.8.3-x86_64/mongod.conf'
->>>>>>> Stashed changes
+  alias mg183='mongod run --config /usr/local/Cellar/mongodb/1.8.3-x86_64/mongod.conf'
   alias mg145='~/mongo/mongo-1.4.5/bin/mongod --dbpath ~/mongo/mongo-1.4.5/data/'
   alias mate='/usr/local/bin/mate'
   alias gemi='sudo gem install –no-ri –no-rdoc'
