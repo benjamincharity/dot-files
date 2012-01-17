@@ -27,7 +27,7 @@ snippet bgc
 snippet bgp
 	background-position: ${1:0 0};
 snippet trans
-	@include transition;
+	@include single-transition;
 snippet brad
 	@include border-radius;
 snippet bs
@@ -91,11 +91,15 @@ snippet fs
 snippet fst
 	font-style: italic;
 snippet ff
+	font-family: $family;
+snippet ffsans
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 snippet ffserif
 	font-family: Georgia, Times New Roman, Times, serif;
 snippet ti
 	text-indent: ${1:-9999}px;${2}
+snippet tin
+	text-indent: ${1:0};${2}
 snippet cl
 	clear: left;
 snippet cr
@@ -103,7 +107,7 @@ snippet cr
 snippet cb
 	clear: both;
 snippet cont
-	content "";${1}
+	content: "";${1}
 snippet o
 	overflow: hidden;
 snippet ov
@@ -143,14 +147,20 @@ snippet transfull
 			 -o-transition: all 0.2s ease-in-out;
 					transition: all 0.2s ease-in-out;
 snippet bsfull
-	-webkit-box-shadow: 0 0 10px rgb(51,51,51);
-		 -moz-box-shadow: 0 0 10px rgb(51,51,51);
-			-ms-box-shadow: 0 0 10px rgb(51,51,51);
-			 -o-box-shadow: 0 0 10px rgb(51,51,51);
-					box-shadow: 0 0 10px rgb(51,51,51);
+	-webkit-box-shadow: 0 0 10px 0 rgb(51,51,51);
+		 -moz-box-shadow: 0 0 10px 0 rgb(51,51,51);
+			-ms-box-shadow: 0 0 10px 0 rgb(51,51,51);
+			 -o-box-shadow: 0 0 10px 0 rgb(51,51,51);
+					box-shadow: 0 0 10px 0 rgb(51,51,51);
 snippet bradfull
 	-webkit-border-radius: 4px;
 		 -moz-border-radius: 4px;
 			-ms-border-radius: 4px;
 			 -o-border-radius: 4px;
 					border-radius: 4px;
+snippet point
+	pointer-events: none;${1}
+snippet pointa
+	pointer-events: auto;${1}
+snippet pie
+	@include pie;${1}
