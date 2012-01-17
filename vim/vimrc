@@ -105,7 +105,11 @@ nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 autocmd BufEnter *.haml setlocal cursorcolumn
 autocmd BufEnter *.sass setlocal cursorcolumn
 autocmd BufEnter *.scss setlocal cursorcolumn
-
+autocmd BufEnter *.html setlocal cursorcolumn
+autocmd BufEnter *.css setlocal cursorcolumn
+autocmd BufEnter *.js setlocal cursorcolumn
+autocmd BufEnter *.rb setlocal cursorcolumn
+autocmd BufEnter *.ru setlocal cursorcolumn
 
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.j set filetype=objj
@@ -129,6 +133,8 @@ fun! ReloadSnippets(snippets_dir, ft)
   call ResetSnippets()
   call GetSnippets(a:snippets_dir, a:ft)
 endfun
+
+com W w
 
 map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
 
