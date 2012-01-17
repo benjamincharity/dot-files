@@ -1,11 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/bc/Downloads/meme_generator'
-let g:netrw_dirhist_2='/Users/bc/Projects/tnt/tumblr'
-let g:netrw_dirhist_3='/Users/bc/Projects/tnt/meme-builder'
-let g:netrw_dirhist_4='/Users/bc/Projects/tnt/tumblr'
-let g:netrw_dirhist_5='/Users/bc/Projects/playground'
-let g:netrw_dirhist_6='/Users/bc/Projects/CaseMaste-DIY'
-let g:netrw_dirhist_7='/Users/bc/Projects/casemate/CaseMate-DIY'
-let g:netrw_dirhist_8='/Users/bc/Projects/home-depot/12-spring/web'
-let g:netrw_dirhist_9='/Users/bc/Projects/middleman-boilerplate'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/bc/Projects/home-depot/12-spring/web'
+let g:netrw_dirhist_2='/Users/bc/Projects/middleman-boilerplate'

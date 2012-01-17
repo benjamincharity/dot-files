@@ -130,6 +130,8 @@ fun! ReloadSnippets(snippets_dir, ft)
   call GetSnippets(a:snippets_dir, a:ft)
 endfun
 
+com W w
+
 map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
 
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
