@@ -1,6 +1,26 @@
 set nocompatible
 set shell=/bin/sh
-silent! call pathogen#runtime_append_all_bundles()
+"silent! call pathogen#runtime_append_all_bundles()
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'fugitive.vim'
+Bundle 'snipMate'
+Bundle 'The-NERD-Commenter'
+Bundle 'The-NERD-tree'
+Bundle 'ack.vim'
+Bundle 'rails.vim'
+Bundle 'surround.vim'
+Bundle 'ZoomWin'
+Bundle 'Command-T'
+Bundle 'rvm.vim'
+Bundle 'bufexplorer.zip'
+Bundle 'javaScriptLint.vim'
+Bundle 'vim-coffee-script'
+Bundle 'scratch.vim'
 
 syntax on
 filetype plugin indent on
