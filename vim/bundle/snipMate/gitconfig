@@ -1,0 +1,28 @@
+[user]
+	name = Benjamin Charity
+  email = ben@benjamincharity.com
+[alias]
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  br = branch
+  dt = difftool
+[apply]
+  whitespace = nowarn
+[core]
+	excludesfile = /Users/bc/.gitignore_global
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+[merge]
+  tool = mvimdiff
+  keepBackup = false
+[diff]
+  tool = mvimdiff
+[difftool]
+  prompt = false
+[difftool "mvimdiff"]
+  cmd = mvim -d -f $LOCAL $REMOTE
+[heroku]
+	account = personal
