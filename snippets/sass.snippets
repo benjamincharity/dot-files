@@ -29,21 +29,31 @@ snippet bgp
 snippet bgs
 	background-size: ${1:cover}
 snippet trans
-	@include transition
+	+transition
 snippet brad
-	@include brad
+	+border-radius
 snippet bs
-	@include box-shadow
+	+box-shadow
 snippet bo
 	border: 1px solid ${1:red}
+snippet bon
+	border: none
 snippet bb
 	border-bottom: ${1:1}px ${2:solid} ${3:red}
+snippet bbn
+	border-bottom: none
 snippet bl
 	border-left: ${1:1}px ${2:solid} ${3:red}
+snippet bln
+	border-left: none
 snippet br
 	border-right: ${1:1}px ${2:solid} ${3:red}
+snippet brn
+	border-right: none
 snippet bt
 	border-top: ${1:1}px ${2:solid} ${3:red}
+snippet btn
+	border-top: none
 snippet h
 	height: ${1}
 snippet w
@@ -80,6 +90,8 @@ snippet fw
 	font-weight: ${1:bold}
 snippet fs
 	font-size: ${1:16}px${2}
+snippet fst
+	font-style: ${1:italic}
 snippet ff
 	font-family: Arial, Helvetica, Verdana, sans-serif
 snippet ffserif
@@ -137,8 +149,10 @@ snippet point
 snippet pointa
 	pointer-events: auto${1}
 snippet pie
-	@include pie${1}
+	+pie${1}
 snippet mh
 	max-height: ${1:100%}
 snippet mw
 	max-width: ${1:100%}
+snippet rem
+	+rem('${1:font-size}',${2:80px})
