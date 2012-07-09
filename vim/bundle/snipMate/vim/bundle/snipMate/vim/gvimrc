@@ -1,0 +1,18 @@
+if has("gui_macvim")
+  macmenu &File.New\ Tab key=<nop>
+  set guioptions-=T
+  set guioptions-=m
+  set guioptions-=r
+  set guioptions-=L
+  "set fu
+  set mousehide
+  "Pane resize
+  nnoremap <up> <C-w>+
+  nnoremap <down> <C-w>-
+  nnoremap <right> <C-w>>
+  nnoremap <left> <C-w><
+
+  "Remap Command-T
+  map <D-t> :CommandT<CR>
+end
+

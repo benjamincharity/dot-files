@@ -44,6 +44,7 @@ unsetopt correct_all
   alias gpom='git push origin master'
   alias gpod='git push origin develop'
   alias gphm='git push heroku master'
+  alias bb='cd ~/dropbox/freelance/projects/bountybuy/bountybuy-v1/'
 
   # for mysql
   alias mysqlstart='mysql.server start'
@@ -53,13 +54,14 @@ unsetopt correct_all
   export EDITOR=vim
   export NODE_PATH=/usr/local/lib/node
   export PATH=/usr/local/bin:/AdobeAIRSDK/bin:$PATH
-  
+
   # Patient pad sdk
   export PATH=$PATH:/Developer/android-sdk-mac_x86/tools
-  
+
   # Stuff for rvm
   unsetopt auto_name_dirs
   [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+

@@ -166,7 +166,30 @@ map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
 " Zen Coding
 let g:user_zen_expandabbr_key = '<c-e>'
 let g:use_zen_complete_tag = 1
+let g:user_zen_settings = {'html' : {'indentation' : '  '},}
 
 " Gist Controll
 let g:github_user = 'benjamincharity'
 let g:github_token = '480476e89088027369bd8ca5ad109afe'
+
+" Rspec goodness!!!
+function! RunSpec(args)
+ let cmd = ":! rspec % -cfn --drb " . a:args
+ execute cmd
+endfunction
+
+" run one rspec example or describe block based on cursor position
+map !s :call RunSpec("-l " . <C-r>=line('.')<CR>)
+" run full rspec file
+map !S :call RunSpec("")<CR>
+
+" patrick's keybindings
+map Q gq
+map <leader><cr> :noh<CR>
+map <leader>d :NERDTreeToggle<CR>
+map <C-l> :tabn<CR>
+map <C-h> :tabp<CR>
+map <C-n> :tabnew<CR>
+map <leader>f :echo @%<CR>
+map W f_
+map <C-t> :TlistToggle<cr>

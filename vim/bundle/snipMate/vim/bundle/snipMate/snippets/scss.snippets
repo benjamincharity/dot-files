@@ -21,11 +21,13 @@ snippet p
 snippet c
 	color: ${1:#bada55};
 snippet bg
-	background: url("../i/${1:image.png}") no-repeat;${2}
+	background: url("/i/${1:image.png}");${2}
 snippet bgc
 	background-color: ${1:#bada55};${2}
 snippet bgp
 	background-position: ${1:0 0};
+snippet bgs
+	background-size: ${1:cover};
 snippet trans
 	@include single-transition;
 snippet brad
@@ -119,7 +121,11 @@ snippet fr
 snippet fn
 	float: none;
 snippet ta
-	text-align: ${1:center};
+	text-align: center${1};
+snippet tal
+	text-align: left${1};
+snippet tar
+	text-align: right${1};
 snippet td
 	text-decoration: none;
 snippet tdu
@@ -164,3 +170,7 @@ snippet pointa
 	pointer-events: auto;${1}
 snippet pie
 	@include pie;${1}
+snippet mh
+	max-height: ${1:100%};${2}
+snippet mw
+	max-width: ${1:100%};${2}

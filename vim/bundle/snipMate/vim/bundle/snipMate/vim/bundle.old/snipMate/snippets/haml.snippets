@@ -1,0 +1,115 @@
+# Some useful Unicode entities
+# Non-Breaking Space
+snippet nbs
+	&nbsp;
+# ←
+snippet left
+	&#x2190;
+# →
+snippet right
+	&#x2192;
+# ↑
+snippet up
+	&#x2191;
+# ↓
+snippet down
+	&#x2193;
+# ↩
+snippet return
+	&#x21A9;
+# ⇤
+snippet backtab
+	&#x21E4;
+# ⇥
+snippet tab
+	&#x21E5;
+# ⇧
+snippet shift
+	&#x21E7;
+# ⌃
+snippet control
+	&#x2303;
+# ⌅
+snippet enter
+	&#x2305;
+# ⌘
+snippet command
+	&#x2318;
+# ⌥
+snippet option
+	&#x2325;
+# ⌦
+snippet delete
+	&#x2326;
+# ⌫
+snippet backspace
+	&#x232B;
+# ⎋
+snippet escape
+	&#x238B;
+# Generic Doctype
+snippet doctype HTML 4.01 Strict
+	!!! Strict
+snippet doctype HTML 4.01 Transitional
+	!!!
+snippet doctype HTML 5
+	!!! 5
+snippet doctype XHTML 1.0 Frameset
+	!!! Frameset
+snippet doctype XHTML 1.0 Strict
+	!!! Strict
+snippet doctype XHTML 1.0 Transitional
+	!!!
+snippet doctype XHTML 1.1
+	!!! 1.1
+# HTML Doctype 5
+snippet doct5
+	!!! 5
+snippet html
+	%html{ :lang => "en" }
+	  ${1}
+snippet xhtml
+	%html{ :xmlns => "http://www.w3.org/1999/xhtml" }
+	  ${1}
+snippet body
+	%body
+	  ${1}
+snippet head
+	%head
+	  %meta{ :charset => "utf-8" }
+	  %title ${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}
+	  ${2}
+snippet title
+	%title ${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}
+snippet script
+	:javascript
+	  ${1}
+snippet scriptsrc
+	%script{ :src => "${1}.js", :type => "text/javascript" }
+snippet link
+	%link{ :rel => "${1:stylesheet}", :href => "${2}" :type => "${3:text/css}", :media => "${4:screen}" }
+snippet div
+	%div${1}
+	  ${2}
+snippet fieldset
+	%fieldset${1}
+	  %legend ${2}
+	  ${3}
+snippet form
+	%form{ :action => "${1}", :method => "${2:get}" }
+	  ${3}
+snippet h1
+	%h1${1}
+snippet input
+	%input{ :type => "${1:text/submit/hidden/button}", :name => "${2:some_name}", :value => "${3}" } ${4}
+snippet label
+	%label{ :for => "${2:$1}" } ${1:name}
+	%input{ :type => "${3:text/submit/hidden/button}", :name => "${3:$2}", :value => "${6:$2}" } ${7}
+snippet meta
+	%meta{ :name => "${1:name}", :content => "${2:content}" } ${3}
+snippet textarea
+	%textarea{ :name => "${1:Name}", :rows => "${2:8}", :cols => "${3:40}" } ${4}
+snippet ul
+	%ul${1}
+snippet li
+	%li ${1}
