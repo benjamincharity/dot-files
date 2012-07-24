@@ -125,6 +125,7 @@ let NERDChristmasTree = 1
 nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "Turn cursor column on for haml and sass
+autocmd BufEnter *.erb setlocal cursorcolumn
 autocmd BufEnter *.haml setlocal cursorcolumn
 autocmd BufEnter *.sass setlocal cursorcolumn
 autocmd BufEnter *.scss setlocal cursorcolumn
@@ -158,6 +159,7 @@ fun! ReloadSnippets(snippets_dir, ft)
 endfun
 
 com W w
+com Wa wa
 
 map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
 
