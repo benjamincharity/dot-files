@@ -39,12 +39,14 @@ unsetopt correct_all
   alias mg145='~/mongo/mongo-1.4.5/bin/mongod --dbpath ~/mongo/mongo-1.4.5/data/'
   alias mate='/usr/local/bin/mate'
   alias gemi='sudo gem install –no-ri –no-rdoc'
-  alias pg_start='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
-  alias pg_stop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
   alias gpom='git push origin master'
   alias gpod='git push origin develop'
   alias gphm='git push heroku master'
   alias bb='cd ~/dropbox/freelance/projects/bountybuy/bountybuy-v1/'
+
+  # postgres
+  alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
+  alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
   # for mysql
   alias mysqlstart='mysql.server start'
@@ -65,3 +67,4 @@ unsetopt correct_all
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
+alias unicorn="unicorn_rails -c ~/.unicorn.rb"
