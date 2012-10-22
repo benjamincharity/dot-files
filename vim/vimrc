@@ -22,7 +22,6 @@ Bundle 'javaScriptLint.vim'
 Bundle 'vim-coffee-script'
 Bundle 'scratch.vim'
 Bundle 'vim-scripts/EasyGrep'
-Bundle 'gist-vim.zip'
 Bundle 'zencoding-vim'
 
 syntax on

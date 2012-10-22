@@ -26,3 +26,5 @@
   cmd = mvim -d -f $LOCAL $REMOTE
 [heroku]
 	account = personal
+[github]
+	user = benjamincharity
