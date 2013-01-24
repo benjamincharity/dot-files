@@ -22,7 +22,9 @@ Bundle 'javaScriptLint.vim'
 Bundle 'vim-coffee-script'
 Bundle 'scratch.vim'
 Bundle 'vim-scripts/EasyGrep'
-Bundle 'zencoding-vim'
+
+" Github repos
+Bundle 'mattn/zencoding-vim'
 
 syntax on
 filetype plugin indent on
@@ -51,6 +53,7 @@ set hlsearch
 set showmatch
 
 set cursorline
+set cursorcolumn
 set listchars=tab:>\ ,trail:•,extends:>,precedes:<,nbsp:+
 set list
 
@@ -65,6 +68,10 @@ set nobackup
 set nowritebackup
 set backupdir=~/.vim_backups//
 set directory=~/.vim_backups//
+
+" quickly open vimrc
+nmap <silent> <leader>ev :e $MYVIMRC<cr>
+nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 " Command-T configuration
 let g:CommandTMaxHeight=20
@@ -124,15 +131,7 @@ let NERDChristmasTree = 1
 nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "Turn cursor column on for haml and sass
-autocmd BufEnter *.erb setlocal cursorcolumn
-autocmd BufEnter *.haml setlocal cursorcolumn
-autocmd BufEnter *.sass setlocal cursorcolumn
-autocmd BufEnter *.scss setlocal cursorcolumn
-autocmd BufEnter *.html setlocal cursorcolumn
-autocmd BufEnter *.css setlocal cursorcolumn
-autocmd BufEnter *.js setlocal cursorcolumn
-autocmd BufEnter *.rb setlocal cursorcolumn
-autocmd BufEnter *.ru setlocal cursorcolumn
+"autocmd BufEnter *.erb setlocal cursorcolumn
 
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.j set filetype=objj

@@ -1,5 +1,5 @@
 [user]
-	name = Benjamin Charity
+  name = Benjamin Charity
   email = ben@benjamincharity.com
 [alias]
   co = checkout
@@ -9,7 +9,7 @@
 [apply]
   whitespace = nowarn
 [core]
-	excludesfile = /Users/bc/.gitignore_global
+  excludesfile = /Users/bc/.gitignore_global
 [color]
   branch = auto
   diff = auto
@@ -25,6 +25,6 @@
 [difftool "mvimdiff"]
   cmd = mvim -d -f $LOCAL $REMOTE
 [heroku]
-	account = personal
+  account = personal
 [github]
-	user = benjamincharity
+  user = benjamincharity
