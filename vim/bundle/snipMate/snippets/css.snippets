@@ -21,7 +21,9 @@ snippet p
 snippet c
 	color: ${1:#bada55};
 snippet bg
-	background: url("/i/${1:image.png}");${2}
+	background: url("/i/${1:image.png}") left top;${2}
+snippet bgi
+	background-image: url("/i/${1:image.png}");${2}
 snippet bgc
 	background-color: ${1:#bada55};${2}
 snippet bgp
@@ -68,6 +70,8 @@ snippet bt
 	border-top: ${1:1}px ${2:solid} ${3:red};
 snippet btn
 	border-top: none;
+snippet boc
+	border-color ${1:red} ${2:red} ${3:red} ${4:red};
 snippet h
 	height: ${1};
 snippet w

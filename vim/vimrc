@@ -83,7 +83,7 @@ nnoremap OC <C-w>>
 nnoremap OD <C-w><
 
 "Theme
-color molokai
+color dusk
 
 "Move lines with alt + direction
 nnoremap ∆ :m+<CR>==
@@ -135,7 +135,7 @@ nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.j set filetype=objj
-au BufNewFile,BufRead *.css set filetype=scss
+"au BufNewFile,BufRead *.css set filetype=scss
 
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.as set filetype=actionscript
@@ -193,3 +193,7 @@ map <C-n> :tabnew<CR>
 map <leader>f :echo @%<CR>
 map W f_
 map <C-t> :TlistToggle<cr>
+
+" override the line highlight styles
+highlight cursorline term=NONE, cterm=NONE, guibg=#444444, ctermbg=235
+highlight cursorcolumn guibg=#444444, ctermbg=235

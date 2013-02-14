@@ -16,14 +16,14 @@
   interactive = auto
   status = auto
 [merge]
-  tool = mvimdiff
+  tool = opendiff
   keepBackup = false
 [diff]
-  tool = mvimdiff
+  tool = opendiff
 [difftool]
   prompt = false
-[difftool "mvimdiff"]
-  cmd = mvim -d -f $LOCAL $REMOTE
+;[difftool "mvimdiff"]
+  ;cmd = mvim -d -f $LOCAL $REMOTE
 [heroku]
   account = personal
 [github]

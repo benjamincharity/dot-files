@@ -56,6 +56,8 @@ snippet bt
 	border-top: ${1:1}px ${2:solid} ${3:red};
 snippet btn
 	border-top: none;
+snippet boc
+	border-color ${1:red} ${2:red} ${3:red} ${4:red};
 snippet h
 	height: ${1};
 snippet w
@@ -192,3 +194,5 @@ snippet wsw
 	white-space: ${1:wrap};${2}
 snippet wsn
 	white-space: ${1:normal};${2}
+snippet cust
+	@include customTransition();${1}
