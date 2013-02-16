@@ -22,6 +22,8 @@ Bundle 'javaScriptLint.vim'
 Bundle 'vim-coffee-script'
 Bundle 'scratch.vim'
 Bundle 'vim-scripts/EasyGrep'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 " Github repos
 Bundle 'mattn/zencoding-vim'
@@ -168,10 +170,6 @@ let g:user_zen_expandabbr_key = '<c-e>'
 let g:use_zen_complete_tag = 1
 let g:user_zen_settings = {'html' : {'indentation' : '  '},}
 
-" Gist Controll
-let g:github_user = 'benjamincharity'
-let g:github_token = '480476e89088027369bd8ca5ad109afe'
-
 " Rspec goodness!!!
 function! RunSpec(args)
  let cmd = ":! rspec % -cfn --drb " . a:args
@@ -197,3 +195,6 @@ map <C-t> :TlistToggle<cr>
 " override the line highlight styles
 highlight cursorline term=NONE, cterm=NONE, guibg=#444444, ctermbg=235
 highlight cursorcolumn guibg=#444444, ctermbg=235
+
+" allow gist.vim to use copy/paste
+let g:gist_clip_command = 'pbcopy'
