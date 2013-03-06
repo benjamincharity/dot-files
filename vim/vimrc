@@ -27,6 +27,9 @@ Bundle 'mattn/gist-vim'
 
 " Github repos
 Bundle 'mattn/zencoding-vim'
+Bundle 'tpope/vim-surround'
+Bundle 'juvenn/mustache'
+Bundle 'slim-template/vim-slim'
 
 syntax on
 filetype plugin indent on
@@ -198,3 +201,6 @@ highlight cursorcolumn guibg=#444444, ctermbg=235
 
 " allow gist.vim to use copy/paste
 let g:gist_clip_command = 'pbcopy'
+
+" Needed for JSLint
+filetype plugin on

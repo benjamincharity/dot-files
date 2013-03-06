@@ -21,7 +21,7 @@ snippet p
 snippet c
 	color: ${1:peachPuff}
 snippet bg
-	background: url("/i/${1:image.png}")${2}
+	background: url('/i/${1:image.png}')${2}
 snippet bgc
 	background-color: ${1:peachpuff}${2}
 snippet bgp
@@ -94,6 +94,12 @@ snippet dib
 	display: inline-block
 snippet fw
 	font-weight: ${1:600}
+snippet fwn
+	font-weight: normal${1}
+snippet fwb
+	font-weight: bold${1}
+snippet fwl
+	font-weight: light${1}
 snippet fs
 	font-size: ${1:16}px${2}
 snippet fst
@@ -189,4 +195,12 @@ snippet doc
 	//  ${3:__documentation__}
 	// @end
 snippet clear
-	@include clear
+	@include clear()
+snippet vertb
+	vertical-align: bottom
+snippet vertt
+	vertical-align: top
+snippet vertm
+	vertical-align: middle
+snippet vert
+	vertical-align: ${1:bottom}

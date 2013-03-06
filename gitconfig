@@ -28,3 +28,5 @@
   account = personal
 [github]
 	user = benjamincharity
+[push]
+	default = simple
