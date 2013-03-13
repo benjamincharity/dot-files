@@ -204,3 +204,6 @@ let g:gist_clip_command = 'pbcopy'
 
 " Needed for JSLint
 filetype plugin on
+
+" Sort CSS styles inside {} by hitting F7
+map <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
