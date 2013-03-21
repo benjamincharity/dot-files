@@ -30,6 +30,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-surround'
 Bundle 'juvenn/mustache'
 Bundle 'slim-template/vim-slim'
+"Bundle 'rstacruz/sparkup'
 
 syntax on
 filetype plugin indent on

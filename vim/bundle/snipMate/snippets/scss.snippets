@@ -116,6 +116,14 @@ snippet ti
 	text-indent: 100%;${1}
 snippet tin
 	text-indent: ${1:0};${2}
+snippet to
+	text-overflow: ${1:ellipsis};${2}
+snippet toe
+	text-overflow: ellipses;${1}
+snippet toc
+	text-overflow: clip;${1}
+snippet tos
+	text-overflow: string;${1}
 snippet cl
 	clear: left;
 snippet cr
@@ -232,14 +240,16 @@ snippet clear
 	@include clear;
 snippet hide
 	@include hideText;
-snippet vertb
+snippet vab
 	vertical-align: bottom;
-snippet vertt
+snippet vat
 	vertical-align: top;
-snippet vertm
+snippet vam
 	vertical-align: middle;
-snippet vert
+snippet va
 	vertical-align: ${1:bottom};
+snippet vaa
+	vertical-align: auto;
 snippet hover
 	&:focus,
 	&:hover {
