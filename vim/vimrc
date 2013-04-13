@@ -208,3 +208,18 @@ filetype plugin on
 
 " Sort CSS styles inside {} by hitting F7
 map <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
+
+
+" show error background on text longer than 80 characters
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%>80v.\+/
+
+"##############################################
+" Easier split navigation
+"##############################################
+
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>

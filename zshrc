@@ -42,7 +42,7 @@ unsetopt correct_all
   alias gpom='git push origin master'
   alias gpod='git push origin develop'
   alias gphm='git push heroku master'
-  alias bb='cd ~/dropbox/freelance/projects/bountybuy/bountybuy-v1/'
+  alias python='python -m SimpleHTTPServer'
 
   # postgres
   alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'

@@ -11,7 +11,9 @@ snippet fun
 	}
 # Anonymous Function
 snippet f
-	function(${1}) {${2}};
+	(function ($) {
+		console.log('log this');
+	}(jQuery));
 # if
 snippet if
 	if (${1:true}) {${2}};
@@ -80,3 +82,7 @@ snippet rt
 	return true;
 snippet event
 	event.preventDefault();
+snippet each
+	$(${1:div}).each(function(index, value) {
+		console.log('div' + index + ':' + $(this).attr('id'));
+	});
