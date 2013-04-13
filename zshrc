@@ -24,12 +24,13 @@ unsetopt correct_all
 # Customize to your needs...
 
   alias status='git status'
-  alias ss='script/server'
-  alias commit='git commit'
   alias add='git add'
+  alias gaa='git add .'
   alias use='rvm gemset use'
   alias t='tmux -u'
+  # copy current directory path
   alias gd='pwd | pbcopy'
+  # go to copied directory path
   alias pd='cd `pbpaste`'
   alias cr='cmus-remote'
   alias growl='growlnotify'
@@ -40,8 +41,12 @@ unsetopt correct_all
   alias mate='/usr/local/bin/mate'
   alias gemi='sudo gem install –no-ri –no-rdoc'
   alias gpom='git push origin master'
+  alias gm='git push'
+  alias gp='git pull'
+  alias gs='git status'
   alias gpod='git push origin develop'
   alias gphm='git push heroku master'
+  alias gd='git diff | mvim'
   alias python='python -m SimpleHTTPServer'
 
   # postgres
