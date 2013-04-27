@@ -219,17 +219,25 @@ snippet rempl
 snippet rempr
 	@include rem('padding-right',${1:12}px);
 snippet remm
-	@include rem('padding',${1:12}px);
+	@include rem('margin',${1:12}px);
 snippet remmt
-	@include rem('padding-top',${1:12}px);
+	@include rem('margin-top',${1:12}px);
 snippet remmb
-	@include rem('padding-bottom',${1:12}px);
+	@include rem('margin-bottom',${1:12}px);
 snippet remml
-	@include rem('padding-left',${1:12}px);
+	@include rem('margin-left',${1:12}px);
 snippet remmr
-	@include rem('padding-right',${1:12}px);
+	@include rem('margin-right',${1:12}px);
 snippet remti
 	@include rem('text-indent',${1:12}px);
+snippet remt
+	@include rem('top',${1:12}px);
+snippet remb
+	@include rem('bottom',${1:12}px);
+snippet reml
+	@include rem('left',${1:12}px);
+snippet remr
+	@include rem('right',${1:12}px);
 snippet ls
 	letter-spacing: ${1:0em};
 snippet ws
@@ -262,6 +270,8 @@ snippet doc
 	// @end
 snippet clear
 	@include clear;
+snippet clearie
+	@include clear-ie;
 snippet hide
 	@include hideText;
 snippet vab

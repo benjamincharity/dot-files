@@ -75,6 +75,10 @@ set nowritebackup
 set backupdir=~/.vim_backups//
 set directory=~/.vim_backups//
 
+"set foldmethod=indent
+"set foldlevelstart=20
+
+
 " quickly open vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
