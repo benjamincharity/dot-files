@@ -262,5 +262,22 @@ snippet hide
 	overflow: hidden;
 	text-indent: 100%;
 	white-space: nowrap;
+snippet clear
+	${1:ELEM}::after {
+		clear: both;
+		content: "";
+		display: table;
+	}
+snippet clearie
+	${1:ELEM}::before {
+		content: "\0020";
+		display: table;
+	}
+	${2:ELEM}::after {
+		clear: both;
+		content: "\0020";
+		display: table;
+		zoom: 1;
+	}
 
 
