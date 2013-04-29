@@ -238,6 +238,10 @@ snippet reml
 	@include rem('left',${1:12}px);
 snippet remr
 	@include rem('right',${1:12}px);
+snippet remh
+	@include rem('height',${1:100}px);
+snippet remw
+	@include rem('width',${1:100}px);
 snippet ls
 	letter-spacing: ${1:0em};
 snippet ws
@@ -288,4 +292,12 @@ snippet hover
 	&:focus,
 	&:hover {
 		${1}
+	}
+snippet bkt
+	@include breakpoint(tablet) {
+		@include rem('${1:width}',${2:250px});
+	}
+snippet bkm
+	@include breakpoint(mobile) {
+		@include rem('${1:width}',${2:250px});
 	}

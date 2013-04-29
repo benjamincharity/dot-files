@@ -46,6 +46,8 @@ unsetopt correct_all
   alias gs='git status'
   alias gpod='git push origin develop'
   alias gphm='git push heroku master'
+  alias gpogh='git push origin gh-pages'
+  alias gpuogh='git pull origin gh-pages'
   alias gd='git diff | mvim'
   alias python='python -m SimpleHTTPServer'
 
