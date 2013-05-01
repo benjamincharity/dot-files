@@ -274,7 +274,9 @@ snippet hover
 		${1}
 snippet bkt
 	@include breakpoint(tablet)
-		@include rem('${1:width}',${2:250px})
+		${1}
 snippet bkm
 	@include breakpoint(mobile)
-		@include rem('${1:width}',${2:250px})
+		${1}
+snippet im
+	!important${1}
