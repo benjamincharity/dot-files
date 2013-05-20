@@ -264,7 +264,7 @@ snippet doc
 	//
 	//
 	//
-	// $${1:APP}_${2:BASE}
+	// $${1:APP_BASE}
 	//
 	//
 	// @author Benjamin Charity <ben@benjamincharity.com>
@@ -295,11 +295,27 @@ snippet hover
 	}
 snippet bkt
 	@include breakpoint(tablet) {
-		${1};
+		${1}
 	}
 snippet bkm
 	@include breakpoint(mobile) {
-		${1};
+		${1}
 	}
 snippet im
 	!important${1}
+snippet before
+	&::before {
+		${1}
+	}
+snippet beforeie
+	&:before {
+		${1}
+	}
+snippet after
+	&::after {
+		${1}
+	}
+snippet afterie
+	&:after {
+		${1}
+	}
