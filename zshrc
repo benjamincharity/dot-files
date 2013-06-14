@@ -73,7 +73,7 @@ unsetopt correct_all
 
   PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
-  alias unicorn="unicorn_rails -c ~/.unicorn.rb"
+  #alias unicorn="unicorn_rails -c ~/.unicorn.rb"
 
   # enable auto completion for git flow
   source ~/.git-flow-completion.zsh
