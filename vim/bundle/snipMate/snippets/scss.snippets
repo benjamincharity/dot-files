@@ -293,12 +293,16 @@ snippet hover
 	&:hover {
 		${1}
 	}
-snippet bkt
-	@include breakpoint(tablet) {
+snippet bkl
+	@include breakpoint(breakpoint_large) {
 		${1}
 	}
 snippet bkm
-	@include breakpoint(mobile) {
+	@include breakpoint(breakpoint_medium) {
+		${1}
+	}
+snippet bks
+	@include breakpoint(breakpoint_small) {
 		${1}
 	}
 snippet im
@@ -319,3 +323,5 @@ snippet afterie
 	&:after {
 		${1}
 	}
+snippet em
+	emCalc(${1:16}px)

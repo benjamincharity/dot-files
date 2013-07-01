@@ -121,15 +121,11 @@ snippet script
 		${1}
 	</script>${2}
 snippet scriptsrc
-	<script src="${1}.js" charset="utf-8"></script>${2}
-snippet jquery
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" charset="utf-8"></script>
+	<script src="${1}.js" type="text/javascript" charset="utf-8"></script>${2}
 snippet style
 	<style type="text/css" media="${1:screen}">
 		${2}
 	</style>${3}
-snippet linkstyle
-	<link rel="stylesheet" href="../css/style.css">
 snippet base
 	<base href="${1}" target="${2}"`Close()`>
 snippet r
@@ -192,15 +188,3 @@ snippet table
 	</table>${4}
 snippet textarea
 	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
-snippet html5
-	<!DOCTYPE html>
-	<html>
-	<head>
-	  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	  <title>${1:Page Title}</title>
-	
-	</head>
-	<body>
-		${2}	
-	</body>
-	</html>

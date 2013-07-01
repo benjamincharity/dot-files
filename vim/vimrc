@@ -10,7 +10,7 @@ Bundle 'gmarik/vundle'
 Bundle 'fugitive.vim'
 Bundle 'snipMate'
 Bundle 'The-NERD-Commenter'
-Bundle 'The-NERD-tree'
+Bundle 'scrooloose/nerdtree'
 Bundle 'ack.vim'
 Bundle 'rails.vim'
 Bundle 'surround.vim'
@@ -81,6 +81,7 @@ set directory=~/.vim_backups//
 
 " quickly open vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
+" quickly source vimrc
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
 
 " Command-T configuration
@@ -166,10 +167,11 @@ fun! ReloadSnippets(snippets_dir, ft)
   call GetSnippets(a:snippets_dir, a:ft)
 endfun
 
+map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
+
+" Remap these since I always seem to type this.
 com W w
 com Wa wa
-
-map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
 
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
@@ -227,3 +229,6 @@ nmap <silent> <c-k> :wincmd k<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+
+" Allow completion in SCSS files
+autocmd BufNewFile,BufRead *.scss             set ft=scss.css

@@ -50,6 +50,7 @@ unsetopt correct_all
   alias gpuogh='git pull origin gh-pages'
   alias gd='git diff | mvim'
   alias python='python -m SimpleHTTPServer'
+  alias l='ls -la'
 
   # postgres
   alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
@@ -75,5 +76,10 @@ unsetopt correct_all
 
   #alias unicorn="unicorn_rails -c ~/.unicorn.rb"
 
-  # enable auto completion for git flow
-  source ~/.git-flow-completion.zsh
+  # If you are using iTerm2's feature allowing you to open new tabs / windows
+  # and "Reuse Previous Tab's Directory" then you will want to add the
+  # following line to the bottom of your .zshrc
+  __rvm_project_rvmrc
+
+  # Push 'frontendv2' branch to origin for ShowcaseIDX
+  alias gpof='git push origin frontendv2'
