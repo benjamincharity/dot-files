@@ -36,8 +36,6 @@ snippet trans
 	+single-transition
 snippet brad
 	border-radius: ${1:2px} ${2:2px} ${3:2px} ${4:2px}
-snippet br
-	border-radius: ${1:2px}
 snippet brtl
 	border-top-left-radius: ${1:2px}
 snippet brtr
@@ -47,7 +45,7 @@ snippet brbr
 snippet brbl
 	border-bottom-left-radius: ${1:2px}
 snippet bs
-	+box-shadow
+	box-shadow: ${1:0} ${2:0} ${3:4px} ${4:0} ${5:rgba(0,0,0,0.8)}
 snippet bo
 	border: 1px solid ${1:red}
 snippet bon
@@ -322,3 +320,15 @@ snippet firstc
 snippet nth
 	&:nth-of-type(${1:n+2})
 		${2}
+snippet out
+	outline: 0${1}
+snippet lst
+	list-style-type: ${1:none}${2}
+snippet lstn
+	list-style-type: none${1}
+snippet lstd
+	list-style-type: disc${1}
+snippet lstc
+	list-style-type: circle${1}
+snippet lsts
+	list-style-type: square${1}
