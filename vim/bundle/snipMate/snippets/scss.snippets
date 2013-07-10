@@ -305,16 +305,20 @@ snippet hover
 	&:hover {
 		${1}
 	}
+snippet bkll
+	@include breakpoint($breakpoint-very-large) {
+		${1}
+	}
 snippet bkl
-	@include breakpoint(breakpoint_large) {
+	@include breakpoint($breakpoint-large) {
 		${1}
 	}
 snippet bkm
-	@include breakpoint(breakpoint_medium) {
+	@include breakpoint($breakpoint-medium) {
 		${1}
 	}
 snippet bks
-	@include breakpoint(breakpoint_small) {
+	@include breakpoint($breakpoint-small) {
 		${1}
 	}
 snippet im
@@ -369,3 +373,25 @@ snippet lstc
 	list-style-type: circle;${1}
 snippet lsts
 	list-style-type: square;${1}
+snippet row
+	@include row();${1}
+snippet col
+	@include col();${1}
+snippet col1
+	@include col(1);${1}
+snippet col2
+	@include col(2);${1}
+snippet col3
+	@include col(3);${1}
+snippet col4
+	@include col(4);${1}
+snippet col5
+	@include col(5);${1}
+snippet col6
+	@include col(6);${1}
+snippet coll
+	@include last();${1}
+snippet prepend
+	@include prepend(${1:1});${2}
+snippet append
+	@include append(${1:1});${2}
