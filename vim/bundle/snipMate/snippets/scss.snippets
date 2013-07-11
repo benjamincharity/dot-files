@@ -271,7 +271,11 @@ snippet wbb
 snippet wbn
 	word-break: normal;${1}
 snippet cust
-	@include customTransition();${1}
+	@include customTransition(${1});${2}
+snippet custc
+	@include customTransition(color);${1}
+snippet custo
+	@include customTransition(opacity);${1}
 snippet doc
 	//
 	//
@@ -395,3 +399,7 @@ snippet prepend
 	@include prepend(${1:1});${2}
 snippet append
 	@include append(${1:1});${2}
+snippet ext
+	@extend %${1:placeholder};${2}
+snippet inc
+	@include ${1:mixin()};${2}

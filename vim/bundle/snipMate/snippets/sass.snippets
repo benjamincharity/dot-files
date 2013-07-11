@@ -361,3 +361,13 @@ snippet prepend
 	@include prepend(${1:1})
 snippet append
 	@include append(${1:1})
+snippet ext
+	@extend %${1:placeholder}
+snippet inc
+	@include ${1:mixin()}
+snippet cust
+	@include customTransition(${1})${2}
+snippet custc
+	@include customTransition(color)${1}
+snippet custo
+	@include customTransition(opacity)${1}
