@@ -24,6 +24,7 @@ unsetopt correct_all
 # Customize to your needs...
 
   alias status='git status'
+  alias st='status'
   alias add='git add'
   alias gaa='git add .'
   alias use='rvm gemset use'
