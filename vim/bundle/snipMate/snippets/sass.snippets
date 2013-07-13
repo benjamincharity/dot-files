@@ -284,14 +284,17 @@ snippet hover
 	&:focus,
 	&:hover
 		${1}
+snippet bkll
+	@include breakpoint($breakpoint-very-large)
+		${1}
 snippet bkl
-	@include breakpoint(breakpoint_large)
+	@include breakpoint($breakpoint-large)
 		${1}
 snippet bkm
-	@include breakpoint(breakpoint_medium)
+	@include breakpoint($breakpoint-medium)
 		${1}
 snippet bks
-	@include breakpoint(breakpoint_small)
+	@include breakpoint($breakpoint-small)
 		${1}
 snippet im
 	!important${1}
@@ -337,9 +340,9 @@ snippet lstc
 snippet lsts
 	list-style-type: square${1}
 snippet row
-	@include row()
+	@include row()${1}
 snippet col
-	@include col()
+	@include col()${1}
 snippet col1
 	@include col(1)${1}
 snippet col2
@@ -353,8 +356,18 @@ snippet col5
 snippet col6
 	@include col(6)${1}
 snippet coll
-	@include last()
+	@include last()${1}
 snippet prepend
-	@include prepend(${1:1})${2}
+	@include prepend(${1:1})
 snippet append
-	@include append(${1:1})${2}
+	@include append(${1:1})
+snippet ext
+	@extend %${1:placeholder}
+snippet inc
+	@include ${1:mixin()}
+snippet cust
+	@include customTransition(${1})${2}
+snippet custc
+	@include customTransition(color)${1}
+snippet custo
+	@include customTransition(opacity)${1}
