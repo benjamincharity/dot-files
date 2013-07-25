@@ -26,7 +26,8 @@ unsetopt correct_all
   alias status='git status'
   alias st='status'
   alias add='git add'
-  alias gaa='git add .'
+  alias ga='git add -A'
+  alias gc='git commit -am'
   alias use='rvm gemset use'
   alias t='tmux -u'
   # copy current directory path
@@ -64,7 +65,7 @@ unsetopt correct_all
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
   export EDITOR=vim
   export NODE_PATH=/usr/local/lib/node
-  export PATH=/usr/local/bin:/AdobeAIRSDK/bin:$PATH
+  export PATH=/usr/local/bin:/AdobeAIRSDK/bin:/usr/local/share/npm/bin:$PATH
 
   # Patient pad sdk
   export PATH=$PATH:/Developer/android-sdk-mac_x86/tools
