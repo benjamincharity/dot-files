@@ -20,6 +20,12 @@ snippet p
 	padding: ${1:0}
 snippet c
 	color: ${1:peachPuff}
+snippet cdg
+	color: $color-dark-gray${1}
+snippet cg
+	color: $color-gray${1}
+snippet clg
+	color: $color-light-gray${1}
 snippet bg
 	background: url('/i/${1:image.png}')${2}
 snippet bgc
@@ -237,7 +243,7 @@ snippet remh
 snippet remw
 	@include rem('width',${1:100}px)
 snippet ls
-	letter-spacing: ${1:0em}
+	letter-spacing: ${1:.1em}
 snippet ws
 	white-space: ${1:nowrap}
 snippet wsnw
@@ -357,6 +363,8 @@ snippet col6
 	@include col(6)${1}
 snippet coll
 	@include last()${1}
+snippet colr
+	@include resetLast()${1}
 snippet prepend
 	@include prepend(${1:1})
 snippet append
