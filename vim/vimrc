@@ -8,7 +8,6 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 Bundle 'fugitive.vim'
-Bundle 'snipMate'
 Bundle 'The-NERD-Commenter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ack.vim'
@@ -26,6 +25,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 
 " Github repos
+Bundle 'msanders/snipmate.vim'
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-surround'
 Bundle 'juvenn/mustache'
