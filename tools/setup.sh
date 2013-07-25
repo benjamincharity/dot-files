@@ -10,7 +10,7 @@ echo ".zshrc"
 ln -s ~/.dot-files/zshrc ~/.zshrc
 
 echo ".vim"
-ln -s ~/.dot-files/vim ~/.vim
+[[ -L ~/.vim ]] || ln -s ~/.dot-files/vim ~/.vim
 
 echo ".vimrc"
 ln -s ~/.dot-files/vim/vimrc ~/.vimrc
