@@ -2,6 +2,7 @@
   name = Benjamin Charity
   email = ben@benjamincharity.com
 [alias]
+  ci = commit
   co = checkout
   lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   br = branch

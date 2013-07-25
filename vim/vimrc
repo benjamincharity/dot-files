@@ -26,6 +26,9 @@ Bundle 'mattn/gist-vim'
 
 " Github repos
 Bundle 'msanders/snipmate.vim'
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+"Bundle "garbas/vim-snipmate"
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-surround'
 Bundle 'juvenn/mustache'
@@ -75,8 +78,8 @@ set nowritebackup
 set backupdir=~/.vim_backups//
 set directory=~/.vim_backups//
 
-"set foldmethod=indent
-"set foldlevelstart=20
+set foldmethod=indent
+set foldlevelstart=20
 
 
 " quickly open vimrc
@@ -109,6 +112,7 @@ set autoindent
 set expandtab
 set shiftwidth=2
 set tabstop=2
+set softtabstop=2
 
 "Set to auto read when a file is changed from the outside
 set autoread
@@ -146,8 +150,6 @@ nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.j set filetype=objj
-"au BufNewFile,BufRead *.css set filetype=scss
-
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.as set filetype=actionscript
 
@@ -167,11 +169,12 @@ fun! ReloadSnippets(snippets_dir, ft)
   call GetSnippets(a:snippets_dir, a:ft)
 endfun
 
+let snippets_dir="~/.dot-files/snippets"
 map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
 
 " Remap these since I always seem to type this.
-com W w
-com Wa wa
+com! W w
+com! Wa wa
 
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
@@ -199,7 +202,6 @@ map <C-l> :tabn<CR>
 map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
 map <leader>f :echo @%<CR>
-map W f_
 map <C-t> :TlistToggle<cr>
 
 " override the line highlight styles
@@ -230,5 +232,6 @@ nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-" Allow completion in SCSS files
-autocmd BufNewFile,BufRead *.scss             set ft=scss.css
+" auto reload vimrc when written to
+autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+autocmd! bufwritepost vimrc source vimrc

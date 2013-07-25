@@ -26,8 +26,9 @@ unsetopt correct_all
   alias status='git status'
   alias st='status'
   alias add='git add'
-  alias ga='git add -A'
+  alias ga='git add -A :/'
   alias gc='git commit -am'
+  # for alan/kanwei
   alias use='rvm gemset use'
   alias t='tmux -u'
   # copy current directory path
@@ -53,6 +54,7 @@ unsetopt correct_all
   alias gd='git diff | mvim'
   alias python='python -m SimpleHTTPServer'
   alias l='ls -la'
+  alias -s scss"=mvim -o"
 
   # postgres
   alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
@@ -66,9 +68,6 @@ unsetopt correct_all
   export EDITOR=vim
   export NODE_PATH=/usr/local/lib/node
   export PATH=/usr/local/bin:/AdobeAIRSDK/bin:/usr/local/share/npm/bin:$PATH
-
-  # Patient pad sdk
-  export PATH=$PATH:/Developer/android-sdk-mac_x86/tools
 
   # Stuff for rvm
   unsetopt auto_name_dirs
@@ -85,3 +84,5 @@ unsetopt correct_all
 
   # Push 'frontendv2' branch to origin for ShowcaseIDX
   alias gpof='git push origin frontendv2'
+
+  set -o vi
