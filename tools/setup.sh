@@ -22,6 +22,9 @@ echo ".gitconfig"
 ln -s ~/.dot-files/gitconfig ~/.gitconfig
 
 
+echo "Setting up vim/vundler..."
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+vim +BundleInstall! +BundleClean +qa
 
 echo "Changing Shells..."
 chsh -s /bin/zsh
