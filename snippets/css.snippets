@@ -20,18 +20,8 @@ snippet p
 	padding: ${1:0};
 snippet c
 	color: ${1:#bada55};
-snippet cg
-	color: $color-gray;${1}
-snippet cdg
-	color: $color-dark-gray;${1}
-snippet clg
-	color: $color-light-gray;${1}
-snippet cw
-	color: $color-white;${1}
-snippet cb
-	color: $color-black;${1}
 snippet bg
-	background: url('/i/${1:image.png}');${2}
+	background: url("/i/${1:image.png}") left top;${2}
 snippet bgc
 	background-color: ${1:#bada55};${2}
 snippet bgp
@@ -43,7 +33,11 @@ snippet bgr
 snippet bgi
 	background-image: url('/i/${1:image.png}');${2}
 snippet trans
-	@include single-transition;
+	-webkit-transition: all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+	-moz-transition:    all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+	-ms-transition:     all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+	-o-transition:      all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
+	transition:         all 300ms cubic-bezier(0.26, 0.86, 0.44, 0.985);
 snippet brad
 	border-radius: ${1:2px} ${2:2px} ${3:2px} ${4:2px};
 snippet brtl
@@ -77,8 +71,6 @@ snippet bt
 snippet btn
 	border-top: none;
 snippet boc
-	border-color ${1:red};${2}
-snippet bocfull
 	border-color ${1:red} ${2:red} ${3:red} ${4:red};
 snippet bw
 	border-width: ${1:1px} ${2:1px} ${3:1px} ${4:1px};
@@ -129,7 +121,7 @@ snippet fs
 snippet fst
 	font-style: italic;
 snippet ff
-	font-family: $${1:family};
+	font-family: ${1:family};
 snippet ffsans
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 snippet ffserif
@@ -139,9 +131,9 @@ snippet ti
 snippet tin
 	text-indent: ${1:0};${2}
 snippet to
-	text-overflow: ${1:ellipsis};${2}
+	text-overflow: ${1:ellipses};${2}
 snippet toe
-	text-overflow: ellipses;${1}
+	text-overflow: ellipsis;${1}
 snippet toc
 	text-overflow: clip;${1}
 snippet tos
@@ -150,8 +142,10 @@ snippet cl
 	clear: left;
 snippet cr
 	clear: right;
-snippet clb
-	clear: ${1:both};${2}
+snippet cb
+	clear: both;
+snippet cn
+	clear: none;
 snippet cont
 	content: "";${1}
 snippet o
@@ -223,51 +217,13 @@ snippet pie
 snippet mh
 	max-height: ${1:100%};${2}
 snippet minh
-	min-height: ${1:50}${2:px};
+	min-height: ${1:50};${2:px}
 snippet mw
 	max-width: ${1:100%};${2}
 snippet minw
-	min-width: ${1:100}${2:px};
-snippet rem
-	@include rem('${1:font-size}',${2:12}px);
-snippet remlh
-	@include rem('line-height',${1:12}px);
-snippet remp
-	@include rem('padding',${1:12}px);
-snippet rempt
-	@include rem('padding-top',${1:12}px);
-snippet rempb
-	@include rem('padding-bottom',${1:12}px);
-snippet rempl
-	@include rem('padding-left',${1:12}px);
-snippet rempr
-	@include rem('padding-right',${1:12}px);
-snippet remm
-	@include rem('margin',${1:12}px);
-snippet remmt
-	@include rem('margin-top',${1:12}px);
-snippet remmb
-	@include rem('margin-bottom',${1:12}px);
-snippet remml
-	@include rem('margin-left',${1:12}px);
-snippet remmr
-	@include rem('margin-right',${1:12}px);
-snippet remti
-	@include rem('text-indent',${1:12}px);
-snippet remt
-	@include rem('top',${1:12}px);
-snippet remb
-	@include rem('bottom',${1:12}px);
-snippet reml
-	@include rem('left',${1:12}px);
-snippet remr
-	@include rem('right',${1:12}px);
-snippet remh
-	@include rem('height',${1:100}px);
-snippet remw
-	@include rem('width',${1:100}px);
+	min-width: ${1:100};${2:px}
 snippet ls
-	letter-spacing: ${1:.1em};${2}
+	letter-spacing: ${1:0em};
 snippet ws
 	white-space: ${1:nowrap};${2}
 snippet wsnw
@@ -277,35 +233,24 @@ snippet wsw
 snippet wsn
 	white-space: ${1:normal};${2}
 snippet wb
-	word-break: ${1:break-word};${2}
+	word-break: ${1:break-word}${2}
 snippet wbb
-	word-break: break-word;${1}
+	word-break: break-word${1}
 snippet wbn
-	word-break: normal;${1}
-snippet cust
-	@include customTransition(${1});${2}
-snippet custc
-	@include customTransition(color);${1}
-snippet custo
-	@include customTransition(opacity);${1}
+	word-break: normal${1}
 snippet doc
-	//
-	//
-	//
-	// $${1:APP_BASE}
-	//
-	//
-	// @author Benjamin Charity <ben@benjamincharity.com>
-	//
-	// @doc
-	//  ${3:__documentation__}
-	// @end
-snippet clear
-	@include clear;
-snippet clearie
-	@include clear-ie;
-snippet hide
-	@include hideText;
+	/*
+	
+	
+	   $${1:APP}_${2:BASE}
+	
+	
+	  @author Benjamin Charity <ben@benjamincharity.com>
+	
+	  @doc
+	    ${3:__documentation__}
+	  @end
+	*/
 snippet vab
 	vertical-align: bottom;
 snippet vat
@@ -316,51 +261,30 @@ snippet va
 	vertical-align: ${1:bottom};
 snippet vaa
 	vertical-align: auto;
-snippet hover
-	&:focus,
-	&:hover {
-		${1}
+snippet hide
+	color: transparent;
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+snippet clear
+	${1:ELEM}::after {
+		clear: both;
+		content: "";
+		display: table;
 	}
-snippet bkll
-	@include breakpoint($breakpoint-very-large) {
-		${1}
+snippet clearie
+	${1:ELEM}::before {
+		content: "\0020";
+		display: table;
 	}
-snippet bkl
-	@include breakpoint($breakpoint-large) {
-		${1}
-	}
-snippet bkml
-	@include breakpoint($breakpoint-medium-large) {
-		${1}
-	}
-snippet bkm
-	@include breakpoint($breakpoint-medium) {
-		${1}
-	}
-snippet bks
-	@include breakpoint($breakpoint-very-small) {
-		${1}
+	${2:ELEM}::after {
+		clear: both;
+		content: "\0020";
+		display: table;
+		zoom: 1;
 	}
 snippet im
 	!important${1}
-snippet before
-	&::before {
-		${1}
-	}
-snippet beforeie
-	&:before {
-		${1}
-	}
-snippet after
-	&::after {
-		${1}
-	}
-snippet afterie
-	&:after {
-		${1}
-	}
-snippet em
-	emCalc(${1:16}px)
 snippet last
 	&:last-of-type {
 		${1}
@@ -393,29 +317,3 @@ snippet lstc
 	list-style-type: circle;${1}
 snippet lsts
 	list-style-type: square;${1}
-snippet row
-	@include row();${1}
-snippet col
-	@include col();${1}
-snippet col1
-	@include col(1);${1}
-snippet col2
-	@include col(2);${1}
-snippet col3
-	@include col(3);${1}
-snippet col4
-	@include col(4);${1}
-snippet col5
-	@include col(5);${1}
-snippet col6
-	@include col(6);${1}
-snippet coll
-	@include last();${1}
-snippet prepend
-	@include prepend(${1:1});${2}
-snippet append
-	@include append(${1:1});${2}
-snippet ext
-	@extend %${1:placeholder};${2}
-snippet inc
-	@include ${1:mixin()};${2}
