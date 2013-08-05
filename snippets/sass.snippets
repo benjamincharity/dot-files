@@ -370,8 +370,8 @@ snippet col5
 	@include col(5)${1}
 snippet col6
 	@include col(6)${1}
-snippet coll
-	@include last()${1}
+snippet colf
+	@include first()${1}
 snippet prepend
 	@include prepend(${1:1})
 snippet append
@@ -386,3 +386,11 @@ snippet custc
 	@include customTransition(color)${1}
 snippet custo
 	@include customTransition(opacity)${1}
+snippet section
+	///////////////////////////////////////////////////////
+	//
+	// ${1:sectionName}
+	//
+	///////////////////////////////////////////////////////${2}
+snippet break
+	@extend %breakWord${1}

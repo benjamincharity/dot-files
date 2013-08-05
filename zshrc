@@ -77,12 +77,17 @@ unsetopt correct_all
 
   #alias unicorn="unicorn_rails -c ~/.unicorn.rb"
 
-  # If you are using iTerm2's feature allowing you to open new tabs / windows
-  # and "Reuse Previous Tab's Directory" then you will want to add the
-  # following line to the bottom of your .zshrc
-  __rvm_project_rvmrc
-
   # Push 'frontendv2' branch to origin for ShowcaseIDX
   alias gpof='git push origin frontendv2'
 
   set -o vi
+
+  # make search up and down work, so partially type and hit up/down to
+  # find relevant stuff
+  bindkey '^[[A' up-line-or-search
+  bindkey '^[[B' down-line-or-search
+
+  # If you are using iTerm2's feature allowing you to open new tabs / windows
+  # and "Reuse Previous Tab's Directory" then you will want to add the
+  # following line to the bottom of your .zshrc
+  __rvm_project_rvmrc
