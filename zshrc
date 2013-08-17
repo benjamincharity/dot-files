@@ -80,6 +80,9 @@ unsetopt correct_all
   # Push 'frontendv2' branch to origin for ShowcaseIDX
   alias gpof='git push origin frontendv2'
 
+  # Push 'frontend' branch to origin for screenpop
+  alias gpoff='git push origin frontend'
+
   set -o vi
 
   # make search up and down work, so partially type and hit up/down to
