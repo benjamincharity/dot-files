@@ -45,6 +45,8 @@ snippet bgi
 snippet trans
 	@include single-transition;
 snippet brad
+	border-radius: ${1:50%};
+snippet bradfull
 	border-radius: ${1:2px} ${2:2px} ${3:2px} ${4:2px};
 snippet brtl
 	border-top-left-radius: ${1:2px};
@@ -208,12 +210,6 @@ snippet bsfull
 			-ms-box-shadow: 0 0 10px 0 rgb(51,51,51);
 			 -o-box-shadow: 0 0 10px 0 rgb(51,51,51);
 					box-shadow: 0 0 10px 0 rgb(51,51,51);
-snippet bradfull
-	-webkit-border-radius: 4px;
-		 -moz-border-radius: 4px;
-			-ms-border-radius: 4px;
-			 -o-border-radius: 4px;
-					border-radius: 4px;
 snippet point
 	pointer-events: none;${1}
 snippet pointa
@@ -322,23 +318,23 @@ snippet hover
 		${1}
 	}
 snippet bkll
-	@include breakpoint($breakpoint-very-large) {
+	@include breakpoint(breakpoint-very-large) {
 		${1}
 	}
 snippet bkl
-	@include breakpoint($breakpoint-large) {
+	@include breakpoint(breakpoint-large) {
 		${1}
 	}
 snippet bkml
-	@include breakpoint($breakpoint-medium-large) {
+	@include breakpoint(breakpoint-medium-large) {
 		${1}
 	}
 snippet bkm
-	@include breakpoint($breakpoint-medium) {
+	@include breakpoint(breakpoint-medium) {
 		${1}
 	}
 snippet bks
-	@include breakpoint($breakpoint-very-small) {
+	@include breakpoint(breakpoint-very-small) {
 		${1}
 	}
 snippet im
@@ -411,6 +407,8 @@ snippet col6
 	@include col(6);${1}
 snippet colf
 	@include first();${1}
+snippet colr
+	@include resetFirst();${1}
 snippet prepend
 	@include prepend(${1:1});${2}
 snippet append
@@ -427,3 +425,19 @@ snippet section
 	///////////////////////////////////////////////////////${2}
 snippet break
 	@extend %breakWord;${1}
+snippet nganimate
+	.${1:pageEnter}-enter {
+
+	}
+
+	.${2:pageEnter}-enter-active {
+
+	}
+
+	.${3:pageEnter}-leave {
+
+	}
+
+	.${4:pageEnter}-leave-active {
+
+	}

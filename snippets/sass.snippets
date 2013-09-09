@@ -45,6 +45,8 @@ snippet bgi
 snippet trans
 	+single-transition
 snippet brad
+	border-radius: ${1:50%}
+snippet bradfull
 	border-radius: ${1:2px} ${2:2px} ${3:2px} ${4:2px}
 snippet brtl
 	border-top-left-radius: ${1:2px}
@@ -372,6 +374,8 @@ snippet col6
 	@include col(6)${1}
 snippet colf
 	@include first()${1}
+snippet colr
+	@include resetFirst()${1}
 snippet prepend
 	@include prepend(${1:1})
 snippet append
@@ -394,3 +398,15 @@ snippet section
 	///////////////////////////////////////////////////////${2}
 snippet break
 	@extend %breakWord${1}
+snippet nganimate
+	.${1:pageEnter}-enter
+
+
+	.${2:pageEnter}-enter-active
+
+
+	.${3:pageEnter}-leave
+
+
+	.${4:pageEnter}-leave-active
+

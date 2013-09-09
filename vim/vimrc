@@ -23,6 +23,8 @@ Bundle 'scratch.vim'
 Bundle 'vim-scripts/EasyGrep'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'vim-scripts/EasyGrep'
+Bundle 'mileszs/ack.vim'
 
 " Github repos
 Bundle 'msanders/snipmate.vim'
@@ -81,6 +83,11 @@ set directory=~/.vim_backups//
 set foldmethod=indent
 set foldlevelstart=20
 
+" Allow arrow key use in insert mode
+set nocompatible
+
+" Allow arrow key use in insert mode
+set nocompatible
 
 " quickly open vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
@@ -159,9 +166,6 @@ inoremap <C-L> <C-O>:nohls<CR>
 
 "Show Registerr
 map <leader>rr :reg<cr>
-
-"Yank Rest of line
-noremap Y y$
 
 " Reload snippets
 fun! ReloadSnippets(snippets_dir, ft)

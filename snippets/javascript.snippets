@@ -65,7 +65,9 @@ snippet :f
 	}${3:,}
 # setTimeout function
 snippet timeout
-	setTimeout(function() {${3}}${2}, ${1:10};
+	setTimeout(function() {
+		${3}
+	}${2}, ${1:10});
 # Get Elements
 snippet get
 	getElementsBy${1:TagName}('${2}')${3}
@@ -80,3 +82,16 @@ snippet rt
 	return true;
 snippet event
 	event.preventDefault;
+snippet annon
+	(function($) {
+	 ${1}
+	})(jQuery);
+snippet ready
+	$(document).ready(function() {
+		${1}
+	});
+snippet on
+	$('${1:.foo}').on('${2:click}', '${4:a}', function(event) {
+		${5}
+	});
+

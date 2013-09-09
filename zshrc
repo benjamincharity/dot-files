@@ -28,6 +28,8 @@ unsetopt correct_all
   alias add='git add'
   alias ga='git add -A :/'
   alias gc='git commit -am'
+  # need to give it a new branch name, creates the new branch and switches to it
+  alias gcb='git checkout -b'
   # for alan/kanwei
   alias use='rvm gemset use'
   alias t='tmux -u'
@@ -63,6 +65,9 @@ unsetopt correct_all
   # for mysql
   alias mysqlstart='mysql.server start'
   alias mysqlstop='mysql.server stop'
+
+  # sshfs shortcuts
+  alias tbfs='[[ -d ~/tourbuzz-vagrant ]] || mkdir ~/tourbuzz-vagrant; sshfs tourbuzz-vagrant:/usr/src/tourbuzz ~/tourbuzz-vagrant'
 
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
   export EDITOR=vim

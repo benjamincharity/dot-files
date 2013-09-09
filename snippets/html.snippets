@@ -123,21 +123,23 @@ snippet script
 snippet scriptsrc
 	<script src="${1}.js" charset="utf-8"></script>${2}
 snippet jquery
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" charset="utf-8"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+snippet angular
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+snippet modernizr
+	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
+snippet zepto
+	<script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.0/zepto.min.js"></script>
 snippet style
 	<style type="text/css" media="${1:screen}">
 		${2}
 	</style>${3}
 snippet linkstyle
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="css/screen.css">
 snippet base
 	<base href="${1}" target="${2}"`Close()`>
 snippet r
 	<br`Close()[1:]`>
-snippet div
-	<div id="${1:name}">
-		${2}
-	</div>
 # Embed QT Movie
 snippet movie
 	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
@@ -161,8 +163,6 @@ snippet fieldset
 snippet form
 	<form action="${1:`Filename('$1_submit')`}" method="${2:get}" accept-charset="utf-8">
 		${3}
-
-
 	<p><input type="submit" value="Continue &rarr;"`Close()`></p>
 	</form>
 snippet h1
@@ -172,7 +172,7 @@ snippet input
 snippet label
 	<label for="${2:$1}">${1:name}</label><input type="${3:text/submit/hidden/button}" name="${4:$2}" value="${5}" id="${6:$2}"`Close()`>${7}
 snippet link
-	<link rel="${1:stylesheet}" href="${2:/css/master.css}" type="text/css" media="${3:screen}" charset="utf-8"`Close()`>${4}
+	<link rel="${1:stylesheet}" href="${2:css/screen}.css" media="${3:screen}">${4}
 snippet mailto
 	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
 snippet meta
