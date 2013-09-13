@@ -83,7 +83,7 @@ unsetopt correct_all
   #alias unicorn="unicorn_rails -c ~/.unicorn.rb"
 
   # Push 'frontendv2' branch to origin for ShowcaseIDX
-  alias gpof='git push origin frontendv2'
+  alias gpod='git push origin dashboardv3'
 
   # Push 'frontend' branch to origin for screenpop
   alias gpoff='git push origin frontend'

@@ -25,6 +25,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'vim-scripts/EasyGrep'
 Bundle 'mileszs/ack.vim'
+Bundle 'vim-scripts/Align'
 
 " Github repos
 Bundle 'msanders/snipmate.vim'
@@ -105,6 +106,16 @@ nnoremap OD <C-w><
 
 "Theme
 color dusk
+
+" I don't understand vundle enough quite yet; even though Bundle 'Align' is above, exists(":AlignCtrl") never passed during .vimrc
+" So to hack around this for now I lazy-config Align otf.
+function! MyAlignConfig()
+    " auto-align: left justify (l), first sep only (:), 1 sp on either side of
+    " separator (p1P1), preserve leading whitespace so we don't break indenting (W)
+    " works for = and =>
+    AlignCtrl =l:p1P1W =>\? :
+endfunction
+vmap + :call MyAlignConfig()<CR>gv :Align<CR>
 
 "Move lines with alt + direction
 nnoremap ∆ :m+<CR>==
