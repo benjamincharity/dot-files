@@ -1,6 +1,6 @@
 [user]
-  name = Benjamin Charity
-  email = ben@benjamincharity.com
+	name = Benjamin Charity
+	email = ben@benjamincharity.com
 [alias]
   ci = commit
   co = checkout
@@ -10,7 +10,8 @@
 [apply]
   whitespace = nowarn
 [core]
-  excludesfile = /Users/bc/.gitignore_global
+	excludesfile = /Users/bc/.gitignore_global
+  pager = tee
 [color]
   branch = auto
   diff = auto

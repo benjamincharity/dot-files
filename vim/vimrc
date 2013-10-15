@@ -98,12 +98,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 " Command-T configuration
 let g:CommandTMaxHeight=20
 
-"Pane resize
-nnoremap OA <C-w>+
-nnoremap OB <C-w>-
-nnoremap OC <C-w>>
-nnoremap OD <C-w><
-
 "Theme
 color dusk
 
@@ -139,7 +133,7 @@ set laststatus=2
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{rvm#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Tab mappings.
-map <leader>tt :tabnew<cr>
+"map <leader>tt :tabnew<cr>
 map <leader>te :tabedit
 map <leader>tc :tabclose<cr>
 map <leader>to :tabonly<cr>
@@ -213,8 +207,6 @@ map !S :call RunSpec("")<CR>
 map Q gq
 map <leader><cr> :noh<CR>
 map <leader>d :NERDTreeToggle<CR>
-map <C-l> :tabn<CR>
-map <C-h> :tabp<CR>
 map <C-n> :tabnew<CR>
 map <leader>f :echo @%<CR>
 map <C-t> :TlistToggle<cr>
@@ -242,11 +234,36 @@ match OverLength /\%>80v.\+/
 "##############################################
 
 " Use ctrl-[hjkl] to select the active split!
-nmap <silent> <c-k> :wincmd k<CR>
-nmap <silent> <c-j> :wincmd j<CR>
+"nmap <silent> <c-k> :wincmd k<CR>
+"nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
 " auto reload vimrc when written to
 autocmd! bufwritepost ~/.vimrc source ~/.vimrc
 autocmd! bufwritepost vimrc source vimrc
+
+" FROM ALAN
+" for moving between split windows with ease:
+map <C-j> <C-w>j<C-w>80+ " up one window, maximized
+map <C-k> <C-w>k<C-w>80+ " down one window, maximized
+map <C-i> <C-w>= " all windows equal height
+map <tab> <C-w>80+ " maximize current window
+
+" mouse support
+" http://www.reasonablyopinionated.com/2011/11/mouse-support-for-terminalapp-scrolling.html
+if has("mouse") && !has("gui_macvim")
+    set mouse=a
+    set ttymouse=xterm2
+    function! ToggleMouse()
+        let m = &mouse
+        if m ==# 'a'
+            execute ":set mouse="
+        else
+            execute ":set mouse=a"
+        endif
+    endfunction
+    map <Leader>m :call ToggleMouse()<CR>
+endif
+
+" ALAN
