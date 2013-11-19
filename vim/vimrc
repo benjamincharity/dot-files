@@ -164,6 +164,7 @@ au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.j set filetype=objj
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.as set filetype=actionscript
+au BufNewFile,BufRead *.php set filetype=html
 
 "un-highlight searched text
 nnoremap <C-L> :nohls<CR><C-L>
@@ -185,6 +186,7 @@ map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
 com! W w
 com! Wa wa
 
+" open the file in marked.app
 :nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
 
 " Zen Coding
@@ -224,6 +226,8 @@ filetype plugin on
 " Sort CSS styles inside {} by hitting F7
 map <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
 
+" Sort CSS styles inside {} by hitting F7
+map <F6> :Align :<CR>
 
 " show error background on text longer than 80 characters
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
