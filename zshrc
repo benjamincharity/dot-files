@@ -71,7 +71,7 @@ unsetopt correct_all
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
   export EDITOR=vim
   export NODE_PATH=/usr/local/lib/node
-  export PATH=/usr/local/bin:/AdobeAIRSDK/bin:/usr/local/share/npm/bin:$PATH
+  export PATH=/usr/local/bin:/AdobeAIRSDK/bin:/usr/local/share/npm/bin:/opt/local/bin:$PATH
 
   # Stuff for rvm
   unsetopt auto_name_dirs

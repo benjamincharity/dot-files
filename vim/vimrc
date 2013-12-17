@@ -1,12 +1,19 @@
 set nocompatible
 set shell=/bin/sh
-"silent! call pathogen#runtime_append_all_bundles()
+
+
+
+
+" # # # # # # # # # # # # # # # # #
+"
+" Set up Vundler
+"
+" # # # # # # # # # # # # # # # # #
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-
 Bundle 'fugitive.vim'
 Bundle 'The-NERD-Commenter'
 Bundle 'scrooloose/nerdtree'
@@ -37,69 +44,188 @@ Bundle 'tpope/vim-surround'
 Bundle 'juvenn/mustache'
 Bundle 'slim-template/vim-slim'
 "Bundle 'rstacruz/sparkup'
+" syntastic
+"let g:syntastic_javascript_checkers = [ "closurecompiler" ]
+"let g:syntastic_javascript_closure_compiler_path = "/usr/lib64/ruby/gems/1.9.1/gems/closure-compiler-1.1.10/lib/closure-compiler-20130411.jar"
+"Bundle 'scrooloose/syntastic'
+
+
+
+
+" # # # # # # # # # # # # # # # # #
+"
+" Settings
+"
+" # # # # # # # # # # # # # # # # #
+
+"Theme
+color dusk
 
 syntax on
 filetype plugin indent on
-
+" Needed for JSLint
+filetype plugin on
 set showcmd
 set showmode
-
 set backspace=indent,eol,start
-
 set clipboard=unnamed
 set t_Co=256
-
 set hidden
-
 set wildmenu
 set wildmode=list:longest
-
 set ignorecase
 set smartcase
-
 set number
 set ruler
-
 set incsearch
 set hlsearch
 set showmatch
-
 set cursorline
 set cursorcolumn
 set listchars=tab:>\ ,trail:•,extends:>,precedes:<,nbsp:+
 set list
-
 set wrap
 set scrolloff=3
-
 set title
-
 set visualbell
-
 set nobackup
 set nowritebackup
 set backupdir=~/.vim_backups//
 set directory=~/.vim_backups//
-
 set foldmethod=indent
 set foldlevelstart=20
-
 " Allow arrow key use in insert mode
 set nocompatible
-
 " Allow arrow key use in insert mode
 set nocompatible
+" Autoindent
+set cindent
+set smartindent
+set autoindent
+set expandtab
+set shiftwidth=2
+set tabstop=2
+set softtabstop=2
+"Set to auto read when a file is changed from the outside
+set autoread
+set laststatus=2
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{rvm#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+"Make bookmarks Visible
+let NERDTreeShowBookmarks = 1
+"Enable Colors
+let NERDChristmasTree = 1
+" Define snippets location
+let snippets_dir="~/.dot-files/snippets"
+" Zen Coding
+let g:user_zen_expandabbr_key = '<c-e>'
+let g:use_zen_complete_tag = 1
+let g:user_zen_settings = {'html' : {'indentation' : '  '},}
+" Set the filetype for various file extensions
+au BufNewFile,BufRead Gemfile set filetype=ruby
+au BufNewFile,BufRead *.j set filetype=objj
+au BufNewFile,BufRead *.md set filetype=markdown
+au BufNewFile,BufRead *.as set filetype=actionscript
+au BufNewFile,BufRead *.php set filetype=html
+" override the line highlight styles
+highlight cursorline term=NONE, cterm=NONE, guibg=#444444, ctermbg=235
+highlight cursorcolumn guibg=#444444, ctermbg=235
+" allow gist.vim to use copy/paste
+let g:gist_clip_command = 'pbcopy'
+" Command-T configuration
+let g:CommandTMaxHeight=20
 
+
+
+
+" # # # # # # # # # # # # # # # # #
+"
+" Command Remapping
+"
+" # # # # # # # # # # # # # # # # #
+
+" Remap the leader key to the spacebar
+" http://karmanebula.com/technically-borked/2013/12/16/leader-key-as-space-capslock-as-esc
+let mapleader=" "
+nnoremap <Leader>q :q<CR>
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>v :vsplit
+nnoremap <Leader>s :split
+nnoremap <Leader>8 :set tw=80<CR>
+nnoremap <Leader>0 :set tw=0<CR>
+nnoremap <Leader>n :set invnumber<CR>
+"Move lines with alt + direction
+nnoremap ∆ :m+<CR>==
+nnoremap ˚ :m-2<CR>==
+vnoremap ∆ :m'>+<CR>gv=gv
+vnoremap ˚ :m-2<CR>gv=gv
+" Tab mappings.
+"map <leader>tt :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
 " quickly open vimrc
 nmap <silent> <leader>ev :e $MYVIMRC<cr>
 " quickly source vimrc
 nmap <silent> <leader>sv :so $MYVIMRC<cr>
+"Toggle NERDTree
+noremap <C-T> :NERDTreeToggle<CR>
+"Get rid of trailing spaces
+nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
+"un-highlight searched text
+nnoremap <C-L> :nohls<CR><C-L>
+inoremap <C-L> <C-O>:nohls<CR>
+"Show Registerr
+map <leader>rr :reg<cr>
+" Quickly reload our snippets
+map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
+" Remap these since I always seem to type the wrong command in haste.
+com! W w
+com! Wa wa
+com! WA wa
+" open the file in marked.app
+:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+" open the file in Chrome
+:nnoremap <leader>c :silent !open -a 'Google Chrome.app' '%:p'<cr>
+" run one rspec example or describe block based on cursor position
+map !s :call RunSpec("-l " . <C-r>=line('.')<CR>)
+" run full rspec file
+map !S :call RunSpec("")<CR>
+" patrick's keybindings
+map Q gq
+map <leader><cr> :noh<CR>
+map <leader>d :NERDTreeToggle<CR>
+map <C-n> :tabnew<CR>
+map <leader>f :echo @%<CR>
+map <C-t> :TlistToggle<cr>
+" Sort CSS styles inside {} by hitting F7
+map <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
+" Align according to `:`
+map <F6> :Align :<CR>
+" FROM ALAN
+" for moving between split windows with ease:
+map <C-j> <C-w>j<C-w>80+ " up one window, maximized
+map <C-k> <C-w>k<C-w>80+ " down one window, maximized
+map <C-i> <C-w>= " all windows equal height
+map <tab> <C-w>80+ " maximize current window
+" Use ctrl-[hjkl] to select the active split!
+"nmap <silent> <c-k> :wincmd k<CR>
+"nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
 
-" Command-T configuration
-let g:CommandTMaxHeight=20
 
-"Theme
-color dusk
+
+
+" # # # # # # # # # # # # # # # # #
+"
+" Helper Functions
+"
+" # # # # # # # # # # # # # # # # #
 
 " I don't understand vundle enough quite yet; even though Bundle 'Align' is above, exists(":AlignCtrl") never passed during .vimrc
 " So to hack around this for now I lazy-config Align otf.
@@ -111,148 +237,17 @@ function! MyAlignConfig()
 endfunction
 vmap + :call MyAlignConfig()<CR>gv :Align<CR>
 
-"Move lines with alt + direction
-nnoremap ∆ :m+<CR>==
-nnoremap ˚ :m-2<CR>==
-vnoremap ∆ :m'>+<CR>gv=gv
-vnoremap ˚ :m-2<CR>gv=gv
-
-"Autoindent
-set cindent
-set smartindent
-set autoindent
-set expandtab
-set shiftwidth=2
-set tabstop=2
-set softtabstop=2
-
-"Set to auto read when a file is changed from the outside
-set autoread
-
-set laststatus=2
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{rvm#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-
-" Tab mappings.
-"map <leader>tt :tabnew<cr>
-map <leader>te :tabedit
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
-map <leader>tm :tabmove
-
-"NERDTree
-
-"Toggle NERDTree
-noremap <C-T> :NERDTreeToggle<CR>
-
-"Make bookmarks Visible
-let NERDTreeShowBookmarks = 1
-
-"Enable Colors
-let NERDChristmasTree = 1
-"
-"Get rid of trailing spaces
-nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
-"Turn cursor column on for haml and sass
-"autocmd BufEnter *.erb setlocal cursorcolumn
-
-au BufNewFile,BufRead Gemfile set filetype=ruby
-au BufNewFile,BufRead *.j set filetype=objj
-au BufNewFile,BufRead *.md set filetype=markdown
-au BufNewFile,BufRead *.as set filetype=actionscript
-au BufNewFile,BufRead *.php set filetype=html
-
-"un-highlight searched text
-nnoremap <C-L> :nohls<CR><C-L>
-inoremap <C-L> <C-O>:nohls<CR>
-
-"Show Registerr
-map <leader>rr :reg<cr>
-
 " Reload snippets
 fun! ReloadSnippets(snippets_dir, ft)
   call ResetSnippets()
   call GetSnippets(a:snippets_dir, a:ft)
 endfun
 
-let snippets_dir="~/.dot-files/snippets"
-map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
-
-" Remap these since I always seem to type this.
-com! W w
-com! Wa wa
-
-" open the file in marked.app
-:nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
-
-" Zen Coding
-let g:user_zen_expandabbr_key = '<c-e>'
-let g:use_zen_complete_tag = 1
-let g:user_zen_settings = {'html' : {'indentation' : '  '},}
-
 " Rspec goodness!!!
 function! RunSpec(args)
  let cmd = ":! rspec % -cfn --drb " . a:args
  execute cmd
 endfunction
-
-" run one rspec example or describe block based on cursor position
-map !s :call RunSpec("-l " . <C-r>=line('.')<CR>)
-" run full rspec file
-map !S :call RunSpec("")<CR>
-
-" patrick's keybindings
-map Q gq
-map <leader><cr> :noh<CR>
-map <leader>d :NERDTreeToggle<CR>
-map <C-n> :tabnew<CR>
-map <leader>f :echo @%<CR>
-map <C-t> :TlistToggle<cr>
-
-" override the line highlight styles
-highlight cursorline term=NONE, cterm=NONE, guibg=#444444, ctermbg=235
-highlight cursorcolumn guibg=#444444, ctermbg=235
-
-" allow gist.vim to use copy/paste
-let g:gist_clip_command = 'pbcopy'
-
-" Needed for JSLint
-filetype plugin on
-
-" Sort CSS styles inside {} by hitting F7
-map <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
-
-" Sort CSS styles inside {} by hitting F7
-map <F6> :Align :<CR>
-
-" show error background on text longer than 80 characters
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%>80v.\+/
-
-"##############################################
-" Easier split navigation
-"##############################################
-
-" Use ctrl-[hjkl] to select the active split!
-"nmap <silent> <c-k> :wincmd k<CR>
-"nmap <silent> <c-j> :wincmd j<CR>
-nmap <silent> <c-h> :wincmd h<CR>
-nmap <silent> <c-l> :wincmd l<CR>
-
-" auto reload vimrc when written to
-autocmd! bufwritepost ~/.vimrc source ~/.vimrc
-autocmd! bufwritepost vimrc source vimrc
-
-" FROM ALAN
-" for moving between split windows with ease:
-map <C-j> <C-w>j<C-w>80+ " up one window, maximized
-map <C-k> <C-w>k<C-w>80+ " down one window, maximized
-map <C-i> <C-w>= " all windows equal height
-map <tab> <C-w>80+ " maximize current window
 
 " mouse support
 " http://www.reasonablyopinionated.com/2011/11/mouse-support-for-terminalapp-scrolling.html
@@ -270,4 +265,10 @@ if has("mouse") && !has("gui_macvim")
     map <Leader>m :call ToggleMouse()<CR>
 endif
 
-" ALAN
+" auto reload vimrc when written to
+autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+autocmd! bufwritepost vimrc source vimrc
+
+" show error background on text longer than 80 characters
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%>80v.\+/

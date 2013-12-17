@@ -477,3 +477,37 @@ snippet nganimate
 	.${4:pageEnter}-leave-active {
 
 	}
+snippet bpm
+	@include breakpoint(mobile) {
+		${1}
+	}
+snippet bpmh
+	@include breakpoint(mobile-horizontal) {
+		${1}
+	}
+snippet bpt
+	@include breakpoint(horizontal) {
+		${1}
+	}
+snippet bpth
+	@include breakpoint(tablet-horizontal) {
+		${1}
+	}
+snippet bpd
+	@include breakpoint(desktop) {
+		${1}
+	}
+snippet bpdl
+	@include breakpoint(desktop-large) {
+		${1}
+	}
+snippet bpb
+	@include between-breakpoint(${1:min}, ${2:max}) {
+		${3}
+	}
+snippet ie
+	@if $ie {
+		${1:do ie thing}
+	} @else {
+	 ${2:do non-ie thing}
+	}
