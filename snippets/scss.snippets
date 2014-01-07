@@ -514,13 +514,15 @@ snippet ie
 	 ${2:do non-ie thing}
 	}
 snippet flex
-	@include flex-container(${1:vertical});${2}
+	@include flex-container(${1:horizontal});${2}
 snippet flexv
 	@include flex-container(vertical);${1}
 snippet flexh
-	@include flex-container(vertical);${1}
+	@include flex-container(horizontal);${1}
 snippet flexc
 	@include flex-component(${1});${2}
+snippet flexc0
+	@include flex-component(0);${1}
 snippet flexc1
 	@include flex-component(1);${1}
 snippet flexc2
