@@ -413,6 +413,8 @@ snippet lstc
 	list-style-type: circle;${1}
 snippet lsts
 	list-style-type: square;${1}
+snippet rowc
+	@include row-container();${1}
 snippet row
 	@include row();${1}
 snippet col
@@ -511,3 +513,23 @@ snippet ie
 	} @else {
 	 ${2:do non-ie thing}
 	}
+snippet flex
+	@include flex-container(${1:vertical});${2}
+snippet flexv
+	@include flex-container(vertical);${1}
+snippet flexh
+	@include flex-container(vertical);${1}
+snippet flexc
+	@include flex-component(${1});${2}
+snippet flexc1
+	@include flex-component(1);${1}
+snippet flexc2
+	@include flex-component(2);${1}
+snippet flexc3
+	@include flex-component(3);${1}
+snippet flexc4
+	@include flex-component(4);${1}
+snippet flexc5
+	@include flex-component(5);${1}
+snippet flexc6
+	@include flex-component(6);${1}

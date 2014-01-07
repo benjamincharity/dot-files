@@ -126,6 +126,11 @@ au BufNewFile,BufRead *.j set filetype=objj
 au BufNewFile,BufRead *.md set filetype=markdown
 au BufNewFile,BufRead *.as set filetype=actionscript
 au BufNewFile,BufRead *.php set filetype=html
+au BufNewFile,BufRead *.cshtml set filetype=html
+" Turn on spell check in markdown files
+au BufNewFile,BufRead *.md setlocal spell spelllang=en_us
+au BufNewFile,BufRead *.mdown setlocal spell spelllang=en_us
+au BufNewFile,BufRead *.markdown setlocal spell spelllang=en_us
 " override the line highlight styles
 highlight cursorline term=NONE, cterm=NONE, guibg=#444444, ctermbg=235
 highlight cursorcolumn guibg=#444444, ctermbg=235
@@ -133,6 +138,10 @@ highlight cursorcolumn guibg=#444444, ctermbg=235
 let g:gist_clip_command = 'pbcopy'
 " Command-T configuration
 let g:CommandTMaxHeight=20
+" Turn on autocomplete for spelling
+set complete+=kspell
+" Define spelling error highlighting
+hi SpellBad ctermfg=015 ctermbg=000 cterm=none guifg=#FE2E2E guibg=#F8E0E0 gui=none
 
 
 
@@ -199,7 +208,7 @@ map !S :call RunSpec("")<CR>
 map Q gq
 map <leader><cr> :noh<CR>
 map <leader>d :NERDTreeToggle<CR>
-map <C-n> :tabnew<CR>
+"map <C-n> :tabnew<CR>
 map <leader>f :echo @%<CR>
 map <C-t> :TlistToggle<cr>
 " Sort CSS styles inside {} by hitting F7
