@@ -36,18 +36,10 @@ Bundle 'vim-scripts/Align'
 
 " Github repos
 Bundle 'msanders/snipmate.vim'
-"Bundle "MarcWeber/vim-addon-mw-utils"
-"Bundle "tomtom/tlib_vim"
-"Bundle "garbas/vim-snipmate"
 Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-surround'
 Bundle 'juvenn/mustache'
 Bundle 'slim-template/vim-slim'
-"Bundle 'rstacruz/sparkup'
-" syntastic
-"let g:syntastic_javascript_checkers = [ "closurecompiler" ]
-"let g:syntastic_javascript_closure_compiler_path = "/usr/lib64/ruby/gems/1.9.1/gems/closure-compiler-1.1.10/lib/closure-compiler-20130411.jar"
-"Bundle 'scrooloose/syntastic'
 
 
 
