@@ -8,6 +8,8 @@
 
 
 #
+#
+#
 # Margin
 #
 snippet m
@@ -20,7 +22,8 @@ snippet mt
 	margin-top: ${1:0};
 snippet mb
 	margin-bottom: ${1:0};
-
+#
+#
 #
 # Padding
 #
@@ -34,7 +37,8 @@ snippet pb
 	padding-bottom: ${1:0};
 snippet p
 	padding: ${1:0};
-
+#
+#
 #
 # Colors
 #
@@ -50,7 +54,8 @@ snippet cw
 	color: $color-white;${1}
 snippet cb
 	color: $color-black;${1}
-
+#
+#
 #
 # Background
 #
@@ -66,7 +71,8 @@ snippet bgr
 	background-repeat: ${1:no-repeat};
 snippet bgi
 	background-image: url('/i/${1:image.png}');${2}
-
+#
+#
 #
 # Transition
 #
@@ -84,7 +90,8 @@ snippet transfull
 			-ms-transition: all 0.2s ease-in-out;
 			 -o-transition: all 0.2s ease-in-out;
 					transition: all 0.2s ease-in-out;
-
+#
+#
 #
 # Border
 #
@@ -126,7 +133,8 @@ snippet bocfull
 	border-color: ${1:red} ${2:red} ${3:red} ${4:red};
 snippet bw
 	border-width: ${1:1px} ${2:1px} ${3:1px} ${4:1px};
-
+#
+#
 #
 # Height / Width
 #
@@ -142,7 +150,8 @@ snippet mw
 	max-width: ${1:100%};${2}
 snippet minw
 	min-width: ${1:100}${2:px};
-
+#
+#
 #
 # Box Shadow
 #
@@ -154,7 +163,8 @@ snippet bsfull
 			-ms-box-shadow: 0 0 10px 0 rgb(51,51,51);
 			 -o-box-shadow: 0 0 10px 0 rgb(51,51,51);
 					box-shadow: 0 0 10px 0 rgb(51,51,51);
-
+#
+#
 #
 # Position
 #
@@ -174,7 +184,8 @@ snippet r
 	right: ${1:0};
 snippet t
 	top: ${1:0};
-
+#
+#
 #
 # Display
 #
@@ -188,7 +199,8 @@ snippet di
 	display: inline;
 snippet dib
 	display: inline-block;
-
+#
+#
 #
 # Fonts
 #
@@ -210,7 +222,8 @@ snippet ffsans
 	font-family: Arial, Helvetica, Verdana, sans-serif;
 snippet ffserif
 	font-family: Georgia, Times New Roman, Times, serif;
-
+#
+#
 #
 # Clear
 #
@@ -220,7 +233,8 @@ snippet cr
 	clear: right;
 snippet clb
 	clear: ${1:both};${2}
-
+#
+#
 #
 # Overflow
 #
@@ -232,7 +246,8 @@ snippet oa
 	overflow: auto;
 snippet oi
 	overflow: inherit;
-
+#
+#
 #
 # Float
 #
@@ -242,25 +257,30 @@ snippet fr
 	float: right;
 snippet fn
 	float: none;
-
+#
+#
 #
 # Text
 #
 snippet ta
-	text-align: center${1};
+	text-align: ${1:center};${2}
+snippet tac
+	text-align: center;${1}
 snippet taj
-	text-align: justify${1};
+	text-align: justify;${1}
 snippet tal
-	text-align: left${1};
+	text-align: left;${1}
 snippet tar
-	text-align: right${1};
+	text-align: right;${1}
 snippet td
 	text-decoration: none;
 snippet tdu
 	text-decoration: underline;
 snippet ts
-	text-shadow: ${1:1}px ${2:1}px ${3:0} ${4:rgb(0,0,0)};
+	text-shadow: ${1:1}px ${2:1}px ${3:0} ${4:rgb(0,0,0)};${5}
 snippet tt
+	text-transform: ${1:uppercase};
+snippet ttu
 	text-transform: uppercase;
 snippet ttl
 	text-transform: lowercase;
@@ -280,7 +300,8 @@ snippet toc
 	text-overflow: clip;${1}
 snippet tos
 	text-overflow: string;${1}
-
+#
+#
 #
 # Cursor
 #
@@ -288,7 +309,8 @@ snippet cu
 	cursor: ${1:pointer};
 snippet cd
 	cursor: ${1:default};
-
+#
+#
 #
 # Visibility
 #
@@ -296,7 +318,8 @@ snippet v
 	visibility: ${1:hidden};
 snippet vv
 	visibility: visible;${1}
-
+#
+#
 #
 # Pointer Events
 #
@@ -308,13 +331,15 @@ snippet pointa
 	pointer-events: auto;${1}
 snippet pointi
 	pointer-events: inherit;${1}
-
+#
+#
 #
 # Content
 #
 snippet cont
 	content: "";${1}
-
+#
+#
 #
 # White Space
 #
@@ -326,7 +351,8 @@ snippet wsw
 	white-space: wrap;${1}
 snippet wsn
 	white-space: normal;${1}
-
+#
+#
 #
 # Word Break
 #
@@ -336,7 +362,8 @@ snippet wbb
 	word-break: break-word;${1}
 snippet wbn
 	word-break: normal;${1}
-
+#
+#
 #
 # Hover
 #
@@ -345,13 +372,15 @@ snippet hover
 	&:hover {
 		${1}
 	}
-
+#
+#
 #
 # Em Calc
 #
 snippet em
 	emCalc(${1:12}px)
-
+#
+#
 #
 # REM
 #
@@ -393,7 +422,8 @@ snippet remh
 	@include rem('height',${1:100}px);
 snippet remw
 	@include rem('width',${1:100}px);
-
+#
+#
 #
 # Clear
 #
@@ -401,7 +431,8 @@ snippet clear
 	@include clear;
 snippet clearie
 	@include clear-ie;
-
+#
+#
 #
 # Vertical Align
 #
@@ -415,7 +446,8 @@ snippet vam
 	vertical-align: middle;
 snippet vaa
 	vertical-align: auto;
-
+#
+#
 #
 # Pseudo Elements
 #
@@ -435,7 +467,8 @@ snippet afterie
 	&:after {
 		${1}
 	}
-
+#
+#
 #
 # Pseudo Selectors
 #
@@ -459,7 +492,8 @@ snippet nth
 	&:nth-of-type(${1:n+2}) {
 		${2}
 	}
-
+#
+#
 #
 # Lists
 #
@@ -473,7 +507,8 @@ snippet lstc
 	list-style-type: circle;${1}
 snippet lsts
 	list-style-type: square;${1}
-
+#
+#
 #
 # Angular
 #
@@ -493,7 +528,8 @@ snippet nganimate
 	.${4:pageEnter}-leave-active {
 
 	}
-
+#
+#
 #
 # Breakpoints
 #
@@ -541,7 +577,8 @@ snippet breaks
 	@include breakpoint(small) {
 		${1}
 	}
-
+#
+#
 #
 # Grid
 #
@@ -583,7 +620,8 @@ snippet prepend
 	@include prepend(${1:1});${2}
 snippet append
 	@include append(${1:1});${2}
-
+#
+#
 #
 # Mixins / Functions
 #
@@ -591,7 +629,8 @@ snippet ext
 	@extend %${1:myFunc}{${2})};${3}
 snippet inc
 	@include ${1:mixin()};${2}
-
+#
+#
 #
 # Documentation
 #
@@ -613,7 +652,8 @@ snippet section
 	// ${1:sectionName}
 	//
 	///////////////////////////////////////////////////////${2}
-
+#
+#
 #
 # Breakpoint
 #
@@ -645,7 +685,8 @@ snippet bpb
 	@include between-breakpoint(${1:min}, ${2:max}) {
 		${3}
 	}
-
+#
+#
 #
 # Flex Box
 #
@@ -701,7 +742,8 @@ snippet ais
 	align-items: stretch;${1}
 snippet aii
 	align-items: initial;${1}
-
+#
+#
 #
 # Various
 #
@@ -721,7 +763,8 @@ snippet z
 	z-index: ${1:1};
 snippet im
 	!important${1}
-
+#
+#
 #
 # IE
 #
