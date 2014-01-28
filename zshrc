@@ -56,6 +56,7 @@ unsetopt correct_all
   alias python='python -m SimpleHTTPServer'
   alias l='ls -la'
   alias -s scss"=mvim -o"
+  alias php "php54 -S localhost:8000"
 
   # postgres
   alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'

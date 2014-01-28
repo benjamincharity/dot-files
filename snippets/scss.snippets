@@ -89,26 +89,26 @@ snippet transfull
 		 -moz-transition: all 0.2s ease-in-out;
 			-ms-transition: all 0.2s ease-in-out;
 			 -o-transition: all 0.2s ease-in-out;
-					transition: all 0.2s ease-in-out;
+					transition: all 0.2s ease-in-out;${1}
 #
 #
 #
 # Border
 #
 snippet brad
-	border-radius: ${1:50%};
+	border-radius: ${1:50%};${2}
 snippet bradfull
-	border-radius: ${1:2px} ${2:2px} ${3:2px} ${4:2px};
+	border-radius: ${1:2px} ${2:2px} ${3:2px} ${4:2px};${5}
 snippet brtl
-	border-top-left-radius: ${1:2px};
+	border-top-left-radius: ${1:2px};${2}
 snippet brtr
-	border-top-right-radius: ${1:2px};
+	border-top-right-radius: ${1:2px};${2}
 snippet brbr
-	border-bottom-right-radius: ${1:2px};
+	border-bottom-right-radius: ${1:2px};${2}
 snippet brbl
-	border-bottom-left-radius: ${1:2px};
+	border-bottom-left-radius: ${1:2px};${2}
 snippet bo
-	border: 1px solid ${1:red};
+	border: ${1:1}px solid ${2:red};${3}
 snippet bon
 	border: none;
 snippet bb
@@ -139,30 +139,30 @@ snippet bw
 # Height / Width
 #
 snippet h
-	height: ${1:100%};
+	height: ${1:100%};${2}
 snippet w
-	width: ${1:100%};
+	width: ${1:100%};${2}
 snippet mh
 	max-height: ${1:100%};${2}
 snippet minh
-	min-height: ${1:50}${2:px};
+	min-height: ${1:50}${2:px};${3}
 snippet mw
 	max-width: ${1:100%};${2}
 snippet minw
-	min-width: ${1:100}${2:px};
+	min-width: ${1:100}${2:px};${3}
 #
 #
 #
 # Box Shadow
 #
 snippet bs
-	box-shadow: ${1:0} ${2:0} ${3:4px} ${4:0} ${5:rgba(0,0,0,0.8)};
+	box-shadow: ${1:0} ${2:0} ${3:4px} ${4:0} ${5:rgba(0,0,0,0.8)};${6}
 snippet bsfull
 	-webkit-box-shadow: 0 0 10px 0 rgb(51,51,51);
 		 -moz-box-shadow: 0 0 10px 0 rgb(51,51,51);
 			-ms-box-shadow: 0 0 10px 0 rgb(51,51,51);
 			 -o-box-shadow: 0 0 10px 0 rgb(51,51,51);
-					box-shadow: 0 0 10px 0 rgb(51,51,51);
+					box-shadow: 0 0 10px 0 rgb(51,51,51);${1}
 #
 #
 #
@@ -177,35 +177,35 @@ snippet posf
 snippet poss
 	position: static;${1}
 snippet b
-	bottom: ${1:0};
+	bottom: ${1:0};${2}
 snippet l
-	left: ${1:0};
+	left: ${1:0};${2}
 snippet r
-	right: ${1:0};
+	right: ${1:0};${2}
 snippet t
-	top: ${1:0};
+	top: ${1:0};${2}
 #
 #
 #
 # Display
 #
 snippet d
-	display: none;
+	display: none;${1}
 snippet dn
-	display: none;
+	display: none;${1}
 snippet db
-	display: block;
+	display: block;${1}
 snippet di
-	display: inline;
+	display: inline;${1}
 snippet dib
-	display: inline-block;
+	display: inline-block;${1}
 #
 #
 #
 # Fonts
 #
 snippet fw
-	font-weight: ${1:600};
+	font-weight: ${1:600};${2}
 snippet fwn
 	font-weight: normal;${1}
 snippet fwb
@@ -213,24 +213,24 @@ snippet fwb
 snippet fwl
 	font-weight: light;${1}
 snippet fs
-	font-size: ${1:16}px;${2}
+	font-size: ${1:1em};${2}
 snippet fst
-	font-style: italic;
+	font-style: italic;${1}
 snippet ff
-	font-family: $${1:family};
+	font-family: $${1:family};${2}
 snippet ffsans
-	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-family: Arial, Helvetica, Verdana, sans-serif;${1}
 snippet ffserif
-	font-family: Georgia, Times New Roman, Times, serif;
+	font-family: Georgia, Times New Roman, Times, serif;${1}
 #
 #
 #
 # Clear
 #
 snippet cl
-	clear: left;
+	clear: left;${1}
 snippet cr
-	clear: right;
+	clear: right;${1}
 snippet clb
 	clear: ${1:both};${2}
 #
@@ -239,24 +239,24 @@ snippet clb
 # Overflow
 #
 snippet o
-	overflow: hidden;
+	overflow: hidden;${1}
 snippet ov
-	overflow: visible;
+	overflow: visible;${1}
 snippet oa
-	overflow: auto;
+	overflow: auto;${1}
 snippet oi
-	overflow: inherit;
+	overflow: inherit;${1}
 #
 #
 #
 # Float
 #
 snippet fl
-	float: left;
+	float: left;${1}
 snippet fr
-	float: right;
+	float: right;${1}
 snippet fn
-	float: none;
+	float: none;${1}
 #
 #
 #
@@ -273,21 +273,21 @@ snippet tal
 snippet tar
 	text-align: right;${1}
 snippet td
-	text-decoration: none;
+	text-decoration: none;${1}
 snippet tdu
-	text-decoration: underline;
+	text-decoration: underline;${1}
 snippet ts
 	text-shadow: ${1:1}px ${2:1}px ${3:0} ${4:rgb(0,0,0)};${5}
 snippet tt
-	text-transform: ${1:uppercase};
+	text-transform: ${1:uppercase};${2}
 snippet ttu
-	text-transform: uppercase;
+	text-transform: uppercase;${1}
 snippet ttl
-	text-transform: lowercase;
+	text-transform: lowercase;${1}
 snippet ttn
-	text-transform: none;
+	text-transform: none;${1}
 snippet ttc
-	text-transform: capitalize;
+	text-transform: capitalize;${1}
 snippet ti
 	text-indent: 100%;${1}
 snippet tin
@@ -306,16 +306,16 @@ snippet tos
 # Cursor
 #
 snippet cu
-	cursor: ${1:pointer};
+	cursor: ${1:pointer};${2}
 snippet cd
-	cursor: ${1:default};
+	cursor: ${1:default};${2}
 #
 #
 #
 # Visibility
 #
 snippet v
-	visibility: ${1:hidden};
+	visibility: ${1:hidden};${2}
 snippet vv
 	visibility: visible;${1}
 #
@@ -378,74 +378,74 @@ snippet hover
 # Em Calc
 #
 snippet em
-	emCalc(${1:12}px)
+	emCalc(${1:12}px)${2}
 #
 #
 #
 # REM
 #
 snippet rem
-	@include rem('${1:font-size}',${2:12}px);
+	@include rem('${1:font-size}',${2:12}px);${3}
 snippet remlh
-	@include rem('line-height',${1:12}px);
+	@include rem('line-height',${1:12}px);${2}
 snippet remp
-	@include rem('padding',${1:12}px);
+	@include rem('padding',${1:12}px);${2}
 snippet rempt
-	@include rem('padding-top',${1:12}px);
+	@include rem('padding-top',${1:12}px);${2}
 snippet rempb
-	@include rem('padding-bottom',${1:12}px);
+	@include rem('padding-bottom',${1:12}px);${2}
 snippet rempl
-	@include rem('padding-left',${1:12}px);
+	@include rem('padding-left',${1:12}px);${2}
 snippet rempr
-	@include rem('padding-right',${1:12}px);
+	@include rem('padding-right',${1:12}px);${2}
 snippet remm
-	@include rem('margin',${1:12}px);
+	@include rem('margin',${1:12}px);${2}
 snippet remmt
-	@include rem('margin-top',${1:12}px);
+	@include rem('margin-top',${1:12}px);${2}
 snippet remmb
-	@include rem('margin-bottom',${1:12}px);
+	@include rem('margin-bottom',${1:12}px);${2}
 snippet remml
-	@include rem('margin-left',${1:12}px);
+	@include rem('margin-left',${1:12}px);${2}
 snippet remmr
-	@include rem('margin-right',${1:12}px);
+	@include rem('margin-right',${1:12}px);${2}
 snippet remti
-	@include rem('text-indent',${1:12}px);
+	@include rem('text-indent',${1:12}px);${2}
 snippet remt
-	@include rem('top',${1:12}px);
+	@include rem('top',${1:12}px);${2}
 snippet remb
-	@include rem('bottom',${1:12}px);
+	@include rem('bottom',${1:12}px);${2}
 snippet reml
-	@include rem('left',${1:12}px);
+	@include rem('left',${1:12}px);${2}
 snippet remr
-	@include rem('right',${1:12}px);
+	@include rem('right',${1:12}px);${2}
 snippet remh
-	@include rem('height',${1:100}px);
+	@include rem('height',${1:100}px);${2}
 snippet remw
-	@include rem('width',${1:100}px);
+	@include rem('width',${1:100}px);${2}
 #
 #
 #
 # Clear
 #
 snippet clear
-	@include clear;
+	@include clear;${1}
 snippet clearie
-	@include clear-ie;
+	@include clear-ie;${1}
 #
 #
 #
 # Vertical Align
 #
 snippet va
-	vertical-align: ${1:bottom};
+	vertical-align: ${1:bottom};${2}
 snippet vab
-	vertical-align: bottom;
+	vertical-align: bottom;${1}
 snippet vat
-	vertical-align: top;
+	vertical-align: top;${1}
 snippet vam
-	vertical-align: middle;
+	vertical-align: middle;${1}
 snippet vaa
-	vertical-align: auto;
+	vertical-align: auto;${1}
 #
 #
 #
@@ -626,9 +626,13 @@ snippet append
 # Mixins / Functions
 #
 snippet ext
-	@extend %${1:myFunc}{${2})};${3}
+	@extend %${1:myStyle};${2}
 snippet inc
-	@include ${1:mixin()};${2}
+	@include ${1:mixin};${2}
+snippet func
+	@function ${1:myFunction}(${2}) {
+		@return ${3:myValue};
+	}${4}
 #
 #
 #
@@ -742,6 +746,10 @@ snippet ais
 	align-items: stretch;${1}
 snippet aii
 	align-items: initial;${1}
+snippet shrink
+	flex-shrink: ${1:0};${2}
+snippet grow
+	flex-grow: ${1:1};${2}
 #
 #
 #
@@ -756,7 +764,7 @@ snippet out
 snippet breakword
 	@extend %breakWord;${1}
 snippet hide
-	@include hideText;
+	@include hideText;${1}
 snippet op
 	opacity: ${1:1};
 snippet z

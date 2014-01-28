@@ -46,6 +46,55 @@ Bundle 'slim-template/vim-slim'
 
 " # # # # # # # # # # # # # # # # #
 "
+" Helper Functions
+"
+" # # # # # # # # # # # # # # # # #
+
+" I don't understand vundle enough quite yet; even though Bundle 'Align' is above, exists(":AlignCtrl") never passed during .vimrc
+" So to hack around this for now I lazy-config Align otf.
+function! MyAlignConfig()
+    " auto-align: left justify (l), first sep only (:), 1 sp on either side of
+    " separator (p1P1), preserve leading whitespace so we don't break indenting (W)
+    " works for = and =>
+    AlignCtrl =l:p1P1W =>\? :
+endfunction
+vmap + :call MyAlignConfig()<CR>gv :Align<CR>
+
+" Rspec goodness!!!
+function! RunSpec(args)
+ let cmd = ":! rspec % -cfn --drb " . a:args
+ execute cmd
+endfunction
+
+" mouse support
+" http://www.reasonablyopinionated.com/2011/11/mouse-support-for-terminalapp-scrolling.html
+if has("mouse") && !has("gui_macvim")
+    set mouse=a
+    set ttymouse=xterm2
+    function! ToggleMouse()
+        let m = &mouse
+        if m ==# 'a'
+            execute ":set mouse="
+        else
+            execute ":set mouse=a"
+        endif
+    endfunction
+    map <Leader>m :call ToggleMouse()<CR>
+endif
+
+" auto reload vimrc when written to
+autocmd! bufwritepost ~/.vimrc source ~/.vimrc
+autocmd! bufwritepost vimrc source vimrc
+
+" show error background on text longer than 80 characters
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%>80v.\+/
+
+
+
+
+" # # # # # # # # # # # # # # # # #
+"
 " Settings
 "
 " # # # # # # # # # # # # # # # # #
@@ -85,7 +134,7 @@ set nowritebackup
 set backupdir=~/.vim_backups//
 set directory=~/.vim_backups//
 set foldmethod=indent
-set foldlevelstart=20
+set foldlevelstart=99
 " Allow arrow key use in insert mode
 set nocompatible
 " Allow arrow key use in insert mode
@@ -183,7 +232,7 @@ inoremap <C-L> <C-O>:nohls<CR>
 "Show Registerr
 map <leader>rr :reg<cr>
 " Quickly reload our snippets
-map <leader>rs :call ReloadSnippets(snippets_dir, &ft)<cr>
+map <leader>rs :call ReloadSnippets(&filetype)<cr>
 " Remap these since I always seem to type the wrong command in haste.
 com! W w
 com! Wa wa
@@ -222,54 +271,3 @@ nmap <silent> <c-l> :wincmd l<CR>
 
 
 
-" # # # # # # # # # # # # # # # # #
-"
-" Helper Functions
-"
-" # # # # # # # # # # # # # # # # #
-
-" I don't understand vundle enough quite yet; even though Bundle 'Align' is above, exists(":AlignCtrl") never passed during .vimrc
-" So to hack around this for now I lazy-config Align otf.
-function! MyAlignConfig()
-    " auto-align: left justify (l), first sep only (:), 1 sp on either side of
-    " separator (p1P1), preserve leading whitespace so we don't break indenting (W)
-    " works for = and =>
-    AlignCtrl =l:p1P1W =>\? :
-endfunction
-vmap + :call MyAlignConfig()<CR>gv :Align<CR>
-
-" Reload snippets
-fun! ReloadSnippets(snippets_dir, ft)
-  call ResetSnippets()
-  call GetSnippets(a:snippets_dir, a:ft)
-endfun
-
-" Rspec goodness!!!
-function! RunSpec(args)
- let cmd = ":! rspec % -cfn --drb " . a:args
- execute cmd
-endfunction
-
-" mouse support
-" http://www.reasonablyopinionated.com/2011/11/mouse-support-for-terminalapp-scrolling.html
-if has("mouse") && !has("gui_macvim")
-    set mouse=a
-    set ttymouse=xterm2
-    function! ToggleMouse()
-        let m = &mouse
-        if m ==# 'a'
-            execute ":set mouse="
-        else
-            execute ":set mouse=a"
-        endif
-    endfunction
-    map <Leader>m :call ToggleMouse()<CR>
-endif
-
-" auto reload vimrc when written to
-autocmd! bufwritepost ~/.vimrc source ~/.vimrc
-autocmd! bufwritepost vimrc source vimrc
-
-" show error background on text longer than 80 characters
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%>80v.\+/
