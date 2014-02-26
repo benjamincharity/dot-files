@@ -226,9 +226,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 noremap <C-T> :NERDTreeToggle<CR>
 "Get rid of trailing spaces
 nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-"un-highlight searched text
-nnoremap <C-L> :nohls<CR><C-L>
-inoremap <C-L> <C-O>:nohls<CR>
 "Show Registerr
 map <leader>rr :reg<cr>
 " Quickly reload our snippets
@@ -269,6 +266,8 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 " shortcut to compile coffeescript to scratch buffer
 map <leader>cp :CoffeeCompile vert<cr>
+" turn off search phrase highlighting until next search
+nnoremap <C-L> :set hlsearch!<CR>
 
 
 
