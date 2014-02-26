@@ -40,7 +40,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'tpope/vim-surround'
 Bundle 'juvenn/mustache'
 Bundle 'slim-template/vim-slim'
-
+Bundle 'kchmck/vim-coffee-script'
 
 
 
@@ -267,6 +267,8 @@ map <tab> <C-w>80+ " maximize current window
 "nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
+" shortcut to compile coffeescript to scratch buffer
+map <leader>cp :CoffeeCompile vert<cr>
 
 
 
