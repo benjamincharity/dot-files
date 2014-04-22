@@ -13,6 +13,20 @@ snippet comb
 	<dev-comment>
 		${1:My Comment}
 	</dev-comment>${2}
+snippet ngapp
+	data-ng-app="${1:myApp}"
+snippet ngc
+	data-ng-controller="${1:myController}"
+snippet ngview
+	data-ng-view${1}
+snippet datainclude
+	data-ng-include=" '${1:myTemplate}.html' "
+snippet uilink
+	<a ui-sref="${1:myState}">${2:linkText}</a>
+snippet ngselect
+	<select ng-model="${1:myModel}" ng-options="${2:thing} in ${3:things}">
+		<option value="">-- choose ${4:thing} --</option>
+	</select>
 #
 #
 #
@@ -30,27 +44,47 @@ snippet html5
 		${2}	
 	</body>
 	</html>
+
 #
 #
 #
 # Scripts
 #
-snippet script
-	<script type="text/javascript" charset="utf-8">
-		${1}
-	</script>${2}
-snippet scriptsrc
-	<script src="${1}.js" charset="utf-8"></script>${2}
+
+# Libraries
 snippet jquery
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 snippet angular
 	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.min.js"></script>
-snippet angularuirouter
+snippet angularuir
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.0/angular-ui-router.min.js"></script>
+snippet angularngr
+	<script src="ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.js"></script>
 snippet modernizr
 	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.7.1/modernizr.min.js"></script>
 snippet zepto
 	<script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.1/zepto.min.js"></script>
+
+# Custom
+snippet script
+	<script>
+		${1}
+	</script>${2}
+snippet scriptsrc
+	<script src="${1}.js"></script>${2}
+snippet app
+	<script src="js/app.js"></script>${1}
+snippet routes
+	<script src="js/routes.js"></script>${1}
+snippet controllers
+	<script src="js/controllers.js"></script>${1}
+snippet directives
+	<script src="js/directives.js"></script>${1}
+snippet filters
+	<script src="js/filters.js"></script>${1}
+snippet services
+	<script src="js/services.js"></script>${1}
+
 #
 #
 #

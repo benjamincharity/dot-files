@@ -41,6 +41,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'juvenn/mustache'
 Bundle 'slim-template/vim-slim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'Raimondi/delimitMate'
+Bundle 'majutsushi/tagbar'
 
 
 
@@ -203,6 +205,12 @@ nnoremap <Leader>s :split
 nnoremap <Leader>8 :set tw=80<CR>
 nnoremap <Leader>0 :set tw=0<CR>
 nnoremap <Leader>n :set invnumber<CR>
+" Command T additions
+noremap <leader>o <Esc>:CommandT<CR>
+noremap <leader>O <Esc>:CommandTFlush<CR>
+noremap <leader>tb <Esc>:CommandTBuffer<CR>
+" Open tagbar
+nmap <F8> :TagbarToggle<CR>
 "Move lines with alt + direction
 nnoremap ∆ :m+<CR>==
 nnoremap ˚ :m-2<CR>==
@@ -267,7 +275,7 @@ nmap <silent> <c-l> :wincmd l<CR>
 " shortcut to compile coffeescript to scratch buffer
 map <leader>cp :CoffeeCompile vert<cr>
 " turn off search phrase highlighting until next search
-nnoremap <C-L> :set hlsearch!<CR>
+nnoremap <C-S> :set hlsearch!<CR>
 
 
 

@@ -94,8 +94,9 @@ snippet on
 	$('${1:.foo}').on('${2:click}', '${4:a}', function(event) {
 		${5}
 	});
-
-
+snippet ternary
+	${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
+#
 ## ANGULAR Snippets
 # Define a new Angular Controller;
 # You can change the controller name and parameters
@@ -234,4 +235,51 @@ snippet ngdl
 		return function(scope, element, attrs${3:ctrl}) {
 			${4}
 		}
+	});
+snippet ngtimeout
+	$timeout(function() {
+	}, ${1:1000});
+snippet scope.apply
+	$scope.$apply(function () {
+		${1:doThing}
+	});${2}
+#
+#
+snippet bpControllers
+	/////////////////////////////////////
+	//
+	// Define Controllers
+	//
+	/////////////////////////////////////
+
+	var controllers = {};
+
+
+	//
+	//
+	controllers.${2:MyCtrl} = function($scope) {
+
+			${3:$scope.foo = 'bar';}
+
+	};
+
+
+	//
+	// Assign controllers to our app
+	${1:myApp}.controller(controllers);
+snippet bpDirectives
+	/////////////////////////////////////
+	//
+	// Define Directives
+	//
+	/////////////////////////////////////
+
+	${1:myApp}.directive("${2:myDirective}", function() {
+
+			return function( scope, element, attrs ) {
+
+				${3}
+
+			}
+
 	});
