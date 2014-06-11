@@ -69,6 +69,9 @@ unsetopt correct_all
   # sshfs shortcuts
   alias tbfs='[[ -d ~/tourbuzz-vagrant ]] || mkdir ~/tourbuzz-vagrant; sshfs tourbuzz-vagrant:/usr/src/tourbuzz ~/tourbuzz-vagrant'
 
+  # boxes
+  alias tb-dev='ssh dev.tourbuzz.net -t "screen -x MainScreen"'
+
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
   export EDITOR=vim
   export NODE_PATH=/usr/local/lib/node
