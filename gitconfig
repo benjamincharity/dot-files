@@ -1,16 +1,17 @@
 [user]
-	name = Benjamin Charity
-	email = ben@benjamincharity.com
+  name = Benjamin Charity
+  email = ben@benjamincharity.com
 [alias]
   ci = commit
   co = checkout
   lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   br = branch
   dt = difftool
+  st = status
 [apply]
   whitespace = nowarn
 [core]
-	excludesfile = /Users/bc/.gitignore_global
+  excludesfile = /Users/bc/.gitignore_global
   pager = tee
 [color]
   branch = auto
@@ -33,8 +34,12 @@
 [push]
   default = simple
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+  cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+  path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+  cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+  trustExitCode = true
+[branch]
+  autosetuprebase = always
+[pull]
+	rebase = true
