@@ -549,55 +549,6 @@ snippet nganimate
 #
 #
 #
-# Breakpoints
-#
-snippet bkll
-	@include breakpoint(breakpoint-very-large) {
-		${1}
-	}
-snippet bkl
-	@include breakpoint(breakpoint-large) {
-		${1}
-	}
-snippet bkml
-	@include breakpoint(breakpoint-medium-large) {
-		${1}
-	}
-snippet bkm
-	@include breakpoint(breakpoint-medium) {
-		${1}
-	}
-snippet bks
-	@include breakpoint(breakpoint-very-small) {
-		${1}
-	}
-snippet break
-	@include breakpoint(${1:medium}) {
-		${2}
-	}
-snippet breakvl
-	@include breakpoint(verylarge) {
-		${1}
-	}
-snippet breakl
-	@include breakpoint(large) {
-		${1}
-	}
-snippet breakmid
-	@include breakpoint(mid) {
-		${1}
-	}
-snippet breakm
-	@include breakpoint(medium) {
-		${1}
-	}
-snippet breaks
-	@include breakpoint(small) {
-		${1}
-	}
-#
-#
-#
 # Grid
 #
 snippet rowc
@@ -681,34 +632,84 @@ snippet section
 #
 # Breakpoint
 #
-snippet bpm
-	@include breakpoint(mobile) {
+#snippet bpm
+#	@include breakpoint(mobile) {
+#		${1}
+#	}
+#snippet bpmh
+#	@include breakpoint(mobile-horizontal) {
+#		${1}
+#	}
+#snippet bpt
+#	@include breakpoint(horizontal) {
+#		${1}
+#	}
+#snippet bpth
+#	@include breakpoint(tablet-horizontal) {
+#		${1}
+#	}
+#snippet bpd
+#	@include breakpoint(desktop) {
+#		${1}
+#	}
+#snippet bpdl
+#	@include breakpoint(desktop-large) {
+#		${1}
+#	}
+#snippet bpb
+#	@include between-breakpoint(${1:min}, ${2:max}) {
+#		${3}
+#	}
+#
+#
+#
+# Breakpoints
+#
+snippet bkll
+	@include breakpoint(breakpoint-very-large) {
 		${1}
 	}
-snippet bpmh
-	@include breakpoint(mobile-horizontal) {
+snippet bkl
+	@include breakpoint(breakpoint-large) {
 		${1}
 	}
-snippet bpt
-	@include breakpoint(horizontal) {
+snippet bkml
+	@include breakpoint(breakpoint-medium-large) {
 		${1}
 	}
-snippet bpth
-	@include breakpoint(tablet-horizontal) {
+snippet bkm
+	@include breakpoint(breakpoint-medium) {
 		${1}
 	}
-snippet bpd
-	@include breakpoint(desktop) {
+snippet bks
+	@include breakpoint(breakpoint-only-small) {
 		${1}
 	}
-snippet bpdl
-	@include breakpoint(desktop-large) {
+snippet break
+	@include breakpoint(${1:medium}) {
+		${2}
+	}
+snippet breakvl
+	@include breakpoint(verylarge) {
 		${1}
 	}
-snippet bpb
-	@include between-breakpoint(${1:min}, ${2:max}) {
-		${3}
+snippet breakl
+	@include breakpoint(large) {
+		${1}
 	}
+snippet breakmid
+	@include breakpoint(mid) {
+		${1}
+	}
+snippet breakm
+	@include breakpoint(medium) {
+		${1}
+	}
+snippet breaks
+	@include breakpoint(small) {
+		${1}
+	}
+
 #
 #
 #

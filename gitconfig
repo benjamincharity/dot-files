@@ -11,7 +11,7 @@
 [apply]
   whitespace = nowarn
 [core]
-  excludesfile = /Users/bc/.gitignore_global
+	excludesfile = /Users/bc/.dot-files/.gitignore_global
   pager = tee
 [color]
   branch = auto
@@ -43,3 +43,5 @@
   autosetuprebase = always
 [pull]
 	rebase = true
+[init]
+	templatedir = ~/.git_template

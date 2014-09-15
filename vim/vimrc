@@ -13,36 +13,33 @@ set shell=/bin/sh
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'fugitive.vim'
-Bundle 'The-NERD-Commenter'
-Bundle 'scrooloose/nerdtree'
-Bundle 'ack.vim'
-Bundle 'rails.vim'
-Bundle 'surround.vim'
-Bundle 'ZoomWin'
-Bundle 'Command-T'
-Bundle 'rvm.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'javaScriptLint.vim'
-Bundle 'vim-coffee-script'
-Bundle 'scratch.vim'
-Bundle 'vim-scripts/EasyGrep'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'vim-scripts/EasyGrep'
-Bundle 'mileszs/ack.vim'
-Bundle 'vim-scripts/Align'
+Plugin 'gmarik/vundle'
+Plugin 'fugitive.vim'
+Plugin 'The-NERD-Commenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'rails.vim'
+Plugin 'surround.vim'
+Plugin 'ZoomWin'
+"Plugin 'Command-T'
+Plugin 'rvm.vim'
+Plugin 'bufexplorer.zip'
+Plugin 'javaScriptLint.vim'
+Plugin 'vim-coffee-script'
+Plugin 'scratch.vim'
+Plugin 'vim-scripts/EasyGrep'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'mileszs/ack.vim'
+Plugin 'vim-scripts/Align'
+Plugin 'msanders/snipmate.vim'
+Plugin 'tpope/vim-surround'
+Plugin 'juvenn/mustache'
+Plugin 'slim-template/vim-slim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'majutsushi/tagbar'
+Plugin 'mattn/emmet-vim'
+Plugin 'gregsexton/MatchTag'
 
-" Github repos
-Bundle 'msanders/snipmate.vim'
-Bundle 'mattn/zencoding-vim'
-Bundle 'tpope/vim-surround'
-Bundle 'juvenn/mustache'
-Bundle 'slim-template/vim-slim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'Raimondi/delimitMate'
-Bundle 'majutsushi/tagbar'
 
 
 
@@ -135,8 +132,8 @@ set title
 set visualbell
 set nobackup
 set nowritebackup
-set backupdir=~/.vim_backups//
-set directory=~/.vim_backups//
+set backupdir=~/.vim/swap_files/
+set directory=~/.vim/swap_files/
 set foldmethod=indent
 set foldlevelstart=99
 " Allow arrow key use in insert mode
@@ -159,12 +156,16 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{rvm#statusli
 let NERDTreeShowBookmarks = 1
 "Enable Colors
 let NERDChristmasTree = 1
+" Open NERDTree when vim opens
+"autocmd vimenter * NERDTree
 " Define snippets location
 let snippets_dir="~/.dot-files/snippets"
 " Zen Coding
-let g:user_zen_expandabbr_key = '<c-e>'
-let g:use_zen_complete_tag = 1
-let g:user_zen_settings = {'html' : {'indentation' : '  '},}
+"let g:user_zen_expandabbr_key = '<c-e>'
+"let g:use_zen_complete_tag = 1
+"let g:user_zen_settings = {'html' : {'indentation' : '  '},}
+" Emmet
+let g:user_emmet_leader_key='<C-e>'
 " Set the filetype for various file extensions
 au BufNewFile,BufRead Gemfile set filetype=ruby
 au BufNewFile,BufRead *.j set filetype=objj
