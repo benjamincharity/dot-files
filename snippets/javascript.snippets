@@ -187,6 +187,10 @@ snippet $w
 	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
 		${2}
 	});
+snippet scope.watch
+	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
+		${2}
+	});
 # Define a $on for a $broadcast/$emit on the $scope inside an Angular Controller
 # You can change the event name to listen on
 snippet $on
@@ -237,6 +241,9 @@ snippet ngdl
 		}
 	});
 snippet ngtimeout
+	$timeout(function() {
+	}, ${1:1000});
+snippet $timeout
 	$timeout(function() {
 	}, ${1:1000});
 snippet apply

@@ -6,6 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="robbyrussell"
 
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export PATH=/usr/local/share/npm/bin:$PATH
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -60,6 +61,8 @@ unsetopt correct_all
   alias -s scss"=mvim -o"
   alias php "php54 -S localhost:8000"
 
+  # ionic
+  alias build='ionic build ios'
   # postgres
   alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
   alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
@@ -103,3 +106,4 @@ unsetopt correct_all
   # and "Reuse Previous Tab's Directory" then you will want to add the
   # following line to the bottom of your .zshrc
   #__rvm_project_rvmrc
+export NODE_PATH="/usr/local/lib/node_modules"

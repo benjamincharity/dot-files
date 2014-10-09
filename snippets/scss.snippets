@@ -809,4 +809,18 @@ snippet ie
 	} @else {
 	 ${2:do non-ie thing}
 	}
-
+#
+#
+#
+# Compass Transforms
+#
+snippet scale
+	@include transform( scale(${1:1,1}) );${2}
+snippet translate
+	@include transform( translate(${1: 100px 100px }) );${2}
+snippet translatex
+	@include transform( translateX(${1:100px}) );${2}
+snippet translatey
+	@include transform( translateY(${1:100px}) );${2}
+snippet rotate
+	@include transform( rotate(${1:90}deg) );${2}
