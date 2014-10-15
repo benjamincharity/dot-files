@@ -48,6 +48,7 @@ unsetopt correct_all
   alias mate='/usr/local/bin/mate'
   alias gemi='sudo gem install –no-ri –no-rdoc'
   alias gpom='git push origin master'
+  alias gphm='git push heroku master'
   alias gm='git push'
   alias gp='git pull'
   alias gs='git status'
@@ -107,3 +108,6 @@ unsetopt correct_all
   # following line to the bottom of your .zshrc
   #__rvm_project_rvmrc
 export NODE_PATH="/usr/local/lib/node_modules"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
