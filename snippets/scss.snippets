@@ -71,6 +71,8 @@ snippet bgs
 	background-size: ${1:cover};
 snippet bgr
 	background-repeat: ${1:no-repeat};
+snippet gradient
+	@include background-image(linear-gradient(${1:white}, #cccccc 30%, #bbbbbb 70%, #aaaaaa));
 #
 #
 #
@@ -404,6 +406,8 @@ snippet em
 #
 snippet rem
 	@include rem('${1:font-size}',${2:12}px);${3}
+snippet remfs
+	@include rem('font-size',${1:12}px);${2}
 snippet remlh
 	@include rem('line-height',${1:12}px);${2}
 snippet remp
@@ -437,9 +441,13 @@ snippet reml
 snippet remr
 	@include rem('right',${1:12}px);${2}
 snippet remh
-	@include rem('height',${1:100}px);${2}
+	@include rem('height',${1:100}${2:px});${3}
+snippet remmh
+	@include rem('max-height',${1:100}px);${2}
 snippet remw
-	@include rem('width',${1:100}px);${2}
+	@include rem('width',${1:500}px);${2}
+snippet remmw
+	@include rem('max-width',${1:100}${2:px});${3}
 #
 #
 #
@@ -485,6 +493,14 @@ snippet afterie
 	&:after {
 		${1}
 	}
+snippet active
+	&:active {
+		${1}
+	}
+snippet focus
+	&:focus {
+		${1}
+	}
 #
 #
 #
@@ -509,6 +525,31 @@ snippet lastc
 snippet nth
 	&:nth-of-type(${1:n+2}) {
 		${2}
+	}
+#
+#
+#
+# State classes
+#
+snippet isactive
+	&.is_active {
+		${1}
+	}
+snippet isopen
+	&.is_open {
+		${1}
+	}
+snippet ishidden
+	&.is_hidden {
+		${1}
+	}
+snippet isdisabled
+	&.is_disabled {
+		${1}
+	}
+snippet isvisible
+	&.is_visible {
+		${1}
 	}
 #
 #

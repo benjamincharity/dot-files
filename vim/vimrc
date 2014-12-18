@@ -17,10 +17,8 @@ Plugin 'gmarik/vundle'
 Plugin 'fugitive.vim'
 Plugin 'The-NERD-Commenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'rails.vim'
 Plugin 'surround.vim'
 Plugin 'ZoomWin'
-"Plugin 'Command-T'
 Plugin 'rvm.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'javaScriptLint.vim'
@@ -39,6 +37,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'gregsexton/MatchTag'
+Plugin 'dkprice/vim-easygrep'
+Plugin 'kien/ctrlp.vim'
 
 
 
@@ -188,7 +188,8 @@ let g:CommandTMaxHeight=20
 set complete+=kspell
 " Define spelling error highlighting
 hi SpellBad ctermfg=015 ctermbg=000 cterm=none guifg=#FE2E2E guibg=#F8E0E0 gui=none
-
+" Fire up CtrlP
+set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 
 

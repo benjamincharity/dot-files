@@ -18,7 +18,7 @@ export PATH=/usr/local/share/npm/bin:$PATH
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
+plugins=(git zsh-per-directory-history)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -62,8 +62,6 @@ unsetopt correct_all
   alias -s scss"=mvim -o"
   alias php "php54 -S localhost:8000"
 
-  # ionic
-  alias build='ionic build ios'
   # postgres
   alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
   alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
@@ -71,12 +69,6 @@ unsetopt correct_all
   # for mysql
   alias mysqlstart='mysql.server start'
   alias mysqlstop='mysql.server stop'
-
-  # sshfs shortcuts
-  alias tbfs='[[ -d ~/tourbuzz-vagrant ]] || mkdir ~/tourbuzz-vagrant; sshfs tourbuzz-vagrant:/usr/src/tourbuzz ~/tourbuzz-vagrant'
-
-  # boxes
-  alias tb-dev='ssh dev.tourbuzz.net -t "screen -x MainScreen"'
 
   export CLASSPATH=$CLASSPATH:/usr/local/Cellar/clojure-contrib/1.2.0/clojure-contrib.jar
   export EDITOR=vim
@@ -100,8 +92,8 @@ unsetopt correct_all
   autoload -U down-line-or-beginning-search
   zle -N up-line-or-beginning-search
   zle -N down-line-or-beginning-search
-  bindkey "^[[A" up-line-or-beginning-search # Up
-  bindkey "^[[B" down-line-or-beginning-search # Down
+  bindkey '\e[A' up-line-or-beginning-search # Up
+  bindkey '\e[B' down-line-or-beginning-search # Down
 
   # If you are using iTerm2's feature allowing you to open new tabs / windows
   # and "Reuse Previous Tab's Directory" then you will want to add the

@@ -4,6 +4,11 @@ snippet proto
 	function(${3:first_argument}) {
 		${4:// body...}
 	};
+# var function
+snippet func
+	var ${1:myFunction} = function(${2}) {
+		${3:console.log('hi');}
+	};${4}
 # Function
 snippet fun
 	function ${1:function_name} (${2:argument}) {
@@ -248,8 +253,7 @@ snippet $timeout
 	}, ${1:1000});
 snippet apply
 	$scope.$apply(function () {
-		${1:doThing}
-	});${2}
+	});${1}
 #
 #
 snippet bpControllers
@@ -290,3 +294,8 @@ snippet bpDirectives
 			}
 
 	});
+snippet http
+	$http({method: 'GET', url: ${1:URL}}).
+		then(function(response, status, headers, config) {
+			return response.data;
+		});${2}
