@@ -102,6 +102,7 @@ augroup END
 
 "Theme
 color dusk
+set guifont=Monaco:h14
 
 syntax on
 filetype plugin indent on
