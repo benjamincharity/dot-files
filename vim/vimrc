@@ -39,6 +39,7 @@ Plugin 'mattn/emmet-vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'kien/ctrlp.vim'
+Plugin 'Valloric/YouCompleteMe'
 
 
 
@@ -58,6 +59,12 @@ function! MyAlignConfig()
     AlignCtrl =l:p1P1W =>\? :
 endfunction
 vmap + :call MyAlignConfig()<CR>gv :Align<CR>
+
+" Open NerdTree automatically
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+
 
 " Rspec goodness!!!
 function! RunSpec(args)
