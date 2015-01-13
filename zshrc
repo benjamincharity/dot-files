@@ -7,6 +7,10 @@ export ZSH_THEME="robbyrussell"
 
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 export PATH=/usr/local/share/npm/bin:$PATH
+
+# Change python path
+export vi_cv_path_python=usr/local/Cellar/python
+
 # Set to this to use case-sensitive completion
 # export CASE_SENSITIVE="true"
 
@@ -57,7 +61,7 @@ unsetopt correct_all
   alias gpogh='git push origin gh-pages'
   alias gpuogh='git pull origin gh-pages'
   alias gd='git diff | mvim'
-  alias python='python -m SimpleHTTPServer'
+  #alias python='python -m SimpleHTTPServer'
   alias l='ls -la'
   alias -s scss"=mvim -o"
   alias php "php54 -S localhost:8000"

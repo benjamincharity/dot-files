@@ -34,12 +34,19 @@ Plugin 'tpope/vim-surround'
 Plugin 'juvenn/mustache'
 Plugin 'slim-template/vim-slim'
 Plugin 'Raimondi/delimitMate'
-Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'gregsexton/MatchTag'
 Plugin 'dkprice/vim-easygrep'
 Plugin 'kien/ctrlp.vim'
+" Needs MacVim with python 2.X support
 Plugin 'Valloric/YouCompleteMe'
+" Needed for tagbar
+Plugin 'marijnh/tern_for_vim'
+Plugin 'majutsushi/tagbar'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'gcmt/taboo.vim'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 
 
@@ -289,6 +296,18 @@ map <leader>cp :CoffeeCompile vert<cr>
 " turn off search phrase highlighting until next search
 nnoremap <C-S> :set hlsearch!<CR>
 
+" Place mouse on html class/id and directly jump to definition in scss/css
+" http://luxiyalu.com/vim-ctags-for-js-less/
+function! JumpToCSS()
+  let id_pos = searchpos("id", "nb", line('.'))[1]
+  let class_pos = searchpos("class", "nb", line('.'))[1]
 
-
-
+  if class_pos > 0 || id_pos > 0
+    if class_pos < id_pos
+      execute ":vim '#".expand('<cword>')."' **/*.scss"
+    elseif class_pos > id_pos
+      execute ":vim '.".expand('<cword>')."' **/*.scss"
+    endif
+  endif
+endfunction
+nnoremap <leader>] :call JumpToCSS()<CR>zz
