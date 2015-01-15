@@ -29,7 +29,11 @@ Plugin 'mattn/webapi-vim'
 Plugin 'mattn/gist-vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/Align'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+" Apparently dead repo
 Plugin 'msanders/snipmate.vim'
+"Plugin 'honza/vim-snipmate'
 Plugin 'tpope/vim-surround'
 Plugin 'juvenn/mustache'
 Plugin 'slim-template/vim-slim'
@@ -47,7 +51,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'gcmt/taboo.vim'
 Plugin 'nathanaelkane/vim-indent-guides'
-
+"Plugin 'SirVer/ultisnips'
 
 
 
@@ -175,10 +179,8 @@ let NERDChristmasTree = 1
 "autocmd vimenter * NERDTree
 " Define snippets location
 let snippets_dir="~/.dot-files/snippets"
-" Zen Coding
-"let g:user_zen_expandabbr_key = '<c-e>'
-"let g:use_zen_complete_tag = 1
-"let g:user_zen_settings = {'html' : {'indentation' : '  '},}
+"let g:snipMate = {}
+"let g:snipMate['snippet_dirs'] = funcref#Function('return ["~/.dot-files/snippets"]')
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
 " Set the filetype for various file extensions
@@ -282,10 +284,10 @@ map <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
 map <F6> :Align :<CR>
 " FROM ALAN
 " for moving between split windows with ease:
-map <C-j> <C-w>j<C-w>80+ " up one window, maximized
-map <C-k> <C-w>k<C-w>80+ " down one window, maximized
-map <C-i> <C-w>= " all windows equal height
-map <tab> <C-w>80+ " maximize current window
+"map <C-j> <C-w>j<C-w>80+ " up one window, maximized
+"map <C-k> <C-w>k<C-w>80+ " down one window, maximized
+"map <C-i> <C-w>= " all windows equal height
+"map <tab> <C-w>80+ " maximize current window
 " Use ctrl-[hjkl] to select the active split!
 "nmap <silent> <c-k> :wincmd k<CR>
 "nmap <silent> <c-j> :wincmd j<CR>
@@ -295,6 +297,28 @@ nmap <silent> <c-l> :wincmd l<CR>
 map <leader>cp :CoffeeCompile vert<cr>
 " turn off search phrase highlighting until next search
 nnoremap <C-S> :set hlsearch!<CR>
+" Remap snipmate's trigger key
+"let g:UltiSnipsExpandTrigger <tab>
+"let g:UltiSnipsListSnippets <c-tab>
+"let g:UltiSnipsJumpForwardTrigger <c-j>
+"let g:UltiSnipsJumpBackwardTrigger <c-k>
+
+":let g:snips_trigger_key = '<C-J>'
+":let g:snips_trigger_key_backwards = '<s-C-J>'
+" Remap youcompleteme's trigger
+"let g:ycm_key_list_select_completion = ['<C-J>']
+
+" Remove triggers for youcompleteme
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+
+" Remap tab to snip mate
+"imap <Tab> <Plug>snipMateNextOrTrigger
+"smap <Tab> <Plug>snipMateNextOrTrigger
+"imap <C-J> <Plug>snipMateNextOrTrigger
+"smap <C-J> <Plug>snipMateNextOrTrigger
+
+
 
 " Place mouse on html class/id and directly jump to definition in scss/css
 " http://luxiyalu.com/vim-ctags-for-js-less/
