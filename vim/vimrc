@@ -282,41 +282,16 @@ map <C-t> :TlistToggle<cr>
 map <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
 " Align according to `:`
 map <F6> :Align :<CR>
-" FROM ALAN
-" for moving between split windows with ease:
-"map <C-j> <C-w>j<C-w>80+ " up one window, maximized
-"map <C-k> <C-w>k<C-w>80+ " down one window, maximized
-"map <C-i> <C-w>= " all windows equal height
-"map <tab> <C-w>80+ " maximize current window
-" Use ctrl-[hjkl] to select the active split!
-"nmap <silent> <c-k> :wincmd k<CR>
-"nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 " shortcut to compile coffeescript to scratch buffer
 map <leader>cp :CoffeeCompile vert<cr>
 " turn off search phrase highlighting until next search
 nnoremap <C-S> :set hlsearch!<CR>
-" Remap snipmate's trigger key
-"let g:UltiSnipsExpandTrigger <tab>
-"let g:UltiSnipsListSnippets <c-tab>
-"let g:UltiSnipsJumpForwardTrigger <c-j>
-"let g:UltiSnipsJumpBackwardTrigger <c-k>
-
-":let g:snips_trigger_key = '<C-J>'
-":let g:snips_trigger_key_backwards = '<s-C-J>'
-" Remap youcompleteme's trigger
-"let g:ycm_key_list_select_completion = ['<C-J>']
 
 " Remove triggers for youcompleteme
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
-
-" Remap tab to snip mate
-"imap <Tab> <Plug>snipMateNextOrTrigger
-"smap <Tab> <Plug>snipMateNextOrTrigger
-"imap <C-J> <Plug>snipMateNextOrTrigger
-"smap <C-J> <Plug>snipMateNextOrTrigger
 
 
 
