@@ -15,6 +15,7 @@ function! JumpToCSS()
   endif
 endfunction
 
+
 "
 " Better text folding
 " http://dhruvasagar.com/2013/03/28/vim-better-foldtext
@@ -32,6 +33,16 @@ set foldtext=NeatFoldText()
 " }}}2
 
 
+"
+" Align selected text by a specific character
+" I don't understand vundle enough quite yet; even though Bundle 'Align' is above, exists(":AlignCtrl") never passed during .vimrc
+" So to hack around this for now I lazy-config Align otf.
+function! MyAlignConfig()
+  " auto-align: left justify (l), first sep only (:), 1 sp on either side of
+  " separator (p1P1), preserve leading whitespace so we don't break indenting (W)
+  " works for = and =>
+  AlignCtrl =l:p1P1W =>\? :
+endfunction
 
 
 

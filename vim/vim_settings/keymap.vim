@@ -25,14 +25,6 @@ nnoremap <Leader>n :set invnumber<CR>
 
 "
 " Align selected text by a specific character
-" I don't understand vundle enough quite yet; even though Bundle 'Align' is above, exists(":AlignCtrl") never passed during .vimrc
-" So to hack around this for now I lazy-config Align otf.
-function! MyAlignConfig()
-  " auto-align: left justify (l), first sep only (:), 1 sp on either side of
-  " separator (p1P1), preserve leading whitespace so we don't break indenting (W)
-  " works for = and =>
-  AlignCtrl =l:p1P1W =>\? :
-endfunction
 vmap + :call MyAlignConfig()<CR>gv :Align<CR>
 
 "
