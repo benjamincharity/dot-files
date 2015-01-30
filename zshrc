@@ -29,11 +29,8 @@ unsetopt correct_all
 
 
 #
-# Alias'
-
-# for alan/kanwei
-alias use='rvm gemset use'
-alias t='tmux -u'
+# General Alias'
+#
 # Copy current directory path
 alias gd='pwd | pbcopy'
 # Go to copied directory path
