@@ -1,7 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_cnt =6
 let g:netrw_dirhist_1='/Users/bc/Dropbox/Freelance/Projects/benjamin-charity/middleman'
 let g:netrw_dirhist_2='/Users/bc/Projects-MxM/NCAA/turner_sports-bracket_facts/mm'
 let g:netrw_dirhist_3='/Users/bc/Dropbox/Freelance/Projects/Showcase/ShowcaseApp'
 let g:netrw_dirhist_4='/Users/bc'
 let g:netrw_dirhist_5='/Users/bc/.dot-files/vim'
+let g:netrw_dirhist_6='/Users/bc/.dot-files'

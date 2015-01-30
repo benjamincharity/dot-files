@@ -18,10 +18,13 @@ source /Users/bc/.dot-files/vim/vim_settings/gui.vim
 source /Users/bc/.dot-files/vim/vim_settings/keymap.vim
 
 "Plugin Specific
-source /Users/bc/.dot-files/vim/vim_settings/nerd_tree.vim
-source /Users/bc/.dot-files/vim/vim_settings/emmet.vim
-source /Users/bc/.dot-files/vim/vim_settings/you_complete_me.vim
-source /Users/bc/.dot-files/vim/vim_settings/ctrl_p.vim
-source /Users/bc/.dot-files/vim/vim_settings/gist.vim
-source /Users/bc/.dot-files/vim/vim_settings/snipmate.vim
+source /Users/bc/.dot-files/vim/vim_settings/_ctrl_p.vim
+source /Users/bc/.dot-files/vim/vim_settings/_emmet.vim
+source /Users/bc/.dot-files/vim/vim_settings/_gist.vim
+source /Users/bc/.dot-files/vim/vim_settings/_javascript_libraries_sytax.vim
+source /Users/bc/.dot-files/vim/vim_settings/_lint.vim
+source /Users/bc/.dot-files/vim/vim_settings/_nerd_tree.vim
+source /Users/bc/.dot-files/vim/vim_settings/_snipmate.vim
+source /Users/bc/.dot-files/vim/vim_settings/_vim_javascript.vim
+source /Users/bc/.dot-files/vim/vim_settings/_you_complete_me.vim
 
