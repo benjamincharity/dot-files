@@ -9,11 +9,6 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 "
-" Fugitive - Git wrapper for Vim
-" https://github.com/tpope/vim-fugitive
-"Plugin 'tpope/vim-fugitive'
-
-"
 " Nerd Commenter - Powerful commenting tools
 " https://github.com/scrooloose/nerdcommenter
 Plugin 'scrooloose/nerdcommenter'
@@ -58,15 +53,6 @@ Plugin 'mileszs/ack.vim'
 " Align - Align text, eqns, declarations, tables etc
 " https://github.com/vim-scripts/Align
 Plugin 'vim-scripts/Align'
-
-"
-" Vim Add-on Utilities
-" https://github.com/marcweber/vim-addon-mw-utils
-"Plugin 'MarcWeber/vim-addon-mw-utils'
-
-" Tlib - Vim utility functions
-" https://github.com/tomtom/tlib_vim
-"Plugin 'tomtom/tlib_vim'
 
 "
 " Snipmate - Vim snippets
