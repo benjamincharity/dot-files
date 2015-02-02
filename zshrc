@@ -6,12 +6,9 @@ export ZSH=$HOME/.oh-my-zsh
 # Define the theme to load
 # Look in ~/.oh-my-zsh/themes/
 export ZSH_THEME="robbyrussell"
-export PATH=/bin:/usr/bin:/usr/local/bin:/usr/local/share/npm/bin:/opt/local/bin:$PATH
+export PATH=/bin:/usr/local/bin:/usr/bin:/usr/local/share/npm/bin:/opt/local/bin:$PATH
 export EDITOR=vim
-# TODO: Do I need both of these Node paths?
-#       If so, can they be combined like other path options?
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
-export NODE_PATH=/usr/local/lib/node
 # Change python path
 export vi_cv_path_python=usr/local/Cellar/python
 ### Added by the Heroku Toolbelt
