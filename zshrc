@@ -36,8 +36,10 @@ alias pd='cd `pbpaste`'
 #
 # Navigation
 #
-# Go to projects directory
-alias projects='cd ~/Dropbox/Projects/'
+# Go to the projects directory
+alias projects='cd ~/Dropbox/Projects/; ls -1F . | grep /'
+# Go to the open source directory and list subfolders
+alias opensource='cd ~/Dropbox/Projects/open-source/; ls -1F . | grep /'
 # Go to KenzieLane directory and list subfolders
 alias kl='cd ~/Dropbox/Projects/KenzieLane/; ls -1F . | grep /'
 # Go to the Clutch directory and list subfolders
