@@ -36,6 +36,24 @@ alias gd='pwd | pbcopy'
 # Go to copied directory path
 alias pd='cd `pbpaste`'
 
+#
+# Navigation
+#
+# Go to projects directory
+alias projects='cd ~/Dropbox/Projects/'
+# Go to KenzieLane directory and list subfolders
+alias kl='cd ~/Dropbox/Projects/KenzieLane/; ls -1F . | grep /'
+# Go to the Clutch directory and list subfolders
+alias clutch='cd ~/Dropbox/Projects/KenzieLane/Clutch/; ls -1F . | grep /'
+# Go to the Ripple directory and list subfolders
+alias ripple='cd ~/Dropbox/Projects/KenzieLane/Ripple/; ls -1F . | grep /'
+# Go to the KnowMe directory and list subfolders
+alias knowme='cd ~/Dropbox/Projects/KenzieLane/KnowMe/; ls -1F . | grep /'
+# Create a directory and immediately cd into it
+# http://superuser.com/questions/152794/is-there-a-shortcut-to-mkdir-foo-and-immediately-cd-into-it
+function mkdircd {
+  command mkdir $1 && cd $1
+}
 
 #
 # GIT
