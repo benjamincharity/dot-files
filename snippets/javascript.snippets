@@ -81,6 +81,8 @@ snippet gett
 	getElementBy${1:Id}('${2}')${3}
 snippet cl
 	console.log(${1:'log this'});
+snippet cln
+	console.log(JSON.stringify(${1:array}, null, 2));${2}
 snippet rf
 	return false;
 snippet rt
@@ -295,7 +297,14 @@ snippet bpDirectives
 
 	});
 snippet http
-	$http({method: 'GET', url: ${1:URL}}).
-		then(function(response, status, headers, config) {
-			return response.data;
-		});${2}
+	$http.post(${1:URL}, ${2:obj}).
+	success(function(data, status, headers, config) {
+
+			console.log('response', data);
+
+			}).
+	error(function(data, status, headers, config) {
+
+			console.log('error', data, status);
+
+			});${3}

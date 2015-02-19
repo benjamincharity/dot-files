@@ -55,9 +55,24 @@ Plugin 'mileszs/ack.vim'
 Plugin 'vim-scripts/Align'
 
 "
+" Vim Add-on MW Utils - Interpret a file by function and cache file automatically
+" Required by Snipmate
+" https://github.com/MarcWeber/vim-addon-mw-utils
+Plugin 'MarcWeber/vim-addon-mw-utils'
+
+"
+" Tlib Vim - Some utility functions for VIM
+" Required by Snipmate
+" https://github.com/tomtom/tlib_vim
+Plugin 'tomtom/tlib_vim'
+
+"
 " Snipmate - Vim snippets
+" https://github.com/garbas/vim-snipmate
+" NOTE Can't seem to define custom snippets location
+"Plugin 'garbas/vim-snipmate'
+"
 " https://github.com/msanders/snipmate.vim
-" NOTE: Apparently dead repo
 Plugin 'msanders/snipmate.vim'
 
 "

@@ -105,9 +105,9 @@ set cursorline
 " Show the cursor column
 set cursorcolumn
 " Style the cursor line
-highlight cursorline term=NONE, cterm=NONE, guibg=#444444, ctermbg=235
+highlight cursorline term=NONE, cterm=NONE, guibg=#4444, ctermbg=235
 " Style the cursor column
-highlight cursorcolumn guibg=#444444, ctermbg=235
+highlight cursorcolumn guibg=#4444, ctermbg=235
 
 
 "
@@ -191,3 +191,9 @@ filetype plugin indent on
 set history=1000
 " Use many undo levels
 set undolevels=1000
+
+"
+" Save folds when a file is closed
+autocmd BufWinLeave *.* mkview
+"Reload folds when a file is opened
+autocmd BufWinEnter *.* silent loadview

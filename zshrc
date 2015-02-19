@@ -32,6 +32,9 @@ unsetopt correct_all
 alias gd='pwd | pbcopy'
 # Go to copied directory path
 alias pd='cd `pbpaste`'
+# Use the MacVim application
+# This throws python error due to YouCompleteMe
+#alias mvim="/Applications/MacVim.app/contents/MacOS/MacVim"
 
 #
 # Navigation
@@ -53,6 +56,8 @@ alias knowme='cd ~/Dropbox/Projects/KenzieLane/KnowMe/; ls -1F . | grep /'
 function mkdircd {
   command mkdir $1 && cd $1
 }
+# Go to my dot files
+alias dotfiles='cd /Users/bc/.dot-files; ls -1F . | grep /'
 
 #
 # GIT
@@ -90,6 +95,14 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 # Stop
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
+
+#
+# Postgres
+#
+# Start
+alias mongostart="launchctl start org.mongodb.mongod"
+# Stop
+alias mongostop="launchctl stop org.mongodb.mongod"
 
 #
 # MySQL
