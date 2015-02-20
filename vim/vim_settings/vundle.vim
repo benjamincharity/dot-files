@@ -148,5 +148,10 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " https://github.com/mustache/vim-mustache-handlebars
 Plugin 'mustache/vim-mustache-handlebars'
 
+"
+" WakaTime
+" https://github.com/wakatime/vim-wakatime
+Plugin 'wakatime/vim-wakatime'
+
 
 call vundle#end()
