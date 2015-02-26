@@ -158,5 +158,9 @@ Plugin 'wakatime/vim-wakatime'
 " https://github.com/myusuf3/numbers.vim/
 Plugin 'myusuf3/numbers.vim'
 
+"
+" Enable Vim 'repeat' for more than native commands
+" https://github.com/tpope/vim-repeat
+Plugin 'tpope/vim-repeat'
 
 call vundle#end()
