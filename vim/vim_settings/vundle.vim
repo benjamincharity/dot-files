@@ -153,5 +153,10 @@ Plugin 'mustache/vim-mustache-handlebars'
 " https://github.com/wakatime/vim-wakatime
 Plugin 'wakatime/vim-wakatime'
 
+"
+" Relative/Absolute line numbers
+" https://github.com/myusuf3/numbers.vim/
+Plugin 'myusuf3/numbers.vim'
+
 
 call vundle#end()

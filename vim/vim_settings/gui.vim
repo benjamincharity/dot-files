@@ -43,8 +43,6 @@ set expandtab
 set autoindent
 " Auto indent when starting a new line
 set smartindent
-" Commenting this out for now... should only need smartindent
-"set cindent
 
 "
 " Searching
@@ -129,10 +127,6 @@ set wildmenu
 set wildmode=list:longest
 
 "
-" Show line numbers
-set number
-
-"
 " Show the current line/column/virtual column/relative position
 set ruler
 
@@ -197,3 +191,12 @@ set undolevels=1000
 autocmd BufWinLeave *.* mkview
 "Reload folds when a file is opened
 autocmd BufWinEnter *.* silent loadview
+
+"
+" Show line numbers
+set number
+
+"
+" save whenever you lose focus
+au FocusLost * :wa
+

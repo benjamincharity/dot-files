@@ -48,9 +48,11 @@ alias kl='cd ~/Dropbox/Projects/KenzieLane/; ls -1F . | grep /'
 # Go to the Clutch directory and list subfolders
 alias clutch='cd ~/Dropbox/Projects/KenzieLane/Clutch/; ls -1F . | grep /'
 # Go to the Ripple directory and list subfolders
-alias ripple='cd ~/Dropbox/Projects/KenzieLane/Ripple/; ls -1F . | grep /'
+alias moment='cd ~/Dropbox/Projects/KenzieLane/Moment/; ls -1F . | grep /'
 # Go to the KnowMe directory and list subfolders
 alias knowme='cd ~/Dropbox/Projects/KenzieLane/KnowMe/; ls -1F . | grep /'
+# Go to the my personal site directory and list subfolders
+alias benjamin='cd ~/Dropbox/Projects/benjamin-charity/; ls -1F . | grep /'
 # Create a directory and immediately cd into it
 # http://superuser.com/questions/152794/is-there-a-shortcut-to-mkdir-foo-and-immediately-cd-into-it
 function mkdircd {

@@ -21,7 +21,8 @@ nnoremap <Leader>0 :set tw=0<CR>
 
 "
 " Toggle line numbers on/off
-nnoremap <Leader>n :set invnumber<CR>
+"nnoremap <Leader>n :NumbersToggle<CR>
+"nnoremap <Leader>nn :NumbersOnOff<CR>
 
 "
 " Align selected text by a specific character
@@ -46,7 +47,6 @@ nmap <silent> <leader>sv :so $MYVIMRC<cr>
 "
 " Remove all trailing spaces
 nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
-
 
 "
 " Show register (clipboard)
