@@ -20,6 +20,11 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
 
 "
+" Vim Fugitive - The best Git wrapper of all time.
+" https://github.com/tpope/vim-fugitive
+Plugin 'tpope/vim-fugitive'
+
+"
 " Buffer Explorer
 " https://github.com/jlanzarotta/bufexplorer
 Plugin 'jlanzarotta/bufexplorer'
@@ -164,10 +169,14 @@ Plugin 'myusuf3/numbers.vim'
 Plugin 'tpope/vim-repeat'
 
 "
-" Enable Markdown styling
+" Enable Markdown syntax, matching and mapping
 " https://github.com/plasticboy/vim-markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
+"
+" Lean & mean status/tabline for vim that's light as air.
+" https://github.com/bling/vim-airline
+Plugin 'bling/vim-airline'
 
 call vundle#end()

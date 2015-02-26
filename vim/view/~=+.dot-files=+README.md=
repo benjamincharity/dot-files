@@ -4,6 +4,10 @@ let s:cpo_save=&cpo
 set cpo&vim
 imap <buffer> <S-BS> <Plug>delimitMateS-BS
 imap <buffer> <BS> <Plug>delimitMateBS
+nnoremap <buffer> <silent>   :call markdown#SwitchStatus()
+nnoremap <buffer>  e :MarkdownEditBlock
+vnoremap <buffer>  e :MarkdownEditBlock
+nnoremap <buffer> <silent>  ft :call markdown#FormatTable()
 vmap <buffer> [] <Plug>(Markdown_MoveToPreviousSiblingHeader)
 vmap <buffer> [[ <Plug>(Markdown_MoveToPreviousHeader)
 nmap <buffer> [] <Plug>(Markdown_MoveToPreviousSiblingHeader)
@@ -26,7 +30,14 @@ imap <buffer> [ <Plug>delimitMate[
 imap <buffer> ] <Plug>delimitMate]
 imap <buffer> ` <Plug>delimitMate`
 imap <buffer> { <Plug>delimitMate{
+inoremap <buffer> <silent> | |:call markdown#FormatTable()a
 imap <buffer> } <Plug>delimitMate}
+iabbr <buffer> :-) :smile:
+iabbr <buffer> :-D :laughing:
+iabbr <buffer> :-( :disappointed:
+iabbr <buffer> ... …
+iabbr <buffer> << «
+iabbr <buffer> >> »
 let &cpo=s:cpo_save
 unlet s:cpo_save
 setlocal keymap=
@@ -83,7 +94,7 @@ setlocal includeexpr=
 setlocal indentexpr=GetMkdIndent()
 setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
 setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255,$
+setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
@@ -115,7 +126,7 @@ setlocal spell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en_us
-setlocal statusline=
+setlocal statusline=%!airline#statusline(2)
 setlocal suffixesadd=
 setlocal swapfile
 setlocal synmaxcol=3000
@@ -132,16 +143,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-2
-normal! zo
-2
-normal! zo
 let s:l = 11 - ((10 * winheight(0) + 28) / 56)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 11
-normal! 0
+normal! 01|
 let &so = s:so_save | let &siso = s:siso_save
 doautoall SessionLoadPost
 " vim: set ft=vim :
