@@ -163,4 +163,11 @@ Plugin 'myusuf3/numbers.vim'
 " https://github.com/tpope/vim-repeat
 Plugin 'tpope/vim-repeat'
 
+"
+" Enable Markdown styling
+" https://github.com/plasticboy/vim-markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+
+
 call vundle#end()
