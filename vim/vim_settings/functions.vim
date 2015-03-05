@@ -45,6 +45,12 @@ function! MyAlignConfig()
 endfunction
 
 
-
-
-
+"
+" $MYVIMRC is the platform-independent location of your .vimrc file. So this
+" command says that whenever that file is written, source (reload) it
+" immediately afterwards.
+" http://www.bestofvim.com/tip/auto-reload-your-vimrc/
+augroup reload_vimrc " {
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END " }

@@ -6,7 +6,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Define the theme to load
 # Look in ~/.oh-my-zsh/themes/
 export ZSH_THEME="robbyrussell"
-export PATH=/bin:/usr/local/bin:/usr/bin:/usr/local/share/npm/bin:/opt/local/bin:$PATH
+export PATH=~/.rbenv/shims/bin:/usr/local/bin:/usr/bin:/usr/local/share/npm/bin:/opt/local/bin:$PATH
 export EDITOR=vim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 # Change python path
@@ -35,24 +35,26 @@ alias pd='cd `pbpaste`'
 # Use the MacVim application
 # This throws python error due to YouCompleteMe
 #alias mvim="/Applications/MacVim.app/contents/MacOS/MacVim"
+# Delete Vim swap files
+alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
 
 #
 # Navigation
 #
+# Go to the code directory
+alias code='cd ~/Code/; ls -1F . | grep /'
 # Go to the projects directory
 alias projects='cd ~/Dropbox/Projects/; ls -1F . | grep /'
 # Go to the open source directory and list subfolders
-alias opensource='cd ~/Dropbox/Projects/open-source/; ls -1F . | grep /'
+alias opensource='cd ~/Code/open-source/; ls -1F . | grep /'
 # Go to KenzieLane directory and list subfolders
-alias kl='cd ~/Dropbox/Projects/KenzieLane/; ls -1F . | grep /'
-# Go to the Clutch directory and list subfolders
-alias clutch='cd ~/Dropbox/Projects/KenzieLane/Clutch/; ls -1F . | grep /'
+alias kl='cd ~/Code/kenzielane/; ls -1F . | grep /'
 # Go to the Ripple directory and list subfolders
-alias moment='cd ~/Dropbox/Projects/KenzieLane/Moment/; ls -1F . | grep /'
+alias moment='cd ~/Code/moment/; ls -1F . | grep /'
 # Go to the KnowMe directory and list subfolders
-alias knowme='cd ~/Dropbox/Projects/KenzieLane/KnowMe/; ls -1F . | grep /'
+alias knowme='cd ~/Code/knowme/; ls -1F . | grep /'
 # Go to the my personal site directory and list subfolders
-alias benjamin='cd ~/Dropbox/Projects/benjamin-charity/; ls -1F . | grep /'
+alias benjamin='cd ~/Code/benjamincharity/; ls -1F . | grep /'
 # Create a directory and immediately cd into it
 # http://superuser.com/questions/152794/is-there-a-shortcut-to-mkdir-foo-and-immediately-cd-into-it
 function mkdircd {

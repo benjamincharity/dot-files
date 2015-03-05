@@ -40,9 +40,15 @@ Plugin 'joestelmach/lint.vim'
 " https://github.com/kchmck/vim-coffee-script
 Plugin 'kchmck/vim-coffee-script'
 
+"
 " Vim Scratch - Unobtrusive scratch window
 " https://github.com/mtth/scratch.vim
 Plugin 'mtth/scratch.vim'
+
+"
+" Vim WebAPI - An Interface to WEB APIs
+" https://github.com/mattn/webapi-vim
+Plugin 'mattn/webapi-vim'
 
 "
 " Gist - Gist support for Vim
