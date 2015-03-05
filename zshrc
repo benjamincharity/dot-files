@@ -39,6 +39,8 @@ alias pd='cd `pbpaste`'
 alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
 # Shortcut to edit Vim's JSHint options
 alias editjshint='mvim /Users/bc/.dot-files/vim/bundle/lint.vim/js/jshint/options.js'
+# Shortcut to edit Angular Fullstack generator templates
+alias editfullstack='mvim /Users/bc/Dropbox/Resources/AngularFullstack\ Edited\ Templates'
 
 
 
