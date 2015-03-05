@@ -37,6 +37,11 @@ alias pd='cd `pbpaste`'
 #alias mvim="/Applications/MacVim.app/contents/MacOS/MacVim"
 # Delete Vim swap files
 alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
+# Shortcut to edit Vim's JSHint options
+alias editjshint='mvim /Users/bc/.dot-files/vim/bundle/lint.vim/js/jshint/options.js'
+
+
+
 
 #
 # Navigation
