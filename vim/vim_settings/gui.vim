@@ -188,9 +188,11 @@ set undolevels=1000
 
 "
 " Save folds when a file is closed
-autocmd BufWinLeave *.* mkview
+" Currently disabled because fold lines are saved even if content changes via
+" git etc. So folds no longer are folding at the correct places
+"autocmd BufWinLeave *.* mkview
 "Reload folds when a file is opened
-autocmd BufWinEnter *.* silent loadview
+"autocmd BufWinEnter *.* silent loadview
 
 "
 " Show line numbers
@@ -198,5 +200,5 @@ set number
 
 "
 " save whenever you lose focus
-au FocusLost * :wa
+"au FocusLost * :wa
 

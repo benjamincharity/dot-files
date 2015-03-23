@@ -296,6 +296,9 @@ snippet bpDirectives
 			}
 
 	});
+
+#
+# HTTP post
 snippet httppost
 	$http.post(${1:URL}, ${2:obj}).
 	success(function(data, status, headers, config) {
@@ -308,6 +311,9 @@ snippet httppost
 		console.log('error: ', data, status);
 
 	});${3}
+
+#
+# HTTP get
 snippet http
 	$http.get(${1:URL})
 	.success(function(data) {
@@ -320,6 +326,9 @@ snippet http
 		console.log('error: ', data, status);
 
 	});${2}
+
+#
+# HTTP get with promise
 snippet httpprom
 	var deferred = $q.defer();
 
@@ -336,6 +345,9 @@ snippet httpprom
 	});
 
 	return deferred.promise;${2}
+
+#
+# HTTP post with promise
 snippet httppostprom
 	var deferred = $q.defer();
 
@@ -352,3 +364,18 @@ snippet httppostprom
 	});
 
 	return deferred.promise;${3}
+#
+# Use an Angular service
+snippet service
+	${1:NiftyService}.${2:methodName}(${3:params}).then(function(result) {
+		${4:console.log(result);}
+	});${5}
+
+
+#
+# SuperSonic
+#
+
+# Supersonic log
+snippet sl
+	supersonic.logger.log(${1:'Log this'});${2}
