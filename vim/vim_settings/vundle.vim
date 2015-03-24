@@ -185,4 +185,9 @@ Plugin 'plasticboy/vim-markdown'
 " https://github.com/bling/vim-airline
 Plugin 'bling/vim-airline'
 
+"
+" Command T
+" https://github.com/wincent/command-t
+Plugin 'wincent/command-t'
+
 call vundle#end()

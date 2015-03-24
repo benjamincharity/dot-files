@@ -386,6 +386,6 @@ snippet sl
 snippet ls
 	localStorage.${2:getItem}( '${2:itemName}', JSON.${3:stringify/parse}(${4:Object}) );${5}
 snippet lsget
-	localStorage.getItem( '${1:itemName}', JSON.parse(${2:Object}) );${3}
+	JSON.parse( localStorage.getItem('${1:itemName}') );${2}
 snippet lsset
 	localStorage.setItem( '${1:itemName}', JSON.stringify(${2:Object}) );${3}
