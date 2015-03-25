@@ -368,7 +368,7 @@ snippet httppostprom
 # Use an Angular service
 snippet service
 	${1:NiftyService}.${2:methodName}(${3:params}).then(function(result) {
-		${4:console.log(result);}
+		console.log('Result from ${4:NiftyService}: ', result);
 	});${5}
 
 
