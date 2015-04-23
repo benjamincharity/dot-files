@@ -25,7 +25,7 @@ snippet ife
 	if (${1:true}) {${2}}
 	else{${3}};
 # tertiary conditional
-snippet t
+snippet ift
 	${1:/* condition */} ? ${2:a} : ${3:b}
 # switch
 snippet switch
@@ -80,9 +80,13 @@ snippet get
 snippet gett
 	getElementBy${1:Id}('${2}')${3}
 snippet cl
-	console.log(${1:'log this'});
+	console.log('${1:Item}: ', ${2:result});${3}
 snippet cln
 	console.log(JSON.stringify(${1:array}, null, 2));${2}
+snippet cw
+	console.warn('${1:Item}: ', ${2:error});${3}
+snippet ce
+	console.error('${1:Item}: ', ${2:error});${3}
 snippet rf
 	return false;
 snippet rt
@@ -370,21 +374,17 @@ snippet service
 	${1:NiftyService}.${2:methodName}(${3:params}).then(function(result) {
 		console.log('Result from ${4:NiftyService}: ', result);
 	});${5}
-
-
 #
 # SuperSonic
 #
-
 # Supersonic log
 snippet sl
 	supersonic.logger.log(${1:'Log this'});${2}
-
 #
 # Local Storage
 #
 snippet ls
-	localStorage.${2:getItem}( '${2:itemName}', JSON.${3:stringify/parse}(${4:Object}) );${5}
+	localStorage.${1:getItem}( '${2:itemName}', JSON.${3:stringify/parse}(${4:Object}) );${5}
 snippet lsget
 	JSON.parse( localStorage.getItem('${1:itemName}') );${2}
 snippet lsset

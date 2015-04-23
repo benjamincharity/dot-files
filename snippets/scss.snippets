@@ -808,6 +808,8 @@ snippet jcsa
 snippet jcsb
 	justify-content: space-between;${1}
 # Align Items
+snippet flexa
+	@include flex-align(${1:position});${2}
 snippet ai
 	align-items: ${1:center};${2}
 snippet aib
@@ -826,6 +828,9 @@ snippet shrink
 	flex-shrink: ${1:0};${2}
 snippet grow
 	flex-grow: ${1:1};${2}
+# Pack
+snippet flexp
+	@include flex-pack(${1:position});${2}
 #
 #
 #
