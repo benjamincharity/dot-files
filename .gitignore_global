@@ -30,7 +30,8 @@
 ######################
 .DS_Store
 ehthumbs.db
-Icon?
+# Commented as it seems to catch `icons` folders
+# Icon?
 Thumbs.db
 
 # Rails              #

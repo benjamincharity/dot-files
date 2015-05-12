@@ -376,6 +376,17 @@ snippet service
 	${1:NiftyService}.${2:methodName}(${3:params}).then(function(result) {
 		console.log('Result from ${4:NiftyService}: ', result);
 	});${5}
+snippet $service
+	${1:NiftyService}.${2:methodName} = function(${3:params}) {
+
+		var deferred = $q.defer();
+
+				deferred.resolve(results);
+				deferred.reject(error);
+
+		return deferred.promise;
+
+	};
 #
 # SuperSonic
 #

@@ -138,3 +138,15 @@ bindkey -M emacs '^N' history-substring-search-down
 # bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+
+
+#
+# Moment
+#
+# Build Dev
+alias build="./build-dev"
+# Build Prod
+alias buildprod="./build-prod"
+# Connect Dev
+alias connect="steroids connect --no-connect --livereload --gruntTask=development"
