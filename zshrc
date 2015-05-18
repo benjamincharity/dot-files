@@ -145,8 +145,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 # Moment
 #
 # Build Dev
-alias build="./build-dev"
+alias connect="./build-dev"
 # Build Prod
-alias buildprod="./build-prod"
-# Connect Dev
-alias connect="steroids connect --no-connect --livereload --gruntTask=development"
+alias connectprod="./build-prod"

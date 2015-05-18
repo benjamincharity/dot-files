@@ -22,6 +22,8 @@ set hidden
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
+
+
 "
 " Tabs
 " ===========================
@@ -34,6 +36,9 @@ set softtabstop=2
 set shiftwidth=2
 " Expand tabs into the correct number of columns
 set expandtab
+" For JavaScript files, switch to 4 tabs
+autocmd FileType javascript setlocal expandtab shiftwidth=4 softtabstop=4
+
 
 "
 " Indentation
@@ -43,6 +48,8 @@ set expandtab
 set autoindent
 " Auto indent when starting a new line
 set smartindent
+
+
 
 "
 " Searching
