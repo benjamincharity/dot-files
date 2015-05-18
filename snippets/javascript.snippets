@@ -1,381 +1,44 @@
-# Prototype
-snippet proto
-	${1:class_name}.prototype.${2:method_name} =
-	function(${3:first_argument}) {
-		${4:// body...}
-	};
-# var function
-snippet func
-	var ${1:myFunction} = function(${2}) {
-		${3:console.log('hi');}
-	};${4}
-# Function
-snippet fun
-	function ${1:function_name} (${2:argument}) {
-		${3:// body...}
-	}
-# Anonymous Function
-snippet f
-	function(${1}) {${2}};
-# if
-snippet if
-	if (${1:true}) {${2}};
-# if ... else
-snippet ife
-	if (${1:true}) {${2}}
-	else{${3}};
-# tertiary conditional
-snippet ift
-	${1:/* condition */} ? ${2:a} : ${3:b}
-# switch
-snippet switch
-	switch(${1:expression}) {
-		case '${3:case}':
-			${4:// code}
-			break;
-		${5}
-		default:
-			${2:// code}
-	}
-# case
-snippet case
-	case '${1:case}':
-		${2:// code}
-		break;
-	${3}
-# for (...) {...}
-snippet for
-	for (var ${2:i} = 0; $2 < ${1:Things}.length; $2${3:++}) {
-		${4:$1[$2]}
-	};
-# for (...) {...} (Improved Native For-Loop)
-snippet forr
-	for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3:--}) {
-		${4:$1[$2]}
-	};
-# while (...) {...}
-snippet wh
-	while (${1:/* condition */}) {
-		${2:/* code */}
-	}
-# do...while
-snippet do
-	do {
-		${2:/* code */}
-	} while (${1:/* condition */});
-# Object Method
-snippet :f
-	${1:method_name}: function(${2:attribute}) {
-		${4}
-	}${3:,}
-# setTimeout function
-snippet timeout
-	setTimeout(function() {
-		${3}
-	}${2}, ${1:10});
-# Get Elements
-snippet get
-	getElementsBy${1:TagName}('${2}')${3}
-# Get Element
-snippet gett
-	getElementBy${1:Id}('${2}')${3}
-snippet cl
-	console.log('${1:Item}: ', ${2:results});${3}
-snippet cls
-	console.log('${1:Log this}');${2}
-snippet cln
-	console.log(JSON.stringify(${1:array}, null, 2));${2}
-snippet cw
-	console.warn('${1:Item}: ', ${2:error});${3}
-snippet ce
-	console.error('${1:Item}: ', ${2:error});${3}
-snippet rf
-	return false;
-snippet rt
-	return true;
-snippet event
-	event.preventDefault;
-snippet annon
-	(function($) {
-	 ${1}
-	})(jQuery);
-snippet ready
-	$(document).ready(function() {
-		${1}
-	});
-snippet on
-	$('${1:.foo}').on('${2:click}', '${4:a}', function(event) {
-		${5}
-	});
-snippet ternary
-	${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
+
 #
-## ANGULAR Snippets
-# Define a new Angular Controller;
-# You can change the controller name and parameters
-snippet ngc
-	var ${1:controllerName} = function(${2:scope}, ${3:injectables}) {
-		${4}
-	};
-# angular.foreach loop
-snippet ngfor
-	angular.forEach(${1:iterateOver}, function(value, key) {
-		${2}
+# Angular
+#
+# Components
+snippet ctrl
+	angular.module('${1:MyModule}')
+	.controller('${2:My}Ctrl', function(
+			$scope
+	) {
+			'use strict';
+
+		${3:console.log('in $2Ctrl');}
+
 	});
-## Module Based Snippets
-# A new angular module without a config function
+#
+# Define a new module for an existing app
 snippet module
-	angular.module('${1:moduleName}', [${2:moduleDependencies}]);
-	${3}
-# A new angular module without a config function and a variable assignment
-snippet ngma
-	var ${1:moduleName} = angular.module('$1', [${2:moduleDeps}]);
-	${3}
-# A new angular module with a config function
-snippet ngmc
-	var ${1:moduleName} = angular.module('$1', [${2:moduleDeps}], function(${3:configDeps}) {
-		${4}
-	});
-# A factory in a module
-snippet ngmfa
-	factory('${1:factoryName}', function(${2:dependencies}) {
-		${3}
-	});
-# Define an Angular Module Service to be attached to a previously defined module
-# You can change the service name and service injectables
-snippet ngms
-	service('${1:serviceName}', function(${2:injectables}) {
-		${3}
-	});
-# Define an Angular Module Filter to be attached to a previously defined module
-# You can change the filter name
-snippet ngmfi
-	filter('${1:filterName}', function(${2:injectables}) {
-		return function(input, ${3:args}) {
-			${4}
-		};
-	});
-## Route Based Snippets
-# Defines a when condition of an AngularJS route
-snippet ngrw
-	$routeProvider.when('${1:url}', {
-		templateUrl: '${2:templateUrl}',
-		controller: '${3:controller}'
-	});
-	${4}
-# Defines a when condition of an AngularJS route with the resolve block
-snippet ngrwr
-	$routeProvider.when('${1:url}', {
-		templateUrl: '${2:templateUrl}',
-		controller: '${3:controller}',
-		resolve: {
-			${4}
-		}
-	});
-	${5}
-# Defines an otherwise condition of an AngularJS route
-snippet ngro
-	$routeProvider.otherwise({
-		redirectTo: '${1:url}'
-	});
-	${2}
-## Scope Related Snippets
-# Define a new $scope'd function (usually inside an AngularJS Controller)
-# You can change the function name and arguments
-snippet $f
-	$scope.${1:functionName} = function(${2:args}) {
-		${3}
-	};
-# Defines a new $scope'd variable inside an AngularJS controller
-snippet $v
-	$scope.${1:variable} = ${2:value};
-	${3}
-# Defines a new $scope'd variable inside an AngularJS controller and assigns a value from a constructor arguments
-snippet $va
-	$scope.${1:variable} = ${2:variable};
-	${3}
-# Define a $watch for an expression
-# You can change the expression to be watched
-snippet $w
-	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
-		${2}
-	});
-snippet scope.watch
-	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
-		${2}
-	});
-# Define a $on for a $broadcast/$emit on the $scope inside an Angular Controller
-# You can change the event name to listen on
-snippet $on
-	$scope.$on('${1:eventName}', function(event, ${2:args}) {
-		${3}
-	});
-# Define a $broadcast for a $scope inside an Angular Controller / Angular Controller Function
-# You can change the event name and optional event arguments
-snippet $b
-	$scope.$broadcast('${1:eventName}', ${2:eventArgs});
-	${3}
-# Define an $emit for a $scope inside an Angular Controller / Angular Controller Function
-# You can change the event name and optional event arguments
-snippet $e
-	$scope.$emit('${1:eventName}', ${2:eventArgs});
-	${3}
-## Directive related snippets
-# A compile function
-snippet ngdcf
-	function compile(tElement, tAttrs, transclude) {
-		return function(scope, element, attrs) {
-			${1}
-		}
-	}
-# A linking function in a directive
-snippet ngdlf
-	function(scope, element, attrs${1:ctrl}) {
-		${2}
-	}
-# A directive with a compile function
-snippet ngdc
-	directive('${1:directiveName}', function factory(${2:injectables}) {
-		var directiveDefinitionObject = {
-			${3:directiveAttrs},
-			compile: function compile(tElement, tAttrs, transclude) {
-				return function (scope, element, attrs) {
-				
-				}
-			}
-		};
-		return directiveDefinitionObject;
-	});
-# A directive with a linking function only
-snippet ngdl
-	.directive('${1:directiveName}', function(${2:directiveDeps}) {
-		return function(scope, element, attrs${3:ctrl}) {
-			${4}
-		}
-	});
-snippet ngtimeout
-	$timeout(function() {
-	}, ${1:1000});
-snippet $timeout
-	$timeout(function() {
-	}, ${1:1000});
-snippet apply
-	$scope.$apply(function () {
-	});${1}
-#
-#
-snippet bpControllers
-	/////////////////////////////////////
-	//
-	// Define Controllers
-	//
-	/////////////////////////////////////
+	angular.module('${1:MyModule}')
 
-	var controllers = {};
+	.config(function ($stateProvider) {
+			'use strict';
 
-
-	//
-	//
-	controllers.${2:MyCtrl} = function($scope) {
-
-			${3:$scope.foo = 'bar';}
-
-	};
-
-
-	//
-	// Assign controllers to our app
-	${1:myApp}.controller(controllers);
-snippet bpDirectives
-	/////////////////////////////////////
-	//
-	// Define Directives
-	//
-	/////////////////////////////////////
-
-	${1:myApp}.directive("${2:myDirective}", function() {
-
-			return function( scope, element, attrs ) {
-
-				${3}
-
-			}
-
-	});
-
-#
-# HTTP post
-snippet httppost
-	$http.post(${1:URL}, ${2:obj}).
-	success(function(data, status, headers, config) {
-
-		console.log('response: ', data);
-
-	}).
-	error(function(data, status, headers, config) {
-
-		console.log('error: ', data, status);
-
-	});${3}
-
-#
-# HTTP get
-snippet http
-	$http.get(${1:URL})
-	.success(function(data) {
-
-		console.log('response: ', data);
+			$stateProvider
+			.state('${2:MyRoute}', {
+					url: '${3:myUrlPath}',
+					templateUrl: '${4:path/to/template}.html',
+					controller: '${5:MyCtrl}'
+			});
 
 	})
-	.error(function(data, status) {
 
-		console.log('error: ', data, status);
-
-	});${2}
-
+	;
 #
-# HTTP get with promise
-snippet httpprom
-	var deferred = $q.defer();
-
-	$http.get(${1:URL})
-	.success(function(data) {
-
-		deferred.resolve(data);
-
-	})
-	.error(function(data, status) {
-
-		deferred.reject(status, ': ', data);
-
-	});
-
-	return deferred.promise;${2}
-
-#
-# HTTP post with promise
-snippet httppostprom
-	var deferred = $q.defer();
-
-	$http.post(${1:URL}, ${2:obj}).
-	success(function(data, status, headers, config) {
-
-		deferred.resolve(data);
-
-	})
-	.error(function(data, status) {
-
-		deferred.reject(status, ': ', data);
-
-	});
-
-	return deferred.promise;${3}
-#
-# Use an Angular service
+# Define a service
 snippet service
 	${1:NiftyService}.${2:methodName}(${3:params}).then(function(result) {
-		console.log('Result from ${4:NiftyService}: ', result);
+			console.log('Result from $1.$2: ', result);
 	});${5}
+#
+# Define a service with promises
 snippet $service
 	${1:NiftyService}.${2:methodName} = function(${3:params}) {
 
@@ -388,17 +51,303 @@ snippet $service
 
 	};
 #
+# A new angular app without a config function
+snippet app
+	angular.module('${1:moduleName}', [${2:moduleDependencies}]);
+#
+# A new angular module without a config function and a variable assignment
+snippet appvar
+	var ${1:moduleName} = angular.module('$1', [${2:moduleDeps}]);
+#
+# Define a filter
+snippet filter
+	angular.module('${1:MyModule}')
+	.filter('${2:MyFilter}', function() {
+
+			return function(input) {
+
+					return ${3:input};
+
+			};
+
+	});
+#
+# Define a directive
+snippet directive
+	angular.module('${1:MyModule}').directive('${2:MyDirective}', function() {
+			return {
+					link: function($scope, element, attrs) {
+
+					}
+			};
+	});
+#
+#
+#
+#
+#
+#
+#
+#
+# Utilities
+#
+#
+# HTTP post
+snippet httppost
+	$http.post(${1:URL}, ${2:obj}).
+	success(function(data, status, headers, config) {
+
+			console.log('response: ', data);
+
+	}).
+	error(function(data, status, headers, config) {
+
+			console.error('error: ', data, status);
+
+	});${3}
+#
+# HTTP get
+snippet http
+	$http.get(${1:URL})
+	.success(function(data) {
+
+			console.log('response: ', data);
+
+	})
+	.error(function(data, status) {
+
+			console.error('error: ', data, status);
+
+	});${2}
+#
+# HTTP get with promise
+snippet httpprom
+	var deferred = $q.defer();
+
+	$http.get(${1:URL})
+	.success(function(data) {
+
+			deferred.resolve(data);
+
+	})
+	.error(function(data, status) {
+
+			deferred.reject(status, ': ', data);
+
+	});
+
+	return deferred.promise;${2}
+#
+# HTTP post with promise
+snippet httppostprom
+	var deferred = $q.defer();
+
+	$http.post(${1:URL}, ${2:obj}).
+	success(function(data, status, headers, config) {
+
+			deferred.resolve(data);
+
+	})
+	.error(function(data, status) {
+
+			deferred.reject(status, ': ', data);
+
+	});
+
+	return deferred.promise;${3}
+#
+# angular.foreach loop
+snippet ngfor
+	angular.forEach(${1:iterateOver}, function(value, key) {
+			${2}
+	});
+#
+# Define a new $scope'd function
+snippet $f
+	$scope.${1:functionName} = function(${2:args}) {
+		${3}
+	};
+#
+# Defines a new $scope'd variable
+snippet $v
+	$scope.${1:variable} = ${2:value};
+#
+# Timeout
+snippet ngtimeout
+	$timeout(function() {
+	}, ${1:1000});
+snippet $timeout
+	$timeout(function() {
+	}, ${1:1000});
+#
+# Scope.Apply
+snippet apply
+	$scope.$apply(function () {
+	});${1}
+#
+# Define a $watch for an expression
+# You can change the expression to be watched
+snippet $w
+	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
+			${2}
+	});
+snippet scope.watch
+	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
+			${2}
+	});
+#
+# Define a $on for a $broadcast/$emit on the $scope inside an Angular Controller
+# You can change the event name to listen on
+snippet $on
+	$scope.$on('${1:eventName}', function(event, ${2:args}) {
+			${3}
+	});
+#
+# Define a $broadcast for a $scope inside an Angular Controller / Angular Controller Function
+# You can change the event name and optional event arguments
+snippet $b
+	$scope.$broadcast('${1:eventName}', ${2:eventArgs});
+#
+# Define an $emit for a $scope inside an Angular Controller / Angular Controller Function
+# You can change the event name and optional event arguments
+snippet $e
+	$scope.$emit('${1:eventName}', ${2:eventArgs});
+#
+#
+#
+#
+#
+#
+#
+#
+# Vanilla JS
+#
+# Variable function
+snippet func
+	var ${1:myFunction} = function(${2}) {
+			${3:console.log('hi');}
+	};${4}
+#
+# Function
+snippet fun
+	function ${1:function_name} (${2:argument}) {
+			${3:// body...}
+	}
+#
+# Anonymous Function
+snippet f
+	function(${1}) {${2}};
+#
+# Object Method
+snippet :f
+	${1:method_name}: function(${2:attribute}) {
+			${4}
+	}${3:,}
+#
+# if
+snippet if
+	if (${1:true}) {${2}};
+#
+# if ... else
+snippet ife
+	if (${1:true}) {
+			${2}
+	} else {
+			${3}
+	};
+#
+# Ternary conditional
+snippet ift
+	${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
+snippet ternary
+	${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
+#
+# switch
+snippet switch
+	switch(${1:expression}) {
+			case '${3:case}':
+					${4:// code}
+					break;
+			${5}
+			default:
+					${2:// code}
+	}
+#
+# for (...) {...}
+snippet for
+	for (var ${2:i} = 0; $2 < ${1:Things}.length; $2${3: + 1}) {
+			${4:$1[$2]}
+	};
+#
+# for (...) {...} (Improved Native For-Loop)
+snippet forr
+	for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3: - 1}) {
+			${4:$1[$2]}
+	};
+#
+# setTimeout function
+snippet timeout
+	setTimeout(function() {
+			${3}
+	}${2}, ${1:10});
+#
+# Console Logs
+snippet cl
+	console.log('${1:Item}: ', ${2:results});${3}
+snippet cls
+	console.log('${1:Log this}');${2}
+snippet cln
+	console.log(JSON.stringify(${1:array}, null, 2));${2}
+snippet cw
+	console.warn('${1:Item}: ', ${2:error});${3}
+snippet ce
+	console.error('${1:Item}: ', ${2:error});${3}
+#
+# Returns
+snippet rf
+	return false;
+snippet rt
+	return true;
+#
+# Event prevent default
+snippet event
+	event.preventDefault;
+#
+# Local Storage
+snippet ls
+	localStorage.${1:getItem}( '${2:itemName}', JSON.${3:stringify/parse}(${4:Object}) );${5}
+# LocalStorage get
+snippet lsget
+	JSON.parse( localStorage.getItem('${1:itemName}') );${2}
+# LocalStorage set
+snippet lsset
+	localStorage.setItem( '${1:itemName}', JSON.stringify(${2:Object}) );${3}
+#
+# Get Element by ID
+snippet gett
+	getElementById('${1}')${2}
+# Document ready
+snippet ready
+	$(document).ready(function() {
+			${1}
+	});
+# Bind via .on
+snippet on
+	$('${1:.foo}').on('${2:click}', '${4:a}', function(event) {
+			${5}
+	});
+#
+#
+#
+#
+#
+#
+#
+#
 # SuperSonic
 #
 # Supersonic log
 snippet sl
 	supersonic.logger.log(${1:'Log this'});${2}
 #
-# Local Storage
 #
-snippet ls
-	localStorage.${1:getItem}( '${2:itemName}', JSON.${3:stringify/parse}(${4:Object}) );${5}
-snippet lsget
-	JSON.parse( localStorage.getItem('${1:itemName}') );${2}
-snippet lsset
-	localStorage.setItem( '${1:itemName}', JSON.stringify(${2:Object}) );${3}
