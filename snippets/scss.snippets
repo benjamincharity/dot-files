@@ -893,3 +893,17 @@ snippet columns
 	@include columns(${1});${2}
 snippet columnspan
 	@include column-span(${1:all});${2}
+#
+#
+#
+#
+# Animations
+#
+snippet animate
+	@include animate(
+		$name: ${1:AnimationName},
+		$duration: ${2:300ms},
+		$count: ${3:infinite},
+		$delay: ${4:0}
+	);
+#

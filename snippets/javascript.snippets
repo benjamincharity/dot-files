@@ -6,9 +6,9 @@
 snippet ctrl
 	angular.module('${1:MyModule}')
 	.controller('${2:My}Ctrl', function(
-			$scope
+		$scope
 	) {
-			'use strict';
+		'use strict';
 
 		${3:console.log('in $2Ctrl');}
 
@@ -19,14 +19,14 @@ snippet module
 	angular.module('${1:MyModule}')
 
 	.config(function ($stateProvider) {
-			'use strict';
+		'use strict';
 
-			$stateProvider
-			.state('${2:MyRoute}', {
-					url: '${3:myUrlPath}',
-					templateUrl: '${4:path/to/template}.html',
-					controller: '${5:MyCtrl}'
-			});
+		$stateProvider
+		.state('${2:MyRoute}', {
+				url: '${3:myUrlPath}',
+				templateUrl: '${4:path/to/template}.html',
+				controller: '${5:My}Ctrl'
+		});
 
 	})
 
@@ -35,7 +35,7 @@ snippet module
 # Define a service
 snippet service
 	${1:NiftyService}.${2:methodName}(${3:params}).then(function(result) {
-			console.log('Result from $1.$2: ', result);
+		console.log('Result from $1.$2: ', result);
 	});${5}
 #
 # Define a service with promises
@@ -44,8 +44,8 @@ snippet $service
 
 		var deferred = $q.defer();
 
-				deferred.resolve(results);
-				deferred.reject(error);
+			deferred.resolve(results);
+			deferred.reject(error);
 
 		return deferred.promise;
 
@@ -64,22 +64,22 @@ snippet filter
 	angular.module('${1:MyModule}')
 	.filter('${2:MyFilter}', function() {
 
-			return function(input) {
+		return function(input) {
 
-					return ${3:input};
+			return ${3:input};
 
-			};
+		};
 
 	});
 #
 # Define a directive
 snippet directive
 	angular.module('${1:MyModule}').directive('${2:MyDirective}', function() {
-			return {
-					link: function($scope, element, attrs) {
+		return {
+			link: function($scope, element, attrs) {
 
-					}
-			};
+			}
+		};
 	});
 #
 #
@@ -97,12 +97,12 @@ snippet httppost
 	$http.post(${1:URL}, ${2:obj}).
 	success(function(data, status, headers, config) {
 
-			console.log('response: ', data);
+		console.log('response: ', data);
 
 	}).
 	error(function(data, status, headers, config) {
 
-			console.error('error: ', data, status);
+		console.error('error: ', data, status);
 
 	});${3}
 #
@@ -111,12 +111,12 @@ snippet http
 	$http.get(${1:URL})
 	.success(function(data) {
 
-			console.log('response: ', data);
+		console.log('response: ', data);
 
 	})
 	.error(function(data, status) {
 
-			console.error('error: ', data, status);
+		console.error('error: ', data, status);
 
 	});${2}
 #
@@ -127,12 +127,12 @@ snippet httpprom
 	$http.get(${1:URL})
 	.success(function(data) {
 
-			deferred.resolve(data);
+		deferred.resolve(data);
 
 	})
 	.error(function(data, status) {
 
-			deferred.reject(status, ': ', data);
+		deferred.reject(status, ': ', data);
 
 	});
 
@@ -145,12 +145,12 @@ snippet httppostprom
 	$http.post(${1:URL}, ${2:obj}).
 	success(function(data, status, headers, config) {
 
-			deferred.resolve(data);
+		deferred.resolve(data);
 
 	})
 	.error(function(data, status) {
 
-			deferred.reject(status, ': ', data);
+		deferred.reject(status, ': ', data);
 
 	});
 
@@ -159,7 +159,7 @@ snippet httppostprom
 # angular.foreach loop
 snippet ngfor
 	angular.forEach(${1:iterateOver}, function(value, key) {
-			${2}
+		${2}
 	});
 #
 # Define a new $scope'd function
@@ -189,18 +189,18 @@ snippet apply
 # You can change the expression to be watched
 snippet $w
 	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
-			${2}
+		${2}
 	});
 snippet scope.watch
 	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
-			${2}
+		${2}
 	});
 #
 # Define a $on for a $broadcast/$emit on the $scope inside an Angular Controller
 # You can change the event name to listen on
 snippet $on
 	$scope.$on('${1:eventName}', function(event, ${2:args}) {
-			${3}
+		${3}
 	});
 #
 # Define a $broadcast for a $scope inside an Angular Controller / Angular Controller Function
@@ -222,16 +222,19 @@ snippet $e
 #
 # Vanilla JS
 #
+# Use strict statement
+snippet strict
+	'use strict';
 # Variable function
 snippet func
 	var ${1:myFunction} = function(${2}) {
-			${3:console.log('hi');}
+		${3:console.log('hi');}
 	};${4}
 #
 # Function
 snippet fun
 	function ${1:function_name} (${2:argument}) {
-			${3:// body...}
+		${3:// body...}
 	}
 #
 # Anonymous Function
@@ -241,7 +244,7 @@ snippet f
 # Object Method
 snippet :f
 	${1:method_name}: function(${2:attribute}) {
-			${4}
+		${4}
 	}${3:,}
 #
 # if
@@ -251,9 +254,9 @@ snippet if
 # if ... else
 snippet ife
 	if (${1:true}) {
-			${2}
+		${2}
 	} else {
-			${3}
+		${3}
 	};
 #
 # Ternary conditional
@@ -265,30 +268,30 @@ snippet ternary
 # switch
 snippet switch
 	switch(${1:expression}) {
-			case '${3:case}':
-					${4:// code}
-					break;
-			${5}
-			default:
-					${2:// code}
+		case '${3:case}':
+			${4:// code}
+			break;
+		${5}
+		default:
+			${2:// code}
 	}
 #
 # for (...) {...}
 snippet for
 	for (var ${2:i} = 0; $2 < ${1:Things}.length; $2${3: + 1}) {
-			${4:$1[$2]}
+		${4:$1[$2]}
 	};
 #
 # for (...) {...} (Improved Native For-Loop)
 snippet forr
 	for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3: - 1}) {
-			${4:$1[$2]}
+		${4:$1[$2]}
 	};
 #
 # setTimeout function
 snippet timeout
 	setTimeout(function() {
-			${3}
+		${3}
 	}${2}, ${1:10});
 #
 # Console Logs
@@ -334,7 +337,7 @@ snippet ready
 # Bind via .on
 snippet on
 	$('${1:.foo}').on('${2:click}', '${4:a}', function(event) {
-			${5}
+		${5}
 	});
 #
 #
