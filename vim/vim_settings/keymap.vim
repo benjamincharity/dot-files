@@ -102,6 +102,10 @@ noremap <leader>cp :CoffeeCompile vert<cr>
 noremap <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
 
 "
+" Sort selected lines
+noremap <leader>S :sort<cr>
+
+"
 " Directly jump to definition in SCSS/CSS from class/id in HTML
 nnoremap <leader>] :call JumpToCSS()<CR>
 

@@ -148,3 +148,16 @@ bindkey -M vicmd 'j' history-substring-search-down
 alias connect="./build-dev"
 # Build Prod
 alias connectprod="./build-prod"
+
+
+#
+# Bower
+#
+# Install
+function bi {
+  command bower install $1 --save
+}
+# Install for dev
+function bid {
+  command bower install $1 --save-dev
+}
