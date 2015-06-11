@@ -13,3 +13,7 @@ let g:gist_open_browser_after_post = 1
 "
 " Show your private gists with ":Gist -l"
 let g:gist_show_privates = 1
+
+"
+" Manipulate multiple files in a gist
+let g:gist_get_multiplefile = 1

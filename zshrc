@@ -161,3 +161,11 @@ function bi {
 function bid {
   command bower install $1 --save-dev
 }
+# Uninstall
+function bu {
+  command bower uninstall $1 --save
+}
+# Uninstall for dev
+function bud {
+  command bower uninstall $1 --save-dev
+}

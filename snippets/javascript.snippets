@@ -93,8 +93,8 @@ snippet directive
 #
 # HTTP post
 snippet httppost
-	$http.post(${1:URL}, ${2:obj}).
-	success(function(data, status, headers, config) {
+	$http.post(${1:URL}, ${2:obj})
+	.success(function(data, status, headers, config) {
 
 		console.log('response: ', data);
 
@@ -141,8 +141,8 @@ snippet httpprom
 snippet httppostprom
 	var deferred = $q.defer();
 
-	$http.post(${1:URL}, ${2:obj}).
-	success(function(data, status, headers, config) {
+	$http.post(${1:URL}, ${2:obj})
+	.success(function(data, status, headers, config) {
 
 		deferred.resolve(data);
 
