@@ -4,51 +4,63 @@
 # Angular
 #
 snippet include
-	<div data-ng-include=" '/partials/${1:template}.${2:html}' "></div>
+<div data-ng-include=" '/partials/${1:template}.${2:html}' "></div>
+endsnippet
 snippet nginclude
-	<ng-include src=" '/partials/${1:template}.${2:html}' "></ng-include>
+<ng-include src=" '/partials/${1:template}.${2:html}' "></ng-include>
+endsnippet
 snippet com
-	<dev-comment>${1:My Comment}</dev-comment>${2}
+<dev-comment>${1:My Comment}</dev-comment>${2}
+endsnippet
 snippet comb
-	<dev-comment>
-		${1:My Comment}
-	</dev-comment>${2}
+<dev-comment>
+	${1:My Comment}
+</dev-comment>${2}
+endsnippet
 snippet ngapp
-	data-ng-app="${1:myApp}"
+data-ng-app="${1:myApp}"
+endsnippet
 snippet ngc
-	data-ng-controller="${1:myController}"
+data-ng-controller="${1:myController}"
+endsnippet
 snippet ngview
-	data-ng-view${1}
+data-ng-view${1}
+endsnippet
 snippet datainclude
-	data-ng-include=" '${1:myTemplate}.html' "
+data-ng-include=" '${1:myTemplate}.html' "
+endsnippet
 snippet uilink
-	<a ui-sref="${1:myState}">${2:linkText}</a>
+<a ui-sref="${1:myState}">${2:linkText}</a>
+endsnippet
 snippet sref
-	<a ui-sref="${1:myState}">${2:linkText}</a>
+<a ui-sref="${1:myState}">${2:linkText}</a>
+endsnippet
 snippet ngselect
-	<select ng-model="${1:myModel}" ng-options="${2:thing} in ${3:things}">
-		<option value="">-- choose ${4:thing} --</option>
-	</select>
+<select ng-model="${1:myModel}" ng-options="${2:thing} in ${3:things}">
+	<option value="">-- choose ${4:thing} --</option>
+</select>
+endsnippet
 snippet void
-	javascript:void(0);${1}
+javascript:void(0);${1}
+endsnippet
 #
 #
 #
 # Boilerplates
 #
 snippet html5
-	<!DOCTYPE html>
-	<html>
-	<head>
-	  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
-	  <title>${1:Page Title}</title>
-	
-	</head>
-	<body>
-		${2}	
-	</body>
-	</html>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>${1:Page Title}</title>
 
+</head>
+<body>
+	${2}	
+</body>
+</html>
+endsnippet
 #
 #
 #
@@ -57,51 +69,49 @@ snippet html5
 
 # Libraries
 snippet jquery
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+endsnippet
 snippet angular
-	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
+endsnippet
 snippet angularuir
-	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+endsnippet
 snippet angularngr
-	<script src="ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.js"></script>
+<script src="ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.js"></script>
+endsnippet
 snippet modernizr
-	<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
+endsnippet
 snippet zepto
-	<script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.min.js"></script>
+endsnippet
 
 # Custom
 snippet script
-	<script>
-		${1}
-	</script>${2}
+<script>
+	${1}
+</script>${2}
+endsnippet
 snippet scriptsrc
-	<script src="${1}.js"></script>${2}
-snippet app
-	<script src="js/app.js"></script>${1}
-snippet routes
-	<script src="js/routes.js"></script>${1}
-snippet controllers
-	<script src="js/controllers.js"></script>${1}
-snippet directives
-	<script src="js/directives.js"></script>${1}
-snippet filters
-	<script src="js/filters.js"></script>${1}
-snippet services
-	<script src="js/services.js"></script>${1}
-
+<script src="${1}.js"></script>${2}
+endsnippet
 #
 #
 #
 # Styles
 #
 snippet style
-	<style type="text/css" media="${1:screen}">
-		${2}
-	</style>${3}
+<style type="text/css" media="${1:screen}">
+	${2}
+</style>${3}
+endsnippet
 snippet linkstyle
-	<link rel="stylesheet" href="css/screen.css">
+<link rel="stylesheet" href="css/screen.css">
+endsnippet
 snippet link
-	<link rel="${1:stylesheet}" href="${2:css/screen}.css" media="${3:screen}">${4}
+<link rel="${1:stylesheet}" href="${2:css/screen}.css" media="${3:screen}">${4}
+endsnippet
 #
 #
 #
@@ -109,13 +119,16 @@ snippet link
 #
 # HTML Doctype 5
 snippet doct5
-	<!DOCTYPE HTML>
+<!DOCTYPE HTML>
+endsnippet
 snippet doct4strict
-	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""
-	"http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN""
+"http://www.w3.org/TR/html4/strict.dtd">
+endsnippet
 snippet doct4trans
-	<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""
-	"http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN""
+"http://www.w3.org/TR/html4/loose.dtd">
+endsnippet
 #
 #
 #
@@ -123,128 +136,163 @@ snippet doct4trans
 #
 # Non-Breaking Space
 snippet nbs
-	&nbsp;
+&nbsp;
+endsnippet
 # ←
 snippet left
-	&#x2190;
+&#x2190;
+endsnippet
 # →
 snippet right
-	&#x2192;
+&#x2192;
+endsnippet
 # ↑
 snippet up
-	&#x2191;
+&#x2191;
+endsnippet
 # ↓
 snippet down
-	&#x2193;
+&#x2193;
+endsnippet
 # ↩
 snippet return
-	&#x21A9;
+&#x21A9;
+endsnippet
 # ⇤
 snippet backtab
-	&#x21E4;
+&#x21E4;
+endsnippet
 # ⇥
 snippet tab
-	&#x21E5;
+&#x21E5;
+endsnippet
 # ⇧
 snippet shift
-	&#x21E7;
+&#x21E7;
+endsnippet
 # ⌃
 snippet control
-	&#x2303;
+&#x2303;
+endsnippet
 # ⌅
 snippet enter
-	&#x2305;
+&#x2305;
+endsnippet
 # ⌘
 snippet command
-	&#x2318;
+&#x2318;
+endsnippet
 # ⌥
 snippet option
-	&#x2325;
+&#x2325;
+endsnippet
 # ⌦
 snippet delete
-	&#x2326;
+&#x2326;
+endsnippet
 # ⌫
 snippet backspace
-	&#x232B;
+&#x232B;
+endsnippet
 # ⎋
 snippet escape
-	&#x238B;
+&#x238B;
+endsnippet
 snippet speaker
-	&#x1f50a;
+&#x1f50a;
+endsnippet
 snippet speakermute
-	&#x1f508;
+&#x1f508;
+endsnippet
 #
 #
 #
 # Forms
 #
 snippet form
-	<form action="#" method="${1:GET}">
-		${2}
-	</form>${3}
+<form action="#" method="${1:GET}">
+	${2}
+</form>${3}
+endsnippet
 snippet fieldset
-	<fieldset>
-		<legend>${1:name}</legend>
-		${2}
-	</fieldset>${3}
+<fieldset>
+	<legend>${1:name}</legend>
+	${2}
+</fieldset>${3}
+endsnippet
 snippet input
-	<input type="${1:text/submit/hidden/button}">${2}
+<input type="${1:text/submit/hidden/button}">${2}
+endsnippet
 snippet inputt
-	<input type="text" placeholder="${1}">${2}
+<input type="text" placeholder="${1}">${2}
+endsnippet
 snippet inpute
-	<input type="email" placeholder="${1}">${2}
+<input type="email" placeholder="${1}">${2}
+endsnippet
 snippet inputurl
-	<input type="url" placeholder="${1}">${2}
+<input type="url" placeholder="${1}">${2}
+endsnippet
 snippet label
-	<label for="${1:NAME}">${2:Label}</label>${3}
+<label for="${1:NAME}">${2:Label}</label>${3}
+endsnippet
 snippet select
-	<select name="${1:some_name}" id="${2:$1}">
-		<option value="${3:option}">${4:$3}</option>
-	</select>${5}
+<select name="${1:some_name}" id="${2:$1}">
+	<option value="${3:option}">${4:$3}</option>
+</select>${5}
+endsnippet
 snippet opt
-	<option value="${1:option}">${2:$1}</option>${3}
+<option value="${1:option}">${2:$1}</option>${3}
+endsnippet
 snippet optt
-	<option>${1:option}</option>${2}
+<option>${1:option}</option>${2}
+endsnippet
 #
 #
 #
 #
 #
 snippet mailto
-	<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
+<a href="mailto:${1:joe@example.com}?subject=${2:feedback}">${3:email me}</a>
+endsnippet
 snippet meta
-	<meta name="${1:name}" content="${2:content}"`Close()`>${3}
+<meta name="${1:name}" content="${2:content}"`Close()`>${3}
+endsnippet
 snippet head
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8"`Close()`>
-		<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
-		${2}
-	</head>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"`Close()`>
+	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>
+	${2}
+</head>
+endsnippet
 snippet title
-	<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+<title>${1:`substitute(Filename('', 'Page Title'), '^.', '\u&', '')`}</title>${2}
+endsnippet
 # Embed QT Movie
 snippet movie
-	<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
-	 codebase="http://www.apple.com/qtactivex/qtplugin.cab">
-		<param name="src" value="$1"`Close()`>
-		<param name="controller" value="$4"`Close()`>
-		<param name="autoplay" value="$5"`Close()`>
-		<embed src="${1:movie.mov}"
-			width="${2:320}" height="${3:240}"
-			controller="${4:true}" autoplay="${5:true}"
-			scale="tofit" cache="true"
-			pluginspage="http://www.apple.com/quicktime/download/"
-		`Close()[1:]`>
-	</object>${6}
+<object width="$2" height="$3" classid="clsid:02BF25D5-8C17-4B23-BC80-D3488ABDDC6B"
+ codebase="http://www.apple.com/qtactivex/qtplugin.cab">
+	<param name="src" value="$1"`Close()`>
+	<param name="controller" value="$4"`Close()`>
+	<param name="autoplay" value="$5"`Close()`>
+	<embed src="${1:movie.mov}"
+		width="${2:320}" height="${3:240}"
+		controller="${4:true}" autoplay="${5:true}"
+		scale="tofit" cache="true"
+		pluginspage="http://www.apple.com/quicktime/download/"
+	`Close()[1:]`>
+</object>${6}
+endsnippet
 #
 #
 #
 # Tables
 #
 snippet table
-	<table border="${1:0}">
-		<tr><th>${2:Header}</th></tr>
-		<tr><th>${3:Data}</th></tr>
-	</table>${4}
+<table border="${1:0}">
+	<tr><th>${2:Header}</th></tr>
+	<tr><th>${3:Data}</th></tr>
+</table>${4}
+endsnippet
 snippet textarea
-	<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+<textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
+endsnippet

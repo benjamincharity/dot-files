@@ -3,83 +3,91 @@
 #
 # Components
 snippet ctrl
-	angular.module('${1:MyModule}')
-	.controller('${2:My}Ctrl', function(
-		$scope
-	) {
-		'use strict';
+angular.module('${1:MyModule}')
+.controller('${2:My}Ctrl', function(
+	$scope
+) {
+	'use strict';
 
-		${3:console.log('in $2Ctrl');}
+	${3:console.log('in $2Ctrl');}
 
-	});
+});
+endsnippet
 #
 # Define a new module for an existing app
 snippet module
-	angular.module('${1:MyModule}')
+angular.module('${1:MyModule}')
 
-	.config(function ($stateProvider) {
-		'use strict';
+.config(function ($stateProvider) {
+	'use strict';
 
-		$stateProvider
-		.state('${2:MyRoute}', {
-				url: '${3:myUrlPath}',
-				templateUrl: '${4:path/to/template}.html',
-				controller: '${5:My}Ctrl'
-		});
+	$stateProvider
+	.state('${2:MyRoute}', {
+			url: '${3:myUrlPath}',
+			templateUrl: '${4:path/to/template}.html',
+			controller: '${5:My}Ctrl'
+	});
 
-	})
+})
 
-	;
+;
+endsnippet
 #
 # Call a service
 snippet service
-	${1:NiftyService}.${2:methodName}(${3:params}).then(function(result) {
-		console.log('Result from $1.$2: ', result);
-	});${4}
+${1:NiftyService}.${2:methodName}(${3:params}).then(function(result) {
+	console.log('Result from $1.$2: ', result);
+});${4}
+endsnippet
 #
 # Define a service with promises
 snippet $service
-	${1:NiftyService}.${2:methodName} = function(${3:params}) {
+${1:NiftyService}.${2:methodName} = function(${3:params}) {
 
-		var deferred = $q.defer();
+	var deferred = $q.defer();
 
-			deferred.resolve(results);
-			deferred.reject(error);
+		deferred.resolve(results);
+		deferred.reject(error);
 
-		return deferred.promise;
+	return deferred.promise;
 
-	};
+};
+endsnippet
 #
 # A new angular app without a config function
 snippet app
-	angular.module('${1:moduleName}', [${2:moduleDependencies}]);
+angular.module('${1:moduleName}', [${2:moduleDependencies}]);
+endsnippet
 #
 # A new angular module without a config function and a variable assignment
 snippet appvar
-	var ${1:moduleName} = angular.module('$1', [${2:moduleDeps}]);
+var ${1:moduleName} = angular.module('$1', [${2:moduleDeps}]);
+endsnippet
 #
 # Define a filter
 snippet filter
-	angular.module('${1:MyModule}')
-	.filter('${2:MyFilter}', function() {
+angular.module('${1:MyModule}')
+.filter('${2:MyFilter}', function() {
 
-		return function(input) {
+	return function(input) {
 
-			return ${3:input};
+		return ${3:input};
 
-		};
+	};
 
-	});
+});
+endsnippet
 #
 # Define a directive
 snippet directive
-	angular.module('${1:MyModule}').directive('${2:MyDirective}', function() {
-		return {
-			link: function($scope, element, attrs) {
+angular.module('${1:MyModule}').directive('${2:MyDirective}', function() {
+	return {
+		link: function($scope, element, attrs) {
 
-			}
-		};
-	});
+		}
+	};
+});
+endsnippet
 #
 #
 #
@@ -93,124 +101,139 @@ snippet directive
 #
 # HTTP post
 snippet httppost
-	$http.post(${1:URL}, ${2:obj})
-	.success(function(data, status, headers, config) {
+$http.post(${1:URL}, ${2:obj})
+.success(function(data, status, headers, config) {
 
-		console.log('response: ', data);
+	console.log('response: ', data);
 
-	}).
-	error(function(data, status, headers, config) {
+}).
+error(function(data, status, headers, config) {
 
-		console.error('error: ', data, status);
+	console.error('error: ', data, status);
 
-	});${3}
+});${3}
+endsnippet
 #
 # HTTP get
 snippet http
-	$http.get(${1:URL})
-	.success(function(data) {
+$http.get(${1:URL})
+.success(function(data) {
 
-		console.log('response: ', data);
+	console.log('response: ', data);
 
-	})
-	.error(function(data, status) {
+})
+.error(function(data, status) {
 
-		console.error('error: ', data, status);
+	console.error('error: ', data, status);
 
-	});${2}
+});${2}
+endsnippet
 #
 # HTTP get with promise
 snippet httpprom
-	var deferred = $q.defer();
+var deferred = $q.defer();
 
-	$http.get(${1:URL})
-	.success(function(data) {
+$http.get(${1:URL})
+.success(function(data) {
 
-		deferred.resolve(data);
+	deferred.resolve(data);
 
-	})
-	.error(function(data, status) {
+})
+.error(function(data, status) {
 
-		deferred.reject(status, ': ', data);
+	deferred.reject(status, ': ', data);
 
-	});
+});
 
-	return deferred.promise;${2}
+return deferred.promise;${2}
+endsnippet
 #
 # HTTP post with promise
 snippet httppostprom
-	var deferred = $q.defer();
+var deferred = $q.defer();
 
-	$http.post(${1:URL}, ${2:obj})
-	.success(function(data, status, headers, config) {
+$http.post(${1:URL}, ${2:obj})
+.success(function(data, status, headers, config) {
 
-		deferred.resolve(data);
+	deferred.resolve(data);
 
-	})
-	.error(function(data, status) {
+})
+.error(function(data, status) {
 
-		deferred.reject(status, ': ', data);
+	deferred.reject(status, ': ', data);
 
-	});
+});
 
-	return deferred.promise;${3}
+return deferred.promise;${3}
+endsnippet
 #
 # angular.foreach loop
 snippet ngfor
-	angular.forEach(${1:iterateOver}, function(value, key) {
-		${2}
-	});
+angular.forEach(${1:iterateOver}, function(value, key) {
+	${2}
+});
+endsnippet
 #
 # Define a new $scope'd function
 snippet $f
-	$scope.${1:functionName} = function(${2:args}) {
-		${3}
-	};
+$scope.${1:functionName} = function(${2:args}) {
+	${3}
+};
+endsnippet
 #
 # Defines a new $scope'd variable
 snippet $v
-	$scope.${1:variable} = ${2:value};
+$scope.${1:variable} = ${2:value};
+endsnippet
 #
 # Timeout
 snippet ngtimeout
-	$timeout(function() {
-	}, ${1:1000});
+$timeout(function() {
+}, ${1:1000});
+endsnippet
 snippet $timeout
-	$timeout(function() {
-	}, ${1:1000});
+$timeout(function() {
+}, ${1:1000});
+endsnippet
 #
 # Scope.Apply
 snippet apply
-	$scope.$apply(function () {
-	});${1}
+$scope.$apply(function () {
+});${1}
+endsnippet
 #
 # Define a $watch for an expression
 # You can change the expression to be watched
 snippet $w
-	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
-		${2}
-	});
+$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
+	${2}
+});
+endsnippet
 snippet scope.watch
-	$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
-		${2}
-	});
+$scope.$watch('${1:watchExpr}', function(newValue, oldValue) {
+	${2}
+});
+endsnippet
 #
 # Define a $on for a $broadcast/$emit on the $scope inside an Angular Controller
 # You can change the event name to listen on
 snippet $on
-	$scope.$on('${1:eventName}', function(event, ${2:args}) {
-		${3}
-	});
+$scope.$on('${1:eventName}', function(event, ${2:args}) {
+	${3}
+});
+endsnippet
 #
 # Define a $broadcast for a $scope inside an Angular Controller / Angular Controller Function
 # You can change the event name and optional event arguments
 snippet $b
-	$scope.$broadcast('${1:eventName}', ${2:eventArgs});
+$scope.$broadcast('${1:eventName}', ${2:eventArgs});
+endsnippet
 #
 # Define an $emit for a $scope inside an Angular Controller / Angular Controller Function
 # You can change the event name and optional event arguments
 snippet $e
-	$scope.$emit('${1:eventName}', ${2:eventArgs});
+$scope.$emit('${1:eventName}', ${2:eventArgs});
+endsnippet
 #
 #
 #
@@ -223,121 +246,148 @@ snippet $e
 #
 # Use strict statement
 snippet strict
-	'use strict';
+'use strict';
+endsnippet
 # Variable function
 snippet func
-	var ${1:myFunction} = function(${2}) {
-		${3:console.log('hi');}
-	};${4}
+var ${1:myFunction} = function(${2}) {
+	${3:console.log('hi');}
+};${4}
+endsnippet
 #
 # Function
 snippet fun
-	function ${1:function_name} (${2:argument}) {
-		${3:// body...}
-	}
+function ${1:function_name} (${2:argument}) {
+	${3:// body...}
+}
+endsnippet
 #
 # Anonymous Function
 snippet f
-	function(${1}) {${2}};
+function(${1}) {${2}};
+endsnippet
 #
 # Object Method
 snippet :f
-	${1:method_name}: function(${2:attribute}) {
-		${4}
-	}${3:,}
+${1:method_name}: function(${2:attribute}) {
+	${4}
+}${3:,}
+endsnippet
 #
 # if
 snippet if
-	if (${1:true}) {${2}};
+if (${1:true}) {${2}};
+endsnippet
 #
 # if ... else
 snippet ife
-	if (${1:true}) {
-		${2}
-	} else {
-		${3}
-	};
+if (${1:true}) {
+	${2}
+} else {
+	${3}
+};
+endsnippet
 #
 # Ternary conditional
 snippet ift
-	${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
+${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
+endsnippet
 snippet ternary
-	${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
+${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
+endsnippet
 #
 # switch
 snippet switch
-	switch(${1:expression}) {
-		case '${3:case}':
-			${4:// code}
-			break;
-		${5}
-		default:
-			${2:// code}
-	}
+switch(${1:expression}) {
+	case '${3:case}':
+		${4:// code}
+		break;
+	${5}
+	default:
+		${2:// code}
+}
+endsnippet
 #
 # for (...) {...}
 snippet for
-	for (var ${2:i} = 0; $2 < ${1:Things}.length; $2${3: + 1}) {
-		${4:$1[$2]}
-	};
+for (var ${2:i} = 0; $2 < ${1:Things}.length; $2${3: + 1}) {
+	${4:$1[$2]}
+};
+endsnippet
 #
 # for (...) {...} (Improved Native For-Loop)
 snippet forr
-	for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3: - 1}) {
-		${4:$1[$2]}
-	};
+for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3: - 1}) {
+	${4:$1[$2]}
+};
+endsnippet
 #
 # setTimeout function
 snippet timeout
-	setTimeout(function() {
-		${3}
-	}${2}, ${1:10});
+setTimeout(function() {
+	${3}
+}${2}, ${1:10});
+endsnippet
 #
 # Console Logs
 snippet cl
-	console.log('${1:Item}: ', ${2:results});${3}
+console.log('${1:Item}: ', ${2:results});${3}
+endsnippet
 snippet cls
-	console.log('${1:Log this}');${2}
+console.log('${1:Log this}');${2}
+endsnippet
 snippet cln
-	console.log(JSON.stringify(${1:array}, null, 2));${2}
+console.log(JSON.stringify(${1:array}, null, 2));${2}
+endsnippet
 snippet cw
-	console.warn('${1:Item}: ', ${2:error});${3}
+console.warn('${1:Item}: ', ${2:error});${3}
+endsnippet
 snippet ce
-	console.error('${1:Item}: ', ${2:error});${3}
+console.error('${1:Item}: ', ${2:error});${3}
+endsnippet
 #
 # Returns
 snippet rf
-	return false;
+return false;
+endsnippet
 snippet rt
-	return true;
+return true;
+endsnippet
 #
 # Event prevent default
 snippet event
-	event.preventDefault;
+event.preventDefault;
+endsnippet
 #
 # Local Storage
 snippet ls
-	localStorage.${1:getItem}( '${2:itemName}', JSON.${3:stringify/parse}(${4:Object}) );${5}
+localStorage.${1:getItem}( '${2:itemName}', JSON.${3:stringify/parse}(${4:Object}) );${5}
+endsnippet
 # LocalStorage get
 snippet lsget
-	JSON.parse( localStorage.getItem('${1:itemName}') );${2}
+JSON.parse( localStorage.getItem('${1:itemName}') );${2}
+endsnippet
 # LocalStorage set
 snippet lsset
-	localStorage.setItem( '${1:itemName}', JSON.stringify(${2:Object}) );${3}
+localStorage.setItem( '${1:itemName}', JSON.stringify(${2:Object}) );${3}
+endsnippet
 #
 # Get Element by ID
 snippet gett
-	document.getElementById('${1}');${2}
+document.getElementById('${1}');${2}
+endsnippet
 # Document ready
 snippet ready
-	$(document).ready(function() {
-			${1}
-	});
+$(document).ready(function() {
+		${1}
+});
+endsnippet
 # Bind via .on
 snippet on
-	$('${1:.foo}').on('${2:click}', '${4:a}', function(event) {
-		${5}
-	});
+$('${1:.foo}').on('${2:click}', '${4:a}', function(event) {
+	${5}
+});
+endsnippet
 #
 #
 #
@@ -350,6 +400,7 @@ snippet on
 #
 # Supersonic log
 snippet sl
-	supersonic.logger.log(${1:'Log this'});${2}
+supersonic.logger.log(${1:'Log this'});${2}
+endsnippet
 #
 #

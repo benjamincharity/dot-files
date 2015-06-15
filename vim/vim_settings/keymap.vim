@@ -54,7 +54,7 @@ map <leader>rr :reg<cr>
 
 "
 " Reload snippets
-map <leader>rs :call ReloadSnippets(&filetype)<cr>
+"map <leader>rs :call ReloadSnippets(&filetype)<cr>
 
 "
 " Remap these since I always seem to type the wrong command in haste.

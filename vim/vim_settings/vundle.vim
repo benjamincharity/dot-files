@@ -30,10 +30,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jlanzarotta/bufexplorer'
 
 "
-" JavaScript Lint
-" https://github.com/joestelmach/lint.vim
-" Customization: lint.vim
-Plugin 'joestelmach/lint.vim'
+" Syntastic - Syntax checking hacks for vim
+" https://github.com/scrooloose/syntastic
+Plugin 'scrooloose/syntastic'
 
 "
 " Vim CoffeeScript
@@ -78,13 +77,9 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 
 "
-" Snipmate - Vim snippets
-" https://github.com/garbas/vim-snipmate
-" NOTE Can't seem to define custom snippets location
-"Plugin 'garbas/vim-snipmate'
-"
-" https://github.com/msanders/snipmate.vim
-Plugin 'msanders/snipmate.vim'
+" UltiSnips
+" https://github.com/SirVer/ultisnips
+Plugin 'SirVer/ultisnips'
 
 "
 " Vim Surround - Surround selection with chosen characters

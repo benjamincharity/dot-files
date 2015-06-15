@@ -1,0 +1,29 @@
+"
+" Recommended base settings
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+
+"
+" Check on open
+let g:syntastic_check_on_open = 0
+
+"
+" Check on file save
+let g:syntastic_check_on_wq = 1
+
+"
+"
+" Tell Syntastic which checker to use
+let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_scss_checkers = ['scss_lint']
+
+"
+" Enable syntax highlighting on errors
+let g:syntastic_enable_highlighting = 1
+
+"
+" Display errors from all checkers together
+let g:syntastic_aggregate_errors = 1

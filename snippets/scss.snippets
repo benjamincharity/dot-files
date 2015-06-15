@@ -13,686 +13,902 @@
 # Margin
 #
 snippet m
-	margin: ${1:0 auto};${2}
+margin: ${1:0 auto};${2}
+endsnippet
 snippet mr
-	margin-right: ${1:0};
+margin-right: ${1:0};
+endsnippet
 snippet ml
-	margin-left: ${1:0};
+margin-left: ${1:0};
+endsnippet
 snippet mt
-	margin-top: ${1:0};
+margin-top: ${1:0};
+endsnippet
 snippet mb
-	margin-bottom: ${1:0};
+margin-bottom: ${1:0};
+endsnippet
 #
 #
 #
 # Padding
 #
 snippet pr
-	padding-right: ${1:0};
+padding-right: ${1:0};
+endsnippet
 snippet pl
-	padding-left: ${1:0};
+padding-left: ${1:0};
+endsnippet
 snippet pt
-	padding-top: ${1};
+padding-top: ${1};
+endsnippet
 snippet pb
-	padding-bottom: ${1:0};
+padding-bottom: ${1:0};
+endsnippet
 snippet p
-	padding: ${1:0};
+padding: ${1:0};
+endsnippet
 #
 #
 #
 # Colors
 #
 snippet c
-	color: ${1:#bada55};
+color: ${1:#bada55};
+endsnippet
 snippet cg
-	color: $color-gray;${1}
+color: $color-gray;${1}
+endsnippet
 snippet cdg
-	color: $color-dark-gray;${1}
+color: $color-dark-gray;${1}
+endsnippet
 snippet clg
-	color: $color-light-gray;${1}
+color: $color-light-gray;${1}
+endsnippet
 snippet cw
-	color: $color-white;${1}
+color: $color-white;${1}
+endsnippet
 snippet cb
-	color: $color-black;${1}
-snippet: cp
-	color: $color-primary;${1}
-snippet: cps
-	color: $color-primary-shade;${1}
-snippet: cs
-	color: $color-secondary;${1}
-snippet: css
-	color: $color-secondary-shade;${1}
-snippet: cts
-	color: $color-tertiary-shade;${1}
+color: $color-black;${1}
+endsnippet
+snippet cp
+color: $color-primary;${1}
+endsnippet
+snippet cps
+color: $color-primary-shade;${1}
+endsnippet
+snippet cs
+color: $color-secondary;${1}
+endsnippet
+snippet css
+color: $color-secondary-shade;${1}
+endsnippet
+snippet cts
+color: $color-tertiary-shade;${1}
+endsnippet
 #
 #
 #
 # Background
 #
 snippet bg
-	background: ${1:skyblue};${2}
+background: ${1:skyblue};${2}
+endsnippet
 snippet bgi
-	background-image: url('${1:/i/image.png}');${2}
+background-image: url('${1:/i/image.png}');${2}
+endsnippet
 snippet bgc
-	background-color: ${1:#bada55};${2}
+background-color: ${1:#bada55};${2}
+endsnippet
 snippet bgct
-	background-color: transparent;${1}
+background-color: transparent;${1}
+endsnippet
 snippet bgp
-	background-position: ${1:0 0};
+background-position: ${1:0 0};
+endsnippet
 snippet bgs
-	background-size: ${1:cover};
+background-size: ${1:cover};
+endsnippet
 snippet bgr
-	background-repeat: ${1:no-repeat};
+background-repeat: ${1:no-repeat};
+endsnippet
 snippet gradient
-	@include background-image(linear-gradient(${1:white}, #cccccc 30%, #bbbbbb 70%, #aaaaaa));
+@include background-image(linear-gradient(${1:white}, #cccccc 30%, #bbbbbb 70%, #aaaaaa));
+endsnippet
 #
 #
 #
 # Transition
 #
 snippet trans
-	@include single-transition;
+@include single-transition;
+endsnippet
 snippet cust
-	@include customTransition(${1});${2}
+@include customTransition(${1});${2}
+endsnippet
 snippet custc
-	@include customTransition(color);${1}
+@include customTransition(color);${1}
+endsnippet
 snippet custo
-	@include customTransition(opacity);${1}
+@include customTransition(opacity);${1}
+endsnippet
 snippet transfull
-	-webkit-transition: all 0.2s ease-in-out;
-		 -moz-transition: all 0.2s ease-in-out;
-			-ms-transition: all 0.2s ease-in-out;
-			 -o-transition: all 0.2s ease-in-out;
-					transition: all 0.2s ease-in-out;${1}
+-webkit-transition: all 0.2s ease-in-out;
+-moz-transition   : all 0.2s ease-in-out;
+-ms-transition    : all 0.2s ease-in-out;
+-o-transition     : all 0.2s ease-in-out;
+transition        : all 0.2s ease-in-out;${1}
+endsnippet
 #
 #
 #
 # Border
 #
 snippet brad
-	border-radius: ${1:50%};${2}
+border-radius: ${1:50%};${2}
+endsnippet
 snippet bradfull
-	border-radius: ${1:2px} ${2:2px} ${3:2px} ${4:2px};${5}
+border-radius: ${1:2px} ${2:2px} ${3:2px} ${4:2px};${5}
+endsnippet
 snippet brtl
-	border-top-left-radius: ${1:2px};${2}
+border-top-left-radius: ${1:2px};${2}
+endsnippet
 snippet brtr
-	border-top-right-radius: ${1:2px};${2}
+border-top-right-radius: ${1:2px};${2}
+endsnippet
 snippet brbr
-	border-bottom-right-radius: ${1:2px};${2}
+border-bottom-right-radius: ${1:2px};${2}
+endsnippet
 snippet brbl
-	border-bottom-left-radius: ${1:2px};${2}
+border-bottom-left-radius: ${1:2px};${2}
+endsnippet
 snippet bo
-	border: ${1:1}px solid ${2:red};${3}
+border: ${1:1}px solid ${2:red};${3}
+endsnippet
 snippet bon
-	border: none;
+border: none;
+endsnippet
 snippet bb
-	border-bottom: ${1:1}px ${2:solid} ${3:red};
+border-bottom: ${1:1}px ${2:solid} ${3:red};
+endsnippet
 snippet bbn
-	border-bottom: none;
+border-bottom: none;
+endsnippet
 snippet bl
-	border-left: ${1:1}px ${2:solid} ${3:red};
+border-left: ${1:1}px ${2:solid} ${3:red};
+endsnippet
 snippet bln
-	border-left: none;
+border-left: none;
+endsnippet
 snippet br
-	border-right: ${1:1}px ${2:solid} ${3:red};
+border-right: ${1:1}px ${2:solid} ${3:red};
+endsnippet
 snippet brn
-	border-right: none;
+border-right: none;
+endsnippet
 snippet bt
-	border-top: ${1:1}px ${2:solid} ${3:red};
+border-top: ${1:1}px ${2:solid} ${3:red};
+endsnippet
 snippet btn
-	border-top: none;
+border-top: none;
+endsnippet
 snippet boc
-	border-color: ${1:red};${2}
+border-color: ${1:red};${2}
+endsnippet
 snippet bocfull
-	border-color: ${1:red} ${2:red} ${3:red} ${4:red};
+border-color: ${1:red} ${2:red} ${3:red} ${4:red};
+endsnippet
 snippet bw
-	border-width: ${1:1px} ${2:1px} ${3:1px} ${4:1px};
+border-width: ${1:1px} ${2:1px} ${3:1px} ${4:1px};
+endsnippet
 #
 #
 #
 # Height / Width
 #
 snippet h
-	height: ${1:100%};${2}
+height: ${1:100%};${2}
+endsnippet
 snippet w
-	width: ${1:100%};${2}
+width: ${1:100%};${2}
+endsnippet
 snippet mh
-	max-height: ${1:100%};${2}
+max-height: ${1:100%};${2}
+endsnippet
 snippet minh
-	min-height: ${1:50}${2:px};${3}
+min-height: ${1:50}${2:px};${3}
+endsnippet
 snippet mw
-	max-width: ${1:100%};${2}
+max-width: ${1:100%};${2}
+endsnippet
 snippet minw
-	min-width: ${1:100}${2:px};${3}
+min-width: ${1:100}${2:px};${3}
+endsnippet
 #
 #
 #
 # Box Shadow
 #
 snippet bs
-	box-shadow: ${1:0} ${2:0} ${3:4px} ${4:0} ${5:rgba(0,0,0,0.8)};${6}
+box-shadow: ${1:0} ${2:0} ${3:4px} ${4:0} ${5:rgba(0,0,0,0.8)};${6}
+endsnippet
 snippet bsn
-	box-shadow: none;${1}
+box-shadow: none;${1}
+endsnippet
 snippet bsfull
-	-webkit-box-shadow: 0 0 10px 0 rgb(51,51,51);
-		 -moz-box-shadow: 0 0 10px 0 rgb(51,51,51);
-			-ms-box-shadow: 0 0 10px 0 rgb(51,51,51);
-			 -o-box-shadow: 0 0 10px 0 rgb(51,51,51);
-					box-shadow: 0 0 10px 0 rgb(51,51,51);${1}
+-webkit-box-shadow : 0 0 10px 0 rgb(51,51,51);
+-moz-box-shadow    : 0 0 10px 0 rgb(51,51,51);
+-ms-box-shadow     : 0 0 10px 0 rgb(51,51,51);
+-o-box-shadow      : 0 0 10px 0 rgb(51,51,51);
+box-shadow         : 0 0 10px 0 rgb(51,51,51);${1}
+endsnippet
 #
 #
 #
 # Position
 #
 snippet pos
-	position: absolute;${1}
+position: absolute;${1}
+endsnippet
 snippet posr
-	position: relative;${1}
+position: relative;${1}
+endsnippet
 snippet posf
-	position: fixed;${1}
+position: fixed;${1}
+endsnippet
 snippet poss
-	position: static;${1}
+position: static;${1}
+endsnippet
 snippet b
-	bottom: ${1:0};${2}
+bottom: ${1:0};${2}
+endsnippet
 snippet l
-	left: ${1:0};${2}
+left: ${1:0};${2}
+endsnippet
 snippet r
-	right: ${1:0};${2}
+right: ${1:0};${2}
+endsnippet
 snippet t
-	top: ${1:0};${2}
+top: ${1:0};${2}
+endsnippet
 #
 #
 #
 # Display
 #
 snippet d
-	display: none;${1}
+display: none;${1}
+endsnippet
 snippet dn
-	display: none;${1}
+display: none;${1}
+endsnippet
 snippet db
-	display: block;${1}
+display: block;${1}
+endsnippet
 snippet di
-	display: inline;${1}
+display: inline;${1}
+endsnippet
 snippet dib
-	display: inline-block;${1}
+display: inline-block;${1}
+endsnippet
 snippet dit
-	display: inline-table;${1}
+display: inline-table;${1}
+endsnippet
 snippet dt
-	display: table;${1}
+display: table;${1}
+endsnippet
 snippet dtcol
-	display: table-column;${1}
+display: table-column;${1}
+endsnippet
 snippet dtcolg
-	display: table-column-group;${1}
+display: table-column-group;${1}
+endsnippet
 snippet dthg
-	display: table-header-group;${1}
+display: table-header-group;${1}
+endsnippet
 snippet dtfg
-	display: table-footer-group;${1}
+display: table-footer-group;${1}
+endsnippet
 snippet dtc
-	display: table-cell;${1}
+display: table-cell;${1}
+endsnippet
 snippet dtr
-	display: table-row;${1}
+display: table-row;${1}
+endsnippet
 snippet dtrg
-	display: table-row-group;${1}
+display: table-row-group;${1}
+endsnippet
 #
 #
 #
 # Fonts
 #
 snippet fw
-	font-weight: ${1:600};${2}
+font-weight: ${1:600};${2}
+endsnippet
 snippet fwn
-	font-weight: normal;${1}
+font-weight: normal;${1}
+endsnippet
 snippet fwb
-	font-weight: bold;${1}
+font-weight: bold;${1}
+endsnippet
 snippet fwl
-	font-weight: light;${1}
+font-weight: light;${1}
+endsnippet
 snippet fs
-	font-size: ${1:1em};${2}
+font-size: ${1:1em};${2}
+endsnippet
 snippet fst
-	font-style: italic;${1}
+font-style: italic;${1}
+endsnippet
 snippet ff
-	font-family: $${1:family};${2}
+font-family: $${1:family};${2}
+endsnippet
 snippet ffsans
-	font-family: Arial, Helvetica, Verdana, sans-serif;${1}
+font-family: Arial, Helvetica, Verdana, sans-serif;${1}
+endsnippet
 snippet ffserif
-	font-family: Georgia, Times New Roman, Times, serif;${1}
+font-family: Georgia, Times New Roman, Times, serif;${1}
+endsnippet
 #
 #
 #
 # Clear
 #
 snippet cl
-	clear: left;${1}
+clear: left;${1}
+endsnippet
 snippet cr
-	clear: right;${1}
+clear: right;${1}
+endsnippet
 snippet clb
-	clear: ${1:both};${2}
+clear: ${1:both};${2}
+endsnippet
 #
 #
 #
 # Overflow
 #
 snippet o
-	overflow: hidden;${1}
+overflow: hidden;${1}
+endsnippet
 snippet ov
-	overflow: visible;${1}
+overflow: visible;${1}
+endsnippet
 snippet oa
-	overflow: auto;${1}
+overflow: auto;${1}
+endsnippet
 snippet oi
-	overflow: inherit;${1}
+overflow: inherit;${1}
+endsnippet
 #
 #
 #
 # Float
 #
 snippet fl
-	float: left;${1}
+float: left;${1}
+endsnippet
 snippet fr
-	float: right;${1}
+float: right;${1}
+endsnippet
 snippet fn
-	float: none;${1}
+float: none;${1}
+endsnippet
 #
 #
 #
 # Text
 #
 snippet ta
-	text-align: ${1:center};${2}
+text-align: ${1:center};${2}
+endsnippet
 snippet tac
-	text-align: center;${1}
+text-align: center;${1}
+endsnippet
 snippet taj
-	text-align: justify;${1}
+text-align: justify;${1}
+endsnippet
 snippet tal
-	text-align: left;${1}
+text-align: left;${1}
+endsnippet
 snippet tar
-	text-align: right;${1}
+text-align: right;${1}
+endsnippet
 snippet td
-	text-decoration: none;${1}
+text-decoration: none;${1}
+endsnippet
 snippet tdu
-	text-decoration: underline;${1}
+text-decoration: underline;${1}
+endsnippet
 snippet ts
-	text-shadow: ${1:1}px ${2:1}px ${3:0} ${4:rgb(0,0,0)};${5}
+text-shadow: ${1:1}px ${2:1}px ${3:0} ${4:rgb(0,0,0)};${5}
+endsnippet
 snippet tt
-	text-transform: ${1:uppercase};${2}
+text-transform: ${1:uppercase};${2}
+endsnippet
 snippet ttu
-	text-transform: uppercase;${1}
+text-transform: uppercase;${1}
+endsnippet
 snippet ttl
-	text-transform: lowercase;${1}
+text-transform: lowercase;${1}
+endsnippet
 snippet ttn
-	text-transform: none;${1}
+text-transform: none;${1}
+endsnippet
 snippet ttc
-	text-transform: capitalize;${1}
+text-transform: capitalize;${1}
+endsnippet
 snippet ti
-	text-indent: 100%;${1}
+text-indent: 100%;${1}
+endsnippet
 snippet tin
-	text-indent: ${1:0};${2}
+text-indent: ${1:0};${2}
+endsnippet
 snippet to
-	text-overflow: ${1:ellipsis};${2}
+text-overflow: ${1:ellipsis};${2}
+endsnippet
 snippet toe
-	text-overflow: ellipses;${1}
+text-overflow: ellipses;${1}
+endsnippet
 snippet toc
-	text-overflow: clip;${1}
+text-overflow: clip;${1}
+endsnippet
 snippet tos
-	text-overflow: string;${1}
+text-overflow: string;${1}
+endsnippet
 #
 #
 #
 # Cursor
 #
 snippet cu
-	cursor: ${1:pointer};${2}
+cursor: ${1:pointer};${2}
+endsnippet
 snippet cd
-	cursor: ${1:default};${2}
+cursor: ${1:default};${2}
+endsnippet
 #
 #
 #
 # Visibility
 #
 snippet v
-	visibility: ${1:hidden};${2}
+visibility: ${1:hidden};${2}
+endsnippet
 snippet vv
-	visibility: visible;${1}
+visibility: visible;${1}
+endsnippet
 #
 #
 #
 # Pointer Events
 #
 snippet point
-	pointer-events: ${1:none};${2}
+pointer-events: ${1:none};${2}
+endsnippet
 snippet pointn
-	pointer-events: none;${1}
+pointer-events: none;${1}
+endsnippet
 snippet pointa
-	pointer-events: auto;${1}
+pointer-events: auto;${1}
+endsnippet
 snippet pointi
-	pointer-events: inherit;${1}
+pointer-events: inherit;${1}
+endsnippet
 #
 #
 #
 # Content
 #
 snippet cont
-	content: "";${1}
+content: "";${1}
+endsnippet
 #
 #
 #
 # White Space
 #
 snippet ws
-	white-space: ${1:nowrap};${2}
+white-space: ${1:nowrap};${2}
+endsnippet
 snippet wsnw
-	white-space: nowrap;${1}
+white-space: nowrap;${1}
+endsnippet
 snippet wsw
-	white-space: wrap;${1}
+white-space: wrap;${1}
+endsnippet
 snippet wsn
-	white-space: normal;${1}
+white-space: normal;${1}
+endsnippet
 #
 #
 #
 # Word Break
 #
 snippet wb
-	word-break: ${1:break-word};${2}
+word-break: ${1:break-word};${2}
+endsnippet
 snippet wbb
-	word-break: break-word;${1}
+word-break: break-word;${1}
+endsnippet
 snippet wbn
-	word-break: normal;${1}
+word-break: normal;${1}
+endsnippet
 #
 #
 #
 # Hover
 #
 snippet hover
-	&:focus,
-	&:hover {
-		${1}
-	}
+&:focus,
+&:hover {
+	${1}
+}
+endsnippet
 #
 #
 #
 # Em Calc
 #
 snippet em
-	emCalc(${1:12}px)${2}
+emCalc(${1:12}px)${2}
+endsnippet
 #
 #
 #
 # REM
 #
 snippet rem
-	@include rem('${1:font-size}',${2:12}px);${3}
+@include rem('${1:font-size}',${2:12}px);${3}
+endsnippet
 snippet remfs
-	@include rem('font-size',${1:12}px);${2}
+@include rem('font-size',${1:12}px);${2}
+endsnippet
 snippet remlh
-	@include rem('line-height',${1:12}px);${2}
+@include rem('line-height',${1:12}px);${2}
 snippet remp
-	@include rem('padding',${1:12}px);${2}
+@include rem('padding',${1:12}px);${2}
+endsnippet
 snippet rempt
-	@include rem('padding-top',${1:12}px);${2}
+@include rem('padding-top',${1:12}px);${2}
+endsnippet
 snippet rempb
-	@include rem('padding-bottom',${1:12}px);${2}
+@include rem('padding-bottom',${1:12}px);${2}
+endsnippet
 snippet rempl
-	@include rem('padding-left',${1:12}px);${2}
+@include rem('padding-left',${1:12}px);${2}
+endsnippet
 snippet rempr
-	@include rem('padding-right',${1:12}px);${2}
+@include rem('padding-right',${1:12}px);${2}
+endsnippet
 snippet remm
-	@include rem('margin',${1:12}px);${2}
+@include rem('margin',${1:12}px);${2}
+endsnippet
 snippet remmt
-	@include rem('margin-top',${1:12}px);${2}
+@include rem('margin-top',${1:12}px);${2}
+endsnippet
 snippet remmb
-	@include rem('margin-bottom',${1:12}px);${2}
+@include rem('margin-bottom',${1:12}px);${2}
+endsnippet
 snippet remml
-	@include rem('margin-left',${1:12}px);${2}
+@include rem('margin-left',${1:12}px);${2}
+endsnippet
 snippet remmr
-	@include rem('margin-right',${1:12}px);${2}
+@include rem('margin-right',${1:12}px);${2}
+endsnippet
 snippet remti
-	@include rem('text-indent',${1:12}px);${2}
+@include rem('text-indent',${1:12}px);${2}
+endsnippet
 snippet remt
-	@include rem('top',${1:12}px);${2}
+@include rem('top',${1:12}px);${2}
+endsnippet
 snippet remb
-	@include rem('bottom',${1:12}px);${2}
+@include rem('bottom',${1:12}px);${2}
+endsnippet
 snippet reml
-	@include rem('left',${1:12}px);${2}
+@include rem('left',${1:12}px);${2}
+endsnippet
 snippet remr
-	@include rem('right',${1:12}px);${2}
+@include rem('right',${1:12}px);${2}
+endsnippet
 snippet remh
-	@include rem('height',${1:100}${2:px});${3}
+@include rem('height',${1:100}${2:px});${3}
+endsnippet
 snippet remmh
-	@include rem('max-height',${1:100}px);${2}
+@include rem('max-height',${1:100}px);${2}
+endsnippet
 snippet remw
-	@include rem('width',${1:500}px);${2}
+@include rem('width',${1:500}px);${2}
+endsnippet
 snippet remmw
-	@include rem('max-width',${1:100}${2:px});${3}
+@include rem('max-width',${1:100}${2:px});${3}
+endsnippet
 #
 #
 #
 # Clear
 #
 snippet clear
-	@include clear;${1}
+@include clear;${1}
+endsnippet
 snippet clearie
-	@include clear-ie;${1}
+@include clear-ie;${1}
+endsnippet
 #
 #
 #
 # Vertical Align
 #
 snippet va
-	vertical-align: ${1:bottom};${2}
+vertical-align: ${1:bottom};${2}
+endsnippet
 snippet vab
-	vertical-align: bottom;${1}
+vertical-align: bottom;${1}
+endsnippet
 snippet vat
-	vertical-align: top;${1}
+vertical-align: top;${1}
+endsnippet
 snippet vam
-	vertical-align: middle;${1}
+vertical-align: middle;${1}
+endsnippet
 snippet vaa
-	vertical-align: auto;${1}
+vertical-align: auto;${1}
+endsnippet
 #
 #
 #
 # Pseudo Elements
 #
 snippet before
-	&::before {
-		${1}
-	}
+&::before {
+	${1}
+}
+endsnippet
 snippet beforeie
-	&:before {
-		${1}
-	}
+&:before {
+	${1}
+}
+endsnippet
 snippet after
-	&::after {
-		${1}
-	}
+&::after {
+	${1}
+}
+endsnippet
 snippet afterie
-	&:after {
-		${1}
-	}
+&:after {
+	${1}
+}
+endsnippet
 snippet active
-	&:active {
-		${1}
-	}
+&:active {
+	${1}
+}
+endsnippet
 snippet focus
-	&:focus {
-		${1}
-	}
+&:focus {
+	${1}
+}
+endsnippet
 #
 #
 #
 # Pseudo Selectors
 #
 snippet first
-	&:first-of-type {
-		${1}
-	}
+&:first-of-type {
+	${1}
+}
+endsnippet
 snippet last
-	&:last-of-type {
-		${1}
-	}
+&:last-of-type {
+	${1}
+}
+endsnippet
 snippet firstc
-	&:first-child {
-		${1}
-	}
+&:first-child {
+	${1}
+}
+endsnippet
 snippet lastc
-	&:last-child {
-		${1}
-	}
+&:last-child {
+	${1}
+}
+endsnippet
 snippet nth
-	&:nth-of-type(${1:n+2}) {
-		${2}
-	}
+&:nth-of-type(${1:n+2}) {
+	${2}
+}
+endsnippet
 #
 #
 #
 # State classes
 #
 snippet isactive
-	&.is_active {
-		${1}
-	}
+&.is_active {
+	${1}
+}
+endsnippet
 snippet isopen
-	&.is_open {
-		${1}
-	}
+&.is_open {
+	${1}
+}
+endsnippet
 snippet ishidden
-	&.is_hidden {
-		${1}
-	}
+&.is_hidden {
+	${1}
+}
+endsnippet
 snippet isdisabled
-	&.is_disabled {
-		${1}
-	}
+&.is_disabled {
+	${1}
+}
+endsnippet
 snippet isvisible
-	&.is_visible {
-		${1}
-	}
+&.is_visible {
+	${1}
+}
+endsnippet
 #
 #
 #
 # Lists
 #
 snippet lst
-	list-style-type: ${1:none};${2}
+list-style-type: ${1:none};${2}
+endsnippet
 snippet lstn
-	list-style-type: none;${1}
+list-style-type: none;${1}
+endsnippet
 snippet lstd
-	list-style-type: disc;${1}
+list-style-type: disc;${1}
+endsnippet
 snippet lstc
-	list-style-type: circle;${1}
+list-style-type: circle;${1}
+endsnippet
 snippet lsts
-	list-style-type: square;${1}
+list-style-type: square;${1}
+endsnippet
 #
 #
 #
 # Angular
 #
 snippet nganimate
-	.${1:pageEnter}-enter {
+.${1:pageEnter}-enter {
 
-	}
+}
 
-	.${2:pageEnter}-enter-active {
+.${2:pageEnter}-enter-active {
 
-	}
+}
 
-	.${3:pageEnter}-leave {
+.${3:pageEnter}-leave {
 
-	}
+}
 
-	.${4:pageEnter}-leave-active {
+.${4:pageEnter}-leave-active {
 
-	}
+}
+endsnippet
 #
 #
 #
 # Grid
 #
 snippet rowc
-	@include row-container();${1}
+@include row-container();${1}
+endsnippet
 snippet row
-	@include row();${1}
+@include row();${1}
+endsnippet
 snippet col
-	@include col();${1}
+@include col();${1}
+endsnippet
 snippet col1
-	@include col(1);${1}
+@include col(1);${1}
+endsnippet
 snippet col2
-	@include col(2);${1}
+@include col(2);${1}
+endsnippet
 snippet col3
-	@include col(3);${1}
+@include col(3);${1}
+endsnippet
 snippet col4
-	@include col(4);${1}
+@include col(4);${1}
+endsnippet
 snippet col5
-	@include col(5);${1}
+@include col(5);${1}
+endsnippet
 snippet col6
-	@include col(6);${1}
+@include col(6);${1}
+endsnippet
 snippet col7
-	@include col(7);${1}
+@include col(7);${1}
+endsnippet
 snippet col8
-	@include col(8);${1}
+@include col(8);${1}
+endsnippet
 snippet col9
-	@include col(9);${1}
+@include col(9);${1}
+endsnippet
 snippet col10
-	@include col(10);${1}
+@include col(10);${1}
+endsnippet
 snippet col11
-	@include col(11);${1}
+@include col(11);${1}
+endsnippet
 snippet col12
-	@include col(12);${1}
+@include col(12);${1}
+endsnippet
 snippet colf
-	@include first();${1}
+@include first();${1}
+endsnippet
 snippet colr
-	@include resetFirst();${1}
+@include resetFirst();${1}
+endsnippet
 snippet prepend
-	@include prepend(${1:1});${2}
+@include prepend(${1:1});${2}
+endsnippet
 snippet append
-	@include append(${1:1});${2}
+@include append(${1:1});${2}
+endsnippet
 #
 #
 #
 # Mixins / Functions
 #
 snippet ext
-	@extend %${1:myStyle};${2}
+@extend %${1:myStyle};${2}
+endsnippet
 snippet inc
-	@include ${1:mixin};${2}
+@include ${1:mixin};${2}
+endsnippet
 snippet func
-	@function ${1:myFunction}(${2}) {
-		@return ${3:myValue};
-	}${4}
+@function ${1:myFunction}(${2}) {
+	@return ${3:myValue};
+}${4}
+endsnippet
 snippet back
-	@include backface-flicker-fix();${1}
+@include backface-flicker-fix();${1}
+endsnippet
 #
 #
 #
 # Documentation
 #
 snippet doc
-	//
-	//
-	//
-	// $${1:APP_BASE}
-	//
-	//
-	// @author Benjamin Charity <ben@benjamincharity.com>
-	//
-	// @doc
-	//  ${2:__documentation__}
-	// @end
+//
+//
+//
+// $${1:APP_BASE}
+//
+//
+// @author Benjamin Charity <ben@benjamincharity.com>
+//
+// @doc
+//  ${2:__documentation__}
+// @end
 
-	// <section> primary container
-	.${3:myClass} {
-		}
+// <section> primary container
+.${3:myClass} {
+	}
+endsnippet
 snippet section
-	///////////////////////////////////////////////////////
-	//
-	// ${1:sectionName}
-	//
-	///////////////////////////////////////////////////////${2}
+///////////////////////////////////////////////////////
+//
+// ${1:sectionName}
+//
+///////////////////////////////////////////////////////${2}
+endsnippet
 snippet component
-	/////////////////////////////////////////////
-	//
-	// ${1:Component Name}
-	//
-	// Structure:
-	//   ${2:<div>}
+/////////////////////////////////////////////
+//
+// ${1:Component Name}
+//
+// Structure:
+//   ${2:<div>}
+endsnippet
 #
 #
 #
@@ -732,49 +948,60 @@ snippet component
 # Breakpoints
 #
 snippet bkll
-	@include breakpoint(breakpoint-very-large) {
-		${1}
-	}
+@include breakpoint(breakpoint-very-large) {
+	${1}
+}
+endsnippet
 snippet bkl
-	@include breakpoint(breakpoint-large) {
-		${1}
-	}
+@include breakpoint(breakpoint-large) {
+	${1}
+}
+endsnippet
 snippet bkml
-	@include breakpoint(breakpoint-medium-large) {
-		${1}
-	}
+@include breakpoint(breakpoint-medium-large) {
+	${1}
+}
+endsnippet
 snippet bkm
-	@include breakpoint(breakpoint-medium) {
-		${1}
-	}
+@include breakpoint(breakpoint-medium) {
+	${1}
+}
+endsnippet
 snippet bks
-	@include breakpoint(breakpoint-only-small) {
-		${1}
-	}
+@include breakpoint(breakpoint-only-small) {
+	${1}
+}
+endsnippet
 snippet break
-	@include breakpoint(${1:medium}) {
-		${2}
-	}
+@include breakpoint(${1:medium}) {
+	${2}
+}
+endsnippet
 snippet breakvl
-	@include breakpoint(verylarge) {
-		${1}
-	}
+@include breakpoint(verylarge) {
+	${1}
+}
+endsnippet
 snippet breakl
-	@include breakpoint(large) {
-		${1}
-	}
+@include breakpoint(large) {
+	${1}
+}
+endsnippet
 snippet breakmid
-	@include breakpoint(mid) {
-		${1}
-	}
+@include breakpoint(mid) {
+	${1}
+}
+endsnippet
 snippet breakm
-	@include breakpoint(medium) {
-		${1}
-	}
+@include breakpoint(medium) {
+	${1}
+}
+endsnippet
 snippet breaks
-	@include breakpoint(small) {
-		${1}
-	}
+@include breakpoint(small) {
+	${1}
+}
+endsnippet
 
 #
 #
@@ -782,128 +1009,175 @@ snippet breaks
 # Flex Box
 #
 snippet flex
-	@include flex-container(${1:horizontal});${2}
+@include flex_container(${1:horizontal});${2}
+endsnippet
 snippet flexv
-	@include flex-container(vertical);${1}
+@include flex_container(vertical);${1}
+endsnippet
 snippet flexh
-	@include flex-container(horizontal);${1}
+@include flex_container(horizontal);${1}
+endsnippet
 snippet flexc
-	@include flex-component(${1});${2}
+@include flex_component(${1});${2}
+endsnippet
 snippet flexc0
-	@include flex-component(0);${1}
+@include flex_component(0);${1}
+endsnippet
 snippet flexc1
-	@include flex-component(1);${1}
+@include flex_component(1);${1}
+endsnippet
 snippet flexc2
-	@include flex-component(2);${1}
+@include flex_component(2);${1}
+endsnippet
 snippet flexc3
-	@include flex-component(3);${1}
+@include flex_component(3);${1}
+endsnippet
 snippet flexc4
-	@include flex-component(4);${1}
+@include flex_component(4);${1}
+endsnippet
 snippet flexc5
-	@include flex-component(5);${1}
+@include flex_component(5);${1}
+endsnippet
 snippet flexc6
-	@include flex-component(6);${1}
+@include flex_component(6);${1}
+endsnippet
 # Justify Content
 snippet jc
-	justify-content: ${1:center};${2}
+justify-content: ${1:center};${2}
+endsnippet
 snippet jcc
-	justify-content: center;${1}
+justify-content: center;${1}
+endsnippet
 snippet jcs
-	justify-content: flex-start;${1}
+justify-content: flex-start;${1}
+endsnippet
 snippet jce
-	justify-content: flex-end;${1}
+justify-content: flex-end;${1}
+endsnippet
 snippet jci
-	justify-content: inherit;${1}
+justify-content: inherit;${1}
+endsnippet
 snippet jcsa
-	justify-content: space-around;${1}
+justify-content: space-around;${1}
+endsnippet
 snippet jcsb
-	justify-content: space-between;${1}
+justify-content: space-between;${1}
+endsnippet
 # Align Items
 snippet flexa
-	@include flex-align(${1:position});${2}
+@include flex-align(${1:position});${2}
+endsnippet
 snippet ai
-	align-items: ${1:center};${2}
+align-items: ${1:center};${2}
+endsnippet
 snippet aib
-	align-items: baseline;${1}
+align-items: baseline;${1}
+endsnippet
 snippet aic
-	align-items: center;${1}
+align-items: center;${1}
+endsnippet
 snippet aifs
-	align-items: flex-start;${1}
+align-items: flex-start;${1}
+endsnippet
 snippet aife
-	align-items: flex-end;${1}
+align-items: flex-end;${1}
+endsnippet
 snippet ais
-	align-items: stretch;${1}
+align-items: stretch;${1}
+endsnippet
 snippet aii
-	align-items: initial;${1}
+align-items: initial;${1}
+endsnippet
 snippet shrink
-	flex-shrink: ${1:0};${2}
+flex-shrink: ${1:0};${2}
+endsnippet
 snippet grow
-	flex-grow: ${1:1};${2}
+flex-grow: ${1:1};${2}
+endsnippet
 # Pack
 snippet flexp
-	@include flex-pack(${1:position});${2}
+@include flex_pack(${1:position});${2}
+endsnippet
 #
 #
 #
 # Various
 #
 snippet lh
-	line-height: ${1:1em};${2}
+line-height: ${1:1em};${2}
+endsnippet
 snippet ls
-	letter-spacing: ${1:1px};${2}
+letter-spacing: ${1:1px};${2}
+endsnippet
 snippet out
-	outline: 0;${1}
+outline: 0;${1}
+endsnippet
 snippet breakword
-	@extend %breakWord;${1}
+@extend %breakWord;${1}
+endsnippet
 snippet hide
-	@include hideText;${1}
+@include hideText;${1}
+endsnippet
 snippet op
-	opacity: ${1:1};
+opacity: ${1:1};
+endsnippet
 snippet z
-	z-index: ${1:1};
+z-index: ${1:1};
+endsnippet
 snippet im
-	!important${1}
+!important${1}
+endsnippet
 snippet place
-	@include placeholders {
-		${1}
-	}${2}
+@include placeholders {
+	${1}
+}${2}
+endsnippet
 #
 #
 #
 # IE
 #
 snippet pie
-	@include pie;${1}
+@include pie;${1}
+endsnippet
 snippet ie
-	@if $ie {
-		${1:do ie thing}
-	} @else {
-	 ${2:do non-ie thing}
-	}
+@if $ie {
+	${1:do ie thing}
+} @else {
+	${2:do non-ie thing}
+}
+endsnippet
 #
 #
 #
 # Compass Transforms
 #
 snippet scale
-	@include transform( scale(${1:1,1}) );${2}
+@include transform( scale(${1:1,1}) );${2}
+endsnippet
 snippet translate
-	@include transform( translate(${1: 100px 100px }) );${2}
+@include transform( translate(${1: 100px 100px }) );${2}
+endsnippet
 snippet translatex
-	@include transform( translateX(${1:100px}) );${2}
+@include transform( translateX(${1:100px}) );${2}
+endsnippet
 snippet translatey
-	@include transform( translateY(${1:100px}) );${2}
+@include transform( translateY(${1:100px}) );${2}
+endsnippet
 snippet rotate
-	@include transform( rotate(${1:90}deg) );${2}
+@include transform( rotate(${1:90}deg) );${2}
+endsnippet
 #
 #
 #
 # Columns
 #
 snippet columns
-	@include columns(${1});${2}
+@include columns(${1});${2}
+endsnippet
 snippet columnspan
-	@include column-span(${1:all});${2}
+@include column-span(${1:all});${2}
+endsnippet
 #
 #
 #
@@ -911,10 +1185,11 @@ snippet columnspan
 # Animations
 #
 snippet animate
-	@include animate(
-		$name: ${1:AnimationName},
-		$duration: ${2:300ms},
-		$count: ${3:infinite},
-		$delay: ${4:0}
-	);
+@include animate(
+	$name: ${1:AnimationName},
+	$duration: ${2:300ms},
+	$count: ${3:infinite},
+	$delay: ${4:0}
+);
+endsnippet
 #
