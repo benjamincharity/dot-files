@@ -19,6 +19,8 @@ let g:syntastic_check_on_wq = 1
 " Tell Syntastic which checker to use
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_scss_checkers = ['scss_lint']
+" Use the HTML5 version of Tidy
+let g:syntastic_html_tidy_exec = 'tidy5'
 
 "
 " Enable syntax highlighting on errors
