@@ -123,20 +123,20 @@ snippet trans
 @include single-transition;
 endsnippet
 snippet cust
-@include customTransition(${1});${2}
+@include custom_transition(${1});${2}
 endsnippet
 snippet custc
-@include customTransition(color);${1}
+@include custom_transition(color);${1}
 endsnippet
 snippet custo
-@include customTransition(opacity);${1}
+@include custom_transition(opacity);${1}
 endsnippet
 snippet transfull
--webkit-transition: all 0.2s ease-in-out;
--moz-transition   : all 0.2s ease-in-out;
--ms-transition    : all 0.2s ease-in-out;
--o-transition     : all 0.2s ease-in-out;
-transition        : all 0.2s ease-in-out;${1}
+-webkit-transition: all .2s ease-in-out;
+-moz-transition   : all .2s ease-in-out;
+-ms-transition    : all .2s ease-in-out;
+-o-transition     : all .2s ease-in-out;
+transition        : all .2s ease-in-out;${1}
 endsnippet
 #
 #
@@ -871,6 +871,12 @@ snippet func
 endsnippet
 snippet back
 @include backface-flicker-fix();${1}
+endsnippet
+snippet vendor
+@include vendor_prefix(
+	${1:transition},
+	${2:arguments}
+);
 endsnippet
 #
 #

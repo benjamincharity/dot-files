@@ -96,7 +96,8 @@ alias gp='git pull'
 alias gd='git diff | mvim'
 # List view
 alias l='ls -la'
-
+# Git Grep
+alias gg='git grep'
 
 #
 # Postgres
