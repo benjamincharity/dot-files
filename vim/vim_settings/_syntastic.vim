@@ -26,7 +26,7 @@ let g:syntastic_enable_highlighting = 1
 
 "
 " Display errors from all checkers together
-let g:syntastic_aggregate_errors = 1
+"let g:syntastic_aggregate_errors = 1
 
 
 "
@@ -35,5 +35,14 @@ let g:syntastic_aggregate_errors = 1
 " Use the HTML5 version of Tidy
 let g:syntastic_html_tidy_exec = 'tidy5'
 " Errors to ignore
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute " ,"trimming empty <", "unescaped &" , "lacks \"action", "is not recognized!", "discarding unexpected", "<img> lacks \"src\" attribute", "plain text isn't allowed in <head> elements"]
-
+let g:syntastic_html_tidy_ignore_errors=[
+  \ "proprietary attribute",
+  \ "trimming empty <",
+  \ "unescaped &",
+  \ "lacks \"action",
+  \ "is not recognized!",
+  \ "discarding unexpected",
+  \ "<img> lacks \"src\" attribute",
+  \ "plain text isn't allowed in <head> elements",
+  \ "<script> escaping malformed URI reference"
+  \ ]
