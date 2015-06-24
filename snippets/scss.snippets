@@ -501,7 +501,7 @@ endsnippet
 # Content
 #
 snippet cont
-content: "";${1}
+content: '';${1}
 endsnippet
 #
 #
@@ -749,6 +749,11 @@ snippet isvisible
 	${1}
 }
 endsnippet
+snippet isselected
+&.is--selected {
+	${1}
+}
+endsnippet
 #
 #
 #
@@ -898,7 +903,7 @@ snippet doc
 
 // <section> primary container
 .${3:myClass} {
-	}
+}
 endsnippet
 snippet section
 ///////////////////////////////////////////////////////
@@ -1199,3 +1204,14 @@ snippet animate
 );
 endsnippet
 #
+#
+#
+#
+# SCSS Lint
+#
+snippet disable
+// scss-lint:disable ${1:IdSelector}
+endsnippet
+snippet enable
+// scss-lint:enable ${1:IdSelector}
+endsnippet
