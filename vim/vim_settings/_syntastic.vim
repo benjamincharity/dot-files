@@ -26,7 +26,7 @@ let g:syntastic_enable_highlighting = 1
 
 "
 " Display errors from all checkers together
-"let g:syntastic_aggregate_errors = 1
+let g:syntastic_aggregate_errors = 0
 
 
 "

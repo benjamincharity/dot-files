@@ -1,6 +1,6 @@
 [user]
-	name = 
-	email = 
+	name = Benjamin Charity
+	email = ben@benjamincharity.com
 [alias]
   ci = commit
   co = checkout
@@ -50,3 +50,7 @@
 	autoupdate = true
 [credential]
 	helper = osxkeychain
+[filter "lfs"]
+	clean = git lfs clean %f
+	smudge = git lfs smudge %f
+	required = true
