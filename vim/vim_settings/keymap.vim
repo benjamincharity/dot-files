@@ -38,11 +38,11 @@ nmap <F8> :TagbarToggle<CR>
 
 "
 " Open vimrc
-nmap <silent> <leader>ev :e $MYVIMRC<cr>
+nmap <silent> <leader>ev :e $MYVIMRC<CR>
 
 "
 " Source vimrc
-nmap <silent> <leader>sv :so $MYVIMRC<cr>
+nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 "
 " Remove all trailing spaces
@@ -50,11 +50,11 @@ nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "
 " Show register (clipboard)
-map <leader>rr :reg<cr>
+map <leader>rr :reg<CR>
 
 "
 " Reload snippets
-"map <leader>rs :call ReloadSnippets(&filetype)<cr>
+"map <leader>rs :call ReloadSnippets(&filetype)<CR>
 
 "
 " Remap these since I always seem to type the wrong command in haste.
@@ -71,19 +71,19 @@ vnoremap ˚ :m-2<CR>gv=gv
 
 "
 " Tab mappings
-map <leader>tn :tabnew<cr>
+map <leader>tn :tabnew<CR>
 map <leader>te :tabedit
-map <leader>tc :tabclose<cr>
-map <leader>to :tabonly<cr>
-map <leader>tn :tabnext<cr>
-map <leader>tp :tabprevious<cr>
-map <leader>tf :tabfirst<cr>
-map <leader>tl :tablast<cr>
+map <leader>tc :tabclose<CR>
+map <leader>to :tabonly<CR>
+map <leader>tn :tabnext<CR>
+map <leader>tp :tabprevious<CR>
+map <leader>tf :tabfirst<CR>
+map <leader>tl :tablast<CR>
 map <leader>tm :tabmove
 
 "
 " Open the file in Chrome
-nnoremap <leader>C :silent !open -a 'Google Chrome.app' '%:p'<cr>
+nnoremap <leader>C :silent !open -a 'Google Chrome.app' '%:p'<CR>
 
 "
 " Toggle NerdTree
@@ -93,9 +93,12 @@ noremap <leader>d :NERDTreeToggle<CR>
 " Clear search highlights
 noremap <leader>l :noh<CR>
 
+" Ack (search) project for word under cursor
+noremap <Leader>a :Ack <cword><CR>
+
 "
 " Compile coffeescript to scratch buffer in vertical split
-noremap <leader>cp :CoffeeCompile vert<cr>
+noremap <leader>cp :CoffeeCompile vert<CR>
 
 "
 " Sort CSS styles inside {}
@@ -103,7 +106,7 @@ noremap <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
 
 "
 " Sort selected lines
-noremap <leader>S :sort<cr>
+noremap <leader>S :sort<CR>
 
 "
 " Directly jump to definition in SCSS/CSS from class/id in HTML
@@ -122,7 +125,7 @@ nnoremap <Leader>h :set cursorline! cursorcolumn!
 
 "
 " Open the file in marked.app
-nnoremap <leader>m :silent !open -a Marked.app '%:p'<cr>
+nnoremap <leader>m :silent !open -a Marked.app '%:p'<CR>
 
 "
 " Toggle paste mode
