@@ -47,7 +47,7 @@ mkdir ~/code
 
 echo "Cloning repos..."
 git clone git@github.com:benjamincharity/blog.benjamincharity.com.git ~/code/blog.benjamincharity.com
-git clone git@github.comm:benjamincharity/ArborWoodProducts.git ~/code/ArborWoodProducts
+git clone git@github.com:benjamincharity/ArborWoodProducts.git ~/code/ArborWoodProducts
 
 echo "Creating 'open-source' directory..."
 mkdir ~/code/open-source
