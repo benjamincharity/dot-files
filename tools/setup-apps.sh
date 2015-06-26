@@ -1,8 +1,3 @@
-
-#
-# Apps/Scripts
-#
-
 # Set directory for cask installs
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
