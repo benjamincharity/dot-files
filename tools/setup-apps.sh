@@ -1,6 +1,7 @@
 echo "Installing Applications..."
 
 echo "Brew Cask:"
+brew tap caskroom/cask
 brew install brew-cask
 
 echo "iTerm2:"
