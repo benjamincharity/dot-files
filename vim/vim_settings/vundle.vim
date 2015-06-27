@@ -1,5 +1,5 @@
 " Set the runtime path to include Vundle
-set rtp+=~/.vim/bundle/Vundle.vim/
+set rtp+=~/.vim/bundle/vundle/
 " Initialize
 call vundle#begin()
 

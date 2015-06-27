@@ -19,7 +19,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Which plugins would you like to load?
 # Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search)
+plugins=(git brew aws bower frontend-search grunt jsontools node npm sublime terminalapp urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
