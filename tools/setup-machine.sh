@@ -2,10 +2,10 @@
 # Basic computer setup
 #
 echo "Setup computer name"
-sudo scutil --set ComputerName "bc-air"
-sudo scutil --set HostName "bc-air"
-sudo scutil --set LocalHostName "bc-air"
-sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "bc-air"
+sudo scutil --set ComputerName "bc"
+sudo scutil --set HostName "bc"
+sudo scutil --set LocalHostName "bc"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "bc"
 
 echo "Disable the 'Are you sure you want to open this application?' dialog"
 defaults write com.apple.LaunchServices LSQuarantine -bool false

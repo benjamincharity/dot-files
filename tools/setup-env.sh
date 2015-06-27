@@ -28,6 +28,9 @@ ln -s ~/.dot-files/vim/gvimrc ~/.gvimrc
 echo ".gitconfig"
 ln -s ~/.dot-files/gitconfig ~/.gitconfig
 
+echo "Create swap files dir"
+mkdir ~/.dot-files/vim/swap_files
+
 echo "Setting up vim/vundler..."
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 # Auto install isn't working currently...
