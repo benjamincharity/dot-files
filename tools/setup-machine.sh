@@ -72,5 +72,6 @@ defaults write com.apple.dock mru-spaces -bool false
 echo "Kill affected applications, so the changes apply"
 for app in Safari Finder Dock Mail SystemUIServer; do killall "$app" >/dev/null 2>&1; done
 
-echo "Disable guest log in account"
-defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
+#This didn't seem to work
+#echo "Disable guest log in account"
+#defaults write /Library/Preferences/com.apple.loginwindow GuestEnabled -bool NO
