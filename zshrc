@@ -166,7 +166,7 @@ alias connectprod="./build-prod"
 # Bower
 #
 # Install
-function bi {
+function bis {
   command bower install $1 --save
 }
 # Install for dev
