@@ -25,6 +25,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
 
+
 #
 # General Alias'
 #
@@ -41,7 +42,6 @@ alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
 alias editjshint='mvim /Users/bc/.dot-files/vim/bundle/lint.vim/js/jshint/options.js'
 # Shortcut to edit Angular Fullstack generator templates
 alias editfullstack='mvim /Users/bc/Dropbox/Resources/AngularFullstack\ Edited\ Templates'
-
 
 
 
@@ -62,13 +62,24 @@ alias moment='cd ~/Code/moment/; ls -1F . | grep /'
 alias knowme='cd ~/Code/knowme/; ls -1F . | grep /'
 # Go to the my personal site directory and list subfolders
 alias benjamin='cd ~/Code/benjamincharity/; ls -1F . | grep /'
+# Go to my dot files
+alias dotfiles='cd /Users/bc/.dot-files; ls -1F . | grep /'
 # Create a directory and immediately cd into it
 # http://superuser.com/questions/152794/is-there-a-shortcut-to-mkdir-foo-and-immediately-cd-into-it
 function mkdircd {
   command mkdir $1 && cd $1
 }
-# Go to my dot files
-alias dotfiles='cd /Users/bc/.dot-files; ls -1F . | grep /'
+
+
+
+#
+# Apps
+#
+# Open Visual Studio Code
+alias vs='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Atom'
+alias vsc='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Atom'
+
+
 
 #
 # GIT
@@ -109,7 +120,7 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
 
 #
-# Postgres
+# Mongo
 #
 # Start
 alias mongostart="launchctl start org.mongodb.mongod"
