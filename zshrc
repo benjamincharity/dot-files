@@ -39,7 +39,7 @@ alias pd='cd `pbpaste`'
 # Delete Vim swap files
 alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
 # Shortcut to edit Vim's JSHint options
-alias editjshint='mvim /Users/bc/.dot-files/vim/bundle/lint.vim/js/jshint/options.js'
+alias editsyntastic='mvim /Users/bc/.dot-files/vim/vim_settings/_syntastic.vim'
 # Shortcut to edit Angular Fullstack generator templates
 alias editfullstack='mvim /Users/bc/Dropbox/Resources/AngularFullstack\ Edited\ Templates'
 
@@ -174,7 +174,7 @@ function bid {
   command bower install $1 --save-dev
 }
 # Uninstall
-function bu {
+function bus {
   command bower uninstall $1 --save
 }
 # Uninstall for dev
