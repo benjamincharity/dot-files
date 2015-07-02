@@ -66,6 +66,10 @@ git clone git@github.com:benjamincharity/stylish-themes.git ~/code/open-source/s
 git clone git@github.com:benjamincharity/book.git ~/code/open-source/book
 git clone git@github.com:benjamincharity/faviconfinder.com.git ~/code/open-source/faviconfinder.com
 git clone git@github.com:benjamincharity/iePayback.git ~/code/open-source/iePayback
+git clone git://github.com/powerline/fonts.git ~/code/open-source/powerline-fonts
+
+echo "Installing Powerline fonts..."
+cd ~/code/open-source/powerline-fonts && ./install.sh
 
 echo "Cloning MacVim..."
 git clone git://github.com/b4winckler/macvim.git ~/code/open-source/macvim

@@ -8,7 +8,31 @@ color dusk
 
 "
 " Typeface & size
-set guifont=Monaco:h14
+set guifont=Inconsolata-dz\ for\ Powerline:h14
+"
+" Possible Powerline enabled fonts:
+"   Anonymous\ Pro\ for\ Powerline
+"   DejaVu\ Sans\ Mono\ for\ Powerline
+"   Droid\ Sans\ Mono\ Dotted\ for\ Powerline
+"   Droid\ Sans\ Mono\ for\ Powerline
+"   Droid\ Sans\ Mono\ Slashed\ for\ Powerline
+"   Fira\ Mono\ for\ Powerline
+"   Fira\ Mono\ Medium\ for\ Powerline
+"   Inconsolata\ for\ Powerline
+"   Inconsolata-dz\ for\ Powerline
+"   Inconsolata-g\ for\ Powerline
+"   Liberation\ Mono\ for\ Powerline
+"   Meslo\ LG\ L\ DZ\ for\ Powerline
+"   Meslo\ LG\ L\ for\ Powerline
+"   Meslo\ LG\ M\ DZ\ for\ Powerline
+"   Meslo\ LG\ M\ for\ Powerline
+"   Meslo\ LG\ S\ DZ\ for\ Powerline
+"   Meslo\ LG\ S\ for\ Powerline
+"   monofur\ for\ Powerline
+"   Source\ Code\ Pro\ for\ Powerline
+"   Ubuntu\ Mono\ derivative\ Powerline
+
+
 
 "
 " Enable syntax highlighting and allow Vim to overrule custom settings
