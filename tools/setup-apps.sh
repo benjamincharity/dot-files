@@ -9,6 +9,9 @@ brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch 
 
 echo "Alfred:"
 brew cask install alfred
+# If you use Alfred to launch programs, you will want to use this command to modify Alfred’s search path to include programs you install with Cask.
+brew cask alfred link
+
 
 echo "Bartender:"
 brew cask install bartender
