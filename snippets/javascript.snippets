@@ -41,8 +41,8 @@ ${1:NiftyService}.${2:methodName}(${3:params}).then(function(result) {
 endsnippet
 #
 # Define a service with promises
-snippet $service "Define a new method on a service object." m
-${1:NiftyService}.${2:methodName} = function(${3:params}) {
+snippet $s "Define a new method on a service object." m
+${1:niftyService}.${2:methodName} = function(${3:params}) {
 
 	var deferred = $q.defer();
 
@@ -249,7 +249,7 @@ snippet strict
 'use strict';
 endsnippet
 # Variable function
-snippet func
+snippet vfun
 var ${1:myFunction} = function(${2}) {
 	${3:console.log('hi');}
 };${4}
@@ -257,7 +257,7 @@ endsnippet
 #
 # Function
 snippet fun
-function ${1:function_name} (${2:argument}) {
+function ${1:function_name}(${2:argument}) {
 	${3:// body...}
 }
 endsnippet
@@ -276,14 +276,14 @@ endsnippet
 #
 # if
 snippet if
-if( ${1:true} ) {
+if (${1:true}) {
 	${2}
 }
 endsnippet
 #
 # if ... else
 snippet ife
-if( ${1:true} ) {
+if (${1:true}) {
 	${2}
 } else {
 	${3}
@@ -394,6 +394,15 @@ endsnippet
 #
 #
 #
+# Comments
+snippet funcom
+/**
+ * ${1:make() returns a new element}
+ *
+ * ${2:@param {String} tag}
+ * ${3:@return {Element} element}
+ */${4}
+endsnippet
 #
 #
 #

@@ -64,6 +64,14 @@ set expandtab
 autocmd FileType javascript setlocal expandtab shiftwidth=4 softtabstop=4
 
 
+
+"
+" Project specific tabs
+" ===========================
+" Moment Styleguides
+autocmd BufRead,BufNewFile  /Users/bc/Code/open-source/moment-styleguides/* setlocal ts=4 sw=4
+
+
 "
 " Indentation
 " ===========================

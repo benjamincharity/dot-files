@@ -84,6 +84,8 @@ alias vsc='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Atom'
 #
 # GIT
 #
+# Let Hub wrap Github commands with some sugar
+eval "$(hub alias -s)"
 # Status
 alias st='status'
 alias gs='git status'
