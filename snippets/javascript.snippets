@@ -18,7 +18,7 @@ endsnippet
 snippet module
 angular.module('${1:MyModule}')
 
-.config(function ($stateProvider) {
+.config(function($stateProvider) {
 	'use strict';
 
 	$stateProvider
@@ -139,16 +139,16 @@ snippet httpprom "An HTTP Get wrapped with a promise" m
 var deferred = $q.defer();
 
 $http.get(${1:URL})
-.success(function(data) {
+	.success(function(data) {
 
-	deferred.resolve(data);
+		deferred.resolve(data);
 
-})
-.error(function(data, status) {
+	})
+	.error(function(data, status) {
 
-	deferred.reject(status, ': ', data);
+		deferred.reject(status, ': ', data);
 
-});
+	});
 
 return deferred.promise;${2}
 endsnippet
@@ -158,16 +158,16 @@ snippet httppostprom "An HTTP Post wrapped in a promise" m
 var deferred = $q.defer();
 
 $http.post(${1:URL}, ${2:obj})
-.success(function(data, status, headers, config) {
+	.success(function(data, status, headers, config) {
 
-	deferred.resolve(data);
+		deferred.resolve(data);
 
-})
-.error(function(data, status) {
+	})
+	.error(function(data, status) {
 
-	deferred.reject(status, ': ', data);
+		deferred.reject(status, ': ', data);
 
-});
+	});
 
 return deferred.promise;${3}
 endsnippet
@@ -203,7 +203,7 @@ endsnippet
 #
 # Scope.Apply
 snippet apply
-$scope.$apply(function () {
+$scope.$apply(function() {
 });${1}
 endsnippet
 #
@@ -420,6 +420,25 @@ supersonic.logger.log(${1:'Log this'});${2}
 endsnippet
 snippet sready
 supersonic.device.ready.then(function() {
+});
+endsnippet
+snippet whenVisible "When visible function for steroids" m
+//
+// When the view becomes visible
+supersonic.ui.views.current.whenVisible(function() {
+});
+endsnippet
+snippet whenReady "On ready function for steroids" m
+supersonic.device.ready.then(function() {
+});
+endsnippet
+# publish
+snippet publish "Publish data to a Supersonic channel" m
+supersonic.data.channel('${1:ChannelName}').publish(${2:data});
+endsnippet
+# subscribe
+snippet subscribe "Subscribe to a Supersonic channel" m
+supersonic.data.channel('${1:ChannelName}').subscribe(function(${2:receivedData}) {
 });
 endsnippet
 #
