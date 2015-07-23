@@ -105,7 +105,7 @@ set scrolloff=3
 " needed to wrap these commands like this for some reason...
 " see: http://stackoverflow.com/questions/395114/vim-syntax-coloring-how-do-i-highlight-long-lines-only/10993757#10993757
 augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+  autocmd BufEnter * highlight OverLength ctermbg=red guibg=gray28
   autocmd BufEnter * match OverLength /\%80v.*/
 augroup END
 
@@ -214,7 +214,6 @@ set laststatus=2
 
 "
 " Enable loading the plugin files for specific file types
-" (needed for JSLint)
 filetype plugin on
 " Enable loading custom indent files for specific file types
 filetype plugin indent on
@@ -240,4 +239,8 @@ set number
 "
 " save whenever you lose focus
 "au FocusLost * :wa
+
+"
+" Color overrides
+hi Search gui=NONE guifg=ivory guibg=CadetBlue4
 

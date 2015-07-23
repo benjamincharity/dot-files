@@ -66,13 +66,11 @@ Plugin 'vim-scripts/Align'
 
 "
 " Vim Add-on MW Utils - Interpret a file by function and cache file automatically
-" Required by Snipmate
 " https://github.com/MarcWeber/vim-addon-mw-utils
 Plugin 'MarcWeber/vim-addon-mw-utils'
 
 "
 " Tlib Vim - Some utility functions for VIM
-" Required by Snipmate
 " https://github.com/tomtom/tlib_vim
 Plugin 'tomtom/tlib_vim'
 

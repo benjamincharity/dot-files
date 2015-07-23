@@ -47,7 +47,7 @@ hi Visual gui=reverse guibg=fg guifg=darkolivegreen
 hi Search guifg=black guibg=LightSkyBlue3 gui=none
 "hi IncSearch guifg=yellow guibg=LightSkyBlue3 gui=bold
 hi IncSearch guibg=blue guifg=yellow gui=bold
-hi WarningMsg guifg=red guibg=GhostWhite gui=bold
+hi WarningMsg guifg=red guibg=firebrick1 gui=bold
 hi Error guibg=red3
 
 

@@ -1,5 +1,4 @@
 {
-    "disallowAnonymousFunctions": true,
     "disallowDanglingUnderscores": true,
     "disallowEmptyBlocks": true,
     "disallowIdentifierNames": [
@@ -116,13 +115,11 @@
         "do",
         "for",
         "if",
-        "else",
         "switch",
         "case",
         "try",
         "catch",
         "void",
-        "while",
         "with",
         "return",
         "typeof",
@@ -164,7 +161,6 @@
     "requireSpaceAfterLineComment": true,
     "requireSpaceBeforeBinaryOperators": [
         "=",
-        ",",
         "+",
         "-",
         "/",
@@ -200,10 +196,6 @@
     },
     "requireSpacesInNamedFunctionExpression": {
         "beforeOpeningCurlyBrace": true
-    },
-    "validateAlignedFunctionParameters": {
-        "lineBreakAfterOpeningBraces": true,
-        "lineBreakBeforeClosingBraces": true
     },
     "validateIndentation": 4,
     "validateLineBreaks": "LF",

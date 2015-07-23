@@ -33,7 +33,7 @@ hi LineNr   guifg=MistyRose3 guibg=bg
 hi MoreMsg  gui=NONE guifg=SeaGreen guibg=bg
 hi NonText  gui=NONE guifg=Cyan4 guibg=#102848
 hi Question gui=NONE guifg=LimeGreen guibg=bg
-hi Search   gui=NONE guifg=SkyBlue4 guibg=Bisque
+hi Search   gui=NONE guifg=SkyBlue4 guibg=firebrick1
 hi SpecialKey   guifg=Cyan guibg=bg
 hi Title    gui=NONE guifg=Yellow2 guibg=bg
 hi WarningMsg   guifg=Tomato3 guibg=Linen
