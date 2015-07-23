@@ -17,7 +17,7 @@ let g:syntastic_check_on_wq = 1
 "
 "
 " Tell Syntastic which checker to use
-let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_javascript_checkers = ['jscs']
 let g:syntastic_scss_checkers = ['scss_lint']
 
 "
@@ -26,7 +26,7 @@ let g:syntastic_enable_highlighting = 1
 
 "
 " Display errors from all checkers together
-let g:syntastic_aggregate_errors = 0
+let g:syntastic_aggregate_errors = 1
 
 
 "
@@ -34,6 +34,7 @@ let g:syntastic_aggregate_errors = 0
 "
 " Use the HTML5 version of Tidy
 let g:syntastic_html_tidy_exec = 'tidy5'
+
 " Errors to ignore
 let g:syntastic_html_tidy_ignore_errors=[
   \ "proprietary attribute",
