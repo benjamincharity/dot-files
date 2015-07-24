@@ -31,6 +31,9 @@ ln -s ~/.dot-files/gitconfig ~/.gitconfig
 echo "Link .git_template"
 ln -s ~/.dot-files/.git_template ~/.git_template
 
+echo "Link .jscsrc"
+ln -s ~/.dot-files/jscsrc ~/.jscsrc
+
 echo "Create swap files dir"
 mkdir ~/.dot-files/vim/swap_files
 
