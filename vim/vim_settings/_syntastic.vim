@@ -28,6 +28,13 @@ let g:syntastic_enable_highlighting = 1
 " Display errors from all checkers together
 let g:syntastic_aggregate_errors = 1
 
+"
+" Change highlight colors
+"highlight link SyntasticError SpellBad
+"highlight link SyntasticWarning SpellCap
+
+hi SpellBad gui=undercurl guisp=LavenderBlush1 guifg=fg guibg=SteelBlue3
+
 
 "
 " HTML

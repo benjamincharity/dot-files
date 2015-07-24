@@ -107,31 +107,31 @@ endsnippet
 # HTTP post
 snippet httppost
 $http.post(${1:URL}, ${2:obj})
-.success(function(data, status, headers, config) {
+	.success(function(data, status, headers, config) {
 
-	console.log('response: ', data);
+		console.log('response: ', data);
 
-}).
-error(function(data, status, headers, config) {
+	}).
+	error(function(data, status, headers, config) {
 
-	console.error('error: ', data, status);
+		console.error('error: ', data, status);
 
-});${3}
+	});${3}
 endsnippet
 #
 # HTTP get
 snippet http "HTTP Get" m
 $http.get(${1:URL})
-.success(function(data) {
+	.success(function(data) {
 
-	console.log('response: ', data);
+		console.log('response: ', data);
 
-})
-.error(function(data, status) {
+	})
+	.error(function(data, status) {
 
-	console.error('error: ', data, status);
+		console.error('error: ', data, status);
 
-});${2}
+	});${2}
 endsnippet
 #
 # HTTP get with promise
@@ -368,15 +368,15 @@ endsnippet
 #
 # Local Storage
 snippet ls
-localStorage.${1:getItem}( '${2:itemName}', JSON.${3:stringify/parse}(${4:Object}) );${5}
+localStorage.${1:getItem}('${2:itemName}', JSON.${3:stringify/parse}(${4:Object}));${5}
 endsnippet
 # LocalStorage get
 snippet lsget
-JSON.parse( localStorage.getItem('${1:itemName}') );${2}
+JSON.parse(localStorage.getItem('${1:itemName}'));${2}
 endsnippet
 # LocalStorage set
 snippet lsset
-localStorage.setItem( '${1:itemName}', JSON.stringify(${2:Object}) );${3}
+localStorage.setItem('${1:itemName}', JSON.stringify(${2:Object}));${3}
 endsnippet
 #
 # Get Element by ID
@@ -422,14 +422,25 @@ snippet sready
 supersonic.device.ready.then(function() {
 });
 endsnippet
+snippet whenReady "On ready function for steroids" m
+supersonic.device.ready.then(function() {
+});
+endsnippet
 snippet whenVisible "When visible function for steroids" m
 //
 // When the view becomes visible
 supersonic.ui.views.current.whenVisible(function() {
+		$scope.$apply(function() {
+		});
 });
 endsnippet
-snippet whenReady "On ready function for steroids" m
-supersonic.device.ready.then(function() {
+# when hidden
+snippet whenHidden "When hidden function for steroids" m
+//
+// When the view is hidden
+supersonic.ui.views.current.whenHidden(function() {
+		$scope.$apply(function() {
+		});
 });
 endsnippet
 # publish
@@ -439,6 +450,8 @@ endsnippet
 # subscribe
 snippet subscribe "Subscribe to a Supersonic channel" m
 supersonic.data.channel('${1:ChannelName}').subscribe(function(${2:receivedData}) {
+		$scope.$apply(function() {
+		});
 });
 endsnippet
 #

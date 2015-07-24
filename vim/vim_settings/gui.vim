@@ -106,7 +106,7 @@ set scrolloff=3
 " see: http://stackoverflow.com/questions/395114/vim-syntax-coloring-how-do-i-highlight-long-lines-only/10993757#10993757
 augroup vimrc_autocmds
   autocmd BufEnter * highlight OverLength ctermbg=red guibg=gray28
-  autocmd BufEnter * match OverLength /\%80v.*/
+  autocmd BufEnter * match OverLength /\%100v.*/
 augroup END
 
 
