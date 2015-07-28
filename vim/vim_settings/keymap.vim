@@ -12,8 +12,8 @@ nnoremap <Leader>q :q<CR>
 nnoremap <Leader>w :w<CR>
 
 "
-" Set the line wrap to 80 characters
-nnoremap <Leader>8 :set tw=80<CR>
+" Set the line wrap to 100 characters
+nnoremap <Leader>1 :set tw=100<CR>
 
 "
 " Set the line wrap to 0 characters

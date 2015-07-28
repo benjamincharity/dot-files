@@ -172,14 +172,14 @@ function bis {
   command bower install $1 --save
 }
 # Install for dev
-function bid {
+function bisd {
   command bower install $1 --save-dev
 }
 # Uninstall
-function bus {
+function bui {
   command bower uninstall $1 --save
 }
 # Uninstall for dev
-function bud {
+function buid {
   command bower uninstall $1 --save-dev
 }

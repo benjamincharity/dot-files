@@ -101,7 +101,7 @@ set scrolloff=3
 
 
 "
-" Highlight any characters that pass the 80 character mark
+" Highlight any characters that pass the 100 character mark
 " needed to wrap these commands like this for some reason...
 " see: http://stackoverflow.com/questions/395114/vim-syntax-coloring-how-do-i-highlight-long-lines-only/10993757#10993757
 augroup vimrc_autocmds
