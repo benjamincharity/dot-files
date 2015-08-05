@@ -183,4 +183,9 @@ Plugin 'bling/vim-airline'
 " https://github.com/wincent/command-t
 Plugin 'wincent/command-t'
 
+"
+" Git add, git commit, git pull, git push all in one command, without leaving vim.
+" https://github.com/peterhurford/send.vim
+Plugin 'peterhurford/send.vim'
+
 call vundle#end()

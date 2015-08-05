@@ -32,8 +32,6 @@ set guifont=Inconsolata-dz\ for\ Powerline:h14
 "   Source\ Code\ Pro\ for\ Powerline
 "   Ubuntu\ Mono\ derivative\ Powerline
 
-
-
 "
 " Enable syntax highlighting and allow Vim to overrule custom settings
 syntax on
@@ -46,7 +44,9 @@ set hidden
 " Allow backspacing over everything in insert mode
 set backspace=indent,eol,start
 
-
+"
+" Set a standard text width
+set textwidth=100
 
 "
 " Tabs
@@ -63,14 +63,11 @@ set expandtab
 " For JavaScript files, switch to 4 tabs
 autocmd FileType javascript setlocal expandtab shiftwidth=4 softtabstop=4
 
-
-
 "
 " Project specific tabs
 " ===========================
 " Moment Styleguides
 autocmd BufRead,BufNewFile  /Users/bc/Code/open-source/moment-styleguides/* setlocal ts=4 sw=4
-
 
 "
 " Indentation
@@ -80,8 +77,6 @@ autocmd BufRead,BufNewFile  /Users/bc/Code/open-source/moment-styleguides/* setl
 set autoindent
 " Auto indent when starting a new line
 set smartindent
-
-
 
 "
 " Searching
@@ -98,8 +93,6 @@ set smartcase
 " either side of the result
 set scrolloff=3
 
-
-
 "
 " Highlight any characters that pass the 100 character mark
 " needed to wrap these commands like this for some reason...
@@ -108,7 +101,6 @@ augroup vimrc_autocmds
   autocmd BufEnter * highlight OverLength ctermbg=red guibg=gray28
   autocmd BufEnter * match OverLength /\%100v.*/
 augroup END
-
 
 "
 " Enable mouse support
@@ -145,7 +137,6 @@ set cursorcolumn
 highlight cursorline term=NONE, cterm=NONE, guibg=#4444, ctermbg=235
 " Style the cursor column
 highlight cursorcolumn guibg=#4444, ctermbg=235
-
 
 "
 " Show information about the current command in the bottom bar
@@ -204,11 +195,7 @@ set directory=~/.vim/swap_files/
 " Auto-reload (unedited) file if it is changed elsewhere
 set autoread
 
-
 "
-" Status bar
-" Customize the status line
-"set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{rvm#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 " Always show the status bar
 set laststatus=2
 
