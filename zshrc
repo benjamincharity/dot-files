@@ -14,12 +14,15 @@ export vi_cv_path_python=usr/local/Cellar/python
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+#
+# Auto update without a prompt
+DISABLE_UPDATE_PROMPT=true
 
 #
 # Which plugins would you like to load?
 # Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew aws bower frontend-search grunt jsontools node npm sublime gitfast terminalapp urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search git-it-on send)
+plugins=(brew aws bower frontend-search grunt jsontools node npm sublime terminalapp urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search send git-it-on)
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -85,7 +88,7 @@ alias vsc='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Atom'
 # GIT
 #
 # Let Hub wrap Github commands with some sugar
-eval "$(hub alias -s)"
+eval '$(hub alias -s)'
 # Status
 alias st='status'
 alias gs='git status'
