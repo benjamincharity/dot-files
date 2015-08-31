@@ -108,7 +108,7 @@ Plugin 'dkprice/vim-easygrep'
 "
 " CtrlP - Fuzzy file finder
 " https://github.com/kien/ctrlp.vim
-Plugin 'kien/ctrlp.vim'
+"Plugin 'kien/ctrlp.vim'
 
 "
 " You Complete Me - Autocomplete for code

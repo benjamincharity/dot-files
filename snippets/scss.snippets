@@ -1020,7 +1020,7 @@ endsnippet
 # Flex Box
 #
 snippet flex
-@include flex_container(${1:horizontal});${2}
+@include flex_container(${1:vertical});${2}
 endsnippet
 snippet flexv
 @include flex_container(vertical);${1}
@@ -1164,10 +1164,10 @@ endsnippet
 # Compass Transforms
 #
 snippet scale
-@include transform( scale(${1:1,1}) );${2}
+@include transform( scale(${1:1, 1}) );${2}
 endsnippet
 snippet translate
-@include transform( translate(${1: 100px 100px }) );${2}
+@include transform( translate(${1:100px, 100px}) );${2}
 endsnippet
 snippet translatex
 @include transform( translateX(${1:100px}) );${2}

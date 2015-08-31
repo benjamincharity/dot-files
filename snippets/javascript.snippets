@@ -1,10 +1,99 @@
 #
+# ES6
+#
+# Controller Class
+snippet controller "Create a controller class" m
+class ${1:App}Controller {
+
+    constructor() {
+        'ngInject';
+
+    }
+
+}
+
+export default $1Controller;
+
+endsnippet
+#
+# Service Class
+snippet service "Create a service class" m
+class ${1:App}Service {
+
+    constructor() {
+        'ngInject';
+
+    }
+
+}
+
+export default $1Service;
+
+endsnippet
+#
+# Directive Class
+snippet directive "Create a directive" m
+class ${1:My}Directive {
+    constructor() {
+        'ngInject';
+
+        let directive = {
+            restrict: 'E',
+            scope: {},
+            templateSrc: '${2:/path/to/file}.html',
+            link: linkFunc,
+            controller: $1Controller,
+            controllerAs: 'vm'
+        };
+
+        return directive;
+
+        function linkFunc($scope, $element, $attr, vm) {
+            ${3:let myVar = 'hi';}
+
+        }
+
+    }
+}
+
+class $1Controller {
+    constructor() {
+        'ngInject';
+
+        ${4:this.yo = 'YOLO BROLO';}
+    }
+
+}
+
+export default $1Directive;
+
+endsnippet
+#
+# Router
+snippet router "Create a router" m
+function ${1:my}RouterConfig($stateProvider) {
+    'ngInject';
+
+    $stateProvider
+        .state('${2:app}', {
+            url: '/${3:route}',
+            templateUrl: 'app/${4:app/app}.html',
+            controller: '${5:AppController}',
+            controllerAs: 'vm',
+        })
+    ;
+
+}
+
+export default $1RouterConfig;
+
+endsnippet
+#
 # Angular
 #
 # Components
 snippet ctrl
-angular.module('${1:MyModule}')
-.controller('${2:My}Ctrl', function(
+angular.module('${1:MyModule}').controller('${2:My}Ctrl', function(
 	$scope
 ) {
 	'use strict';
@@ -16,53 +105,29 @@ endsnippet
 #
 # Define a new module for an existing app
 snippet module
-angular.module('${1:MyModule}')
-
-.config(function($stateProvider) {
-	'use strict';
-
-	$stateProvider
-	.state('${2:MyRoute}', {
-			url: '${3:myUrlPath}',
-			templateUrl: '${4:path/to/template}.html',
-			controller: '${5:My}Ctrl'
-	});
-
-})
-
-;
+angular.module('${1:moduleName}', [${2:moduleDependencies}]);
 endsnippet
 #
 # Call a service
-snippet service "Call a service method."
+snippet $s "Call a service method."
 ${1:NiftyService}.${2:methodName}(${3:params}).then(function(result) {
 	console.log('Result from $1.$2: ', result);
 });${4}
 endsnippet
 #
 # Define a service with promises
-snippet $s "Define a new method on a service object." m
-${1:niftyService}.${2:methodName} = function(${3:params}) {
+#snippet $s "Define a new method on a service object." m
+#${1:niftyService}.${2:methodName} = function(${3:params}) {
 
-	var deferred = $q.defer();
+	#var deferred = $q.defer();
 
-		deferred.resolve(results);
-		deferred.reject(error);
+		#deferred.resolve(results);
+		#deferred.reject(error);
 
-	return deferred.promise;
+	#return deferred.promise;
 
-};
-endsnippet
-#
-# A new angular app without a config function
-snippet app
-angular.module('${1:moduleName}', [${2:moduleDependencies}]);
-endsnippet
-#
-# A new angular module without a config function and a variable assignment
-snippet appvar
-var ${1:moduleName} = angular.module('$1', [${2:moduleDeps}]);
-endsnippet
+#};
+#endsnippet
 #
 # Define a filter
 snippet filter
@@ -79,7 +144,7 @@ angular.module('${1:MyModule}')
 endsnippet
 #
 # Define a directive
-snippet directive
+snippet $d
 angular.module('${1:MyModule}').directive('${2:MyDirective}', function() {
 	return {
 		link: function($scope, element, attrs) {
@@ -304,12 +369,11 @@ ${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
 endsnippet
 #
 # switch
-snippet switch
+snippet switch "Switch statement" m
 switch (${1:expression}) {
 	case '${3:case}':
 		${4:// code}
 		break;
-	${5}
 	default:
 		${2:// code}
 }
@@ -351,6 +415,14 @@ console.warn('${1:Item}: ', ${2:error});${3}
 endsnippet
 snippet ce
 console.error('${1:Item}: ', ${2:error});${3}
+endsnippet
+#
+# Log Debugs
+snippet ld "Log string and object"
+$log.debug('${1:My message}: ', ${2:MyParam});
+endsnippet
+snippet lds "Log string"
+$log.debug('${1:My message}');
 endsnippet
 #
 # Returns
@@ -450,9 +522,17 @@ endsnippet
 # subscribe
 snippet subscribe "Subscribe to a Supersonic channel" m
 supersonic.data.channel('${1:ChannelName}').subscribe(function(${2:receivedData}) {
-		$scope.$apply(function() {
-		});
+	$scope.$apply(function() {
+	});
 });
+endsnippet
+# pop a view
+snippet pop "Pop a supersonic layer"
+supersonic.ui.layers.pop();
+endsnippet
+# Hide modal
+snippet hidemodal "Dismiss a supersonic modal"
+supersonic.ui.modal.hide();
 endsnippet
 #
 #
