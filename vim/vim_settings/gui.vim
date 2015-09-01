@@ -157,6 +157,10 @@ set wildmenu
 set wildmode=list:longest
 
 "
+" Define paths to ignore
+ :set wildignore+=**/bower_components/*,**/node_modules/*,**/moment-client/plugins/*,**/moment-client/platforms/*,**/moment-client/www/*,**/dist/*
+
+"
 " Show the current line/column/virtual column/relative position
 set ruler
 
