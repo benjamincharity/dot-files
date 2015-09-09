@@ -137,7 +137,11 @@ nnoremap j gj
 nnoremap k gk
 
 "
-"Remap Command-T
+" Remap Command-T
 map <D-t> :CommandT<CR>
 map <D-T> :CommandTBuffer<CR>
+
+"
+" Fold between brackets
+map <leader>ff V$% :fold<CR>
 
