@@ -925,6 +925,11 @@ endsnippet
 #
 # Breakpoint
 #
+snippet bp "Use a breakpoint mixin" m
+@include bp(${1:5}) {
+	${2}
+}
+endsnippet
 #snippet bpm
 #	@include breakpoint(mobile) {
 #		${1}
