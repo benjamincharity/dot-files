@@ -1024,41 +1024,20 @@ endsnippet
 #
 # Flex Box
 #
-snippet flex
-@include flex_container(${1:vertical});${2}
+snippet flexc "Define a flex component: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]"
+flex: ${1:0} ${2:1} ${3:auto};${4}
 endsnippet
-snippet flexv
-@include flex_container(vertical);${1}
+snippet flex "Layout as flexbox"
+display: flex;
 endsnippet
-snippet flexh
-@include flex_container(horizontal);${1}
+snippet fd "Set layout direction: row|row-reverse|column|column-reverse"
+flex-direction: column;
 endsnippet
-snippet flexc
-@include flex_component(${1});${2}
+snippet flexf "Flex shorthand: row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse"
+flex-flow: ${1:row} ${2:nowrap};${3}
 endsnippet
-snippet flexc0
-@include flex_component(0);${1}
-endsnippet
-snippet flexc1
-@include flex_component(1);${1}
-endsnippet
-snippet flexc2
-@include flex_component(2);${1}
-endsnippet
-snippet flexc3
-@include flex_component(3);${1}
-endsnippet
-snippet flexc4
-@include flex_component(4);${1}
-endsnippet
-snippet flexc5
-@include flex_component(5);${1}
-endsnippet
-snippet flexc6
-@include flex_component(6);${1}
-endsnippet
-# Justify Content
-snippet jc
+### Justify Content
+snippet jc "Justify flex content: flex-start|flex-end|center|space-between|space-around"
 justify-content: ${1:center};${2}
 endsnippet
 snippet jcc
@@ -1079,11 +1058,11 @@ endsnippet
 snippet jcsb
 justify-content: space-between;${1}
 endsnippet
-# Align Items
-snippet flexa
-@include flex_align(${1:position});${2}
+### Align Items
+snippet Flexa
+@include flex_align(${1:center});${2}
 endsnippet
-snippet ai
+snippet ai "Align flex items: flex-start|flex-end|center|baseline|stretch"
 align-items: ${1:center};${2}
 endsnippet
 snippet aib
@@ -1110,9 +1089,46 @@ endsnippet
 snippet grow
 flex-grow: ${1:1};${2}
 endsnippet
-# Pack
-snippet flexp
-@include flex_pack(${1:position});${2}
+snippet flexw "Flex wrap: nowrap|wrap|wrap-reverse"
+flex-wrap: ${1:wrap};${2}
+endsnippet
+
+# MIXINS
+snippet Flex
+@include flex_container(${1:vertical});${2}
+endsnippet
+snippet Flexv
+@include flex_container(vertical);${1}
+endsnippet
+snippet Flexh
+@include flex_container(horizontal);${1}
+endsnippet
+snippet Flexc
+@include flex_component(${1});${2}
+endsnippet
+snippet Flexc0
+@include flex_component(0);${1}
+endsnippet
+snippet Flexc1
+@include flex_component(1);${1}
+endsnippet
+snippet Flexc2
+@include flex_component(2);${1}
+endsnippet
+snippet Flexc3
+@include flex_component(3);${1}
+endsnippet
+snippet Flexc4
+@include flex_component(4);${1}
+endsnippet
+snippet Flexc5
+@include flex_component(5);${1}
+endsnippet
+snippet Flexc6
+@include flex_component(6);${1}
+endsnippet
+snippet Flexp
+@include flex_pack(${1:center});${2}
 endsnippet
 #
 #
