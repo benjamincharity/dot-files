@@ -143,6 +143,11 @@ angular.module('${1:MyModule}')
 });
 endsnippet
 #
+# Use a filter
+snippet $f "Use a filter"
+$filter('${1:FilterName}')(${2:ItemToFilter}, '${3:Param}')${4}
+endsnippet
+#
 # Define a directive
 snippet $d
 angular.module('${1:MyModule}').directive('${2:MyDirective}', function() {
@@ -245,11 +250,11 @@ angular.forEach(${1:iterateOver}, function(value, key) {
 endsnippet
 #
 # Define a new $scope'd function
-snippet $f
-$scope.${1:functionName} = function(${2:args}) {
-	${3}
-};
-endsnippet
+#snippet $f
+#$scope.${1:functionName} = function(${2:args}) {
+	#${3}
+#};
+#endsnippet
 #
 # Defines a new $scope'd variable
 snippet $v
