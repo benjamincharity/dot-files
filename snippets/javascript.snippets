@@ -42,8 +42,7 @@ class ${1:My}Directive {
             scope: {},
             templateSrc: '${2:/path/to/file}.html',
             link: linkFunc,
-            controller: $1Controller,
-            controllerAs: 'vm'
+            controller: '$1Controller as vm',
         };
 
         return directive;
