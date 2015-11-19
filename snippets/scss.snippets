@@ -864,10 +864,10 @@ endsnippet
 # Mixins / Functions
 #
 snippet ext
-@extend %${1:myStyle};${2}
+@extend %${1:myStyle};
 endsnippet
 snippet inc
-@include ${1:mixin};${2}
+@include ${1:mixin};
 endsnippet
 snippet func
 @function ${1:myFunction}(${2}) {
@@ -879,7 +879,7 @@ snippet back
 endsnippet
 snippet vendor
 @include vendor_prefix(
-	${1:transition},
+	${1:transform},
 	${2:arguments}
 );
 endsnippet
