@@ -1,7 +1,6 @@
 "
 " Remap the leader key to the spacebar
-" http://karmanebula.com/technically-borked/2013/12/16/leader-key-as-space-capslock-as-esc
-let mapleader=" "
+map <space> \
 
 "
 " Quit window/split/buffer
@@ -143,5 +142,5 @@ map <D-T> :CommandTBuffer<CR>
 
 "
 " Fold between brackets
-map <leader>ff V$% :fold<CR>
+map <leader>ff $zf%<CR>
 
