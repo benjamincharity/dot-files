@@ -33,38 +33,69 @@ endsnippet
 #
 # Directive Class
 snippet directive "Create a directive" m
-class ${1:My}Directive {
-    constructor() {
-        'ngInject';
+function ${1:my}Directive(
+) {
+	'ngInject';
 
-        let directive = {
-            restrict: 'E',
-            scope: {},
-            templateSrc: '${2:/path/to/file}.html',
-            link: linkFunc,
-            controller: '$1Controller as vm',
-        };
+	const directive = {
+		restrict: '${2:E}',
+		scope: {},
+		bindToController: {},
+		templateUrl: '${3:/path/to/file}.html',
+		link: linkFunction,
+		controller: $1Controller,
+		controllerAs: 'vm',
+	};
 
-        return directive;
+	return directive;
 
-        function linkFunc($scope, $element, $attr, vm) {
-            ${3:let myVar = 'hi';}
 
-        }
+	/**
+	 * Link
+	 */
+	function linkFunction($scope, $element, $attr, vm) {
 
-    }
-}
-
-class $1Controller {
-    constructor() {
-        'ngInject';
-
-        ${4:this.yo = 'YOLO BROLO';}
-    }
+	}
 
 }
+
+
+/**
+ * Controller
+ */
+function $1Controller() {
+
+	this.yo = 'YOLO BROLO';
+
+}
+
 
 export default $1Directive;
+
+endsnippet
+#
+# Define a directive
+snippet $d
+angular.module('${1:MyModule}').directive('${2:MyDirective}', function() {
+
+	return {
+		restrict: 'E',
+		scope: {},
+		bindToController: {},
+		templateSrc: '${3:/path/to/file}.html',
+		link: linkFunction,
+		controller: '$2Controller',
+		controllerAs: 'vm'
+	};
+
+
+	function linkFunction($scope, $element, $attr, vm) {
+	}
+
+	function $2Controller() {
+	}
+
+});
 
 endsnippet
 #
@@ -92,14 +123,15 @@ endsnippet
 #
 # Components
 snippet ctrl
-angular.module('${1:MyModule}').controller('${2:My}Ctrl', function(
+angular.module('${1:MyModule}').controller('${2:My}Controller', function(
 	$scope
 ) {
 	'use strict';
 
-	${3:console.log('in $2Ctrl');}
+	${3:console.log('in $Controller');}
 
 });
+
 endsnippet
 #
 # Define a new module for an existing app
@@ -145,17 +177,6 @@ endsnippet
 # Use a filter
 snippet $f "Use a filter"
 $filter('${1:FilterName}')(${2:ItemToFilter}, '${3:Param}')${4}
-endsnippet
-#
-# Define a directive
-snippet $d
-angular.module('${1:MyModule}').directive('${2:MyDirective}', function() {
-	return {
-		link: function($scope, element, attrs) {
-
-		}
-	};
-});
 endsnippet
 #
 # Get an element
