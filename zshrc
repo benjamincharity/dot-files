@@ -6,7 +6,17 @@ export ZSH=$HOME/.oh-my-zsh
 # Define the theme to load
 # Look in ~/.oh-my-zsh/themes/
 export ZSH_THEME="robbyrussell"
-export PATH=~/.dot-files:~/.rbenv/shims/bin:/usr/local/bin:/usr/bin:/usr/local/share/npm/bin:/opt/local/bin:$PATH
+# Items in path:
+#   ~/.dot-files
+#   ~/.rbenv/shims/bin
+#   /usr/local/bin
+#   /usr/bin
+#   ~/.npm
+#   /opt/local/bin
+#   /usr/local/bin/npm
+#   /usr/local/bin/node
+#   $PATH
+export PATH=~/.dot-files:~/.rbenv/shims/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:$PATH
 export EDITOR=vim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 # Change python path
