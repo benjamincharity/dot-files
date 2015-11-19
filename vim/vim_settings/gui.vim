@@ -215,6 +215,7 @@ set history=1000
 " Use many undo levels
 set undolevels=1000
 
+
 "
 " Save folds when a file is closed
 " Currently disabled because fold lines are saved even if content changes via

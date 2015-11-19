@@ -55,3 +55,6 @@
 	clean = git lfs clean %f
 	smudge = git lfs smudge %f
 	required = true
+[gui]
+	recentrepo = /Users/bc/Code/moment/moment-client
+	recentrepo = /Users/bc/Code/moment/admin
