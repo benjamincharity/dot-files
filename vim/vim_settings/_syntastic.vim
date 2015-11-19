@@ -8,7 +8,7 @@ let g:syntastic_auto_loc_list = 1
 
 "
 " Check on open
-let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_open = 1
 
 "
 " Check on file save
@@ -17,7 +17,7 @@ let g:syntastic_check_on_wq = 1
 "
 "
 " Tell Syntastic which checker to use
-let g:syntastic_javascript_checkers = ['jscs']
+let g:syntastic_javascript_checkers = ['eslint', 'jscs']
 let g:syntastic_scss_checkers = ['scss_lint']
 
 "
@@ -55,5 +55,7 @@ let g:syntastic_html_tidy_ignore_errors=[
   \ "<script> escaping malformed URI reference",
   \ "<a> escaping malformed URI reference",
   \ "<input> attribute \"id\" has invalid value",
-  \ "['Authorization'] is better written in dot notation."
+  \ "['Authorization'] is better written in dot notation.",
+  \ "<ng-include> discarding whitespace in URI reference",
+  \ "<ng-include> discarding newline in URI reference"
   \ ]
