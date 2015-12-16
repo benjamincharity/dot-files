@@ -1,39 +1,49 @@
 #
 # ES6
 #
+# Injector
+snippet inject "Injector tag"
+'ngInject';
+endsnippet
+#
+# Global
+snippet global "ESLint global"
+/* global ${1:jQuery} */
+endsnippet
+#
 # Controller Class
 snippet controller "Create a controller class" m
-class ${1:App}Controller {
+export class ${1:App}Controller {
 
-    constructor() {
-        'ngInject';
+	constructor() {
+		'ngInject';
 
-    }
+		const self = this;
+
+	}
 
 }
-
-export default $1Controller;
 
 endsnippet
 #
 # Service Class
 snippet service "Create a service class" m
-class ${1:App}Service {
+export class ${1:App}Service {
 
-    constructor() {
-        'ngInject';
+	constructor() {
+		'ngInject';
 
-    }
+		const self = this;
+
+	}
 
 }
-
-export default $1Service;
 
 endsnippet
 #
 # Directive Class
 snippet directive "Create a directive" m
-function ${1:my}Directive(
+export function ${1:my}Directive(
 ) {
 	'ngInject';
 
@@ -53,7 +63,7 @@ function ${1:my}Directive(
 	/**
 	 * Link
 	 */
-	function linkFunction($scope, $element, $attr, vm) {
+	function linkFunction($scope, $element, $attrs, vm) {
 
 	}
 
@@ -68,9 +78,6 @@ function $1Controller() {
 	this.yo = 'YOLO BROLO';
 
 }
-
-
-export default $1Directive;
 
 endsnippet
 #
@@ -99,23 +106,37 @@ angular.module('${1:MyModule}').directive('${2:MyDirective}', function() {
 
 endsnippet
 #
-# Router
-snippet router "Create a router" m
-function ${1:my}RouterConfig($stateProvider) {
-    'ngInject';
+# Module
+snippet module "Create a module (es6)" m
+import '../core';
 
-    $stateProvider
-        .state('${2:app}', {
-            url: '/${3:route}',
-            templateUrl: 'app/${4:app/app}.html',
-            controller: '${5:AppController}',
-            controllerAs: 'vm',
-        })
-    ;
+import { SignInRouterConfig } from './signIn.routes';
+import { SignInController } from './signIn.controller';
+
+
+angular.module('${1:ModuleName}', [
+	'admin.core',
+])
+	.config(SignInRouterConfig)
+	.controller('SignInController', SignInController)
+;
+
+endsnippet
+#
+# Router
+snippet routes "Create a router file (es6)" m
+export function ${1:SignIn}RouterConfig($stateProvider) {
+	'ngInject';
+
+	$stateProvider
+		.state('${2:state.state}', {
+			url: '/${3:url}',
+			templateUrl: '${4:path/to/template}.html',
+			controller: '$1Controller as vm',
+	})
+	;
 
 }
-
-export default $1RouterConfig;
 
 endsnippet
 #
@@ -135,7 +156,7 @@ angular.module('${1:MyModule}').controller('${2:My}Controller', function(
 endsnippet
 #
 # Define a new module for an existing app
-snippet module
+snippet $m
 angular.module('${1:moduleName}', [${2:moduleDependencies}]);
 endsnippet
 #
@@ -161,7 +182,28 @@ endsnippet
 #endsnippet
 #
 # Define a filter
-snippet filter
+snippet filter "Define a filter (es6)" m
+export default function ${1:Foo}Filter() {
+
+	return ${2:myFunction};
+
+
+	/**
+	 * ${3:My function}
+	 *
+	 * @param {String} input
+	 * @return {String} output
+	 */
+	function $2(${4:input}) {
+
+	}
+
+}
+
+endsnippet
+#
+# Define a filter
+snippet $f
 angular.module('${1:MyModule}')
 .filter('${2:MyFilter}', function() {
 
@@ -283,11 +325,11 @@ endsnippet
 #
 # Timeout
 snippet ngtimeout
-$timeout(function() {
+$timeout(() => {
 }, ${1:1000});
 endsnippet
 snippet $t
-$timeout(function() {
+$timeout(() => {
 }, ${1:1000});
 endsnippet
 #
