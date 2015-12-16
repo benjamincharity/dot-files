@@ -1024,6 +1024,10 @@ endsnippet
 #
 # Flex Box
 #
+snippet flexx "Layout as flex and set direction. row|row-reverse|column|column-reverse nowrap|wrap|wrap-reverse"
+display: flex;
+flex-flow: ${1:row} ${2:nowrap};${3}
+endsnippet
 snippet flexc "Define a flex component: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]"
 flex: ${1:1} ${2:1} ${3:auto};${4}
 endsnippet
@@ -1184,21 +1188,21 @@ endsnippet
 #
 # Compass Transforms
 #
-snippet scale
-@include transform( scale(${1:1, 1}) );${2}
-endsnippet
-snippet translate
-@include transform( translate(${1:100px, 100px}) );${2}
-endsnippet
-snippet translatex
-@include transform( translateX(${1:100px}) );${2}
-endsnippet
-snippet translatey
-@include transform( translateY(${1:100px}) );${2}
-endsnippet
-snippet rotate
-@include transform( rotate(${1:90}deg) );${2}
-endsnippet
+#snippet scale
+#@include transform( scale(${1:1, 1}) );${2}
+#endsnippet
+#snippet translate
+#@include transform( translate(${1:100px, 100px}) );${2}
+#endsnippet
+#snippet translatex
+#@include transform( translateX(${1:100px}) );${2}
+#endsnippet
+#snippet translatey
+#@include transform( translateY(${1:100px}) );${2}
+#endsnippet
+#snippet rotate
+#@include transform( rotate(${1:90}deg) );${2}
+#endsnippet
 #
 #
 #
