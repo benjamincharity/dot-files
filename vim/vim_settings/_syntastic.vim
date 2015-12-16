@@ -17,7 +17,7 @@ let g:syntastic_check_on_wq = 1
 "
 "
 " Tell Syntastic which checker to use
-let g:syntastic_javascript_checkers = ['eslint', 'jscs']
+let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_scss_checkers = ['scss_lint']
 
 "
@@ -57,5 +57,6 @@ let g:syntastic_html_tidy_ignore_errors=[
   \ "<input> attribute \"id\" has invalid value",
   \ "['Authorization'] is better written in dot notation.",
   \ "<ng-include> discarding whitespace in URI reference",
-  \ "<ng-include> discarding newline in URI reference"
+  \ "<ng-include> discarding newline in URI reference",
+  \ "<article> attribute \"id\" has invalid value \"js_item_{{ $index }}\""
   \ ]
