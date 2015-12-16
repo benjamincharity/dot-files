@@ -48,6 +48,14 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "
+" Sort CSS styles inside {}
+noremap <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
+
+"
+" Sort selected lines
+noremap <leader>S :sort<CR>
+
+"
 " Show register (clipboard)
 map <leader>rr :reg<CR>
 
@@ -98,14 +106,6 @@ noremap <Leader>a :Ack <cword><CR>
 "
 " Compile coffeescript to scratch buffer in vertical split
 noremap <leader>cp :CoffeeCompile vert<CR>
-
-"
-" Sort CSS styles inside {}
-noremap <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
-
-"
-" Sort selected lines
-noremap <leader>S :sort<CR>
 
 "
 " Directly jump to definition in SCSS/CSS from class/id in HTML
