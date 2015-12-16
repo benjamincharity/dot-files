@@ -1,4 +1,5 @@
 {
+    "esnext": true,
     "disallowEmptyBlocks": true,
     "disallowIdentifierNames": [
         "temp",
@@ -54,7 +55,6 @@
         "allExcept": [ "[", "]" ]
     },
     "disallowSpacesInsideParentheses": true,
-    "disallowTrailingComma": true,
     "disallowTrailingWhitespace": true,
     "disallowYodaConditions": true,
     "maximumLineLength": {
@@ -62,11 +62,15 @@
         "tabSize": 4,
         "allowComments": false,
         "allowUrlComments": true,
-        "allowRegex": false
+        "allowRegex": true
     },
     "requireBlocksOnNewline": true,
     "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
     "requireCapitalizedConstructors": true,
+    "requireTrailingComma": {
+        "ignoreSingleValue": true,
+        "ignoreSingleLine": true
+    },
     "requireCommaBeforeLineBreak": true,
     "requireCurlyBraces": [
         "if",
@@ -154,7 +158,11 @@
         "return",
         "typeof"
     ],
-    "requireSpaceAfterLineComment": true,
+    "requireSpaceAfterLineComment": {
+      "allExcept": [
+        "/"
+      ]
+    },
     "requireSpaceBeforeBinaryOperators": [
         "=",
         "+",
