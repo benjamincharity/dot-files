@@ -1,29 +1,30 @@
 {
-  "extends": "eslint:recommended",
-    "plugins": ["angular"],
+    "extends": "eslint:recommended",
+
+    "plugins": [
+      "angular"
+    ],
+
     "env": {
       "es6": true,
-      "browser": true,
-      "jasmine": true
+      "env": {
+        "browser": true
+      }
     },
+
     "ecmaFeatures": {
       "modules": true
     },
+
     "globals": {
-      "angular": true,
       "module": true,
       "inject": true,
       "moment": false,
       "_": false,
-      "Velocity": false,
-      "analytics": false,
-      "StatusBar": false
+      "angular: true"
     },
+
     "rules": {
-        // Needed for angular
-        "no-use-before-define": 0,
-        // Needed for angular
-        "no-unused-vars": 0,
         "comma-dangle": [2, "always-multiline"],
         "radix": 2,
         "yoda": 2,
@@ -64,6 +65,21 @@
         "no-plusplus": 2,
         "object-curly-spacing": [2, "always"],
         "no-console": 0,
-        "angular/log": 0
+        "consistent-this": [2, "self"],
+        "block-scoped-var": 2,
+        "eqeqeq": 2,
+        "no-var": 2,
+        "no-const-assign": 2,
+        "max-params": [2, 5],
+        "no-redeclare": 2,
+        "no-magic-numbers": 2,
+        // Needed for angular
+        "no-use-before-define": 0,
+        // Needed for angular
+        "no-unused-vars": 0,
+        "angular/log": 0,
+        // Disabled this since we uses classes for services
+        // http://www.michaelbromley.co.uk/blog/350/exploring-es6-classes-in-angularjs-1-x%20nice
+        "angular/no-service-method": 0
     }
 }
