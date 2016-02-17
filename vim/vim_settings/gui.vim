@@ -62,6 +62,8 @@ set shiftwidth=2
 set expandtab
 " For JavaScript files, switch to 4 tabs
 autocmd FileType javascript setlocal expandtab shiftwidth=4 softtabstop=4
+" For Gitconfig files, switch to 4 tabs
+autocmd FileType gitconfig setlocal expandtab shiftwidth=4 softtabstop=4
 
 "
 " Project specific tabs
