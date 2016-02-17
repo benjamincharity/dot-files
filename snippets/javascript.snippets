@@ -15,9 +15,20 @@ endsnippet
 snippet controller "Create a controller class" m
 export class ${1:App}Controller {
 
-	constructor() {
+	constructor(
+	) {
 		'ngInject';
 
+
+		this._activate();
+
+	}
+
+
+
+
+	_activate() {
+		console.log('in $1Controller')
 	}
 
 }
@@ -104,15 +115,15 @@ endsnippet
 snippet module "Create a module (es6)" m
 import '../core';
 
-import { SignInRouterConfig } from './signIn.routes';
-import { SignInController } from './signIn.controller';
+import { ${1:SignIn}RouterConfig } from './signIn.routes';
+import { $1Controller } from './signIn.controller';
 
 
-angular.module('${1:ModuleName}', [
-	'admin.core',
+angular.module('${2:ModuleName}', [
+	'dm.core',
 ])
-	.config(SignInRouterConfig)
-	.controller('SignInController', SignInController)
+	.config($1RouterConfig)
+	.controller('$1Controller', $1Controller)
 ;
 
 endsnippet
@@ -163,7 +174,8 @@ endsnippet
 #
 # Define a filter
 snippet filter "Define a filter (es6)" m
-export default function ${1:Foo}Filter() {
+export function ${1:Foo}Filter() {
+	'ngInject';
 
 	return ${2:myFunction};
 
@@ -201,6 +213,17 @@ endsnippet
 #
 # Utilities
 #
+#
+# Disable eslint for a specific rule
+snippet disable "Disable ESLint for a specific rule"
+/* eslint-disable ${1:camelcase} */
+/* eslint-enable $1 */
+endsnippet
+#
+# Disable eslint for a specific line
+snippet disableline "Disable ESLint for a specific line and rule"
+// eslint-disable-line ${1:camelcase}
+endsnippet
 #
 # HTTP post
 snippet httppost
