@@ -1,60 +1,61 @@
 [user]
-	name = Benjamin Charity
-	email = ben@benjamincharity.com
+    name = Benjamin Charity
+    email = ben@benjamincharity.com
 [alias]
-  ci = commit
-  co = checkout
-  lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-  br = branch
-  dt = difftool
-  st = status
-  pr = pull-request -b master
+    ci = commit
+    co = checkout
+    lg = log --graph --pretty=format:'%Cred%h%Creset - %Cblue%an%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    br = branch
+    dt = difftool
+    st = status
+    pr = pull-request -b master
+    lastchange = log -p --follow -n 1
 [apply]
-  whitespace = nowarn
+    whitespace = nowarn
 [core]
-	excludesfile = /Users/bc/.dot-files/.gitignore_global
-  pager = tee
+    excludesfile = /Users/bc/.dot-files/.gitignore_global
+    pager = tee
 [color]
-  branch = auto
-  diff = auto
-  interactive = auto
-  status = auto
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
 [merge]
-  tool = opendiff
-  keepBackup = false
+    tool = opendiff
+    keepBackup = false
 [diff]
-  tool = opendiff
+    tool = meld
 [difftool]
-  prompt = false
+    prompt = false
 ;[difftool "mvimdiff"]
   ;cmd = mvim -d -f $LOCAL $REMOTE
 [heroku]
-  account = personal
+    account = personal
 [github]
-  user = benjamincharity
+    user = benjamincharity
 [push]
-	default = current
+    default = current
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
 [mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [branch]
-  autosetuprebase = always
+    autosetuprebase = always
 [pull]
-	rebase = true
+    rebase = true
 [init]
-	templatedir = ~/.dot-files/.git_template
+    templatedir = ~/.dot-files/.git_template
 [rerere]
-	enabled = true
-	autoupdate = true
+    enabled = true
+    autoupdate = true
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [filter "lfs"]
-	clean = git lfs clean %f
-	smudge = git lfs smudge %f
-	required = true
+    clean = git lfs clean %f
+    smudge = git lfs smudge %f
+    required = true
 [gui]
-	recentrepo = /Users/bc/Code/moment/moment-client
-	recentrepo = /Users/bc/Code/moment/admin
+    recentrepo = /Users/bc/Code/moment/moment-client
+    recentrepo = /Users/bc/Code/moment/admin
