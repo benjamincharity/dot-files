@@ -168,14 +168,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 
 
-#
-# Moment
-#
-# Build Dev
-alias connect="./build-dev"
-# Build Prod
-alias connectprod="./build-prod"
-
 
 #
 # Bower
@@ -196,3 +188,13 @@ function bui {
 function buid {
   command bower uninstall $1 --save-dev
 }
+
+
+
+
+#
+# Fun
+#
+# Generate a random ASCII cow
+alias cow='vaca'
+
