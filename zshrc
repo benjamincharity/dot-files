@@ -125,6 +125,8 @@ alias l='ls -la'
 # Git Grep
 alias gg='git grep'
 
+
+
 #
 # Postgres
 #
@@ -132,6 +134,7 @@ alias gg='git grep'
 alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 # Stop
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
+
 
 
 #
@@ -142,6 +145,8 @@ alias mongostart="launchctl start org.mongodb.mongod"
 # Stop
 alias mongostop="launchctl stop org.mongodb.mongod"
 
+
+
 #
 # MySQL
 #
@@ -149,6 +154,7 @@ alias mongostop="launchctl stop org.mongodb.mongod"
 alias mysqlstart='mysql.server start'
 # Stop
 alias mysqlstop='mysql.server stop'
+
 
 
 #
@@ -165,7 +171,6 @@ bindkey -M emacs '^N' history-substring-search-down
 # bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
-
 
 
 
@@ -189,6 +194,13 @@ function buid {
   command bower uninstall $1 --save-dev
 }
 
+
+
+#
+# NPM
+#
+# Show a list of all possible NPM scripts in a directory
+alias run='ntl'
 
 
 
