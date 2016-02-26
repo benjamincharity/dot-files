@@ -116,9 +116,9 @@ Plugin 'dkprice/vim-easygrep'
 Plugin 'Valloric/YouCompleteMe'
 
 "
-" Tern for Vim - Needed for Tagbar
-" https://github.com/marijnh/tern_for_vim
-Plugin 'marijnh/tern_for_vim'
+" Tern - This is a Vim plugin that provides Tern-based JavaScript editing support.
+" https://github.com/ternjs/tern_for_vim
+Plugin 'ternjs/tern_for_vim'
 
 "
 " Tagbar - Browse tags of current document
@@ -188,4 +188,6 @@ Plugin 'wincent/command-t'
 " https://github.com/peterhurford/send.vim
 Plugin 'peterhurford/send.vim'
 
+
 call vundle#end()
+
