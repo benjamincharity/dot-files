@@ -1,5 +1,8 @@
+#########################################
 #
 # ES6
+#
+#########################################
 #
 # Injector
 snippet inject "Injector tag"
@@ -145,7 +148,14 @@ export function ${1:SignIn}RouterConfig($stateProvider) {
 
 endsnippet
 #
+#
+#
+#
+#########################################
+#
 # Angular
+#
+#########################################
 #
 # Components
 snippet ctrl
@@ -207,12 +217,11 @@ endsnippet
 #
 #
 #
-#
-#
-#
+#########################################
 #
 # Utilities
 #
+#########################################
 #
 # Disable eslint for a specific rule
 snippet disable "Disable ESLint for a specific rule"
@@ -351,48 +360,87 @@ endsnippet
 #
 #
 #
-#
+#########################################
 #
 # Vanilla JS
 #
-# Use strict statement
+#########################################
+#
+#
+#
+#
+#########################################
+#
+# Simple promise
+#
+#########################################
+snippet promise
+return this.$q((resolve, reject) => {
+	resolve();
+	reject();
+});
+endsnippet
+#########################################
+#
+# Use strict
+#
+#########################################
 snippet strict
 'use strict';
 endsnippet
+#########################################
+#
 # Variable function
+#
+#########################################
 snippet vfun
-var ${1:myFunction} = function(${2}) {
+const ${1:myFunction} = function(${2}) {
 	${3:console.log('hi');}
 };${4}
 endsnippet
+#########################################
 #
-# Function
+# Named function
+#
+#########################################
 snippet fun
 function ${1:function_name}(${2:argument}) {
 	${3:// body...}
 }
 endsnippet
+#########################################
 #
-# Anonymous Function
+# Anonymous function
+#
+#########################################
 snippet f
 function(${1}) {${2}};
 endsnippet
+#########################################
 #
-# Object Method
+# Object method
+#
+#########################################
 snippet :f
 ${1:method_name}: function(${2:attribute}) {
 	${4}
 }${3:,}
 endsnippet
+#########################################
 #
 # if
+#
+#########################################
 snippet if
 if (${1:true}) {
 	${2}
 }
 endsnippet
+#########################################
 #
 # if ... else
+#
+#########################################
 snippet ife
 if (${1:true}) {
 	${2}
@@ -400,8 +448,11 @@ if (${1:true}) {
 	${3}
 }
 endsnippet
+#########################################
 #
 # Ternary conditional
+#
+#########################################
 snippet ift
 ${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
 endsnippet
@@ -433,15 +484,21 @@ for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3: - 1}) {
 	${4:$1[$2]}
 };
 endsnippet
+#########################################
 #
-# setTimeout function
+# Set Timeout
+#
+#########################################
 snippet timeout
 setTimeout(() => {
 	${3}
 }${2}, ${1:10});
 endsnippet
+#########################################
 #
 # Console Logs
+#
+#########################################
 snippet cl
 console.log('${1:Item}: ', ${2:results});${3}
 endsnippet
