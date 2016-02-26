@@ -95,6 +95,8 @@ nnoremap <leader>C :silent !open -a 'Google Chrome.app' '%:p'<CR>
 "
 " Toggle NerdTree
 noremap <leader>d :NERDTreeToggle<CR>
+"locate current file in NERDTree
+map <leader>FF :NERDTreeFind<cr>
 
 "
 " Clear search highlights
@@ -124,7 +126,7 @@ nnoremap <Leader>h :set cursorline! cursorcolumn!
 
 "
 " Open the file in marked.app
-nnoremap <leader>m :silent !open -a Marked.app '%:p'<CR>
+nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<CR>
 
 "
 " Toggle paste mode
@@ -143,4 +145,17 @@ map <D-T> :CommandTBuffer<CR>
 "
 " Fold between brackets
 map <leader>ff $zf%<CR>
+
+"
+" Tern
+" Jump to definition
+map <leader>tt :TernDef<CR>
+" Look at docs
+map <leader>td :TernDef<CR>
+" Find/Navigate references
+map <leader>tr :TernRefs<CR>
+" Rename variable
+map <leader>tR :TernRename<CR>
+" Find the type
+map <leader>tT :TernType<CR>
 
