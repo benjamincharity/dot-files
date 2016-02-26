@@ -1,0 +1,25 @@
+" -------- Base --------
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set gdefault
+
+
+
+
+" -------- Naviagation --------
+" dc-debug console
+map ,dc :xcmenucmd Activate Console<CR>
+
+
+
+
+" -------- Miscellaneous --------
+
+" search the string cursor points to. Very Usefull.
+map ,a viw:xccmd findSelectedTextInWorkspace<CR>
+
+" Comment selected lines
+nnoremap // :xccmd commentAndUncommentCurrentLines<CR>
+vnoremap // :xccmd commentAndUncommentCurrentLines<CR>
