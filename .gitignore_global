@@ -54,7 +54,6 @@ config/*.yml
 rerun.txt
 pickle-email-*.html
 
-
-# Node              #
-#####################
-node_modules/*
+# Node               #
+######################
+node_modules

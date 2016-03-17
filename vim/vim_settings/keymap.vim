@@ -149,9 +149,9 @@ map <leader>ff $zf%<CR>
 "
 " Tern
 " Jump to definition
-map <leader>tt :TernDef<CR>
-" Look at docs
 map <leader>td :TernDef<CR>
+" Look at docs
+map <leader>tD :TernDef<CR>
 " Find/Navigate references
 map <leader>tr :TernRefs<CR>
 " Rename variable

@@ -4,6 +4,16 @@
 #
 #########################################
 #
+# co
+snippet co "co generator function" m
+co(function*() {
+	const ${2:callResult} = yield ${1:asyncServiceCall};
+})
+	.catch((error) => {
+		console.error('$1 error: ', error);
+	});
+endsnippet
+#
 # Injector
 snippet inject "Injector tag"
 'ngInject';
@@ -31,7 +41,7 @@ export class ${1:App}Controller {
 
 
 	_activate() {
-		console.log('in $1Controller')
+
 	}
 
 }
@@ -53,12 +63,15 @@ endsnippet
 #
 # Directive Class
 snippet directive "Create a directive" m
+import { $1Controller } from './${1}.controller';
+
 export function ${1:my}Directive(
 ) {
 	'ngInject';
 
 	const directive = {
 		restrict: '${2:E}',
+		${3:replace: true,}
 		scope: {},
 		bindToController: {},
 		templateUrl: '${3:/path/to/file}.html',
@@ -76,14 +89,6 @@ export function ${1:my}Directive(
 	function linkFunction($scope, $element, $attrs, vm) {
 
 	}
-
-}
-
-
-/**
- * Controller
- */
-function $1Controller() {
 
 }
 
@@ -116,15 +121,10 @@ endsnippet
 #
 # Module
 snippet module "Create a module (es6)" m
-import '../core';
-
 import { ${1:SignIn}RouterConfig } from './signIn.routes';
 import { $1Controller } from './signIn.controller';
 
-
-angular.module('${2:ModuleName}', [
-	'dm.core',
-])
+angular.module('${2:ModuleName}', [])
 	.config($1RouterConfig)
 	.controller('$1Controller', $1Controller)
 ;
@@ -252,14 +252,14 @@ endsnippet
 # HTTP get
 snippet http "HTTP Get" m
 $http.get(${1:URL})
-	.success((data) => {
+	.success((results) => {
 
-		console.log('response: ', data);
+		console.log('results: ', results);
 
 	})
-	.error((data, status) => {
+	.error((error) => {
 
-		console.error('error: ', data, status);
+		console.error('error: ', error);
 
 	});${2}
 endsnippet
@@ -371,10 +371,21 @@ endsnippet
 #
 #########################################
 #
-# Simple promise
+# ES6 promise
 #
 #########################################
-snippet promise
+snippet promise "Create a standard ES6 Promise"
+return new Promise((resolve, reject) => {
+	resolve();
+	reject();
+});
+endsnippet
+#########################################
+#
+# $q promise
+#
+#########################################
+snippet $q "Create a Promise using the $q library"
 return this.$q((resolve, reject) => {
 	resolve();
 	reject();
@@ -555,8 +566,8 @@ document.getElementById('${1}');${2}
 endsnippet
 # Document ready
 snippet ready
-$(document).ready(() => {
-		${1}
+angular.element($document).ready(() => {
+	${1}
 });
 endsnippet
 # Bind via .on
