@@ -179,6 +179,11 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'bling/vim-airline'
 
 "
+" Airline Themes
+" https://github.com/vim-airline/vim-airline-themes/blob/master/README.md
+Plugin 'vim-airline/vim-airline-themes'
+
+"
 " Command T
 " https://github.com/wincent/command-t
 Plugin 'wincent/command-t'
@@ -187,7 +192,6 @@ Plugin 'wincent/command-t'
 " Git add, git commit, git pull, git push all in one command, without leaving vim.
 " https://github.com/peterhurford/send.vim
 Plugin 'peterhurford/send.vim'
-
 
 call vundle#end()
 

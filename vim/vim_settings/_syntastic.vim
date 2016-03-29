@@ -29,6 +29,10 @@ let g:syntastic_enable_highlighting = 1
 let g:syntastic_aggregate_errors = 0
 
 "
+" Set debug letter
+let g:syntastic_debug = 0
+
+"
 " Change highlight colors
 "highlight link SyntasticError SpellBad
 "highlight link SyntasticWarning SpellCap
