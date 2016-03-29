@@ -16,13 +16,11 @@ export ZSH_THEME="robbyrussell"
 #   /usr/local/bin/npm
 #   /usr/local/bin/node
 #   $PATH
-export PATH=~/.dot-files:~/.rbenv/shims/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:$PATH
+export PATH=~/.dot-files:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$PATH
 export EDITOR=vim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 # Change python path
 export vi_cv_path_python=usr/local/Cellar/python
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
 
 #
 # Auto update without a prompt
@@ -32,7 +30,10 @@ DISABLE_UPDATE_PROMPT=true
 # Which plugins would you like to load?
 # Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew aws bower frontend-search grunt jsontools node npm sublime terminalapp urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search send git-it-on)
+plugins=(brew aws bower rbenv grunt jsontools node npm sublime terminalapp urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search send git-it-on)
+
+
+
 
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
@@ -230,3 +231,8 @@ gifify() {
   fi
 }
 
+
+#
+# RBENV
+#
+eval "$(rbenv init -)"
