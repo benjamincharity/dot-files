@@ -20,7 +20,6 @@ source /Users/bc/.dot-files/vim/vim_settings/keymap.vim
 "Plugin Specific
 source /Users/bc/.dot-files/vim/vim_settings/_ack.vim
 source /Users/bc/.dot-files/vim/vim_settings/_airline.vim
-source /Users/bc/.dot-files/vim/vim_settings/_command-t.vim
 source /Users/bc/.dot-files/vim/vim_settings/_ctrl_p.vim
 source /Users/bc/.dot-files/vim/vim_settings/_emmet.vim
 source /Users/bc/.dot-files/vim/vim_settings/_gist.vim

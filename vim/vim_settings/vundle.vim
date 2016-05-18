@@ -184,9 +184,10 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 "
-" Command T
-" https://github.com/wincent/command-t
-Plugin 'wincent/command-t'
+" ctrlp
+" Fuzzy file, buffer, mru, tag, etc finder
+" https://github.com/ctrlpvim/ctrlp.vim
+Plugin 'ctrlpvim/ctrlp.vim'
 
 "
 " Git add, git commit, git pull, git push all in one command, without leaving vim.
