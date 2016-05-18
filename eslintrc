@@ -1,21 +1,17 @@
 {
     "extends": "eslint:recommended",
-
     "plugins": [
       "angular"
     ],
-
     "env": {
       "es6": true,
       "env": {
         "browser": true
       }
     },
-
     "ecmaFeatures": {
       "modules": true
     },
-
     "globals": {
       "module": true,
       "inject": true,
@@ -23,7 +19,6 @@
       "_": false,
       "angular: true"
     },
-
     "rules": {
         "comma-dangle": [2, "always-multiline"],
         "radix": 2,

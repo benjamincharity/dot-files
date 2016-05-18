@@ -38,6 +38,8 @@ plugins=(brew aws bower rbenv grunt jsontools node npm sublime terminalapp urlto
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
+# For NVM
+source $(brew --prefix nvm)/nvm.sh
 
 
 #
@@ -63,7 +65,8 @@ alias editfullstack='mvim /Users/bc/Dropbox/Resources/AngularFullstack\ Edited\ 
 # Navigation
 #
 # Go to the code directory
-alias code='cd ~/Code/; ls -1F . | grep /'
+# Conflicts with vscode 'code .'
+#alias code='cd ~/Code/; ls -1F . | grep /'
 # Go to the projects directory
 alias projects='cd ~/Dropbox/Projects/; ls -1F . | grep /'
 # Go to the open source directory and list subfolders
@@ -92,8 +95,8 @@ function mkdircd {
 # Apps
 #
 # Open Visual Studio Code
-alias vs='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Atom'
-alias vsc='/Applications/Visual\ Studio\ Code.app/Contents/MacOS/Atom'
+alias vsc='/Applications/Visual\ Studio\ Code.app'
+alias vs='/Applications/Visual\ Studio\ Code.app'
 
 
 

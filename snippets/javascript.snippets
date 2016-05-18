@@ -94,6 +94,30 @@ export function ${1:my}Directive(
 
 endsnippet
 #
+# Provider Class
+snippet provider "Create a provider" m
+export class ${1:Module}Config {
+
+	// Define defaults
+	constructor() {
+
+		// Note...
+		this.item = true;
+
+	}
+
+
+
+
+	$get() {
+		return this;
+	}
+
+
+}
+
+endsnippet
+#
 # Define a directive
 snippet $d
 angular.module('${1:MyModule}').directive('${2:MyDirective}', function() {
@@ -566,7 +590,7 @@ document.getElementById('${1}');${2}
 endsnippet
 # Document ready
 snippet ready
-angular.element($document).ready(() => {
+angular.element(this.$document[0]).ready(() => {
 	${1}
 });
 endsnippet
