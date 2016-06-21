@@ -71,6 +71,8 @@ alias editfullstack='mvim /Users/bc/Dropbox/Resources/AngularFullstack\ Edited\ 
 alias projects='cd ~/Dropbox/Projects/; ls -1F . | grep /'
 # Go to the open source directory and list subfolders
 alias opensource='cd ~/Code/open-source/; ls -1F . | grep /'
+# Go to the design directory and list subfolders
+alias design='cd ~/Design/; ls -1F . | grep /'
 # Go to KenzieLane directory and list subfolders
 alias kl='cd ~/Code/kenzielane/; ls -1F . | grep /'
 # Go to the Ripple directory and list subfolders
