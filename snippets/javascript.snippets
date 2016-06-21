@@ -230,7 +230,7 @@ endsnippet
 #
 # Use a filter
 snippet $f "Use a filter"
-$filter('${1:FilterName}')(${2:ItemToFilter}, '${3:Param}')${4}
+this.$filter('${1:FilterName}')(${2:ItemToFilter}, '${3:Param}');${4}
 endsnippet
 #
 # Get an element
@@ -332,29 +332,29 @@ endsnippet
 #
 # Timeout
 snippet ngtimeout
-$timeout(() => {
+this.$timeout(() => {
 }, ${1:1000});
 endsnippet
 snippet $t
-$timeout(() => {
+this.$timeout(() => {
 }, ${1:1000});
 endsnippet
 #
 # Scope.Apply
 snippet apply
-$scope.$apply(() => {
+this.$scope.$apply(() => {
 });${1}
 endsnippet
 #
 # Define a $watch for an expression
 # You can change the expression to be watched
 snippet $w
-$scope.$watch('${1:watchExpr}', (newValue, oldValue) => {
+this.$scope.$watch('${1:watchExpr}', (newValue, oldValue) => {
 	${2}
 });
 endsnippet
 snippet scope.watch
-$scope.$watch('${1:watchExpr}', (newValue, oldValue) => {
+this.$scope.$watch('${1:watchExpr}', (newValue, oldValue) => {
 	${2}
 });
 endsnippet
@@ -362,7 +362,7 @@ endsnippet
 # Define a $on for a $broadcast/$emit on the $scope inside an Angular Controller
 # You can change the event name to listen on
 snippet $on
-$scope.$on('${1:eventName}', (event, ${2:args}) => {
+this.$scope.$on('${1:eventName}', (event, ${2:args}) => {
 	${3}
 });
 endsnippet
@@ -370,7 +370,7 @@ endsnippet
 # Define a $broadcast for a $scope inside an Angular Controller / Angular Controller Function
 # You can change the event name and optional event arguments
 snippet $b
-$scope.$broadcast('${1:eventName}', ${2:eventArgs});
+this.$scope.$broadcast('${1:eventName}', ${2:eventArgs});
 endsnippet
 #
 # Define an $emit for a $scope inside an Angular Controller / Angular Controller Function
@@ -508,16 +508,16 @@ endsnippet
 #
 # for (...) {...}
 snippet for
-for (var ${2:i} = 0; $2 < ${1:Things}.length; $2${3: + 1}) {
-	${4:$1[$2]}
-};
+for (let ${1:value} of ${2:array}) {
+	console.log($1);
+}
 endsnippet
 #
 # for (...) {...} (Improved Native For-Loop)
 snippet forr
 for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3: - 1}) {
 	${4:$1[$2]}
-};
+}
 endsnippet
 #########################################
 #
