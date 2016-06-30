@@ -112,6 +112,10 @@ alias st='status'
 alias gs='git status'
 # Add all untracked files
 alias ga='git add -A :/'
+# Stash, pull, pop
+alias spp='git stash && git pull && git stash pop'
+# Stash, pull, pop, start node
+alias spps='git stash && git pull && git stash pop && node index.js'
 # Commit with message
 alias gc='git commit -am'
 # Create and checkout new branch
@@ -221,23 +225,22 @@ alias cow='vaca'
 
 #
 # GIFs
+# Originally found here: https://gist.github.com/SlexAxton/4989674
+# NOTE: I removed the if/else catch for `--good` since without this parameter the quality is
+# terrible.
 #
 gifify() {
   if [[ -n "$1" ]]; then
-    if [[ $2 == '--good' ]]; then
-      ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png
-      time convert -verbose +dither -layers Optimize -resize 600x600\> out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > $1.gif
-      rm out-static*.png
-    else
-      ffmpeg -i $1 -s 600x400 -pix_fmt rgb24 -r 10 -f gif - | gifsicle --optimize=3 --delay=3 > $1.gif
-    fi
+    ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png
+    time convert -verbose +dither -layers Optimize -resize 600x600\> out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > $1.gif
+    rm out-static*.png
   else
     echo "proper usage: gifify <input_movie.mov>. You DO need to include extension."
   fi
 }
 
-
 #
 # RBENV
 #
 eval "$(rbenv init -)"
+
