@@ -64,12 +64,6 @@ map <leader>rr :reg<CR>
 "map <leader>rs :call ReloadSnippets(&filetype)<CR>
 
 "
-" Remap these since I always seem to type the wrong command in haste.
-command! W w
-command! Wa wa
-command! WA wa
-
-"
 " Move lines with alt + direction
 nnoremap ∆ :m+<CR>==
 nnoremap ˚ :m-2<CR>==
@@ -163,4 +157,16 @@ map <leader>tT :TernType<CR>
 "
 " Convert all emoji references (:smile:) into the actual emoji (😃)
 map <leader>re :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
+
+
+
+"
+" Overrides and Fallbacks
+"
+
+" 'W' should be converted to 'w' if on the command line and not part of a word
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+
+" 'Wa' should be converted to 'wa' if on the command line and not part of a word
+cnoreabbrev <expr> Wa ((getcmdtype() is# ':' && getcmdline() is# 'Wa')?('wa'):('Wa'))
 
