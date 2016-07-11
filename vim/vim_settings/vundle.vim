@@ -194,5 +194,11 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " https://github.com/peterhurford/send.vim
 Plugin 'peterhurford/send.vim'
 
+"
+" Emoji in Vim.
+" https://github.com/junegunn/vim-emoji
+Plugin 'junegunn/vim-emoji'
+
+
 call vundle#end()
 
