@@ -159,3 +159,8 @@ map <leader>tR :TernRename<CR>
 " Find the type
 map <leader>tT :TernType<CR>
 
+
+"
+" Convert all emoji references (:smile:) into the actual emoji (😃)
+map <leader>re :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
+
