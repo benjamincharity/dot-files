@@ -145,10 +145,10 @@ endsnippet
 #
 # Module
 snippet module "Create a module (es6)" m
-import { ${1:SignIn}RouterConfig } from './signIn.routes';
-import { $1Controller } from './signIn.controller';
+import { ${1:SignIn}RouterConfig } from './$3.routes';
+import { $1Controller } from './$3.controller';
 
-angular.module('${2:ModuleName}', [])
+angular.module('${2:prefix}.${3:name}', [])
 	.config($1RouterConfig)
 	.controller('$1Controller', $1Controller)
 ;
@@ -613,5 +613,59 @@ snippet funcom
  * ${2:@param {Object} moment}
  * ${3:@return {String} name}
  */${4}
+endsnippet
+
+#
+#
+#
+#
+# Tests
+# Describe
+snippet describe "Describe function" m
+describe('${1:test block}', () => {
+
+});
+endsnippet
+# Describe full
+snippet describefull "Describe function and child containers" m
+describe('${1:test block}', () => {
+
+	beforeEach(() => {
+
+	});
+
+	afterEach(() => {
+
+	});
+
+	it('should do something', () => {
+		expect().toEqual();
+	});
+
+});
+endsnippet
+# it
+snippet it "It statement" m
+it('${1:should do something}', () => {
+	expect(${2:item}).${3:toEqual}(${4:value});
+});
+endsnippet
+# Before inject
+snippet beforei "Before injector function" m
+beforeEach(inject((_${1:serviceToInject}_) => {
+	$1 = _$1_;
+}));
+endsnippet
+# Before function
+snippet before "Before function" m
+beforeEach(() => {
+	${1}
+});
+endsnippet
+# After
+snippet after "After function" m
+afterEach(() => {
+	${1}
+});
 endsnippet
 
