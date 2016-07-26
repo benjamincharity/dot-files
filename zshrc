@@ -136,6 +136,8 @@ alias gd='git diff | mvim'
 alias l='ls -la'
 # Git Grep
 alias gg='git grep'
+# Get a list of all changes since the latest release
+alias gr='git log `git describe --tags --abbrev=0`..HEAD --oneline'
 
 
 
