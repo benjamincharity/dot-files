@@ -516,8 +516,8 @@ endsnippet
 #
 # for (...) {...} (Improved Native For-Loop)
 snippet forr
-for (var ${2:i} = ${1:Things}.length - 1; $2 >= 0; $2${3: - 1}) {
-	${4:$1[$2]}
+for (const ${1:i} = 0; $1 < ${2:array}.length; $1 += 1) {
+	${4:$2[$1]}
 }
 endsnippet
 #########################################
@@ -639,7 +639,7 @@ describe('${1:test block}', () => {
 	});
 
 	it('should do something', () => {
-		expect().toEqual();
+		expect(false).toEqual(true);
 	});
 
 });
@@ -647,7 +647,7 @@ endsnippet
 # it
 snippet it "It statement" m
 it('${1:should do something}', () => {
-	expect(${2:item}).${3:toEqual}(${4:value});
+	expect(${2:false}).${3:toEqual}(${4:true});
 });
 endsnippet
 # Before inject
