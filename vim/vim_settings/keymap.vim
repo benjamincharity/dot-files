@@ -97,7 +97,7 @@ map <leader>FF :NERDTreeFind<cr>
 noremap <leader>l :noh<CR>
 
 " Ack (search) project for word under cursor
-noremap <Leader>a :Ack <cword><CR>
+noremap <Leader>a :Ack! --ignore-dir={.tmp,node_modules,bower_modules,coverage,plugins,platforms,www,dist} <cword><CR>
 
 "
 " Compile coffeescript to scratch buffer in vertical split
