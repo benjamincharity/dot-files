@@ -11,17 +11,19 @@ Plugin 'gmarik/Vundle.vim'
 "
 " Nerd Commenter - Powerful commenting tools
 " https://github.com/scrooloose/nerdcommenter
+" Customization: _nerd_commenter.vim
 Plugin 'scrooloose/nerdcommenter'
 
 "
 " NerdTree - Filesystem explorer
 " https://github.com/scrooloose/nerdtree
-" Customization: nerd_tree.vim
+" Customization: _nerd_tree.vim
 Plugin 'scrooloose/nerdtree'
 
 "
 " Vim Fugitive - The best Git wrapper of all time.
 " https://github.com/tpope/vim-fugitive
+" Customization: _fugitive.vim
 Plugin 'tpope/vim-fugitive'
 
 "
@@ -32,12 +34,8 @@ Plugin 'jlanzarotta/bufexplorer'
 "
 " Syntastic - Syntax checking hacks for vim
 " https://github.com/scrooloose/syntastic
+" Customization: _syntastic.vim
 Plugin 'scrooloose/syntastic'
-
-"
-" Vim CoffeeScript
-" https://github.com/kchmck/vim-coffee-script
-Plugin 'kchmck/vim-coffee-script'
 
 "
 " Vim Scratch - Unobtrusive scratch window
@@ -52,11 +50,13 @@ Plugin 'mattn/webapi-vim'
 "
 " Gist - Gist support for Vim
 " https://github.com/mattn/gist-vim
+" Customization: _gist.vim
 Plugin 'mattn/gist-vim'
 
 "
 " Ack - Replacement for Grep
 " https://github.com/mileszs/ack.vim
+" Customization: _ack.vim
 Plugin 'mileszs/ack.vim'
 
 "
@@ -92,7 +92,7 @@ Plugin 'Raimondi/delimitMate'
 "
 " Emmet
 " https://github.com/mattn/emmet-vim
-" Customization: emmet.vim
+" Customization: _emmet.vim
 Plugin 'mattn/emmet-vim'
 
 "
@@ -106,13 +106,9 @@ Plugin 'gregsexton/MatchTag'
 Plugin 'dkprice/vim-easygrep'
 
 "
-" CtrlP - Fuzzy file finder
-" https://github.com/kien/ctrlp.vim
-"Plugin 'kien/ctrlp.vim'
-
-"
 " You Complete Me - Autocomplete for code
 " Needs MacVim with python 2.X support
+" Customization: _you_complete_me.vim
 Plugin 'Valloric/YouCompleteMe'
 
 "
@@ -128,13 +124,13 @@ Plugin 'majutsushi/tagbar'
 "
 " Vim Javascript
 " https://github.com/pangloss/vim-javascript
-" Customization: vim_javascript.vim
+" Customization: _vim_javascript.vim
 Plugin 'pangloss/vim-javascript'
 
 "
 " Javsacript Libraries Syntax - Support for various JS languages/frameworks
 " https://github.com/othree/javascript-libraries-syntax.vim
-" Customization: javascript_libraries_sytax.vim
+" Customization: _javascript_libraries_sytax.vim
 Plugin 'othree/javascript-libraries-syntax.vim'
 
 "
@@ -176,6 +172,7 @@ Plugin 'plasticboy/vim-markdown'
 "
 " Lean & mean status/tabline for vim that's light as air.
 " https://github.com/bling/vim-airline
+" Customization: _airline.vim
 Plugin 'bling/vim-airline'
 
 "
@@ -187,6 +184,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " ctrlp
 " Fuzzy file, buffer, mru, tag, etc finder
 " https://github.com/ctrlpvim/ctrlp.vim
+" Customization: _ctrl_p.vim
 Plugin 'ctrlpvim/ctrlp.vim'
 
 "
@@ -197,6 +195,7 @@ Plugin 'peterhurford/send.vim'
 "
 " Emoji in Vim.
 " https://github.com/junegunn/vim-emoji
+" Customization: _vim_emoji.vim
 Plugin 'junegunn/vim-emoji'
 
 
