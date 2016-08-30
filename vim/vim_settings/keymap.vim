@@ -60,10 +60,6 @@ noremap <leader>S :sort<CR>
 map <leader>rr :reg<CR>
 
 "
-" Reload snippets
-"map <leader>rs :call ReloadSnippets(&filetype)<CR>
-
-"
 " Move lines with alt + direction
 nnoremap ∆ :m+<CR>==
 nnoremap ˚ :m-2<CR>==
@@ -130,11 +126,6 @@ set pastetoggle=<F2>
 " Allow cursor to move up/down to the next row (not just the next line)
 nnoremap j gj
 nnoremap k gk
-
-"
-" Remap Command-T
-map <D-t> :CommandT<CR>
-map <D-T> :CommandTBuffer<CR>
 
 "
 " Fold between brackets
