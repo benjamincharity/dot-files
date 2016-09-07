@@ -646,8 +646,10 @@ describe('${1:test block}', () => {
 endsnippet
 # it
 snippet it "It statement" m
-it('${1:should do something}', () => {
-	expect(${2:false}).${3:toEqual}(${4:true});
+it(\`${1:should do something}\`, () => {
+	const actual = null;
+	const expected = null;
+	expect(actual).toEqual(expected);
 });
 endsnippet
 # Before inject
