@@ -1,6 +1,5 @@
-" Set the runtime path to include Vundle
-set rtp+=~/.vim/bundle/vundle/
-" Initialize
+" Set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 "
@@ -198,6 +197,10 @@ Plugin 'peterhurford/send.vim'
 " Customization: _vim_emoji.vim
 Plugin 'junegunn/vim-emoji'
 
+"
+" HTML5 Support
+" https://github.com/othree/html5.vim
+Plugin 'othree/html5.vim'
 
 call vundle#end()
 
