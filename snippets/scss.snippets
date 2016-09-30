@@ -341,7 +341,7 @@ snippet fst
 font-style: italic;${1}
 endsnippet
 snippet ff
-font-family: $${1:family};${2}
+font-family: ${1:$family};${2}
 endsnippet
 snippet ffsans
 font-family: Arial, Helvetica, Verdana, sans-serif;${1}
@@ -895,16 +895,9 @@ snippet doc
 // $${1:APP_BASE}
 //
 //
-// @author Benjamin Charity <ben@benjamincharity.com>
-//
 // @doc
 //  ${2:__documentation__}
 // @end
-
-// <section> primary container
-.${3:myClass} {
-}
-
 endsnippet
 snippet section
 ///////////////////////////////////////////////////////
@@ -1187,23 +1180,33 @@ endsnippet
 #
 #
 #
-# Compass Transforms
+# Functions
 #
-#snippet scale
-#@include transform( scale(${1:1, 1}) );${2}
-#endsnippet
-#snippet translate
-#@include transform( translate(${1:100px, 100px}) );${2}
-#endsnippet
-#snippet translatex
-#@include transform( translateX(${1:100px}) );${2}
-#endsnippet
-#snippet translatey
-#@include transform( translateY(${1:100px}) );${2}
-#endsnippet
-#snippet rotate
-#@include transform( rotate(${1:90}deg) );${2}
-#endsnippet
+snippet pal "palette() function" m
+palette(${1:white}${2})
+endsnippet
+snippet font "font() function" m
+font(${1:avenir}${2})
+endsnippet
+snippet for "Sass for loop" m
+@for $i from 1 through 8 {
+	.col-#{$i} {
+	}
+}
+endsnippet
+snippet while "Sass while loop" m
+@while ${1:$num} > ${2:0} {
+	.module-#{$num} {
+	}
+}
+endsnippet
+snippet each "Sass each loop" m
+@each ${1:$color} in ${2:$list} {
+	.${3:photo-#{$color}} {
+		background-color: #{$color};
+	}
+}
+endsnippet
 #
 #
 #
