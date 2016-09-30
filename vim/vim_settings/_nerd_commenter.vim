@@ -1,5 +1,3 @@
-
-" Force SCSS file to start with the alternate delimeter
-" NOTE: Do not believe this is working
-let g:NERDAltDelims_scss = 1
+" Force SASS files to start with the alternate delimeter (//) rather than the standard (/**/)
+let g:NERDAltDelims_sass = 1
 
