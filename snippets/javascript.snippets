@@ -363,7 +363,7 @@ endsnippet
 # Define a $on for a $broadcast/$emit on the $scope inside an Angular Controller
 # You can change the event name to listen on
 snippet $on
-this.$scope.$on('${1:eventName}', (event, ${2:args}) => {
+this.$rootScope.$on('${1:eventName}', (event, ${2:args}) => {
 	${3}
 });
 endsnippet
@@ -377,7 +377,7 @@ endsnippet
 # Define an $emit for a $scope inside an Angular Controller / Angular Controller Function
 # You can change the event name and optional event arguments
 snippet $e
-$scope.$emit('${1:eventName}', ${2:eventArgs});
+this.$rootScope.$emit('${1:eventName}', ${2:eventArgs});
 endsnippet
 #
 #
