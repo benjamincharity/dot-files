@@ -59,3 +59,5 @@
 [gui]
     recentrepo = /Users/bc/Code/moment/moment-client
     recentrepo = /Users/bc/Code/moment/admin
+[grep]
+	lineNumber = true
