@@ -69,28 +69,6 @@ endsnippet
 #
 # Scripts
 #
-
-# Libraries
-snippet jquery
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-endsnippet
-snippet angular
-<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular.min.js"></script>
-endsnippet
-snippet angularuir
-<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
-endsnippet
-snippet angularngr
-<script src="ajax.googleapis.com/ajax/libs/angularjs/1.2.12/angular-route.js"></script>
-endsnippet
-snippet modernizr
-<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.min.js"></script>
-endsnippet
-snippet zepto
-<script src="//cdnjs.cloudflare.com/ajax/libs/zepto/1.1.4/zepto.min.js"></script>
-endsnippet
-
-# Custom
 snippet script
 <script>
 	${1}
@@ -299,3 +277,45 @@ endsnippet
 snippet textarea
 <textarea name="${1:Name}" rows="${2:8}" cols="${3:40}">${4}</textarea>${5}
 endsnippet
+#
+#
+#
+# Angular Material
+#
+# Icon
+snippet mdicon "Angular Material icon"
+<ng-md-icon icon="${1:zoom_in}"></ng-md-icon>
+endsnippet
+# Tooltip
+snippet tooltip "Angular Material tooltip (top|bottom|left|right)"
+<md-tooltip md-direction="${1:left}">
+endsnippet
+# Toolbar
+snippet toolbar "Angular Material toolbar" m
+<md-toolbar class="${1:md-hue-2}">
+	<div class="md-toolbar-tools">
+		<h2>
+			${2:Section Title}
+		</h2>
+
+		<span flex></span>
+
+		<md-button
+			class="md-icon-button"
+			data-ng-click="${3:vm.toolbarMethod()}"
+			aria-label="$5"
+		>
+			<md-tooltip md-direction="${4:left}">
+				${5:Tooltip explanation}
+			</md-tooltip>
+
+			<ng-md-icon icon="${6:zoom_in}"></ng-md-icon>
+		</md-button>
+
+	</div>
+</md-toolbar>
+endsnippet
+
+
+
+
