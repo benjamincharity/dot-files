@@ -51,10 +51,6 @@ alias pd='cd `pbpaste`'
 #alias mvim="/Applications/MacVim.app/contents/MacOS/MacVim"
 # Delete Vim swap files
 alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
-# Shortcut to edit Vim's JSHint options
-alias editsyntastic='mvim /Users/bc/.dot-files/vim/vim_settings/_syntastic.vim'
-# Shortcut to edit Angular Fullstack generator templates
-alias editfullstack='mvim /Users/bc/Dropbox/Resources/AngularFullstack\ Edited\ Templates'
 
 
 
