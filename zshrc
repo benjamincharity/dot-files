@@ -169,9 +169,8 @@ alias mysqlstop='mysql.server stop'
 #
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
-# TODO: Cannot get the up/down keys working
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 # bind P and N for EMACS mode
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
