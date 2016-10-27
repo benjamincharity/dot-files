@@ -30,7 +30,7 @@ DISABLE_UPDATE_PROMPT=true
 # Which plugins would you like to load?
 # Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew aws bower rbenv grunt jsontools node npm sublime terminalapp urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search send git-it-on)
+plugins=(brew aws bower jsontools node npm sublime terminalapp urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search send git-it-on)
 
 
 
@@ -106,7 +106,7 @@ alias vs='/Applications/Visual\ Studio\ Code.app'
 # GIT
 #
 # Let Hub wrap Github commands with some sugar
-eval '$(hub alias -s)'
+#eval '$(hub alias -s)'
 # Status
 alias st='status'
 alias gs='git status'
