@@ -244,5 +244,5 @@ gifify() {
 #
 # RBENV
 #
-eval "$(rbenv init -)"
+#eval "$(rbenv init -)"
 
