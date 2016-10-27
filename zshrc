@@ -38,9 +38,6 @@ plugins=(brew aws bower jsontools node npm sublime terminalapp urltools zsh-per-
 source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 
-# For NVM
-source $(brew --prefix nvm)/nvm.sh
-
 
 #
 # General Alias'
