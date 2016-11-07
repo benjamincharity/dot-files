@@ -31,6 +31,12 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jlanzarotta/bufexplorer'
 
 "
+" SASS lint for Syntastic
+" https://github.com/gcorne/vim-sass-lint
+" Customization: _vim_sass_lint.vim
+Plugin 'gcorne/vim-sass-lint'
+
+"
 " Syntastic - Syntax checking hacks for vim
 " https://github.com/scrooloose/syntastic
 " Customization: _syntastic.vim

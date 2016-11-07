@@ -34,4 +34,5 @@ source /Users/bc/.dot-files/vim/vim_settings/_vim_emoji.vim
 source /Users/bc/.dot-files/vim/vim_settings/_vim_indent_guides.vim
 source /Users/bc/.dot-files/vim/vim_settings/_vim_javascript.vim
 source /Users/bc/.dot-files/vim/vim_settings/_vim_markdown.vim
+source /Users/bc/.dot-files/vim/vim_settings/_vim_sass_lint.vim
 source /Users/bc/.dot-files/vim/vim_settings/_you_complete_me.vim
