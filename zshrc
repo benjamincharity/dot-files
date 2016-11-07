@@ -8,13 +8,15 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="robbyrussell"
 # Items in path:
 #   ~/.dot-files
-#   ~/.rbenv/shims/bin
 #   /usr/local/bin
 #   /usr/bin
 #   ~/.npm
 #   /opt/local/bin
 #   /usr/local/bin/npm
 #   /usr/local/bin/node
+#   /usr/local/heroku/bin
+#   ~/.rbenv/shims
+#   ~/.rbenv/bin
 #   $PATH
 export PATH=~/.dot-files:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$PATH
 export EDITOR=vim
