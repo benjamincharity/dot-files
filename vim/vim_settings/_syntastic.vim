@@ -24,7 +24,8 @@ let g:syntastic_check_on_wq = 1
 "
 " Tell Syntastic which checker to use
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_scss_checkers = ['scss_lint']
+let g:syntastic_sass_checkers = ['sass_lint']
+let g:syntastic_scss_checkers = ['sass_lint']
 
 "
 " Enable syntax highlighting on errors
@@ -47,7 +48,7 @@ highlight link SyntasticStyleWarningSign SignColumn
 let g:syntastic_aggregate_errors = 0
 
 "
-" Set debug letter
+" Set debug level
 let g:syntastic_debug = 0
 
 "
