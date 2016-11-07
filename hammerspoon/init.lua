@@ -19,8 +19,10 @@ end
 -- Single keybinding for app launch
 singleapps = {
   {'s', 'Sketch'},
+  {'l', 'Slack'},
   {'f', 'Fantastical 2'},
-  {'c', 'Google Chrome'}
+  {'c', 'Google Chrome'},
+  {'q', 'Quiver'}
 }
 -- Loop through and bind each key to app
 for i, app in ipairs(singleapps) do
