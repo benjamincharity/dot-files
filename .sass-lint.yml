@@ -33,4 +33,6 @@ rules:
   variable-name-format:
     - 0
     - convention: snakecase
+  no-css-comments:
+    - 0
 

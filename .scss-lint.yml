@@ -1,0 +1,23 @@
+linters:
+
+    NameFormat:
+        enabled: false
+        convention: snake_case
+
+    SelectorFormat:
+        enabled: true
+        convention: hyphenated_BEM
+
+    SpaceAfterPropertyColon:
+        enabled: true
+        style: at_least_one_space
+
+    SpaceAfterPropertyName:
+        enabled: false
+
+    PropertySortOrder:
+        enabled: false
+
+    NestingDepth:
+        max_depth: 6
+
