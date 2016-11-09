@@ -171,8 +171,11 @@ alias mysqlstop='mysql.server stop'
 #
 # bind UP and DOWN arrow keys
 zmodload zsh/terminfo
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
+# WTF: These keybindings only trigger search from beginning of phrase (not any location in phrase)
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 # bind P and N for EMACS mode
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
