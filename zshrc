@@ -1,5 +1,5 @@
 #
-# EXPORTS/PATHS
+# EXPORTS/PATH
 #
 # Path to your oh-my-zsh configuration.
 export ZSH=$HOME/.oh-my-zsh
@@ -48,9 +48,6 @@ unsetopt correct_all
 alias gd='pwd | pbcopy'
 # Go to copied directory path
 alias pd='cd `pbpaste`'
-# Use the MacVim application
-# This throws python error due to YouCompleteMe
-#alias mvim="/Applications/MacVim.app/contents/MacOS/MacVim"
 # Delete Vim swap files
 alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
 
@@ -85,6 +82,8 @@ alias screenflow='cd /Users/bc/Dropbox/ScreenFlow'
 function mkdircd {
   command mkdir $1 && cd $1
 }
+# Edit ngrok config
+alias editngrok='mvim /Users/bc/.ngrok2/ngrok.yml'
 
 
 
