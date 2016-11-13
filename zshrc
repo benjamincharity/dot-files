@@ -74,16 +74,18 @@ alias knowme='cd ~/Code/knowme/; ls -1F . | grep /'
 # Go to the my personal site directory and list subfolders
 alias benjamin='cd ~/Code/benjamincharity/; ls -1F . | grep /'
 # Go to my dot files
-alias dotfiles='cd /Users/bc/.dot-files; ls -1F . | grep /'
+alias dotfiles='cd ~/.dot-files; ls -1F . | grep /'
 # Go to ScreenFlow captures
-alias screenflow='cd /Users/bc/Dropbox/ScreenFlow'
+alias screenflow='cd ~/Dropbox/ScreenFlow'
+# Go code directory
+alias codedir='cd ~/Code/Code/; ls -1F . | grep /'
 # Create a directory and immediately cd into it
 # http://superuser.com/questions/152794/is-there-a-shortcut-to-mkdir-foo-and-immediately-cd-into-it
 function mkdircd {
   command mkdir $1 && cd $1
 }
 # Edit ngrok config
-alias editngrok='mvim /Users/bc/.ngrok2/ngrok.yml'
+alias editngrok='mvim ~/.ngrok2/ngrok.yml'
 
 
 
@@ -242,3 +244,60 @@ gifify() {
 #
 #eval "$(rbenv init -)"
 
+###-begin-npm-completion-###
+#
+# npm command completion script
+#
+# Installation: npm completion >> ~/.bashrc  (or ~/.zshrc)
+# Or, maybe: npm completion > /usr/local/etc/bash_completion.d/npm
+#
+
+if type complete &>/dev/null; then
+  _npm_completion () {
+    local words cword
+    if type _get_comp_words_by_ref &>/dev/null; then
+      _get_comp_words_by_ref -n = -n @ -w words -i cword
+    else
+      cword="$COMP_CWORD"
+      words=("${COMP_WORDS[@]}")
+    fi
+
+    local si="$IFS"
+    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$cword" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           npm completion -- "${words[@]}" \
+                           2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  complete -o default -F _npm_completion npm
+elif type compdef &>/dev/null; then
+  _npm_completion() {
+    local si=$IFS
+    compadd -- $(COMP_CWORD=$((CURRENT-1)) \
+                 COMP_LINE=$BUFFER \
+                 COMP_POINT=0 \
+                 npm completion -- "${words[@]}" \
+                 2>/dev/null)
+    IFS=$si
+  }
+  compdef _npm_completion npm
+elif type compctl &>/dev/null; then
+  _npm_completion () {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       npm completion -- "${words[@]}" \
+                       2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  compctl -K _npm_completion npm
+fi
+###-end-npm-completion-###
