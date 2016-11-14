@@ -208,5 +208,21 @@ Plugin 'junegunn/vim-emoji'
 " https://github.com/othree/html5.vim
 Plugin 'othree/html5.vim'
 
+"
+" TypeScript Support
+" https://github.com/Quramy/tsuquyomi
+Plugin 'Quramy/tsuquyomi'
+
+"
+" TypeScript Syntax
+" https://github.com/leafgarland/typescript-vim
+Plugin 'leafgarland/typescript-vim'
+
+"
+" Interactive command execution in Vim. (required by typescript plugins)
+" https://github.com/Shougo/vimproc.vim
+Plugin 'Shougo/vimproc.vim'
+
+
 call vundle#end()
 

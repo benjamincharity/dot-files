@@ -57,8 +57,8 @@ alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
 # Navigation
 #
 # Go to the code directory
-# Conflicts with vscode 'code .'
-#alias code='cd ~/Code/; ls -1F . | grep /'
+# 'code' conflicts with vscode 'code .'
+alias codedir='cd ~/Code/; ls -1F . | grep /'
 # Go to the projects directory
 alias projects='cd ~/Dropbox/Projects/; ls -1F . | grep /'
 # Go to the open source directory and list subfolders
@@ -77,8 +77,6 @@ alias benjamin='cd ~/Code/benjamincharity/; ls -1F . | grep /'
 alias dotfiles='cd ~/.dot-files; ls -1F . | grep /'
 # Go to ScreenFlow captures
 alias screenflow='cd ~/Dropbox/ScreenFlow'
-# Go code directory
-alias codedir='cd ~/Code/Code/; ls -1F . | grep /'
 # Create a directory and immediately cd into it
 # http://superuser.com/questions/152794/is-there-a-shortcut-to-mkdir-foo-and-immediately-cd-into-it
 function mkdircd {
