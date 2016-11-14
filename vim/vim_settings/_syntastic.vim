@@ -24,6 +24,7 @@ let g:syntastic_check_on_wq = 1
 "
 " Tell Syntastic which checker to use
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_sass_checkers = ['sass_lint']
 let g:syntastic_scss_checkers = ['sass_lint']
 
