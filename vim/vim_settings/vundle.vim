@@ -209,11 +209,6 @@ Plugin 'junegunn/vim-emoji'
 Plugin 'othree/html5.vim'
 
 "
-" TypeScript Support
-" https://github.com/Quramy/tsuquyomi
-Plugin 'Quramy/tsuquyomi'
-
-"
 " TypeScript Syntax
 " https://github.com/leafgarland/typescript-vim
 Plugin 'leafgarland/typescript-vim'
