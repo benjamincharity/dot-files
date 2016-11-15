@@ -27,6 +27,10 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_sass_checkers = ['sass_lint']
 let g:syntastic_scss_checkers = ['sass_lint']
+let g:syntastic_html_checkers = []
+
+" Use the HTML5 version of Tidy
+let g:syntastic_html_tidy_exec = 'tidy5'
 
 "
 " Enable syntax highlighting on errors
@@ -59,13 +63,6 @@ let g:syntastic_debug = 0
 
 hi SpellBad gui=undercurl guisp=LavenderBlush1 guifg=fg guibg=SteelBlue3
 
-
-"
-" HTML
-"
-" Use the HTML5 version of Tidy
-let g:syntastic_html_tidy_exec = 'tidy5'
-
 " Errors to ignore
 let g:syntastic_html_tidy_ignore_errors=[
   \ "proprietary attribute",
@@ -79,7 +76,6 @@ let g:syntastic_html_tidy_ignore_errors=[
   \ "<script> escaping malformed URI reference",
   \ "<a> escaping malformed URI reference",
   \ "<input> attribute \"id\" has invalid value",
-  \ "['Authorization'] is better written in dot notation.",
   \ "<ng-include> discarding whitespace in URI reference",
   \ "<ng-include> discarding newline in URI reference",
   \ "<article> attribute \"id\" has invalid value \"js_item_{{ $index }}\""
