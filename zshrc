@@ -71,6 +71,8 @@ alias kl='cd ~/Code/kenzielane/; ls -1F . | grep /'
 alias moment='cd ~/Code/moment/; ls -1F . | grep /'
 # Go to the KnowMe directory and list subfolders
 alias knowme='cd ~/Code/knowme/; ls -1F . | grep /'
+# Go to the remedy code directory and list subfolders
+alias remedy='cd ~/Code/remedy/; ls -1F . | grep /'
 # Go to the my personal site directory and list subfolders
 alias benjamin='cd ~/Code/benjamincharity/; ls -1F . | grep /'
 # Go to my dot files
@@ -300,6 +302,9 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
+
+
+
 ###-begin-ng-completion###
 #
 # ng command completion script
