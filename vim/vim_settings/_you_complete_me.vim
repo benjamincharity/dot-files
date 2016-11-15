@@ -6,3 +6,7 @@
 " Auto-close the preview window after the user accepts the offered completion
 " string
 let g:ycm_autoclose_preview_window_after_completion = 1
+
+" Tell YCM to use Python v2 (since vim uses it)
+let g:UltiSnipsUsePythonVersion = 2
+
