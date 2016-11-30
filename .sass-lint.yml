@@ -35,4 +35,10 @@ rules:
     - convention: snakecase
   no-css-comments:
     - 0
+  # This interferes with our palette() function
+  no-color-keywords:
+    - 0
+  # This interferes with our palette() function
+  no-color-literals:
+    - 0
 
