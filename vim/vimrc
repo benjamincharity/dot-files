@@ -17,9 +17,11 @@ source /Users/bc/.dot-files/vim/vim_settings/functions.vim
 source /Users/bc/.dot-files/vim/vim_settings/gui.vim
 source /Users/bc/.dot-files/vim/vim_settings/keymap.vim
 
+
 "Plugin Specific
 source /Users/bc/.dot-files/vim/vim_settings/_ack.vim
 source /Users/bc/.dot-files/vim/vim_settings/_airline.vim
+source /Users/bc/.dot-files/vim/vim_settings/_angular-cli.vim
 source /Users/bc/.dot-files/vim/vim_settings/_ctrl_p.vim
 source /Users/bc/.dot-files/vim/vim_settings/_emmet.vim
 source /Users/bc/.dot-files/vim/vim_settings/_fugitive.vim
@@ -29,6 +31,7 @@ source /Users/bc/.dot-files/vim/vim_settings/_nerd_commenter.vim
 source /Users/bc/.dot-files/vim/vim_settings/_nerd_tree.vim
 source /Users/bc/.dot-files/vim/vim_settings/_numbers.vim
 source /Users/bc/.dot-files/vim/vim_settings/_syntastic.vim
+source /Users/bc/.dot-files/vim/vim_settings/_tsuquyomi.vim
 source /Users/bc/.dot-files/vim/vim_settings/_ultisnips.vim
 source /Users/bc/.dot-files/vim/vim_settings/_vim_emoji.vim
 source /Users/bc/.dot-files/vim/vim_settings/_vim_indent_guides.vim
@@ -36,3 +39,4 @@ source /Users/bc/.dot-files/vim/vim_settings/_vim_javascript.vim
 source /Users/bc/.dot-files/vim/vim_settings/_vim_markdown.vim
 source /Users/bc/.dot-files/vim/vim_settings/_vim_sass_lint.vim
 source /Users/bc/.dot-files/vim/vim_settings/_you_complete_me.vim
+
