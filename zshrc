@@ -86,6 +86,8 @@ function mkdircd {
 }
 # Edit ngrok config
 alias editngrok='mvim ~/.ngrok2/ngrok.yml'
+# Edit hammer configs
+alias edithammer='mvim ~/.hammerspoon/init.lua && mvim ~/.dot-files/hammerspoon/init.lua'
 
 
 
@@ -213,7 +215,8 @@ function buid {
 #
 # Show a list of all possible NPM scripts in a directory
 alias run='ntl'
-
+# List all global packages
+alias npmglobal='npm list -g --depth=0'
 
 
 #
