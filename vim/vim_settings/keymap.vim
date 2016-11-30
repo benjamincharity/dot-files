@@ -134,6 +134,7 @@ map <leader>ff $zf%<CR>
 "
 " Tern
 " Jump to definition
+" TODO: I don't believe these are working
 map <leader>td :TernDef<CR>
 " Look at docs
 map <leader>tD :TernDef<CR>
@@ -149,6 +150,12 @@ map <leader>tT :TernType<CR>
 " Convert all emoji references (:smile:) into the actual emoji (😃)
 map <leader>re :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
 
+
+"
+" Typescript
+" Jump to definition
+map <buffer> <leader>td <Plug>(TsuquyomiDefinition)
+map <buffer> <leader>ti <Plug>(TsuquyomiImport)
 
 
 "
