@@ -1,1 +1,1 @@
-let g:used_javascript_libs = 'underscore,lodash,backbone,jquery,angularjs'
+let g:used_javascript_libs = 'lodash,jquery,angularjs'
