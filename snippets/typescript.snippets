@@ -7,7 +7,20 @@
 # Disable tslint for a specific rule
 snippet disable "Disable TSLint for a specific rule"
 /* tslint:disable:${1:camelcase} */
-/* tslint-enable $1 */
+/* tslint-enable: $1 */
+endsnippet
+# Get Element by ID
+snippet gett
+document.getElementById('${1}');${2}
+endsnippet
+# Function comment
+snippet funcom "Create a function comment" m
+/**
+ * ${1:make() returns a new element}
+ *
+ * ${2:@param {Object} moment}
+ * ${3:@return {String} name}
+ */${4}
 endsnippet
 
 
@@ -20,6 +33,7 @@ endsnippet
 # Converted from: https://github.com/mhartington/vim-angular2-snippets
 # Originals: https://github.com/johnpapa/vscode-angular2-snippets
 
+# Create component
 snippet ng2-component "Create component" m
 import { Component, OnInit } from '@angular/core';
 
@@ -35,7 +49,7 @@ export class ${3:ComponentName}Component implements OnInit {
 
 }
 endsnippet
-
+# Create service
 snippet ng2-service "Create service" m
 import { Injectable } from '@angular/core';
 
@@ -46,7 +60,7 @@ export class ${1:ServiceName}Service {
 
 }
 endsnippet
-
+# Create pipe
 snippet ng2-pipe "Create pipe" m
 import { Pipe, PipeTransform } from '@angular/core';
 
@@ -60,28 +74,27 @@ export class ${2:PipeName}Pipe implements PipeTransform {
 	}
 }
 endsnippet
-
+# Create routes
 snippet ng2-routes "Create routes" m
 @Routes([
 	{ path: '/${1:path}', component: ${2:Component} }${3}
 ])
 endsnippet
-
+# Create route path
 snippet ng2-route-path "Create route path" m
 { path: '/${1:path}', component: ${2:Component} }${3}
 endsnippet
-
-
+# Create http get
 snippet ng2-http-get "Create http.get" m
 return this.http.get('${1:url}')
 .map((res: Response) => res.json());
 endsnippet
-
+# Service subscribe
 snippet ng2-subscribe "Service subscribe" m
 this.${1:service}.${2:function}
 .subscribe(${3:arg} => this.${4:property} = ${5:arg});
 endsnippet
-
+# Create module bootstrap
 snippet ng2-bootstrap "Bootstrap module" m
 import { enableProdMode } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
@@ -94,7 +107,7 @@ bootstrap(${3:AppComponent})
 	.then(success => console.log('Bootstrap success'))
 	.catch(error => console.log(error));
 endsnippet
-
+# Root component
 snippet ng2-component-root "Root component" m
 import { Component } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
@@ -116,19 +129,16 @@ import 'rxjs/Rx'; // load the full rxjs
 ])
 export class AppComponent {}
 endsnippet
-
-#
-#
-#
-#
-# Comments
-snippet funcom
-/**
- * ${1:make() returns a new element}
- *
- * ${2:@param {Object} moment}
- * ${3:@return {String} name}
- */${4}
+###
+# Custom Angular2 Snippets
+##
+# import
+snippet import "Import component"
+import { ${1:NgModule} } from '${2:@angular/core}';
+endsnippet
+# import Angular Material
+snippet importa "Import Angular Material component"
+import { ${1:MdToolbar} } from '@angular/material/${2:toolbar}';
 endsnippet
 
 
@@ -165,3 +175,47 @@ endsnippet
 snippet ce
 console.error('${1:Item}: ', ${2:error});${3}
 endsnippet
+#########################################
+#
+# if
+#
+#########################################
+snippet if
+if (${1:true}) {
+	${2}
+}
+endsnippet
+#########################################
+#
+# if ... else
+#
+#########################################
+snippet ife
+if (${1:true}) {
+	${2}
+} else {
+	${3}
+}
+endsnippet
+#########################################
+#
+# Ternary conditional
+#
+#########################################
+snippet ift
+${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
+endsnippet
+snippet ternary
+${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
+endsnippet
+#########################################
+#
+# Set Timeout
+#
+#########################################
+snippet timeout
+setTimeout(() => {
+	${3}
+}${2}, ${1:10});
+endsnippet
+
