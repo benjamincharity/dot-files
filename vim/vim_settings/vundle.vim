@@ -218,6 +218,15 @@ Plugin 'leafgarland/typescript-vim'
 " https://github.com/Shougo/vimproc.vim
 Plugin 'Shougo/vimproc.vim'
 
+"
+" Tsuquyomi (typescript IDE-ish features)
+" https://github.com/Quramy/tsuquyomi
+Plugin 'Quramy/tsuquyomi'
+
+"
+" Angular CLI commands support for vim
+" https://github.com/bdauria/angular-cli.vim
+Plugin 'bdauria/angular-cli.vim'
 
 call vundle#end()
 
