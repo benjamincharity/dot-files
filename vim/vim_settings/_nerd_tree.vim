@@ -1,5 +1,3 @@
-
-
 "
 " Make bookmarks Visible
 let NERDTreeShowBookmarks = 1
