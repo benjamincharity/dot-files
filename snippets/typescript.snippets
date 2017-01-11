@@ -19,7 +19,7 @@ snippet funcom "Create a function comment" m
  * ${1:make() returns a new element}
  *
  * ${2:@param {Object} moment}
- * ${3:@return {String} name}
+ * ${3:@return {string} name}
  */${4}
 endsnippet
 
@@ -208,6 +208,31 @@ endsnippet
 snippet ternary
 ${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
 endsnippet
+#
+# switch
+snippet switch "Switch statement" m
+switch (${1:expression}) {
+	case '${3:case}':
+		${4:// code}
+		break;
+	default:
+		${2:// code}
+}
+endsnippet
+#
+# for (...) {...}
+snippet for
+for (const ${1:value} of ${2:array}) {
+	console.log($1);
+}
+endsnippet
+#
+# for (...) {...} (Improved Native For-Loop)
+snippet forr
+for (let ${1:i} = 0; $1 < ${2:array}.length; $1 += 1) {
+	${4:$2[$1]}
+}
+endsnippet
 #########################################
 #
 # Set Timeout
@@ -218,4 +243,74 @@ setTimeout(() => {
 	${3}
 }${2}, ${1:10});
 endsnippet
+#########################################
+#
+# Jasmine / Testing
+#
+#########################################
+# Describe
+snippet describe "Describe function" m
+describe(\`${1:test block}\`, () => {
 
+});
+endsnippet
+# Describe full
+snippet describefull "Describe function and child containers" m
+describe(\`${1:test block}\`, () => {
+
+	beforeEach(() => {
+
+	});
+
+	afterEach(() => {
+
+	});
+
+	it(\`should do something\`, () => {
+		expect(false).toEqual(true);
+	});
+
+});
+endsnippet
+# it
+snippet it "It statement" m
+it(\`${1:should do something}\`, () => {
+	const actual = null;
+	const expected = null;
+	expect(actual).toEqual(expected);
+});
+endsnippet
+# Before inject
+snippet beforei "Before injector function" m
+beforeEach(inject((_${1:serviceToInject}_) => {
+	$1 = _$1_;
+}));
+endsnippet
+# Before function
+snippet before "Before function" m
+beforeEach(() => {
+	${1}
+});
+endsnippet
+# After
+snippet after "After function" m
+afterEach(() => {
+	${1}
+});
+endsnippet
+# Actual/Expected
+snippet actual "Actual / Expected constants"
+const actual = ${1};
+const expected = ${2};
+endsnippet
+#########################################
+#
+# Imports
+#
+#########################################
+snippet lodash "Import all lodash functions"
+import * as _ from 'lodash';
+endsnippet
+snippet moment "Import all momentjs functions"
+import * as moment from 'moment';
+endsnippet
