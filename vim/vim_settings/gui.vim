@@ -8,7 +8,7 @@ color dusk
 
 "
 " Typeface & size
-set guifont=Inconsolata-dz\ for\ Powerline:h14
+set guifont=Inconsolata-dz\ for\ Powerline:h16
 "
 " Possible Powerline enabled fonts:
 "   Anonymous\ Pro\ for\ Powerline
@@ -53,19 +53,23 @@ set textwidth=100
 " ===========================
 " http://tedlogan.com/techblog3.html
 " A tab equals 2 columns
-set tabstop=2
-" A tab also equals 2 columns in insert mode
-set softtabstop=2
-" When indenting lines or blocks of code, move 2 columns at a time
-set shiftwidth=2
+set tabstop=4
+" A tab also equals 4 columns in insert mode
+set softtabstop=4
+" When indenting lines or blocks of code, move 4 columns at a time
+set shiftwidth=4
 " Expand tabs into the correct number of columns
 set expandtab
 " For JavaScript files, switch to 4 tabs
-autocmd FileType javascript setlocal expandtab shiftwidth=4 softtabstop=4
+"autocmd FileType javascript setlocal expandtab shiftwidth=4 softtabstop=4
 " For TypeScript files, switch to 4 tabs
-autocmd FileType typescript setlocal expandtab shiftwidth=4 softtabstop=4
+"autocmd FileType typescript setlocal expandtab shiftwidth=4 softtabstop=4
 " For Gitconfig files, switch to 4 tabs
-autocmd FileType gitconfig setlocal expandtab shiftwidth=4 softtabstop=4
+"autocmd FileType gitconfig setlocal expandtab shiftwidth=4 softtabstop=4
+" For SCSS files, switch to 2 tabs
+"autocmd FileType scss setlocal expandtab shiftwidth=2 softtabstop=2
+" For HTML files, switch to 2 tabs
+"autocmd FileType html setlocal expandtab shiftwidth=2 softtabstop=2
 
 "
 " Project specific tabs
