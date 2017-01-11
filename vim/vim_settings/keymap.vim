@@ -112,7 +112,7 @@ map <C-l> <C-w>l
 
 "
 " Toggle cursor line/column highlighting
-nnoremap <Leader>h :set cursorline! cursorcolumn!
+nnoremap <Leader>h :set cursorline! cursorcolumn!<CR>
 
 "
 " Open the file in marked.app
@@ -132,31 +132,19 @@ nnoremap k gk
 map <leader>ff $zf%<CR>
 
 "
-" Tern
-" Jump to definition
-" TODO: I don't believe these are working
-map <leader>td :TernDef<CR>
-" Look at docs
-map <leader>tD :TernDef<CR>
-" Find/Navigate references
-map <leader>tr :TernRefs<CR>
-" Rename variable
-map <leader>tR :TernRename<CR>
-" Find the type
-map <leader>tT :TernType<CR>
-
-
-"
 " Convert all emoji references (:smile:) into the actual emoji (😃)
 map <leader>re :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
 
+"
+" List all TODOs
+noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.ts<CR>:cw<CR>
 
 "
 " Typescript
 " Jump to definition
-map <buffer> <leader>td <Plug>(TsuquyomiDefinition)
-map <buffer> <leader>ti <Plug>(TsuquyomiImport)
-
+nnoremap <buffer> <leader>td :TsuquyomiDefinition<CR>
+nnoremap <buffer> <leader>ti :TsuquyomiImport<CR>
+nnoremap <buffer> <leader>tr :TsuquyomiReload<CR>
 
 "
 " Overrides and Fallbacks
