@@ -137,7 +137,7 @@ map <leader>re :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
 
 "
 " List all TODOs
-noremap <Leader>t :noautocmd vimgrep /TODO/j **/*.ts<CR>:cw<CR>
+noremap <Leader>to :noautocmd vimgrep /TODO/j **/*.ts<CR>:cw<CR>
 
 "
 " Typescript
