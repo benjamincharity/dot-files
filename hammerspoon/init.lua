@@ -23,7 +23,7 @@ singleapps = {
   {'f', 'Fantastical 2'},
   {'c', 'Google Chrome'},
   {'q', 'Quiver'},
-  {'m', 'Postbox'}
+  {'m', 'Spark'}
 }
 -- Loop through and bind each key to app
 for i, app in ipairs(singleapps) do
