@@ -88,6 +88,8 @@ function mkdircd {
 alias editngrok='mvim ~/.ngrok2/ngrok.yml'
 # Edit hammer configs
 alias edithammer='mvim ~/.hammerspoon/init.lua && mvim ~/.dot-files/hammerspoon/init.lua'
+# Edit this file
+alias editzshrc='mvim ~/.zshrc'
 
 
 
@@ -97,6 +99,7 @@ alias edithammer='mvim ~/.hammerspoon/init.lua && mvim ~/.dot-files/hammerspoon/
 # Open Visual Studio Code
 alias vsc='/Applications/Visual\ Studio\ Code.app'
 alias vs='/Applications/Visual\ Studio\ Code.app'
+alias code='code-insiders'
 
 
 
