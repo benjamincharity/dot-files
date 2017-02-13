@@ -196,28 +196,6 @@ bindkey -M vicmd 'j' history-substring-search-down
 
 
 #
-# Bower
-#
-# Install
-function bis {
-  command bower install $1 --save
-}
-# Install for dev
-function bisd {
-  command bower install $1 --save-dev
-}
-# Uninstall
-function bui {
-  command bower uninstall $1 --save
-}
-# Uninstall for dev
-function buid {
-  command bower uninstall $1 --save-dev
-}
-
-
-
-#
 # NPM
 #
 # Show a list of all possible NPM scripts in a directory
@@ -249,10 +227,7 @@ gifify() {
   fi
 }
 
-#
-# RBENV
-#
-#eval "$(rbenv init -)"
+
 
 #
 ###-begin-npm-completion-###
