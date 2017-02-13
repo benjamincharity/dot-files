@@ -1,5 +1,25 @@
-#!/usr/bin/env ruby
-file="~/Dropbox/gitshots/#{Time.now.to_i}.jpg"
-puts "Taking capture into #{file}!"
-system "imagesnap -q -w 3 #{file}"
+#!/bin/bash
+
+numberOfDevices=$(imagesnap -l | grep "FaceTime HD Camera (Display)" | wc -l | xargs echo -n)
+echo "Number of devices: ${numberOfDevices}"
+
+# If we found multiple devices, use monitor's device
+if [ "$numberOfDevices" -gt 1 ]; then
+    device="FaceTime HD Camera (Display)"
+else
+    # Otherwise use the built in device
+    device="FaceTime HD Camera"
+fi
+
+echo "Device: ${device}"
+
+timestamp=$(date +%s)
+filePath="/Users/bc/Dropbox/gitshots/${timestamp}.jpg"
+
+echo "Taking capture into: ${filePath}"
+
+# Adding the '&' prevents lag
+# https://coderwall.com/p/xlatfq/take-a-photo-of-yourself-every-time-you-commit
+imagesnap -q -w 3 -d "${device}" $filePath &
+
 exit 0
