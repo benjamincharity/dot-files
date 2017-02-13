@@ -8,8 +8,8 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="robbyrussell"
 # Items in path:
 #   ~/.dot-files
-#   /usr/local/bin
 #   /usr/bin
+#   /usr/local/bin
 #   ~/.npm
 #   /opt/local/bin
 #   /usr/local/bin/npm
@@ -17,8 +17,9 @@ export ZSH_THEME="robbyrussell"
 #   /usr/local/heroku/bin
 #   ~/.rbenv/shims
 #   ~/.rbenv/bin
+#   `yarn global bin`
 #   $PATH
-export PATH=~/.dot-files:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$PATH
+export PATH=~/.dot-files:/usr/bin:/usr/local/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:`yarn global bin`:$PATH
 export EDITOR=vim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 # Change python path
@@ -32,7 +33,7 @@ DISABLE_UPDATE_PROMPT=true
 # Which plugins would you like to load?
 # Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew aws bower jsontools node npm sublime terminalapp urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search send git-it-on)
+plugins=(brew aws bower jsontools node npm sublime terminalapp urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search send git-it-on docker)
 
 
 
@@ -100,6 +101,9 @@ alias editzshrc='mvim ~/.zshrc'
 alias vsc='/Applications/Visual\ Studio\ Code.app'
 alias vs='/Applications/Visual\ Studio\ Code.app'
 alias code='code-insiders'
+# Make sure the cli is using the lastest version of vim
+alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 
 
 
