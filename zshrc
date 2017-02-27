@@ -122,7 +122,7 @@ alias spp='git stash && git pull && git stash pop'
 # Stash, pull, pop, start node
 alias spps='git stash && git pull && git stash pop && node index.js'
 # Commit with message
-alias gc='git commit -am'
+alias gc='git cz'
 # Create and checkout new branch
 alias gcb='git checkout -b'
 # Git push origin master
@@ -209,6 +209,14 @@ alias npmglobal='npm list -g --depth=0'
 #
 # Generate a random ASCII cow
 alias cow='vaca'
+
+
+#
+# SSH
+#
+# SSH into whatbox
+alias sshwhatbox='ssh benjamincharity@galileo.whatbox.ca'
+
 
 
 #
