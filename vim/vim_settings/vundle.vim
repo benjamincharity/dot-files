@@ -229,5 +229,11 @@ Plugin 'Quramy/tsuquyomi'
 " https://github.com/bdauria/angular-cli.vim
 Plugin 'bdauria/angular-cli.vim'
 
+"
+" GitHub extension for fugitive.vim
+" https://github.com/tpope/vim-rhubarb
+Plugin 'tpope/vim-rhubarb'
+
+
 call vundle#end()
 
