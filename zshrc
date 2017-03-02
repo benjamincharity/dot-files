@@ -218,6 +218,13 @@ alias cow='vaca'
 alias sshwhatbox='ssh benjamincharity@galileo.whatbox.ca'
 
 
+#
+# Notes generation
+# https://github.com/ahmadassaf/code-notes
+#
+alias findnotes='notes -x node_modules/ -x .DS_Store'
+
+
 
 #
 # GIFs
