@@ -234,6 +234,11 @@ Plugin 'bdauria/angular-cli.vim'
 " https://github.com/tpope/vim-rhubarb
 Plugin 'tpope/vim-rhubarb'
 
+"
+" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
+" https://github.com/airblade/vim-gitgutter
+Plugin 'airblade/vim-gitgutter'
+
 
 call vundle#end()
 
