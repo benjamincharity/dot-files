@@ -113,36 +113,40 @@ alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 # Let Hub wrap Github commands with some sugar
 #eval '$(hub alias -s)'
 # Status
-alias st='status'
-alias gs='git status'
+alias st="status"
+alias gs="git status"
 # Add all untracked files
-alias ga='git add -A :/'
+alias ga="git add -A :/"
 # Stash, pull, pop
-alias spp='git stash && git pull && git stash pop'
+alias spp="git stash && git pull && git stash pop"
 # Stash, pull, pop, start node
-alias spps='git stash && git pull && git stash pop && node index.js'
+alias spps="git stash && git pull && git stash pop && node index.js"
 # Commit with message
-alias gc='git cz'
+alias gc="git cz"
 # Create and checkout new branch
-alias gcb='git checkout -b'
+alias gcb="git checkout -b"
 # Git push origin master
-alias gpom='git push origin master'
+alias gpom="git push origin master"
 # Git push origin develop
-alias gpod='git push origin develop'
+alias gpod="git push origin develop"
 # Git push heroku master
-alias gphm='git push heroku master'
+alias gphm="git push heroku master"
 # Git push
-alias gm='git push'
+alias gm="git push"
 # Git pull
-alias gp='git pull'
+alias gp="git pull"
 # Git diff with MacVim
-alias gd='git diff | mvim'
+alias gd="git diff | mvim"
 # List view
-alias l='ls -la'
+alias l="ls -la"
 # Git Grep
-alias gg='git grep'
+alias gg="git grep"
 # Get a list of all changes since the latest release
-alias gr='git log `git describe --tags --abbrev=0`..HEAD --oneline'
+alias gr="git log `git describe --tags --abbrev=0`..HEAD --oneline"
+# Unstage all commits on your current branch
+alias unstageall="git reset $(git merge-base master $(git branch | grep \* | cut -d ' ' -f2))"
+# Unstage all commits on your current branch, stage all files, begin commit process
+alias squash="unstageall && git add -A && gc"
 
 
 
