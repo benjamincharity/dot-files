@@ -3,6 +3,12 @@
 numberOfDevices=$(imagesnap -l | grep "FaceTime HD Camera (Display)" | wc -l | xargs echo -n)
 echo "Number of devices: ${numberOfDevices}"
 
+# If no cameras were found, do nothing
+if [ "$numberOfDevices" == 0 ]; then
+	echo "No cameras were found :/"
+	exit 0
+fi
+
 # If we found multiple devices, use monitor's device
 if [ "$numberOfDevices" -gt 1 ]; then
     device="FaceTime HD Camera (Display)"
