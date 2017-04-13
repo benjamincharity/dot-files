@@ -229,6 +229,15 @@ alias sshwhatbox='ssh benjamincharity@galileo.whatbox.ca'
 alias findnotes='notes -x node_modules/ -x .DS_Store'
 
 
+explore() {
+  if [[ -n "$1" ]]; then
+    source-map-explorer dist/vendor."$1".bundle.js dist/vendor."$1".bundle.js.map
+  else
+    echo "proper usage: explore <bundleId>."
+  fi
+}
+
+
 
 #
 # GIFs
