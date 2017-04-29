@@ -51,6 +51,8 @@ alias gd='pwd | pbcopy'
 alias pd='cd `pbpaste`'
 # Delete Vim swap files
 alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
+# Get the current IP address
+alias ipconfig='ifconfig | grep "inet " | grep -v 127.0.0.1'
 
 
 
