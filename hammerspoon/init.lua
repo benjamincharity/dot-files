@@ -61,9 +61,10 @@ end
 releasedF18 = function()
   k:exit()
   if not k.triggered then
-    hs.eventtap.keyStroke({}, 'ESCAPE')
+    hs.eventtap.keyStroke('ctrl', 'c')
   end
 end
 
 -- Bind the Hyper key
 f18 = hs.hotkey.bind({}, 'F18', pressedF18, releasedF18)
+
