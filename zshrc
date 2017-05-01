@@ -231,6 +231,9 @@ alias sshwhatbox='ssh benjamincharity@galileo.whatbox.ca'
 alias findnotes='notes -x node_modules/ -x .DS_Store'
 
 
+#
+# Explore a webpack generated sourcemap
+#
 explore() {
   if [[ -n "$1" ]]; then
     source-map-explorer dist/vendor."$1".bundle.js dist/vendor."$1".bundle.js.map
@@ -238,7 +241,6 @@ explore() {
     echo "proper usage: explore <bundleId>."
   fi
 }
-
 
 
 #
