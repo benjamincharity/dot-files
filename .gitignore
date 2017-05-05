@@ -2,3 +2,4 @@ vim/bundle
 vim/swap_files
 vim/view
 node_modules
+.npm-packages
