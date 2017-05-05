@@ -125,7 +125,6 @@ alias editgitconfig='mvim /Users/bc/.dot-files/gitconfig'
 # Open Visual Studio Code
 alias vsc='/Applications/Visual\ Studio\ Code.app'
 alias vs='/Applications/Visual\ Studio\ Code.app'
-alias code='code-insiders'
 # Make sure the cli is using the lastest version of vim
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
@@ -169,7 +168,7 @@ alias gg="git grep"
 # Get a list of all changes since the latest release
 alias gr='git log `git describe --tags --abbrev=0`..HEAD --oneline'
 # Unstage all commits on your current branch
-alias unstageall="git reset $(git merge-base master $(git branch | grep \* | cut -d ' ' -f2))"
+alias unstageall='git reset $(git merge-base master $(git branch | grep \* | cut -d " " -f2))'
 # Unstage all commits on your current branch, stage all files, begin commit process
 alias squash="unstageall && git add -A && gc"
 
