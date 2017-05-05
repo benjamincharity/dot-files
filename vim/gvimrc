@@ -11,5 +11,11 @@ if has("gui_macvim")
   nnoremap <down> <C-w>-
   nnoremap <right> <C-w>>
   nnoremap <left> <C-w><
+
+
+  "
+  " Turn on ligatures
+  set macligatures
+
 end
 
