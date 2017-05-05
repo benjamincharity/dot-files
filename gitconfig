@@ -17,6 +17,7 @@
         git rev-list --max-parents=0 HEAD --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit; \
     }; f"
     undo = reset --soft HEAD~1
+    updateremote = remote set-url origin
 [apply]
     whitespace = nowarn
 [core]
