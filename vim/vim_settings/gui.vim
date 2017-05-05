@@ -8,7 +8,7 @@ color dusk
 
 "
 " Typeface & size
-set guifont=Inconsolata-dz\ for\ Powerline:h16
+set guifont=Fira\ Code:h16
 "
 " Possible Powerline enabled fonts:
 "   Anonymous\ Pro\ for\ Powerline
