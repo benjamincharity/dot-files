@@ -239,6 +239,11 @@ Plugin 'tpope/vim-rhubarb'
 " https://github.com/airblade/vim-gitgutter
 Plugin 'airblade/vim-gitgutter'
 
+"
+" Vim syntax file & snippets for Docker's Dockerfile
+" https://github.com/ekalinin/Dockerfile.vim
+Plugin 'ekalinin/Dockerfile.vim'
+
 
 call vundle#end()
 
