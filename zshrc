@@ -8,18 +8,19 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="robbyrussell"
 # Items in path:
 #   ~/.dot-files
-#   /usr/bin
 #   /usr/local/bin
+#   /usr/bin
 #   ~/.npm
 #   /opt/local/bin
 #   /usr/local/bin/npm
 #   /usr/local/bin/node
+#   ~/.npm-packages/bin
 #   /usr/local/heroku/bin
 #   ~/.rbenv/shims
 #   ~/.rbenv/bin
 #   `yarn global bin`
 #   $PATH
-export PATH=~/.dot-files:/usr/bin:/usr/local/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:`yarn global bin`:$PATH
+export PATH=~/.dot-files:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:`yarn global bin`:$PATH
 export EDITOR=vim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 # Change python path
@@ -28,6 +29,26 @@ export vi_cv_path_python=usr/local/Cellar/python
 #
 # Auto update without a prompt
 DISABLE_UPDATE_PROMPT=true
+
+
+
+#
+# ZSH History Substring Search
+#
+# bind UP and DOWN arrow keys
+zmodload zsh/terminfo
+# WTF: These keybindings only trigger search from beginning of phrase (not any location in phrase)
+#bindkey '^[[A' history-substring-search-up
+#bindkey '^[[B' history-substring-search-down
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+# bind P and N for EMACS mode
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
 
 #
 # Which plugins would you like to load?
@@ -93,6 +114,8 @@ alias editngrok='mvim ~/.ngrok2/ngrok.yml'
 alias edithammer='mvim ~/.hammerspoon/init.lua && mvim ~/.dot-files/hammerspoon/init.lua'
 # Edit this file
 alias editzshrc='mvim ~/.zshrc'
+# Edit gitconfig
+alias editgitconfig='mvim /Users/bc/.dot-files/gitconfig'
 
 
 
@@ -144,7 +167,7 @@ alias l="ls -la"
 # Git Grep
 alias gg="git grep"
 # Get a list of all changes since the latest release
-alias gr="git log `git describe --tags --abbrev=0`..HEAD --oneline"
+alias gr='git log `git describe --tags --abbrev=0`..HEAD --oneline'
 # Unstage all commits on your current branch
 alias unstageall="git reset $(git merge-base master $(git branch | grep \* | cut -d ' ' -f2))"
 # Unstage all commits on your current branch, stage all files, begin commit process
@@ -179,25 +202,6 @@ alias mongostop="launchctl stop org.mongodb.mongod"
 alias mysqlstart='mysql.server start'
 # Stop
 alias mysqlstop='mysql.server stop'
-
-
-
-#
-# ZSH History Substring Search
-#
-# bind UP and DOWN arrow keys
-zmodload zsh/terminfo
-# WTF: These keybindings only trigger search from beginning of phrase (not any location in phrase)
-#bindkey '^[[A' history-substring-search-up
-#bindkey '^[[B' history-substring-search-down
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-# bind P and N for EMACS mode
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
-# bind k and j for VI mode
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
 
 
 
