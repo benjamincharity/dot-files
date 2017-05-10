@@ -40,7 +40,12 @@ Plugin 'gcorne/vim-sass-lint'
 " Syntastic - Syntax checking hacks for vim
 " https://github.com/scrooloose/syntastic
 " Customization: _syntastic.vim
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
+
+"
+" Asynchronous Lint Engine
+" https://github.com/w0rp/ale
+Plugin 'w0rp/ale'
 
 "
 " Vim Scratch - Unobtrusive scratch window
@@ -57,12 +62,6 @@ Plugin 'mattn/webapi-vim'
 " https://github.com/mattn/gist-vim
 " Customization: _gist.vim
 Plugin 'mattn/gist-vim'
-
-"
-" Ack - Replacement for Grep
-" https://github.com/mileszs/ack.vim
-" Customization: _ack.vim
-Plugin 'mileszs/ack.vim'
 
 "
 " Align - Align text, eqns, declarations, tables etc
@@ -215,14 +214,9 @@ Plugin 'othree/html5.vim'
 Plugin 'leafgarland/typescript-vim'
 
 "
-" Interactive command execution in Vim. (required by typescript plugins)
-" https://github.com/Shougo/vimproc.vim
-Plugin 'Shougo/vimproc.vim'
-
-"
 " Tsuquyomi (typescript IDE-ish features)
 " https://github.com/Quramy/tsuquyomi
-Plugin 'Quramy/tsuquyomi'
+"Plugin 'Quramy/tsuquyomi'
 
 "
 " Angular CLI commands support for vim
@@ -235,14 +229,19 @@ Plugin 'bdauria/angular-cli.vim'
 Plugin 'tpope/vim-rhubarb'
 
 "
-" A Vim plugin which shows a git diff in the gutter (sign column) and stages/undoes hunks.
-" https://github.com/airblade/vim-gitgutter
-Plugin 'airblade/vim-gitgutter'
-
-"
 " Vim syntax file & snippets for Docker's Dockerfile
 " https://github.com/ekalinin/Dockerfile.vim
 Plugin 'ekalinin/Dockerfile.vim'
+
+"
+" Show a diff using Vim its sign column.
+" https://github.com/mhinz/vim-signify
+Plugin 'mhinz/vim-signify'
+
+"
+" Asynchronous grep plugin for Vim
+" https://github.com/ramele/agrep
+Plugin 'ramele/agrep'
 
 
 call vundle#end()
