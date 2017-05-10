@@ -43,8 +43,8 @@ zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 # bind P and N for EMACS mode
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
+#bindkey -M emacs '^P' history-substring-search-up
+#bindkey -M emacs '^N' history-substring-search-down
 # bind k and j for VI mode
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
@@ -58,10 +58,12 @@ plugins=(brew aws bower jsontools node npm sublime terminalapp urltools zsh-per-
 
 
 
-
 source $ZSH/oh-my-zsh.sh
-unsetopt correct_all
 
+# Disable autocorrect
+unsetopt correct_all
+# Don't share history between windows
+unsetopt share_history
 
 #
 # General Alias'
@@ -74,7 +76,8 @@ alias pd='cd `pbpaste`'
 alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
 # Get the current IP address
 alias ipconfig='ifconfig | grep "inet " | grep -v 127.0.0.1'
-
+# Use ngrok
+alias ngrok='/Applications/ngrok'
 
 
 #
