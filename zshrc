@@ -1,4 +1,12 @@
 #
+# Which plugins would you like to load?
+# Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
+# Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(brew aws bower jsontools node npm sublime urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search send git-it-on docker)
+
+
+#
+#
 # EXPORTS/PATH
 #
 # Path to your oh-my-zsh configuration.
@@ -31,6 +39,10 @@ export vi_cv_path_python=usr/local/Cellar/python
 DISABLE_UPDATE_PROMPT=true
 
 
+#
+# Init rbenv
+eval "$(rbenv init -)"
+
 
 #
 # ZSH History Substring Search
@@ -50,13 +62,6 @@ bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
 
-#
-# Which plugins would you like to load?
-# Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew aws bower jsontools node npm sublime terminalapp urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search send git-it-on docker)
-
-
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,7 +74,7 @@ unsetopt share_history
 # General Alias'
 #
 # Copy current directory path
-alias gd='pwd | pbcopy'
+alias pwd='pwd | pbcopy && pwd'
 # Go to copied directory path
 alias pd='cd `pbpaste`'
 # Delete Vim swap files
@@ -119,6 +124,8 @@ alias edithammer='mvim ~/.hammerspoon/init.lua && mvim ~/.dot-files/hammerspoon/
 alias editzshrc='mvim ~/.zshrc'
 # Edit gitconfig
 alias editgitconfig='mvim /Users/bc/.dot-files/gitconfig'
+# Got to the Terminus directory and list subfolders
+alias terminus='cd ~/Code/Terminus/; ls -1F . | grep /'
 
 
 
