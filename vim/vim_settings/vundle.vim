@@ -244,5 +244,10 @@ Plugin 'mhinz/vim-signify'
 Plugin 'ramele/agrep'
 
 
+" Ruby on Rails power tools
+" https://github.com/tpope/vim-rails
+Plugin 'tpope/vim-rails'
+
+
 call vundle#end()
 

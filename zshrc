@@ -156,7 +156,7 @@ alias spp="git stash && git pull && git stash pop"
 # Stash, pull, pop, start node
 alias spps="git stash && git pull && git stash pop && node index.js"
 # Commit with message
-alias gc="git cz"
+alias gc="git commit"
 # Create and checkout new branch
 alias gcb="git checkout -b"
 # Git push origin master
