@@ -119,7 +119,7 @@ Plugin 'Valloric/YouCompleteMe'
 " Tern - This is a Vim plugin that provides Tern-based JavaScript editing support.
 " NOTE: Currently disabled as it is interacting poorly with Tsuquyomi
 " https://github.com/ternjs/tern_for_vim
-"Plugin 'ternjs/tern_for_vim'
+Plugin 'ternjs/tern_for_vim'
 
 "
 " Tagbar - Browse tags of current document
@@ -216,7 +216,7 @@ Plugin 'leafgarland/typescript-vim'
 "
 " Tsuquyomi (typescript IDE-ish features)
 " https://github.com/Quramy/tsuquyomi
-"Plugin 'Quramy/tsuquyomi'
+Plugin 'Quramy/tsuquyomi'
 
 "
 " Angular CLI commands support for vim
@@ -247,6 +247,8 @@ Plugin 'ramele/agrep'
 " Ruby on Rails power tools
 " https://github.com/tpope/vim-rails
 Plugin 'tpope/vim-rails'
+
+Plugin 'Shougo/vimproc.vim'
 
 
 call vundle#end()
