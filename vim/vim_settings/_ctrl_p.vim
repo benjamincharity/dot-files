@@ -16,6 +16,7 @@ let g:ctrlp_custom_ignore='coverage'
 "\ --ignore "coverage/*"
 "\ --ignore "platforms/*"
 "\ --ignore "build/*"
-"\ --ignore "www/*"
+"\ --ignore "documentation/*"
+"\ --ignore "stylesguide/*"
 "\ -g ""'
 "\ }
