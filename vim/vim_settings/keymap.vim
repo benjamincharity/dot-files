@@ -93,7 +93,7 @@ map <leader>FF :NERDTreeFind<cr>
 noremap <leader>l :noh<CR>
 
 " Ack (search) project for word under cursor
-noremap <Leader>a :execute 'Agrep -r <cword> .'<CR>
+noremap <Leader>a :execute 'Agrep --exclude-dir={documentation,stylesguide,node_modules} -r <cword> .'<CR>
 
 "
 " Compile coffeescript to scratch buffer in vertical split
@@ -142,7 +142,6 @@ noremap <Leader>to :noautocmd vimgrep /TODO/j **/*.ts<CR>:cw<CR>
 "
 " Typescript
 " Jump to definition
-" TODO: Currently tsuquyomi is disabled due to no vim8 support
 nnoremap <buffer> <leader>td :TsuquyomiDefinition<CR>
 nnoremap <buffer> <leader>ti :TsuquyomiImport<CR>
 nnoremap <buffer> <leader>tr :TsuquyomiReload<CR>
