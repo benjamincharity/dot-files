@@ -75,7 +75,10 @@ set expandtab
 " Project specific tabs
 " ===========================
 " Moment Styleguides
-autocmd BufRead,BufNewFile  /Users/bc/Code/open-source/moment-styleguides/* setlocal ts=4 sw=4
+"autocmd BufRead,BufNewFile  /Users/bc/Code/open-source/moment-styleguides/* setlocal ts=4 sw=4
+augroup ProjectSetup
+au BufRead,BufEnter /Users/bc/Code/Terminus/components-test/* set sts=2 shiftwidth=2
+augroup END
 
 "
 " Indentation
@@ -166,7 +169,7 @@ set wildmode=list:longest
 
 "
 " Define paths to ignore
- :set wildignore+=**/bower_components/*,**/node_modules/*,**/moment-client/plugins/*,**/moment-client/platforms/*,**/moment-client/www/*,**/dist/*
+:set wildignore+=**/bower_components/*,**/node_modules/*,**/moment-client/plugins/*,**/moment-client/platforms/*,**/moment-client/www/*,**/dist/*
 
 "
 " Show the current line/column/virtual column/relative position
@@ -243,4 +246,7 @@ set number
 "
 " Color overrides
 hi Search gui=NONE guifg=ivory guibg=CadetBlue4
+hi SpellBad guifg=#f34923 guibg=#152132
+hi Search guibg=#35445a
+hi MatchParen guibg=#273c5a
 
