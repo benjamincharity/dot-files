@@ -16,6 +16,7 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSH_THEME="robbyrussell"
 # Items in path:
 #   ~/.dot-files
+#   /Applications/MacVim.app/Contents/bin
 #   /usr/local/bin
 #   /usr/bin
 #   ~/.npm
@@ -28,8 +29,8 @@ export ZSH_THEME="robbyrussell"
 #   ~/.rbenv/bin
 #   `yarn global bin`
 #   $PATH
-export PATH=~/.dot-files:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:`yarn global bin`:$PATH
-export EDITOR=vim
+export PATH=~/.dot-files:/Applications/MacVim.app/Contents/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:`yarn global bin`:$PATH
+export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 # Change python path
 export vi_cv_path_python=usr/local/Cellar/python
