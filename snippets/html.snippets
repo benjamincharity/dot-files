@@ -3,45 +3,8 @@
 #
 # Angular
 #
-snippet include
-data-ng-include=" '${1:path}/${2:template}.${3:html}' "
-endsnippet
-snippet divinclude
-<div data-ng-include=" '${1:path}/${2:template}.${3:html}' "></div>
-endsnippet
-snippet nginclude
-<ng-include src=" '${1:path}/${2:template}.${3:html}' "></ng-include>
-endsnippet
-snippet com
-<dev-comment>${1:My Comment}</dev-comment>${2}
-endsnippet
-snippet comb
-<dev-comment>
-	${1:My Comment}
-</dev-comment>${2}
-endsnippet
-snippet ngapp
-data-ng-app="${1:myApp}"
-endsnippet
-snippet ngc
-data-ng-controller="${1:myController}"
-endsnippet
-snippet ngview
-data-ng-view${1}
-endsnippet
-snippet datainclude
-data-ng-include=" '${1:myTemplate}.html' "
-endsnippet
-snippet uilink
-<a ui-sref="${1:myState}">${2:linkText}</a>
-endsnippet
-snippet sref
-<a ui-sref="${1:myState}">${2:linkText}</a>
-endsnippet
-snippet ngselect
-<select ng-model="${1:myModel}" ng-options="${2:thing} in ${3:things}">
-	<option value="">-- choose ${4:thing} --</option>
-</select>
+snippet ngc "Add a conditional class"
+[ngClass]="{'${1:class-name}': ${2:isTrue}}"${3}
 endsnippet
 snippet void
 javascript:void(0);${1}
