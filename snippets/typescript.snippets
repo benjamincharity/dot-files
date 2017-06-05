@@ -17,13 +17,28 @@ endsnippet
 snippet gett
 document.getElementById('${1}');${2}
 endsnippet
-# Function comment
-snippet funcom "Create a function comment" m
+# Simple comment
+snippet scom "Create a simple JSDoc comment" m
 /**
- * ${1:make() returns a new element}
+ * ${1:My method does this thing}
+ */${4}
+endsnippet
+# Function comment
+snippet mcom "Create a JSDoc method comment" m
+/**
+ * ${1:Return the difference in time in words}
  *
- * ${2:@param {Object} moment}
- * ${3:@return {string} name}
+ * ${2:@param {Object} time The time chosen}
+ * ${3:@return {string} timeAgo The difference in time}
+ */${4}
+endsnippet
+# Function comment ALIAS
+snippet funcom "Create a JSDoc method comment" m
+/**
+ * ${1:Return the difference in time in words}
+ *
+ * ${2:@param {Object} time The time chosen}
+ * ${3:@return {string} timeAgo The difference in time}
  */${4}
 endsnippet
 
