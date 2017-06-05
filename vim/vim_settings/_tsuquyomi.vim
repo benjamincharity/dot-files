@@ -13,3 +13,4 @@ let g:tsuquyomi_javascript_support = 1
 " Currently undocumented: https://github.com/Quramy/tsuquyomi/pull/114
 let g:tsuquyomi_import_curly_spacing = 1
 
+let g:tsuquyomi_use_vimproc = 1
