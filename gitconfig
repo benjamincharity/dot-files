@@ -23,6 +23,7 @@
 [core]
     excludesfile = /Users/bc/.dot-files/.gitignore_global
     pager = tee
+	editor = vim
 [color]
     branch = auto
     diff = auto
