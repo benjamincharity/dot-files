@@ -27,9 +27,9 @@ export ZSH_THEME="robbyrussell"
 #   /usr/local/heroku/bin
 #   ~/.rbenv/shims
 #   ~/.rbenv/bin
-#   `yarn global bin`
+#   $(yarn global bin)
 #   $PATH
-export PATH=~/.dot-files:/Applications/MacVim.app/Contents/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:`yarn global bin`:$PATH
+export PATH=~/.dot-files:/Applications/MacVim.app/Contents/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):$PATH
 export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 # Change python path
@@ -43,6 +43,12 @@ DISABLE_UPDATE_PROMPT=true
 #
 # Init rbenv
 eval "$(rbenv init -)"
+
+#
+# Init hub completions
+# https://github.com/github/hub/blob/master/etc/README.md
+fpath=(~/.zsh/completions $fpath) 
+autoload -U compinit && compinit
 
 
 #
@@ -146,7 +152,7 @@ alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 # GIT
 #
 # Let Hub wrap Github commands with some sugar
-#eval '$(hub alias -s)'
+alias git=hub
 # Status
 alias st="status"
 alias gs="git status"
@@ -157,7 +163,7 @@ alias spp="git stash && git pull && git stash pop"
 # Stash, pull, pop, start node
 alias spps="git stash && git pull && git stash pop && node index.js"
 # Commit with message
-alias gc="git commit"
+alias gc="git commit -am"
 # Create and checkout new branch
 alias gcb="git checkout -b"
 # Git push origin master
