@@ -77,7 +77,7 @@ set expandtab
 " Moment Styleguides
 "autocmd BufRead,BufNewFile  /Users/bc/Code/open-source/moment-styleguides/* setlocal ts=4 sw=4
 augroup ProjectSetup
-au BufRead,BufEnter /Users/bc/Code/Terminus/components-test/* set sts=2 shiftwidth=2
+au BufRead,BufEnter /Users/bc/Code/Terminus/* set sts=2 shiftwidth=2
 augroup END
 
 "
