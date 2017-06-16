@@ -18,6 +18,9 @@
     }; f"
     undo = reset --soft HEAD~1
     updateremote = remote set-url origin
+    prs = browse -- pulls
+    issues = browse -- issues
+    projects = browse -- project
 [apply]
     whitespace = nowarn
 [core]
