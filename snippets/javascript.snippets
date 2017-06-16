@@ -536,7 +536,7 @@ endsnippet
 #
 #########################################
 snippet cl
-console.log('${1:Item}: ', ${2:results});${3}
+console.log('${1:Item}: ', $1);${2}
 endsnippet
 snippet cls
 console.log('${1:Log this}');${2}
@@ -545,18 +545,10 @@ snippet cln
 console.log(JSON.stringify(${1:array}, null, 2));${2}
 endsnippet
 snippet cw
-console.warn('${1:Item}: ', ${2:error});${3}
+console.warn('${1:Item}: ', $1);${2}
 endsnippet
 snippet ce
-console.error('${1:Item}: ', ${2:error});${3}
-endsnippet
-#
-# Log Debugs
-snippet ld "Log string and object"
-self.$log.debug('${1:My message}: ', ${2:MyParam});
-endsnippet
-snippet lds "Log string"
-self.$log.debug('${1:My message}');
+console.error('${1:Item}: ', $1);${2}
 endsnippet
 #
 # Returns
