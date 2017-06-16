@@ -1245,4 +1245,26 @@ endsnippet
 snippet enable
 // sass-lint:enable ${1:IdSelector}
 endsnippet
-
+#
+#
+#
+#
+# File management
+#
+snippet import
+@import '${1:./../scss/foo}';${2}
+endsnippet
+#
+#
+#
+#
+# Comments
+#
+snippet com "Add a Nucleus comment" m
+/**
+ * ${1:The base font family}
+ *
+ * @nuclide ${2:Font Family}
+ * @section ${3:Config > Typography}
+ */${4}
+endsnippet
