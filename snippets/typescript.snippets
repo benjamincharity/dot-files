@@ -159,6 +159,10 @@ endsnippet
 snippet importa "Import Angular Material component"
 import { ${1:MdToolbar} } from '@angular/material/${2:toolbar}';
 endsnippet
+# export
+snippet export "Export component"
+export { ${1:MyModule} } from '${2:./../my-module/my-module}';
+endsnippet
 
 
 #########################################
@@ -193,6 +197,19 @@ console.warn('${1:Item}: ', $1);${2}
 endsnippet
 snippet ce
 console.error('${1:Item}: ', $1);${2}
+endsnippet
+
+
+#########################################
+#
+# Returns
+#
+#########################################
+snippet rf
+return false;
+endsnippet
+snippet rt
+return true;
 endsnippet
 #########################################
 #
