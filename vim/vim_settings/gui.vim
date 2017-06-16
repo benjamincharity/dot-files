@@ -247,6 +247,6 @@ set number
 " Color overrides
 hi Search gui=NONE guifg=ivory guibg=CadetBlue4
 hi SpellBad guifg=#f34923 guibg=#152132
-hi Search guibg=#35445a
+hi Search guibg=#131c2b
 hi MatchParen guibg=#273c5a
 
