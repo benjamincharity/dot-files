@@ -28,20 +28,24 @@ snippet mcom "Create a JSDoc method comment" m
 /**
  * ${1:Return the difference in time in words}
  *
- * ${2:@param {Object} time The time chosen}
- * ${3:@return {string} timeAgo The difference in time}
- */${4}
+ * @param {${2:Object}} ${3:time The time chosen}
+ * @return {${4:String}} ${5:timeAgo The difference in time}
+ */${6}
 endsnippet
 # Function comment ALIAS
 snippet funcom "Create a JSDoc method comment" m
 /**
  * ${1:Return the difference in time in words}
  *
- * ${2:@param {Object} time The time chosen}
- * ${3:@return {string} timeAgo The difference in time}
+ * @param {${2:Object}} ${3:time The time chosen}
+ * @return {${4:String}} ${5:timeAgo The difference in time}
  */${4}
 endsnippet
-
+snippet com "Create a Compodoc comment"
+/**
+ * ${1:My definition}
+ */
+endsnippet
 
 
 #########################################
@@ -163,7 +167,10 @@ endsnippet
 snippet export "Export component"
 export { ${1:MyModule} } from '${2:./../my-module/my-module}';
 endsnippet
-
+snippet uiimport "Import a UI component"
+import { Ts${1:Button}Module } from './../$3/$3.${2:module}';
+`!p t[3] = t[1][:1].lower() + t[1][1:]`
+endsnippet
 
 #########################################
 #
@@ -311,6 +318,7 @@ endsnippet
 # it
 snippet it "It statement" m
 it(\`${1:should do something}\`, () => {
+	this.fixture.detectChanges();
 	const actual = null;
 	const expected = null;
 	expect(actual).toEqual(expected);
@@ -354,3 +362,143 @@ endsnippet
 snippet moment "Import all momentjs functions"
 import * as moment from 'moment';
 endsnippet
+
+#########################################
+#
+# Component Snippets
+#
+#########################################
+# Component
+# NOTE: The last line uppercases the first letter of the 2nd variable and stores it as the 3rd
+# variable
+snippet uic "Create a UI component" m
+import {
+  Component,
+  Input,
+  Output,
+} from '@angular/core';
+
+/**
+ * ${1:This is...}
+ *
+ * @example
+ * <ts-${2:foo}
+ *              item="Value"
+ * ></ts-$2>
+ */
+@Component({
+  selector: 'ts-$2',
+  templateUrl: './$2.component.html',
+  styleUrls: ['./$2.component.scss'],
+})
+export class Ts$3Component {
+  /**
+   * TODO
+   */
+  /*
+   * @Input() itemName: type = 'Value';
+   */
+
+}
+`!p t[3] = t[2][:1].upper() + t[2][1:]`
+endsnippet
+# Module
+# NOTE: The last line lowercases the first letter of the 1st variable and stores it as the 2nd
+# variable
+snippet uim "Create a UI module" m
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+/*
+ *import {
+ *  MdButtonModule,
+ *} from '@angular/material';
+ */
+
+import { Ts${1:Foo}Component } from './$2.component';
+export { Ts$1Component } from './$2.component';
+
+
+@NgModule({
+  imports: [
+    CommonModule,
+  ],
+  exports: [
+    Ts$1Component,
+  ],
+  declarations: [
+    Ts$1Component,
+  ],
+})
+export class Ts$1Module {}
+`!p t[2] = t[1][:1].lower() + t[1][1:]`
+endsnippet
+# Component Test
+snippet uict "Create a test for a UI component" m
+import { Component } from '@angular/core';
+import { TestBed, ComponentFixture, async } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
+/*
+ *import {
+ *  MdButtonModule,
+ *} from '@angular/material';
+ */
+
+import { Ts${1:Button}Component } from './$2.component';
+
+@Component({
+  template: \`
+    <div>
+      <ts-$2>
+	  </ts-$2>
+    </div>
+  \`,
+})
+class TestHostComponent {}
+
+describe(\`$1Component\`, () => {
+
+  beforeEach(async(() => {
+    TestBed.configureTestingModule({
+      imports: [
+      /*
+       * MdButtonModule,
+       */
+      ],
+      declarations: [
+        Ts$1Component,
+        TestHostComponent,
+      ],
+    })
+      .compileComponents().then(() => {
+        this.fixture = TestBed.createComponent(Ts$1Component);
+        this.component = this.fixture.componentInstance;
+      });
+  }));
+
+
+  it(\`should exist\`, () => {
+    this.fixture.detectChanges();
+
+    expect(this.component).toBeTruthy();
+  });
+
+});
+`!p t[2] = t[1][:1].lower() + t[1][1:]`
+endsnippet
+
+
+
+
+
+
+#########################################
+#
+# Snippet Helper Functions
+#
+#########################################
+global !p
+def convert(name):
+    s1 = re.sub('(.)([A-Z][a-z]+)', r'\1-\2', name)
+    return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
+endglobal
+
