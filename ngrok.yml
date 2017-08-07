@@ -1,0 +1,8 @@
+authtoken: 3N3GVq8QVLQUtzKpyyaBx_5A3aRPftAUnm2KZriQZZo
+tunnels:
+  terminus-ui:
+    addr: 4300
+    proto: http
+    host_header: localhost:4200
+    hostname: tui.benjamincharity.work
+
