@@ -1,6 +1,6 @@
 [user]
-	name = Benjamin Charity
-	email = ben@benjamincharity.com
+    name = Benjamin Charity
+    email = ben@benjamincharity.com
 [alias]
     ci = commit
     co = checkout
@@ -21,12 +21,16 @@
     prs = browse -- pulls
     issues = browse -- issues
     projects = browse -- project
+    deletebranch = "!f() { \
+        git push origin --delete "$@"; \
+        git branch -d "$@"; \
+    }; f"
 [apply]
     whitespace = nowarn
 [core]
     excludesfile = /Users/bc/.dot-files/.gitignore_global
     pager = tee
-	editor = vim
+    editor = vim
 [color]
     branch = auto
     diff = auto
@@ -63,7 +67,7 @@
     enabled = true
     autoupdate = true
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [filter "lfs"]
     clean = git lfs clean %f
     smudge = git lfs smudge %f
