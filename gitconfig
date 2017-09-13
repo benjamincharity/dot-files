@@ -29,6 +29,12 @@
         git ls-files | while read f; do git blame --line-porcelain $f | grep '^author '; done | sort -f | uniq -ic | sort -n; \
     }; f"
     commitsperauthor = shortlog -s -n --all
+    release = "!f() { \
+        git log `git describe --tags --abbrev=0`..HEAD --oneline; \
+    }; f"
+    grep-no-spec = "!f() { \
+        git grep \"$1\" \"$2\" \":(exclude)*.spec.ts\"; \
+    }; f"
 [apply]
     whitespace = nowarn
 [core]
