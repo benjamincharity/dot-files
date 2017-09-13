@@ -47,7 +47,7 @@ eval "$(rbenv init -)"
 #
 # Init hub completions
 # https://github.com/github/hub/blob/master/etc/README.md
-fpath=(~/.zsh/completions $fpath) 
+fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 
 
@@ -148,7 +148,7 @@ alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 # Atom Beta
 alias atom-beta='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
-alias ab='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
+alias atomb='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
 
 
 
