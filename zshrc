@@ -142,9 +142,13 @@ alias terminus='cd ~/Code/Terminus/; ls -1F . | grep /'
 # Open Visual Studio Code
 alias vsc='/Applications/Visual\ Studio\ Code.app'
 alias vs='/Applications/Visual\ Studio\ Code.app'
+# Vim
 # Make sure the cli is using the lastest version of vim
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+# Atom Beta
+alias atom-beta='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
+alias ab='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
 
 
 
@@ -182,8 +186,10 @@ alias gd="git diff | mvim"
 alias l="ls -la"
 # Git Grep
 alias gg="git grep"
+# Git Grep excluding spec files
+alias ggns="git grep-no-spec"
 # Get a list of all changes since the latest release
-alias gr='git log `git describe --tags --abbrev=0`..HEAD --oneline'
+alias gr='git release'
 # Unstage all commits on your current branch
 alias unstageall='git reset $(git merge-base master $(git branch | grep \* | cut -d " " -f2))'
 # Unstage all commits on your current branch, stage all files, begin commit process
@@ -228,6 +234,21 @@ alias mysqlstop='mysql.server stop'
 alias run='ntl'
 # List all global packages
 alias npmglobal='npm list -g --depth=0'
+
+
+#
+# Yarn
+#
+alias yi='yarn install'
+alias ya='yarn add'
+alias ys='yarn run start'
+alias yga='yarn global add'
+alias yad='yarn add --dev'
+alias yis='yarn install && yarn run start'
+alias yt='yarn run test'
+alias yl='yarn link'
+alias yu='yarn unlink'
+alias yb='yarn run build'
 
 
 #
@@ -427,3 +448,5 @@ fi
 
 ###-end-ng-completion###
 
+
+eval $(thefuck --alias)
