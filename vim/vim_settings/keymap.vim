@@ -1,6 +1,6 @@
 "
 " Remap the leader key to the spacebar
-map <space> \
+map <SPACE> <leader>
 
 "
 " Quit window/split/buffer
@@ -17,11 +17,6 @@ nnoremap <Leader>1 :set tw=100<CR>
 "
 " Set the line wrap to 0 characters
 nnoremap <Leader>0 :set tw=0<CR>
-
-"
-" Toggle line numbers on/off
-"nnoremap <Leader>n :NumbersToggle<CR>
-"nnoremap <Leader>nn :NumbersOnOff<CR>
 
 "
 " Align selected text by a specific character
@@ -146,13 +141,25 @@ nnoremap <buffer> <leader>td :TsuquyomiDefinition<CR>
 nnoremap <buffer> <leader>ti :TsuquyomiImport<CR>
 nnoremap <buffer> <leader>tr :TsuquyomiReload<CR>
 
+
 "
 " Overrides and Fallbacks
 "
 
+"
 " 'W' should be converted to 'w' if on the command line and not part of a word
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 
+"
 " 'Wa' should be converted to 'wa' if on the command line and not part of a word
 cnoreabbrev <expr> Wa ((getcmdtype() is# ':' && getcmdline() is# 'Wa')?('wa'):('Wa'))
+
+
+"
+" Custom
+"
+
+"
+" Map `jk` to escape to make things easier for Brian M.
+imap jk <Esc>
 
