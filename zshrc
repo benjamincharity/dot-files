@@ -249,6 +249,7 @@ alias yt='yarn run test'
 alias yl='yarn link'
 alias yu='yarn unlink'
 alias yb='yarn run build'
+alias yr='yarn run'
 
 
 #
