@@ -117,7 +117,6 @@ Plugin 'Valloric/YouCompleteMe'
 
 "
 " Tern - This is a Vim plugin that provides Tern-based JavaScript editing support.
-" NOTE: Currently disabled as it is interacting poorly with Tsuquyomi
 " https://github.com/ternjs/tern_for_vim
 Plugin 'ternjs/tern_for_vim'
 

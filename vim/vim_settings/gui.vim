@@ -169,7 +169,7 @@ set wildmode=list:longest
 
 "
 " Define paths to ignore
-:set wildignore+=**/bower_components/*,**/node_modules/*,**/moment-client/plugins/*,**/moment-client/platforms/*,**/moment-client/www/*,**/dist/*
+:set wildignore+=**/bower_components/*,**/node_modules/*,**/dist/*,**/log/*,**/tmp/*
 
 "
 " Show the current line/column/virtual column/relative position
@@ -225,15 +225,6 @@ filetype plugin indent on
 set history=1000
 " Use many undo levels
 set undolevels=1000
-
-
-"
-" Save folds when a file is closed
-" Currently disabled because fold lines are saved even if content changes via
-" git etc. So folds no longer are folding at the correct places
-"autocmd BufWinLeave *.* mkview
-"Reload folds when a file is opened
-"autocmd BufWinEnter *.* silent loadview
 
 "
 " Show line numbers
