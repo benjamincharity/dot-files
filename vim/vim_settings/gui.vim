@@ -53,11 +53,11 @@ set textwidth=100
 " ===========================
 " http://tedlogan.com/techblog3.html
 " A tab equals 2 columns
-set tabstop=4
+set tabstop=2
 " A tab also equals 4 columns in insert mode
-set softtabstop=4
+set softtabstop=2
 " When indenting lines or blocks of code, move 4 columns at a time
-set shiftwidth=4
+set shiftwidth=2
 " Expand tabs into the correct number of columns
 set expandtab
 " For JavaScript files, switch to 4 tabs

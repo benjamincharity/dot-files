@@ -1260,6 +1260,7 @@ endsnippet
 #
 # Comments
 #
+# A standard nucleus comment
 snippet com "Add a Nucleus comment" m
 /**
  * ${1:The base font family}
@@ -1268,3 +1269,16 @@ snippet com "Add a Nucleus comment" m
  * @section ${3:Config > Typography}
  */${4}
 endsnippet
+# A mixin comment
+snippet mixcom "Add a Nucleus mixin comment" m
+/**
+ * ${1:Put rounded borders around the element}
+ *
+ * @section ${2:Style Mixins}
+ * @param ${3:$radius}
+ *  ${4:This could be single line}
+ * @example
+ *  ${5:@include brc(3px);}
+ */${6}
+endsnippet
+

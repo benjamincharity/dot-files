@@ -247,9 +247,11 @@ alias yad='yarn add --dev'
 alias yis='yarn install && yarn run start'
 alias yt='yarn run test'
 alias yl='yarn link'
-alias yu='yarn unlink'
+alias yul='yarn unlink'
 alias yb='yarn run build'
 alias yr='yarn run'
+alias yo='yarn outdated'
+alias ygo='yarn global outdated'
 
 
 #

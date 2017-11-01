@@ -6,3 +6,8 @@ tunnels:
     host_header: localhost:4200
     hostname: tui.benjamincharity.work
 
+  terminus-core:
+    addr: 4200
+    proto: http
+    host_header: localhost:4200
+    hostname: myt.benjamincharity.work

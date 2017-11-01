@@ -1,6 +1,6 @@
 [user]
-    name = Benjamin Charity
-    email = ben@benjamincharity.com
+	name = Benjamin Charity
+	email = ben@benjamincharity.com
 [alias]
     ci = commit
     co = checkout

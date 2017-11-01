@@ -13,6 +13,10 @@ endsnippet
 snippet disableline "Disable TSLint for the following line"
 // tslint:disable-next-line
 endsnippet
+# Ignore else path for Istanbul test reporter
+snippet ignoreelse "Istanbul coverage: ignore 'else' path"
+// istanbul ignore else
+endsnippet
 # Get Element by ID
 snippet gett
 document.getElementById('${1}');${2}
@@ -43,7 +47,7 @@ snippet funcom "Create a JSDoc method comment" m
 endsnippet
 snippet com "Create a Compodoc comment"
 /**
- * ${1:My definition}
+ * ${1:TODO}
  */
 endsnippet
 
@@ -161,7 +165,7 @@ import { ${2:NgModule} } from '${1:@angular/core}';
 endsnippet
 # import Angular Material
 snippet importa "Import Angular Material component"
-import { ${2:MdToolbar} } from '@angular/material/${1:toolbar}';
+import { ${2:MatToolbarModule} } from '@angular/material/${1:toolbar}';
 endsnippet
 # export
 snippet export "Export component"
@@ -174,10 +178,14 @@ import { Ts${1:Button}Module } from './../$3/$3.${2:module}';
 endsnippet
 # Create @Input
 snippet input "Create an @Input declaration" m
-@Input('${1:myVar}')
-${2:public} $1: ${3:string};
+@Input()
+${3:public} ${1:myVar}: ${2:string};
 endsnippet
-
+# Create @Output
+snippet output
+@Output()
+public ${1:submitted}: EventEmitter<${2:TsLoginFormResponse}> = new EventEmitter();${3}
+endsnippet
 
 #########################################
 #
@@ -356,7 +364,7 @@ const expected = ${2};
 endsnippet
 # Create a spy
 snippet spy "Create a Jasmine spy"
-jasmine.createSpy('${1:mySpy}');${2}
+jasmine.createSpy('${1:mySpy}')${2}
 endsnippet
 #########################################
 #
@@ -369,7 +377,9 @@ endsnippet
 snippet moment "Import all momentjs functions"
 import * as moment from 'moment';
 endsnippet
-
+snippet importof "Import RXJS 'of' method"
+import { of } from 'rxjs/observable/of';
+endsnippet
 #########################################
 #
 # Component Snippets
@@ -416,9 +426,7 @@ snippet uim "Create a UI module" m
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 /*
- *import {
- *  MdButtonModule,
- *} from '@angular/material';
+ *import { MatButtonModule } from '@angular/material/button';
  */
 
 import { Ts${1:Foo}Component } from './$2.component';
@@ -445,9 +453,7 @@ import { Component } from '@angular/core';
 import { TestBed, ComponentFixture, async } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 /*
- *import {
- *  MdButtonModule,
- *} from '@angular/material';
+ *import { MatButtonModule } from '@angular/material/button';
  */
 
 import { Ts${1:Button}Component } from './$2.component';
@@ -468,7 +474,7 @@ describe(\`$1Component\`, () => {
     TestBed.configureTestingModule({
       imports: [
       /*
-       * MdButtonModule,
+       * MatButtonModule,
        */
       ],
       declarations: [
