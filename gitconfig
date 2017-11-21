@@ -60,7 +60,7 @@
 [github]
     user = benjamincharity
 [push]
-    default = current
+	default = current
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
     path = 

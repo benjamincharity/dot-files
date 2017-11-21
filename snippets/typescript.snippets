@@ -206,19 +206,19 @@ endsnippet
 #
 #########################################
 snippet cl
-console.log('${1:Item}: ', $1);${2}
+console.log('${1:Item}: ', $1)${2}
 endsnippet
 snippet cls
-console.log('${1:Log this}');${2}
+console.log('${1:Log this}')${2}
 endsnippet
 snippet cln
-console.log(JSON.stringify(${1:array}, null, 2));${2}
+console.log(JSON.stringify(${1:array}, null, 2))${2}
 endsnippet
 snippet cw
-console.warn('${1:Item}: ', $1);${2}
+console.warn('${1:Item}: ', $1)${2}
 endsnippet
 snippet ce
-console.error('${1:Item}: ', $1);${2}
+console.error('${1:Item}: ', $1)${2}
 endsnippet
 
 
@@ -507,6 +507,14 @@ snippet dodebug "Add ngrx 'do' with a debugger statement" m
 endsnippet
 
 
+#########################################
+#
+# Various
+#
+#########################################
+snippet oassign "Object.assign" m
+Object.assign({}, ${1:myObj})$2
+endsnippet
 
 
 
