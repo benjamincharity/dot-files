@@ -241,9 +241,10 @@ alias npmglobal='npm list -g --depth=0'
 #
 alias yi='yarn install'
 alias ya='yarn add'
+alias yrm='yarn remove'
 alias ys='yarn run start'
 alias yga='yarn global add'
-alias yad='yarn add --dev'
+alias yad='yarn add --D'
 alias yis='yarn install && yarn run start'
 alias yt='yarn run test'
 alias yl='yarn link'
@@ -252,6 +253,9 @@ alias yb='yarn run build'
 alias yr='yarn run'
 alias yo='yarn outdated'
 alias ygo='yarn global outdated'
+function yae {
+  command yarn add $1@latest --exact $2
+}
 
 
 #
@@ -453,3 +457,6 @@ fi
 
 
 eval $(thefuck --alias)
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
