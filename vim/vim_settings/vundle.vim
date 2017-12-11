@@ -37,12 +37,6 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'gcorne/vim-sass-lint'
 
 "
-" Syntastic - Syntax checking hacks for vim
-" https://github.com/scrooloose/syntastic
-" Customization: _syntastic.vim
-"Plugin 'scrooloose/syntastic'
-
-"
 " Asynchronous Lint Engine
 " https://github.com/w0rp/ale
 Plugin 'w0rp/ale'
@@ -123,7 +117,7 @@ Plugin 'ternjs/tern_for_vim'
 "
 " Tagbar - Browse tags of current document
 " http://majutsushi.github.io/tagbar/
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 
 "
 " Vim Javascript
@@ -185,13 +179,6 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
 "
-" ctrlp
-" Fuzzy file, buffer, mru, tag, etc finder
-" https://github.com/ctrlpvim/ctrlp.vim
-" Customization: _ctrl_p.vim
-Plugin 'ctrlpvim/ctrlp.vim'
-
-"
 " Git add, git commit, git pull, git push all in one command, without leaving vim.
 " https://github.com/peterhurford/send.vim
 Plugin 'peterhurford/send.vim'
@@ -215,7 +202,7 @@ Plugin 'leafgarland/typescript-vim'
 "
 " Tsuquyomi (typescript IDE-ish features)
 " https://github.com/Quramy/tsuquyomi
-Plugin 'Quramy/tsuquyomi'
+"Plugin 'Quramy/tsuquyomi'
 
 "
 " Angular CLI commands support for vim
@@ -250,6 +237,10 @@ Plugin 'tpope/vim-rails'
 " https://github.com/Shougo/vimproc.vim
 Plugin 'Shougo/vimproc.vim'
 
+" File Search
+" https://github.com/junegunn/fzf.vim
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plugin 'junegunn/fzf.vim'
 
 call vundle#end()
 

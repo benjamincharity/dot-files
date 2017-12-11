@@ -6,8 +6,8 @@
 #
 # Disable tslint for a specific rule
 snippet disable "Disable TSLint for a specific rule"
-/* tslint:disable:${1:camelcase} */
-/* tslint-enable: $1 */
+// tslint:disable: ${1:camelcase}
+// tslint:enable: $1
 endsnippet
 # Disabled tslint for the following line
 snippet disableline "Disable TSLint for the following line"
@@ -32,8 +32,8 @@ snippet mcom "Create a JSDoc method comment" m
 /**
  * ${1:Return the difference in time in words}
  *
- * @param {${2:Object}} ${3:time The time chosen}
- * @return {${4:String}} ${5:timeAgo The difference in time}
+ * @param ${2:time} - ${3:The time chosen}
+ * @return ${4:The difference in time}
  */${6}
 endsnippet
 # Function comment ALIAS
@@ -41,9 +41,9 @@ snippet funcom "Create a JSDoc method comment" m
 /**
  * ${1:Return the difference in time in words}
  *
- * @param {${2:Object}} ${3:time The time chosen}
- * @return {${4:String}} ${5:timeAgo The difference in time}
- */${4}
+ * @param ${2:time} - ${3:The time chosen}
+ * @return ${4:The difference in time}
+ */${5}
 endsnippet
 snippet com "Create a Compodoc comment"
 /**
@@ -333,9 +333,6 @@ endsnippet
 # it
 snippet it "It statement" m
 it(\`${1:should do something}\`, () => {
-	this.fixture.detectChanges();
-	const actual = null;
-	const expected = null;
 	expect(actual).toEqual(expected);
 });
 endsnippet

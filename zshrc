@@ -41,8 +41,14 @@ DISABLE_UPDATE_PROMPT=true
 
 
 #
+# Set default command for FZF
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+
+#
 # Init rbenv
 eval "$(rbenv init -)"
+
 
 #
 # Init hub completions
@@ -251,11 +257,18 @@ alias yl='yarn link'
 alias yul='yarn unlink'
 alias yb='yarn run build'
 alias yr='yarn run'
-alias yo='yarn outdated'
+alias yro='yarn outdated'
 alias ygo='yarn global outdated'
 function yae {
   command yarn add $1@latest --exact $2
 }
+
+
+#
+#
+# Terminus
+#
+alias startapi='COOKIE_DOMAIN=.vcap.me FRONTEND_HOSTNAME=my.vcap.me:4200 BACKEND_HOSTNAME=backend-my.vcap.me BACKEND_DELEGATION_URL=http://backend-my.vcap.me:3000/ JWT_SIGNING_SECRET=foooooooobar bundle exec rails s'
 
 
 #
