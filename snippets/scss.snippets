@@ -1238,12 +1238,29 @@ endsnippet
 #
 # SCSS Lint
 #
-snippet disable
-// sass-lint:disable ${1:IdSelector}
-// sass-lint:enable $1
+#snippet disable
+#// sass-lint:disable ${1:IdSelector}
+#// sass-lint:enable $1
+#endsnippet
+#snippet enable
+#// sass-lint:enable ${1:IdSelector}
+#endsnippet
+#
+#
+#
+#
+# StyleLint
+#
+snippet disable "Disable a specific SCSS lint rule"
+// stylelint-disable ${1:unit-no-unknown}
+// stylelint-enable $1
 endsnippet
-snippet enable
-// sass-lint:enable ${1:IdSelector}
+snippet disableim "Disable SCSS no-important rule"
+// stylelint-disable declaration-no-important
+// stylelint-enable declaration-no-important
+endsnippet
+snippet disableline "Disable the next line"
+// stylelint-disable-line
 endsnippet
 #
 #
