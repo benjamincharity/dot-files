@@ -44,6 +44,11 @@ DISABLE_UPDATE_PROMPT=true
 # Set default command for FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# preview
+export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
 #
 # Init rbenv
@@ -183,9 +188,11 @@ alias gpod="git push origin develop"
 # Git push heroku master
 alias gphm="git push heroku master"
 # Git push
-alias gm="git push"
+alias gp="git push"
+# Git push and open the PRs view
+alias gp="git push && git prs"
 # Git pull
-alias gp="git pull"
+alias gpl="git pull"
 # Git diff with MacVim
 alias gd="git diff | mvim"
 # List view
@@ -262,13 +269,6 @@ alias ygo='yarn global outdated'
 function yae {
   command yarn add $1@latest --exact $2
 }
-
-
-#
-#
-# Terminus
-#
-alias startapi='COOKIE_DOMAIN=.vcap.me FRONTEND_HOSTNAME=my.vcap.me:4200 BACKEND_HOSTNAME=backend-my.vcap.me BACKEND_DELEGATION_URL=http://backend-my.vcap.me:3000/ JWT_SIGNING_SECRET=foooooooobar bundle exec rails s'
 
 
 #
