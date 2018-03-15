@@ -204,6 +204,7 @@ set nowritebackup
 " Define the vim backup directory
 set backupdir=~/.vim/swap_files/
 " Define the vim swap files directory
+set swapfile
 set directory=~/.vim/swap_files/
 
 "
