@@ -74,10 +74,6 @@ map <leader>tl :tablast<CR>
 map <leader>tm :tabmove
 
 "
-" Open the file in Chrome
-nnoremap <leader>C :silent !open -a 'Google Chrome.app' '%:p'<CR>
-
-"
 " Toggle NerdTree
 noremap <leader>d :NERDTreeToggle<CR>
 "locate current file in NERDTree
@@ -88,7 +84,7 @@ map <leader>FF :NERDTreeFind<cr>
 noremap <leader>l :noh<CR>
 
 " Ack (search) project for word under cursor
-noremap <Leader>a :execute 'Agrep --exclude-dir={documentation,stylesguide,node_modules} -r <cword> .'<CR>
+noremap <Leader>a :execute 'Agrep -r <cword> .'<CR>
 
 "
 " Compile coffeescript to scratch buffer in vertical split
@@ -110,8 +106,20 @@ map <C-l> <C-w>l
 nnoremap <Leader>h :set cursorline! cursorcolumn!<CR>
 
 "
+" Open the file in Chrome
+nnoremap <leader>C :silent !open -a 'Google Chrome.app' '%:p'<CR>
+
+"
 " Open the file in marked.app
 nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<CR>
+
+"
+" Format a markdown table
+nnoremap <leader>mt :TableFormat<CR>
+
+"
+" Open the file under the cursor in a new vertical split
+map <leader>ggf :vertical wincmd f<CR>
 
 "
 " Toggle paste mode
@@ -133,13 +141,6 @@ map <leader>re :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
 "
 " List all TODOs
 noremap <Leader>to :noautocmd vimgrep /TODO/j **/*.ts<CR>:cw<CR>
-
-"
-" Typescript
-" Jump to definition
-nnoremap <buffer> <leader>td :TsuquyomiDefinition<CR>
-nnoremap <buffer> <leader>ti :TsuquyomiImport<CR>
-nnoremap <buffer> <leader>tr :TsuquyomiReload<CR>
 
 
 "
