@@ -161,15 +161,15 @@ endsnippet
 ##
 # import
 snippet import "Import component"
-import { ${2:NgModule} } from '${1:@angular/core}';
+import { ${1:NgModule} } from '${2:@angular/core}';
 endsnippet
 # import Angular Material
 snippet importa "Import Angular Material component"
-import { ${2:MatToolbarModule} } from '@angular/material/${1:toolbar}';
+import { ${1:MatToolbarModule} } from '@angular/material/${2:toolbar}';
 endsnippet
 # export
 snippet export "Export component"
-export { ${2:MyModule} } from '${1:./../my-module/my-module}';
+export { ${1:MyModule} } from '${2:./../my-module/my-module}';
 endsnippet
 # Import from @terminus/ui
 snippet uiimport "Import a UI component"
@@ -332,7 +332,13 @@ describe(\`${1:test block}\`, () => {
 endsnippet
 # it
 snippet it "It statement" m
-it(\`${1:should do something}\`, () => {
+it(\`should ${1:do something}\`, () => {
+	expect(actual).toEqual(expected);
+});
+endsnippet
+# test (for jest
+snippet test "Jest 'test' statement" m
+test(\`should ${1:do something}\`, () => {
 	expect(actual).toEqual(expected);
 });
 endsnippet
@@ -374,8 +380,11 @@ endsnippet
 snippet moment "Import all momentjs functions"
 import * as moment from 'moment';
 endsnippet
-snippet importof "Import RXJS 'of' method"
+snippet imof "Import RXJS 'of' method"
 import { of } from 'rxjs/observable/of';
+endsnippet
+snippet imoperator "Import RXJS operator"
+import { ${1:map} } from 'rxjs/operators/$1';
 endsnippet
 #########################################
 #
