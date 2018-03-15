@@ -19,7 +19,6 @@ source /Users/bc/.dot-files/vim/vim_settings/keymap.vim
 
 
 "Plugin Specific
-source /Users/bc/.dot-files/vim/vim_settings/_ack.vim
 source /Users/bc/.dot-files/vim/vim_settings/_agrep.vim
 source /Users/bc/.dot-files/vim/vim_settings/_ale.vim
 source /Users/bc/.dot-files/vim/vim_settings/_airline.vim
