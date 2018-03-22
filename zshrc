@@ -190,7 +190,7 @@ alias gphm="git push heroku master"
 # Git push
 alias gp="git push"
 # Git push and open the PRs view
-alias gp="git push && git prs"
+alias gpp="git push && git prs"
 # Git pull
 alias gpl="git pull"
 # Git diff with MacVim

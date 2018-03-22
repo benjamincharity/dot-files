@@ -200,11 +200,6 @@ Plugin 'othree/html5.vim'
 Plugin 'leafgarland/typescript-vim'
 
 "
-" Tsuquyomi (typescript IDE-ish features)
-" https://github.com/Quramy/tsuquyomi
-"Plugin 'Quramy/tsuquyomi'
-
-"
 " Angular CLI commands support for vim
 " https://github.com/bdauria/angular-cli.vim
 Plugin 'bdauria/angular-cli.vim'
