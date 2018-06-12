@@ -50,6 +50,14 @@ snippet com "Create a Compodoc comment"
  * ${1:TODO}
  */
 endsnippet
+#########################################
+#
+# TypeScript
+#
+#########################################
+snippet tsobj "Typings for a basic TypeScript object" m
+{[key: string]: any}$1
+endsnippet
 
 
 #########################################
@@ -181,10 +189,25 @@ snippet input "Create an @Input declaration" m
 @Input()
 ${3:public} ${1:myVar}: ${2:string};
 endsnippet
+# Create an @Input with a setter & getter
+snippet inputset "Create an @Input setter & getter" m
+@Input()
+public set ${1:myInput}(value: ${2:any}) {
+	if (!value) {
+		return;
+	}
+
+	this._$1 = value;
+}
+public get $1(): $2 {
+	return this._$1;
+}
+private _$1: $2;
+endsnippet
 # Create @Output
 snippet output
 @Output()
-public ${1:submitted}: EventEmitter<${2:TsLoginFormResponse}> = new EventEmitter();${3}
+public ${1:myEvent}: EventEmitter<${2:myType}> = new EventEmitter();${3}
 endsnippet
 
 #########################################
@@ -206,19 +229,19 @@ endsnippet
 #
 #########################################
 snippet cl
-console.log('${1:Item}: ', $1)${2}
+console.log('${1:Item}: ', $1);${2}
 endsnippet
 snippet cls
-console.log('${1:Log this}')${2}
+console.log('${1:Log this}');${2}
 endsnippet
 snippet cln
-console.log(JSON.stringify(${1:array}, null, 2))${2}
+console.log(JSON.stringify(${1:array}, null, 2));${2}
 endsnippet
 snippet cw
-console.warn('${1:Item}: ', $1)${2}
+console.warn('${1:Item}: ', $1);${2}
 endsnippet
 snippet ce
-console.error('${1:Item}: ', $1)${2}
+console.error('${1:Item}: ', $1);${2}
 endsnippet
 
 

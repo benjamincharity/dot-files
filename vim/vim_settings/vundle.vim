@@ -224,14 +224,17 @@ Plugin 'mhinz/vim-signify'
 " https://github.com/ramele/agrep
 Plugin 'ramele/agrep'
 
+"
 " Ruby on Rails power tools
 " https://github.com/tpope/vim-rails
 Plugin 'tpope/vim-rails'
 
+"
 " Interactive command execution
 " https://github.com/Shougo/vimproc.vim
 Plugin 'Shougo/vimproc.vim'
 
+"
 " File Search
 " https://github.com/junegunn/fzf.vim
 Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
