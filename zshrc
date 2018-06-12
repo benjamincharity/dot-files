@@ -34,6 +34,8 @@ export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
 export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
 # Change python path
 export vi_cv_path_python=usr/local/Cellar/python
+# For `n`
+export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 #
 # Auto update without a prompt
@@ -471,5 +473,3 @@ fi
 
 eval $(thefuck --alias)
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
