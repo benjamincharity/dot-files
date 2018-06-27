@@ -31,7 +31,9 @@ export ZSH_THEME="robbyrussell"
 #   /usr/local/Cellar/python@2/2.7.15/bin/python2
 #   $PATH
 export PATH=~/.dot-files:/Applications/MacVim.app/Contents/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/Users/bc/n/bin/node:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$PATH
-export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
+# MacVim as the editor
+#export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
+export EDITOR=/usr/local/bin/nvim
 export NODE_PATH=$NODE_PATH:/Users/bc/n/lib/node_modules
 # Change python path
 export vi_cv_path_python=usr/local/Cellar/python
@@ -140,17 +142,17 @@ function mkdircd {
   command mkdir $1 && cd $1
 }
 # Edit ngrok config
-alias editngrok='mvim ~/.ngrok2/ngrok.yml'
+alias editngrok='nvim ~/.ngrok2/ngrok.yml'
 # Edit hammer configs
-alias edithammer='mvim ~/.hammerspoon/init.lua && mvim ~/.dot-files/hammerspoon/init.lua'
+alias edithammer='nvim ~/.hammerspoon/init.lua && nvim ~/.dot-files/hammerspoon/init.lua'
 # Edit this file
-alias editzshrc='mvim ~/.zshrc'
+alias editzshrc='nvim ~/.zshrc'
 # Edit gitconfig
-alias editgitconfig='mvim /Users/bc/.dot-files/gitconfig'
+alias editgitconfig='nvim /Users/bc/.dot-files/gitconfig'
 # Got to the Terminus directory and list subfolders
 alias terminus='cd ~/Code/Terminus/; ls -1F . | grep /'
 # Edit nvim config
-alias editnvim='nvim ~/.config/nvim/init.vim'
+alias editnvim='nvim ~/.dot-files/nvim/init.vim'
 
 
 
@@ -163,7 +165,7 @@ alias vs='/Applications/Visual\ Studio\ Code.app'
 # Vim
 # Make sure the cli is using the lastest version of vim
 alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
+#alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 # Atom Beta
 alias atom-beta='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
 alias atomb='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
@@ -200,8 +202,8 @@ alias gp="git push"
 alias gpp="git push && git prs"
 # Git pull
 alias gpl="git pull"
-# Git diff with MacVim
-alias gd="git diff | mvim"
+# Git diff with NVim
+alias gd="git diff | nvim"
 # List view
 alias l="ls -la"
 # Git Grep
