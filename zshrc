@@ -22,16 +22,17 @@ export ZSH_THEME="robbyrussell"
 #   ~/.npm
 #   /opt/local/bin
 #   /usr/local/bin/npm
-#   /usr/local/bin/node
+#   /Users/bc/n/bin/node
 #   ~/.npm-packages/bin
 #   /usr/local/heroku/bin
 #   ~/.rbenv/shims
 #   ~/.rbenv/bin
 #   $(yarn global bin)
+#   /usr/local/Cellar/python@2/2.7.15/bin/python2
 #   $PATH
-export PATH=~/.dot-files:/Applications/MacVim.app/Contents/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/usr/local/bin/node:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):$PATH
+export PATH=~/.dot-files:/Applications/MacVim.app/Contents/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/Users/bc/n/bin/node:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$PATH
 export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
-export NODE_PATH=$NODE_PATH:/usr/local/lib/node_modules
+export NODE_PATH=$NODE_PATH:/Users/bc/n/lib/node_modules
 # Change python path
 export vi_cv_path_python=usr/local/Cellar/python
 # For `n`
@@ -99,6 +100,8 @@ alias pwd='pwd | pbcopy && pwd'
 alias pd='cd `pbpaste`'
 # Delete Vim swap files
 alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
+# Delete Vim swap files
+alias cleannvimswap='find ~/.config/nvim/swap-files -type f | xargs rm -f'
 # Get the current IP address
 alias ipconfig='ifconfig | grep "inet " | grep -v 127.0.0.1'
 # Use ngrok
@@ -146,6 +149,8 @@ alias editzshrc='mvim ~/.zshrc'
 alias editgitconfig='mvim /Users/bc/.dot-files/gitconfig'
 # Got to the Terminus directory and list subfolders
 alias terminus='cd ~/Code/Terminus/; ls -1F . | grep /'
+# Edit nvim config
+alias editnvim='nvim ~/.config/nvim/init.vim'
 
 
 
