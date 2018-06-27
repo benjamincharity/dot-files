@@ -5,30 +5,24 @@
 #########################################
 #
 # Disable tslint for a specific rule
-snippet disable "Disable TSLint for a specific rule"
+snippet disable "Disable TSLint for a specific rule" m
 // tslint:disable: ${1:camelcase}
 // tslint:enable: $1
 endsnippet
 # Disabled tslint for the following line
-snippet disableline "Disable TSLint for the following line"
+snippet disableline "Disable TSLint for the following line" m
 // tslint:disable-next-line
 endsnippet
 # Ignore else path for Istanbul test reporter
-snippet ignoreelse "Istanbul coverage: ignore 'else' path"
+snippet ignoreelse "Istanbul coverage: ignore 'else' path" m
 // istanbul ignore else
 endsnippet
 # Get Element by ID
-snippet gett
+snippet gett "Get element by ID" m
 document.getElementById('${1}');${2}
 endsnippet
-# Simple comment
-snippet scom "Create a simple JSDoc comment" m
-/**
- * ${1:My method does this thing}
- */${4}
-endsnippet
 # Function comment
-snippet mcom "Create a JSDoc method comment" m
+snippet mcom "JSDoc method comment" m
 /**
  * ${1:Return the difference in time in words}
  *
@@ -37,7 +31,7 @@ snippet mcom "Create a JSDoc method comment" m
  */${6}
 endsnippet
 # Function comment ALIAS
-snippet funcom "Create a JSDoc method comment" m
+snippet funcom "JSDoc method comment" m
 /**
  * ${1:Return the difference in time in words}
  *
@@ -45,7 +39,7 @@ snippet funcom "Create a JSDoc method comment" m
  * @return ${4:The difference in time}
  */${5}
 endsnippet
-snippet com "Create a Compodoc comment"
+snippet com "JSDoc comment" m
 /**
  * ${1:TODO}
  */
@@ -69,7 +63,7 @@ endsnippet
 # Originals: https://github.com/johnpapa/vscode-angular2-snippets
 
 # Create component
-snippet ng2-component "Create component" m
+snippet ng2-component "Create Angular component" m
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -85,7 +79,7 @@ export class ${3:ComponentName}Component implements OnInit {
 }
 endsnippet
 # Create service
-snippet ng2-service "Create service" m
+snippet ng2-service "Create Angular service" m
 import { Injectable } from '@angular/core';
 
 @Injectable()
@@ -96,103 +90,93 @@ export class ${1:ServiceName}Service {
 }
 endsnippet
 # Create pipe
-snippet ng2-pipe "Create pipe" m
-import { Pipe, PipeTransform } from '@angular/core';
+snippet ng2-pipe "Create Angular pipe" m
+import { pipe, pipetransform } from '@angular/core';
 
-@Pipe({
+@pipe({
 	name: '${1:name}'
 })
 
-export class ${2:PipeName}Pipe implements PipeTransform {
+export class ${2:pipename}pipe implements pipetransform {
 	transform(value: any, args: any[]): any {
 
 	}
 }
 endsnippet
-# Create routes
+# create routes
 snippet ng2-routes "Create routes" m
-@Routes([
-	{ path: '/${1:path}', component: ${2:Component} }${3}
+@routes([
+	{ path: '/${1:path}', component: ${2:component} }${3}
 ])
 endsnippet
-# Create route path
+# create route path
 snippet ng2-route-path "Create route path" m
-{ path: '/${1:path}', component: ${2:Component} }${3}
+{ path: '/${1:path}', component: ${2:component} }${3}
 endsnippet
-# Create http get
-snippet ng2-http-get "Create http.get" m
-return this.http.get('${1:url}')
-.map((res: Response) => res.json());
-endsnippet
-# Service subscribe
-snippet ng2-subscribe "Service subscribe" m
-this.${1:service}.${2:function}
-.subscribe(${3:arg} => this.${4:property} = ${5:arg});
-endsnippet
-# Create module bootstrap
-snippet ng2-bootstrap "Bootstrap module" m
-import { enableProdMode } from '@angular/core';
+# create module bootstrap
+snippet ng2-bootstrap "Angular bootstraping module" m
+import { enableprodmode } from '@angular/core';
 import { bootstrap } from '@angular/platform-browser-dynamic';
 
-import { ${1:AppComponent} } from './${2:name}.component';
+import { ${1:appcomponent} } from './${2:name}.component';
 
-// enableProdMode();
+// enableprodmode();
 
-bootstrap(${3:AppComponent})
-	.then(success => console.log('Bootstrap success'))
+bootstrap(${3:appcomponent})
+	.then(success => console.log('bootstrap success'))
 	.catch(error => console.log(error));
 endsnippet
-# Root component
-snippet ng2-component-root "Root component" m
-import { Component } from '@angular/core';
-import { HTTP_PROVIDERS } from '@angular/http';
-import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS } from '@angular/router';
-import 'rxjs/Rx'; // load the full rxjs
+# root component
+snippet ng2-component-root "Angular root component" m
+import { component } from '@angular/core';
+import { http_providers } from '@angular/http';
+import { routes, router_directives, router_providers } from '@angular/router';
+import 'rxjs/rx'; // load the full rxjs
 
-@Component({
-	moduleId: module.id,
+@component({
+	moduleid: module.id,
 	selector: '${1:selector}',
-	templateUrl: '${2:name}.component.html',
-	directives: [ROUTER_DIRECTIVES],
+	templateurl: '${2:name}.component.html',
+	directives: [router_directives],
 	providers: [
-		HTTP_PROVIDERS,
-		ROUTER_PROVIDERS
+		http_providers,
+		router_providers
 	]
 })
-@Routes([
+@routes([
 
 ])
-export class AppComponent {}
+export class appcomponent {}
 endsnippet
 ###
-# Custom Angular2 Snippets
+# custom angular2 snippets
 ##
 # import
-snippet import "Import component"
-import { ${1:NgModule} } from '${2:@angular/core}';
+snippet import "Import a component" m
+import { ${1:ngmodule} } from '${2:@angular/core}';
 endsnippet
-# import Angular Material
-snippet importa "Import Angular Material component"
-import { ${1:MatToolbarModule} } from '@angular/material/${2:toolbar}';
+# import angular material
+snippet importa "Import an angular material component" m
+import { ${1:MatToolBarmodule} } from '@angular/material/${2:toolbar}';
 endsnippet
 # export
-snippet export "Export component"
-export { ${1:MyModule} } from '${2:./../my-module/my-module}';
+snippet export "Export a component" m
+export { ${1:mymodule} } from '${2:./../my-module/my-module}';
 endsnippet
-# Import from @terminus/ui
+# import from @terminus/ui
 snippet uiimport "Import a UI component"
-import { Ts${1:Button}Module } from './../$3/$3.${2:module}';
+import { ts${1:button}module } from './../$3/$3.${2:module}';
 `!p t[3] = t[1][:1].lower() + t[1][1:]`
 endsnippet
-# Create @Input
+# create @input
 snippet input "Create an @Input declaration" m
-@Input()
-${3:public} ${1:myVar}: ${2:string};
+@input()
+${3:public} ${1:myvar}: ${2:string};
 endsnippet
-# Create an @Input with a setter & getter
+# create an @input with a setter & getter
 snippet inputset "Create an @Input setter & getter" m
-@Input()
-public set ${1:myInput}(value: ${2:any}) {
+@input()
+public set ${1:myinput}(value: ${2:any}) {
 	if (!value) {
 		return;
 	}
@@ -204,19 +188,19 @@ public get $1(): $2 {
 }
 private _$1: $2;
 endsnippet
-# Create @Output
-snippet output
-@Output()
-public ${1:myEvent}: EventEmitter<${2:myType}> = new EventEmitter();${3}
+# create @output
+snippet output "Create an @Output" m
+@output()
+public ${1:myevent}: eventemitter<${2:mytype}> = new eventemitter();${3}
 endsnippet
 
 #########################################
 #
-# ES6 promise
+# es6 promise
 #
 #########################################
-snippet promise "Create a standard ES6 Promise"
-return new Promise((resolve, reject) => {
+snippet promise "Create promise (es6)" m
+return new promise((resolve, reject) => {
 	resolve();
 	reject();
 });
@@ -225,22 +209,22 @@ endsnippet
 
 #########################################
 #
-# Console Logs
+# console logs
 #
 #########################################
-snippet cl
-console.log('${1:Item}: ', $1);${2}
+snippet cl "console.log with argument"
+console.log('${1:item}: ', $1);${2}
 endsnippet
-snippet cls
+snippet cls "console.log"
 console.log('${1:Log this}');${2}
 endsnippet
-snippet cln
+snippet cln "console.log with stringified content"
 console.log(JSON.stringify(${1:array}, null, 2));${2}
 endsnippet
-snippet cw
+snippet cw "console.warn with argument"
 console.warn('${1:Item}: ', $1);${2}
 endsnippet
-snippet ce
+snippet ce "console.error with argument"
 console.error('${1:Item}: ', $1);${2}
 endsnippet
 
@@ -250,10 +234,10 @@ endsnippet
 # Returns
 #
 #########################################
-snippet rf
+snippet rf "return false;"
 return false;
 endsnippet
-snippet rt
+snippet rt "return true;"
 return true;
 endsnippet
 #########################################
@@ -261,7 +245,7 @@ endsnippet
 # if
 #
 #########################################
-snippet if
+snippet if "if statement"
 if (${1:true}) {
 	${2}
 }
@@ -271,7 +255,7 @@ endsnippet
 # if ... else
 #
 #########################################
-snippet ife
+snippet ife "if/else statement"
 if (${1:true}) {
 	${2}
 } else {
@@ -283,10 +267,10 @@ endsnippet
 # Ternary conditional
 #
 #########################################
-snippet ift
+snippet ift "Ternary if statement"
 ${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
 endsnippet
-snippet ternary
+snippet ternary "Ternary if statement"
 ${1:thingToTest} ? ${2:doIfTrue} : ${3:doIfFalse};
 endsnippet
 #
@@ -302,14 +286,14 @@ switch (${1:expression}) {
 endsnippet
 #
 # for (...) {...}
-snippet for
+snippet for "for loop (es6)" m
 for (const ${1:value} of ${2:array}) {
 	console.log($1);
 }
 endsnippet
 #
 # for (...) {...} (Improved Native For-Loop)
-snippet forr
+snippet forr "for loop (classic)" m
 for (let ${1:i} = 0; $1 < ${2:array}.length; $1 += 1) {
 	${4:$2[$1]}
 }
@@ -319,42 +303,24 @@ endsnippet
 # Set Timeout
 #
 #########################################
-snippet timeout
+snippet timeout "setTimeout" m
 setTimeout(() => {
 	${3}
 }${2}, ${1:10});
 endsnippet
 #########################################
 #
-# Jasmine / Testing
+# Jasmine / Jest / Testing
 #
 #########################################
 # Describe
-snippet describe "Describe function" m
+snippet describe "Jest 'describe' block" m
 describe(\`${1:test block}\`, () => {
-
-});
-endsnippet
-# Describe full
-snippet describefull "Describe function and child containers" m
-describe(\`${1:test block}\`, () => {
-
-	beforeEach(() => {
-
-	});
-
-	afterEach(() => {
-
-	});
-
-	it(\`should do something\`, () => {
-		expect(false).toEqual(true);
-	});
 
 });
 endsnippet
 # it
-snippet it "It statement" m
+snippet it "Jasmine 'it' statement" m
 it(\`should ${1:do something}\`, () => {
 	expect(actual).toEqual(expected);
 });
@@ -372,13 +338,13 @@ beforeEach(inject((_${1:serviceToInject}_) => {
 }));
 endsnippet
 # Before function
-snippet before "Before function" m
+snippet before "Jest 'before' block" m
 beforeEach(() => {
 	${1}
 });
 endsnippet
 # After
-snippet after "After function" m
+snippet after "Jest 'after' block" m
 afterEach(() => {
 	${1}
 });
@@ -404,10 +370,10 @@ snippet moment "Import all momentjs functions"
 import * as moment from 'moment';
 endsnippet
 snippet imof "Import RXJS 'of' method"
-import { of } from 'rxjs/observable/of';
+import { of } from 'rxjs';
 endsnippet
 snippet imoperator "Import RXJS operator"
-import { ${1:map} } from 'rxjs/operators/$1';
+import { ${1:map} } from 'rxjs/operators';
 endsnippet
 #########################################
 #
@@ -419,13 +385,15 @@ endsnippet
 # variable
 snippet uic "Create a UI component" m
 import {
+  ChangeDetectionStrategy,
   Component,
   Input,
   Output,
+  ViewEncapsulation,
 } from '@angular/core';
 
 /**
- * ${1:This is...}
+ * ${1:TODO: This is...}
  *
  * @example
  * <ts-${2:foo}
@@ -433,17 +401,17 @@ import {
  * ></ts-$2>
  */
 @Component({
-  selector: 'ts-$2',
-  templateUrl: './$2.component.html',
-  styleUrls: ['./$2.component.scss'],
+	selector: 'ts-$2',
+	templateUrl: './$2.component.html',
+	styleUrls: ['./$2.component.scss'],
+	host: {
+		class: 'ts-$2',
+	},
+	exportAs: 'ts$3',
+	changeDetection: ChangeDetectionStrategy.OnPush,
+	encapsulation: ViewEncapsulation.None,
 })
 export class Ts$3Component {
-  /**
-   * TODO
-   */
-  /*
-   * @Input() itemName: type = 'Value';
-   */
 
 }
 `!p t[3] = t[2][:1].upper() + t[2][1:]`
@@ -528,8 +496,8 @@ describe(\`$1Component\`, () => {
 `!p t[2] = t[1][:1].lower() + t[1][1:]`
 endsnippet
 # Debugger statement for NGRX stream
-snippet dodebug "Add ngrx 'do' with a debugger statement" m
-.do(() => {
+snippet tapdebug "Add ngrx 'tap' with a debugger statement" m
+.tap(() => {
   // tslint:disable-next-line
   debugger;
 })
