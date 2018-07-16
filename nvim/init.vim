@@ -319,11 +319,11 @@ inoremap <return> <C-R>=Ulti_ExpandOrEnter()<CR>
 " Enable tabbing and shift-tabbing through list of results
 function! g:SmartTab()
   if pumvisible()
-    return SuperTab("n")
+    return SuperTab("p")
   else
     call UltiSnips#JumpForwards()
     if g:ulti_jump_forwards_res == 0
-      return SuperTab("n")
+      return SuperTab("p")
     endif
     return ''
   endif
@@ -333,11 +333,11 @@ snoremap <silent> <tab> <Esc>:call g:SmartTab()<cr>
 
 function! g:SmartShiftTab()
   if pumvisible()
-    return SuperTab("p")
+    return SuperTab("n")
   else
     call UltiSnips#JumpBackwards()
     if g:ulti_jump_backwards_res == 0
-      return SuperTab("p")
+      return SuperTab("n")
     endif
     return ''
   endif
@@ -537,6 +537,9 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
+" Increase this time since it is used to switch the TS error message with TS type info.
+" This also determines how quickly a file is saved to a buffer
+set updatetime=4000
 
 "===============================================================
 " TAG: keymap
