@@ -91,13 +91,13 @@ export class ${1:ServiceName}Service {
 endsnippet
 # Create pipe
 snippet ng2-pipe "Create Angular pipe" m
-import { pipe, pipetransform } from '@angular/core';
+import { Pipe, PipeTransform } from '@angular/core';
 
-@pipe({
+@Pipe({
 	name: '${1:name}'
 })
 
-export class ${2:pipename}pipe implements pipetransform {
+export class ${2:PipeName}Pipe implements PipeTransform {
 	transform(value: any, args: any[]): any {
 
 	}
@@ -105,7 +105,7 @@ export class ${2:pipename}pipe implements pipetransform {
 endsnippet
 # create routes
 snippet ng2-routes "Create routes" m
-@routes([
+@Routes([
 	{ path: '/${1:path}', component: ${2:component} }${3}
 ])
 endsnippet
@@ -115,14 +115,14 @@ snippet ng2-route-path "Create route path" m
 endsnippet
 # create module bootstrap
 snippet ng2-bootstrap "Angular bootstraping module" m
-import { enableprodmode } from '@angular/core';
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import { EnableProdMode } from '@angular/core';
+import { Bootstrap } from '@angular/platform-browser-dynamic';
 
-import { ${1:appcomponent} } from './${2:name}.component';
+import { ${1:AppComponent} } from './${2:name}.component';
 
-// enableprodmode();
+// EnableProdMode();
 
-bootstrap(${3:appcomponent})
+Bootstrap(${3:AppComponent})
 	.then(success => console.log('bootstrap success'))
 	.catch(error => console.log(error));
 endsnippet
@@ -133,7 +133,7 @@ import { http_providers } from '@angular/http';
 import { routes, router_directives, router_providers } from '@angular/router';
 import 'rxjs/rx'; // load the full rxjs
 
-@component({
+@Component({
 	moduleid: module.id,
 	selector: '${1:selector}',
 	templateurl: '${2:name}.component.html',
@@ -143,7 +143,7 @@ import 'rxjs/rx'; // load the full rxjs
 		router_providers
 	]
 })
-@routes([
+@Routes([
 
 ])
 export class appcomponent {}
@@ -153,7 +153,7 @@ endsnippet
 ##
 # import
 snippet import "Import a component" m
-import { ${1:ngmodule} } from '${2:@angular/core}';
+import { ${1:NgModule} } from '${2:@angular/core}';
 endsnippet
 # import angular material
 snippet importa "Import an angular material component" m
@@ -161,22 +161,22 @@ import { ${1:MatToolBarmodule} } from '@angular/material/${2:toolbar}';
 endsnippet
 # export
 snippet export "Export a component" m
-export { ${1:mymodule} } from '${2:./../my-module/my-module}';
+export { ${1:MyModule} } from '${2:./../my-module/my-module}';
 endsnippet
 # import from @terminus/ui
 snippet uiimport "Import a UI component"
 import { ts${1:button}module } from './../$3/$3.${2:module}';
 `!p t[3] = t[1][:1].lower() + t[1][1:]`
 endsnippet
-# create @input
+# create @Input
 snippet input "Create an @Input declaration" m
-@input()
+@Input()
 ${3:public} ${1:myvar}: ${2:string};
 endsnippet
 # create an @input with a setter & getter
 snippet inputset "Create an @Input setter & getter" m
-@input()
-public set ${1:myinput}(value: ${2:any}) {
+@Input()
+public set ${1:myInput}(value: ${2:any}) {
 	if (!value) {
 		return;
 	}
@@ -190,8 +190,8 @@ private _$1: $2;
 endsnippet
 # create @output
 snippet output "Create an @Output" m
-@output()
-public ${1:myevent}: eventemitter<${2:mytype}> = new eventemitter();${3}
+@Output()
+public ${1:myEvent}: EventEmitter<${2:myType}> = new EventEmitter();${3}
 endsnippet
 
 #########################################
