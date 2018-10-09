@@ -186,7 +186,18 @@ public set ${1:myInput}(value: ${2:any}) {
 public get $1(): $2 {
 	return this._$1;
 }
-private _$1: $2;
+private _$1: $2${3};
+endsnippet
+# create an @input with a setter & getter
+snippet inputsetbool "Create an @Input setter & getter for a boolean value" m
+@Input()
+public set ${1:myInput}(value: ${2:any}) {
+	this._$1 = coerceBooleanProperty(value);
+}
+public get $1(): $2 {
+	return this._$1;
+}
+private _$1: $2${3};
 endsnippet
 # create @output
 snippet output "Create an @Output" m
@@ -305,8 +316,7 @@ endsnippet
 #########################################
 snippet timeout "setTimeout" m
 setTimeout(() => {
-	${3}
-}${2}, ${1:10});
+}, ${1:10});${2}
 endsnippet
 #########################################
 #
@@ -502,7 +512,10 @@ snippet tapdebug "Add ngrx 'tap' with a debugger statement" m
   debugger;
 })
 endsnippet
-
+# Fixture.detectChanges
+snippet fdc "fixture.detectChanges()" m
+fixture.detectChanges();
+endsnippet
 
 #########################################
 #
@@ -525,4 +538,3 @@ def convert(name):
     s1 = re.sub('(.)([A-Z][a-z]+)', r'\1-\2', name)
     return re.sub('([a-z0-9])([A-Z])', r'\1-\2', s1).lower()
 endglobal
-

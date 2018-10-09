@@ -256,6 +256,10 @@ alias mysqlstop='mysql.server stop'
 alias run='ntl'
 # List all global packages
 alias npmglobal='npm list -g --depth=0'
+# Promote a version to @latest on NPM
+function promoteLatest {
+  command npm dist-tag add @terminus/ui@$1 latest
+}
 
 
 #

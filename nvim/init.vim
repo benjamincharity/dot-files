@@ -72,6 +72,9 @@ Plug 'myusuf3/numbers.vim'
 Plug 'mhartington/nvim-typescript', { 'do': './install.sh' }
 " For async completion
 Plug 'Shougo/deoplete.nvim'
+" TypeScript syntax"
+" https://github.com/HerringtonDarkholme/yats.vim
+Plug 'HerringtonDarkholme/yats.vim'
 
 " Themes
 Plug 'gilgigilgil/anderson.vim'
@@ -157,10 +160,6 @@ Plug 'tpope/vim-surround'
 " https://github.com/wakatime/vim-wakatime
 Plug 'wakatime/vim-wakatime'
 
-" TypeScript syntax"
-" https://github.com/HerringtonDarkholme/yats.vim
-Plug 'HerringtonDarkholme/yats.vim'
-
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -198,6 +197,14 @@ let g:ale_sign_column_always = 1
 " highlight ALEWarningSign ctermfg=9 ctermbg=15 guifg=#C30500 guibg=#F5F5F5
 " Should ALE highlight the entire line when an error is found
 let g:ale_set_highlights = 1
+" Toggling this on didn't add trailing comma on save :/
+let g:ale_fix_on_save = 1
+" Define what fixers to run on save
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'typescript': ['tslint'],
+\   'javascript': ['eslint'],
+\}
 
 " AngularCLI
 " Change the stylesheet format
@@ -537,9 +544,11 @@ autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checkti
 autocmd FileChangedShellPost *
   \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
+" $time
 " Increase this time since it is used to switch the TS error message with TS type info.
 " This also determines how quickly a file is saved to a buffer
-set updatetime=4000
+" This also determines when plugins update the status bar. eg TypeScript won't output a type definition until the buffer is saved.
+set updatetime=750
 
 "===============================================================
 " TAG: keymap
@@ -645,3 +654,25 @@ cnoreabbrev <expr> Wa ((getcmdtype() is# ':' && getcmdline() is# 'Wa')?('wa'):('
 " Custom
 " Map `jk` to escape to make things easier for Brian M.
 imap jk <Esc>
+
+" Format imports
+" Breaks single line into multiple lines, ensures trailing comma, alphabetizes
+" NOTE: requires the vim plugin Surround
+"
+"  EXPLANATION:
+" `f}`: find closing curly brace }
+" `%`: go back to the opening {
+" `cSBB`: change Surround blockwise from { to {
+" `j`: move down one line
+" `:s/,/,\r/g`: substitute `,` with `,\r` /globally
+" `<CR>`: carriage return
+" `viB`: visually select curlybraces Block
+" `==`: reindent
+" `<CR>`: carriage return
+" `:%s/\s\+$//e`: remove trailing spaces
+" `<CR>`: carriage return
+" `viB:sort i`: alphabetize the list
+" `<CR>`: carriage return
+"
+" NOTE: removed `viB:norm A,<CR>viB:s/,,/,/g<CR>` since tslint is handling trailing commas
+map <leader>fi f}%cSBBj:s/,/,\r/g<CR>viB==<CR>:%s/\s\+$//e<CR>viB:norm A,<CR>viB:s/,,/,/g<CR><CR>viB:sort i<CR>
