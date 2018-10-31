@@ -156,6 +156,10 @@ Plug 'tpope/vim-speeddating'
 " https://github.com/tpope/vim-surround
 Plug 'tpope/vim-surround'
 
+" Vim Terraform Syntax
+" https://github.com/hashivim/vim-terraform
+Plug 'hashivim/vim-terraform'
+
 " WakaTime
 " https://github.com/wakatime/vim-wakatime
 Plug 'wakatime/vim-wakatime'
@@ -254,6 +258,12 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+" Enable per-command history.
+" CTRL-N and CTRL-P will be automatically bound to next-history and
+" previous-history instead of down and up. If you don't like the change,
+" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 
 " Indent Guides
 " Enable by default
@@ -629,7 +639,7 @@ map <leader>ff $zf%<CR>
 " Convert all emoji references (:smile:) into the actual emoji (😃)
 map <leader>re :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
 " List all TODOs
-noremap <Leader>to :noautocmd vimgrep /TODO/j **/*.ts<CR>:cw<CR>
+noremap <Leader>to :Ggrep TODO -- './*' ':(exclude)code' ':(exclude)docs' ':(exclude)DEVELOPMENT.md'<CR>:cw<CR>
 " Fix all ALE reported errors
 nmap <silent> <leader>af :ALEFix<cr>
 " Use tab as completion for deoplete
