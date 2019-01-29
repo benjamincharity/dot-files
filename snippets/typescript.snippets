@@ -325,7 +325,7 @@ endsnippet
 #########################################
 # Describe
 snippet describe "Jest 'describe' block" m
-describe(\`${1:test block}\`, () => {
+describe(\`${1:test block}\`, function() {
 
 });
 endsnippet
@@ -337,7 +337,7 @@ it(\`should ${1:do something}\`, () => {
 endsnippet
 # test (for jest
 snippet test "Jest 'test' statement" m
-test(\`should ${1:do something}\`, () => {
+test(\`should ${1:do something}\`, function() {
 	expect(actual).toEqual(expected);
 });
 endsnippet

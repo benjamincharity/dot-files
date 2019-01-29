@@ -84,6 +84,8 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
 
+# Commands history with dates
+alias h="fc -li 1"
 
 
 source $ZSH/oh-my-zsh.sh
@@ -216,7 +218,8 @@ alias gr='git release'
 alias unstageall='git reset $(git merge-base master $(git branch | grep \* | cut -d " " -f2))'
 # Unstage all commits on your current branch, stage all files, begin commit process
 alias squash="unstageall && git add -A && gc"
-
+# Git log - oneline no-pager
+alias glnp="git --no-pager log --oneline -n30"
 
 
 #
@@ -283,6 +286,10 @@ function yae {
   command yarn add $1@latest --exact $2
 }
 
+#
+# Weather
+#
+alias weather='curl wttr.in/30341'
 
 #
 # Fun
@@ -296,6 +303,8 @@ alias cow='vaca'
 #
 # SSH into whatbox
 alias sshwhatbox='ssh benjamincharity@galileo.whatbox.ca'
+# SSH into hassio
+alias sshhassio='ssh root@hassio.local'
 
 
 #
@@ -483,4 +492,3 @@ fi
 
 
 eval $(thefuck --alias)
-
