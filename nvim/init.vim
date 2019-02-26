@@ -142,7 +142,7 @@ Plug 'tpope/vim-rhubarb'
 " SASS lint for Syntastic
 " https://github.com/gcorne/vim-sass-lint
 " Customization: _vim_sass_lint.vim
-Plug 'gcorne/vim-sass-lint'
+"Plug 'gcorne/vim-sass-lint'
 
 " Show a diff using Vim its sign column.
 " https://github.com/mhinz/vim-signify
@@ -181,7 +181,7 @@ let g:airline_powerline_fonts = 1
 
 " Ale
 " Define which linters to use
-let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['tslint', 'tsserver', 'typecheck'], 'html': ['htmlhint-ng2']}
+let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['tslint', 'tsserver', 'typecheck'], 'html': ['htmlhint-ng2'], 'sass': ['stylelint'], 'scss': ['stylelint'], 'css': ['stylelint']}
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 " Custom error symbols
@@ -208,6 +208,7 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'typescript': ['tslint'],
 \   'javascript': ['eslint'],
+\   'scss': ['stylelint'],
 \}
 
 " AngularCLI
@@ -296,7 +297,7 @@ let g:numbers_exclude = ['nerdtree']
 
 " Sass Lint
 " Define path to config
-let g:sass_lint_config = '/Users/bc/.sass-lint.yml'
+"let g:sass_lint_config = '/Users/bc/.sass-lint.yml'
 
 " Ultisnips
 " Define snippet location
