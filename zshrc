@@ -17,12 +17,15 @@ export ZSH_THEME="robbyrussell"
 # Items in path:
 #   ~/.dot-files
 #   /Applications/MacVim.app/Contents/bin
+#   $N_PREFIX/bin
+#   $N_PREFIX/lib
+#   $N_PREFIX/include
+#   $N_PREFIX/share
 #   /usr/local/bin
 #   /usr/bin
 #   ~/.npm
 #   /opt/local/bin
 #   /usr/local/bin/npm
-#   /Users/bc/n/bin/node
 #   ~/.npm-packages/bin
 #   /usr/local/heroku/bin
 #   ~/.rbenv/shims
@@ -30,15 +33,16 @@ export ZSH_THEME="robbyrussell"
 #   $(yarn global bin)
 #   /usr/local/Cellar/python@2/2.7.15/bin/python2
 #   $PATH
-export PATH=~/.dot-files:/Applications/MacVim.app/Contents/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:/Users/bc/n/bin/node:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$PATH
+export PATH=~/.dot-files:/Applications/MacVim.app/Contents/bin:$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$PATH
 # MacVim as the editor
 #export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
 export EDITOR=/usr/local/bin/nvim
-export NODE_PATH=$NODE_PATH:/Users/bc/n/lib/node_modules
+#export NODE_PATH=$NODE_PATH:/Users/bc/n/lib/node_modules
 # Change python path
 export vi_cv_path_python=usr/local/Cellar/python
 # For `n`
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
+export N_PREFIX="$HOME/n";
+ [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH="$N_PREFIX/bin:$PATH"
 
 #
 # Auto update without a prompt
