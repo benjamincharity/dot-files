@@ -540,6 +540,9 @@ set undolevels=1000
 " Show line numbers
 set number
 
+" Always show the sign column (avoids flickering)
+set signcolumn=yes
+
 " Color overrides
 hi Search gui=NONE guifg=ivory guibg=CadetBlue4
 hi SpellBad guifg=#f34923 guibg=#152132
@@ -660,6 +663,8 @@ nmap <leader>ti :TSImport<CR>
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
 " 'Wa' should be converted to 'wa' if on the command line and not part of a word
 cnoreabbrev <expr> Wa ((getcmdtype() is# ':' && getcmdline() is# 'Wa')?('wa'):('Wa'))
+" 'Qa' should be converted to 'qa' if on the command line and not part of a word
+cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('Qa'))
 
 "
 " Custom
