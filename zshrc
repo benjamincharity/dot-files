@@ -2,7 +2,7 @@
 # Which plugins would you like to load?
 # Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew aws bower jsontools node npm sublime urltools zsh-per-directory-history zsh-syntax-highlighting zsh-history-substring-search send git-it-on docker)
+plugins=(brew aws bower jsontools node npm sublime urltools zsh-syntax-highlighting zsh-history-substring-search send git-it-on docker)
 
 
 #
@@ -70,29 +70,26 @@ eval "$(rbenv init -)"
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 
+source $ZSH/oh-my-zsh.sh
 
 #
 # ZSH History Substring Search
+# NOTE: This must be _after_ `oh-my-zsh.sh` is sourced
 #
 # bind UP and DOWN arrow keys
-zmodload zsh/terminfo
-# WTF: These keybindings only trigger search from beginning of phrase (not any location in phrase)
-#bindkey '^[[A' history-substring-search-up
-#bindkey '^[[B' history-substring-search-down
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
 # bind P and N for EMACS mode
 #bindkey -M emacs '^P' history-substring-search-up
 #bindkey -M emacs '^N' history-substring-search-down
 # bind k and j for VI mode
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
+#bindkey -M vicmd 'k' history-substring-search-up
+#bindkey -M vicmd 'j' history-substring-search-down
 
 # Commands history with dates
 alias h="fc -li 1"
 
 
-source $ZSH/oh-my-zsh.sh
 
 # Disable autocorrect
 unsetopt correct_all
