@@ -181,7 +181,14 @@ let g:airline_powerline_fonts = 1
 
 " Ale
 " Define which linters to use
-let g:ale_linters = {'javascript': ['eslint'], 'typescript': ['tslint', 'tsserver', 'typecheck'], 'html': ['htmlhint-ng2'], 'sass': ['stylelint'], 'scss': ['stylelint'], 'css': ['stylelint']}
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['tslint', 'eslint', 'tsserver', 'typecheck'],
+\   'html': ['htmlhint-ng2'],
+\   'sass': ['stylelint'],
+\   'scss': ['stylelint'],
+\   'css': ['stylelint']
+\}
 " Enable completion where available.
 let g:ale_completion_enabled = 1
 " Custom error symbols
@@ -206,7 +213,7 @@ let g:ale_fix_on_save = 1
 " Define what fixers to run on save
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'typescript': ['tslint'],
+\   'typescript': ['tslint', 'eslint'],
 \   'javascript': ['eslint'],
 \   'scss': ['stylelint'],
 \}
