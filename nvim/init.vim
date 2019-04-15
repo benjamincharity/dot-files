@@ -665,6 +665,13 @@ nmap <leader>lds :TSDefPreview<CR>
 nmap <leader>ti :TSImport<CR>
 
 "
+" Keybindings for specific filetypes
+" Markdown
+autocmd FileType markdown nnoremap <buffer> <leader>hd :HeaderDecrease<CR>
+autocmd FileType markdown nnoremap <buffer> <leader>hi :HeaderIncrease<CR>
+
+
+"
 " Overrides and Fallbacks
 " 'W' should be converted to 'w' if on the command line and not part of a word
 cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
