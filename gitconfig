@@ -26,7 +26,7 @@
         git branch -d "$@"; \
     }; f"
     linesperauthor = "!f() { \
-        git ls-files | while read f; do git blame --line-porcelain $f | grep '^author '; done | sort -f | uniq -ic | sort -n; \
+        git ls-files | grep -v 'docs/' | while read f; do git blame --line-porcelain $f | grep '^author '; done | sort -f | uniq -ic | sort -n; \
     }; f"
     commitsperauthor = shortlog -s -n --all
     release = "!f() { \
@@ -63,7 +63,7 @@
 	default = current
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path = 
+    path =
 [mergetool "sourcetree"]
     cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true

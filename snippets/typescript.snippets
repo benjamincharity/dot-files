@@ -4,14 +4,28 @@
 #
 #########################################
 #
-# Disable tslint for a specific rule
-snippet disable "Disable TSLint for a specific rule" m
+# TSLint
+# Disable TSLint for a specific rule
+snippet disablet "Disable TSLint for a specific rule" m
 // tslint:disable: ${1:camelcase}
 // tslint:enable: $1
 endsnippet
-# Disabled tslint for the following line
-snippet disableline "Disable TSLint for the following line" m
-// tslint:disable-next-line
+# Disabled TSLint for the following line
+snippet disablelinet "Disable TSLint for the following line" m
+// tslint:disable-next-line${1}
+endsnippet
+# ESLint
+# Disabled ESLint for the following line
+snippet disableline "Disable ESLint for the following line" m
+// eslint-disable-next-line${1}
+endsnippet
+# Disable ESLint for a specific rule
+snippet disable "Disable ESLint for a specific rule" m
+/* eslint-disable ${1:camelcase} */
+/* eslint-enable $1 */
+endsnippet
+snippet disableany "Disable TSLint no-any rule" m
+// tslint:disable-next-line no-any
 endsnippet
 # Ignore else path for Istanbul test reporter
 snippet ignoreelse "Istanbul coverage: ignore 'else' path" m
@@ -474,7 +488,7 @@ import { Ts${1:Button}Component } from './$2.component';
   template: \`
     <div>
       <ts-$2>
-	  </ts-$2>
+		</ts-$2>
     </div>
   \`,
 })

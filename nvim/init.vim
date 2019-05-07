@@ -217,6 +217,7 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'scss': ['stylelint'],
 \}
+let g:ale_typescript_tsserver_config_path  = '~/tsconfig.json'
 
 " AngularCLI
 " Change the stylesheet format
@@ -373,6 +374,11 @@ snoremap <silent> <s-tab> <Esc>:call g:SmartShiftTab()<cr>
 " Signify
 " Tell signify to only try checking with git
 let g:signify_vcs_list=['git']
+
+" Look for a local vimrc
+if filereadable(glob(".vimrc.local"))
+  source .vimrc.local
+endif
 
 
 "===============================================================
@@ -624,7 +630,7 @@ noremap <leader>l :noh<CR>
 " Ack (search) project for word under cursor
 noremap <Leader>a :execute 'Agrep -r <cword> .'<CR>
 " Directly jump to definition in SCSS/CSS from class/id in HTML
-nnoremap <leader>] :call JumpToCSS()<CR>
+"nnoremap <leader>] :call JumpToCSS()<CR>
 " Easily move between splits/windows
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
@@ -636,8 +642,6 @@ nnoremap <Leader>h :set cursorline! cursorcolumn!<CR>
 nnoremap <leader>C :silent !open -a 'Google Chrome.app' '%:p'<CR>
 " Open the file in marked.app
 nnoremap <leader>m :silent !open -a Marked\ 2.app '%:p'<CR>
-" Format a markdown table
-nnoremap <leader>mt :TableFormat<CR>
 " Open the file under the cursor in a new vertical split
 map <leader>ggf :vertical wincmd f<CR>
 " Toggle paste mode
@@ -663,12 +667,18 @@ nmap <leader>lf :TSRefs<CR>
 nmap <leader>ld :TSTypeDef<CR>
 nmap <leader>lds :TSDefPreview<CR>
 nmap <leader>ti :TSImport<CR>
+" Ale
+nmap <silent> <leader>aj :ALENext<cr>
+nmap <silent> <leader>ak :ALEPrevious<cr>
 
 "
 " Keybindings for specific filetypes
 " Markdown
+" Indent/De-indent headers
 autocmd FileType markdown nnoremap <buffer> <leader>hd :HeaderDecrease<CR>
 autocmd FileType markdown nnoremap <buffer> <leader>hi :HeaderIncrease<CR>
+" Format a markdown table
+autocmd FileType markdown nnoremap <leader>mt :TableFormat<CR>
 
 
 "
@@ -706,3 +716,5 @@ imap jk <Esc>
 "
 " NOTE: removed `viB:norm A,<CR>viB:s/,,/,/g<CR>` since tslint is handling trailing commas
 map <leader>fi f}%cSBBj:s/,/,\r/g<CR>viB==<CR>:%s/\s\+$//e<CR>viB:norm A,<CR>viB:s/,,/,/g<CR><CR>viB:sort i<CR>
+" Same as above except for Arrays
+map <leader>fa f]%cSrrj:s/,/,\r/g<CR>vi]==<CR>:%s/\s\+$//e<CR>vi]:norm A,<CR>vi]:s/,,/,/g<CR><CR>vi]:sort i<CR>
