@@ -183,7 +183,7 @@ let g:airline_powerline_fonts = 1
 " Define which linters to use
 let g:ale_linters = {
 \   'javascript': ['eslint'],
-\   'typescript': ['tslint', 'eslint', 'tsserver', 'typecheck'],
+\   'typescript': ['tslint', 'tsserver', 'typecheck', 'eslint'],
 \   'html': ['htmlhint-ng2'],
 \   'sass': ['stylelint'],
 \   'scss': ['stylelint'],
