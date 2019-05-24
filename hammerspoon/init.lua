@@ -1,3 +1,6 @@
+-- NOTE: This file is for tracking changes ONLY. The file the hammerspoon actually reads is at `~/.hammerspoon/init.lua`
+-- Any changes made here should be copied to that file.
+
 
 -- A global variable for the Hyper Mode
 k = hs.hotkey.modal.new({}, "F19")
@@ -18,12 +21,14 @@ launch = function(appname)
 end
 -- Single keybinding for app launch
 singleapps = {
+  {'a', 'Atom'},
+  {'f', 'Firefox'},
+  {'c', 'Google Chrome'},
+  {'n', 'Notion'},
   {'s', 'Sketch'},
   {'l', 'Slack'},
-  {'c', 'Google Chrome'},
-  {'q', 'Quiver'},
   {'m', 'Spark'},
-  {'a', 'Atom'}
+  {'q', 'Quiver'}
 }
 -- Loop through and bind each key to app
 for i, app in ipairs(singleapps) do
@@ -67,4 +72,3 @@ end
 
 -- Bind the Hyper key
 f18 = hs.hotkey.bind({}, 'F18', pressedF18, releasedF18)
-
