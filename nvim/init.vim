@@ -718,3 +718,9 @@ imap jk <Esc>
 map <leader>fi f}%cSBBj:s/,/,\r/g<CR>viB==<CR>:%s/\s\+$//e<CR>viB:norm A,<CR>viB:s/,,/,/g<CR><CR>viB:sort i<CR>
 " Same as above except for Arrays
 map <leader>fa f]%cSrrj:s/,/,\r/g<CR>vi]==<CR>:%s/\s\+$//e<CR>vi]:norm A,<CR>vi]:s/,,/,/g<CR><CR>vi]:sort i<CR>
+
+
+"
+" Set custom filetypes
+au BufRead,BufNewFile .stylelintrc setfiletype json
+au BufRead,BufNewFile .all-contributorsrc setfiletype json
