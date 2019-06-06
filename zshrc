@@ -224,7 +224,17 @@ alias unstageall='git reset $(git merge-base master $(git branch | grep \* | cut
 alias squash="unstageall && git add -A && gc"
 # Git log - oneline no-pager
 alias glnp="git --no-pager log --oneline -n30"
-
+# Helper function to do a WIP commit
+doGitWip(){
+  msg=$*
+  if [[ $msg ]]
+  then
+    git add . && git commit -m "🚧 WIP: $msg 🚧" --no-verify
+  else
+    git add . && git commit -m "🚧 WIP 🚧" --no-verify
+  fi
+}
+alias gwip=doGitWip
 
 #
 # Postgres
