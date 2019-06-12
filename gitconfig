@@ -1,6 +1,7 @@
 [user]
 	name = Benjamin Charity
 	email = ben@benjamincharity.com
+	signingkey = 45FE8D874C075B01
 [alias]
     ci = commit
     co = checkout
@@ -88,3 +89,5 @@
     recentrepo = /Users/bc/Code/moment/admin
 [grep]
     lineNumber = true
+[commit]
+	gpgsign = true
