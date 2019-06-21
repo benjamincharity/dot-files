@@ -235,6 +235,7 @@ doGitWip(){
   fi
 }
 alias gwip=doGitWip
+alias cleanorig="find . -name '*.orig' -delete"
 
 #
 # Postgres
