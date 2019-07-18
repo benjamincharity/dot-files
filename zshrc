@@ -229,9 +229,9 @@ doGitWip(){
   msg=$*
   if [[ $msg ]]
   then
-    git add . && git commit -m "🚧 WIP: $msg 🚧" --no-verify
+    git add . && git commit -m "🚧 WIP: $msg [ci skip] 🚧" --no-verify
   else
-    git add . && git commit -m "🚧 WIP 🚧" --no-verify
+    git add . && git commit -m "🚧 WIP [ci skip] 🚧" --no-verify
   fi
 }
 alias gwip=doGitWip
