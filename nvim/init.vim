@@ -380,6 +380,10 @@ if filereadable(glob(".vimrc.local"))
   source .vimrc.local
 endif
 
+" Markdown
+" Enable syntax highlighting within markdown code snippets for these languages
+let g:markdown_fenced_languages = ['html', 'scss', 'javascript', 'typescript', 'bash=sh']
+
 
 "===============================================================
 " TAG: gui
