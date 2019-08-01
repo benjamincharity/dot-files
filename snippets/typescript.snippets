@@ -360,6 +360,10 @@ test(\`should ${1:do something}\`, function() {
 	expect(actual).toEqual(expected);
 });
 endsnippet
+# Jest TODO test
+snippet testtodo "Jest TODO test" m
+test.todo(`should ${1:do something}`)
+endsnippet
 # Before inject
 snippet beforei "Before injector function" m
 beforeEach(inject((_${1:serviceToInject}_) => {
