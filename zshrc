@@ -330,6 +330,11 @@ alias sshhassio='ssh root@hassio.local'
 #
 alias findnotes='notes -x node_modules/ -x .DS_Store'
 
+#
+# Enable Slack dark mode
+#
+alias enableslackdarkmode="cd ~/code/open-source/slack-dark-mode && git pull && chmod +x slack-dark-mode.sh && sudo ./slack-dark-mode.sh"
+
 
 #
 # Explore a webpack generated sourcemap
