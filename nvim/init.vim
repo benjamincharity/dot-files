@@ -298,6 +298,8 @@ let NERDTreeShowBookmarks = 1
 let NERDChristmasTree = 1
 " Set custom location for bookmarks file
 let NERDTreeBookmarksFile=expand("$HOME/.dot-files/.NERDTreeBookmarks")
+" Make hidden files visible by default
+let NERDTreeShowHidden = 1
 
 " Numbers
 " Don't affect certain plugins
