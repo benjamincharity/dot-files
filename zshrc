@@ -46,6 +46,8 @@ export vi_cv_path_python=usr/local/Cellar/python
 # For `n`
 export N_PREFIX="$HOME/n";
  [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH="$N_PREFIX/bin:$PATH"
+# For GPG
+export GPG_TTY=`tty`
 
 #
 # Auto update without a prompt
