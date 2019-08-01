@@ -333,7 +333,7 @@ alias findnotes='notes -x node_modules/ -x .DS_Store'
 #
 # Enable Slack dark mode
 #
-alias enableslackdarkmode="cd ~/code/open-source/slack-dark-mode && git pull && chmod +x slack-dark-mode.sh && sudo ./slack-dark-mode.sh"
+alias enableslackdarkmode="cd ~/code/open-source/slack-dark-mode && git pull && chmod +x slack-dark-mode.sh && sudo ./slack-dark-mode.sh && cd -"
 
 
 #
