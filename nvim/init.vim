@@ -22,6 +22,10 @@ Plug 'vim-scripts/Align'
 " https://github.com/jlanzarotta/bufexplorer
 Plug 'jlanzarotta/bufexplorer'
 
+" Gutter Coverage
+" https://github.com/ruanyl/coverage.vim
+Plug 'ruanyl/coverage.vim'
+
 " DelimitMate - Automatic closing of quotes, parenthesis, brackets, etc.
 " https://github.com/Raimondi/delimitMate
 Plug 'Raimondi/delimitMate'
@@ -233,6 +237,9 @@ let g:nvim_typescript#type_info_on_hold = 1
 let g:deoplete#enable_at_startup = 1
 " https://github.com/SirVer/ultisnips/issues/517#issuecomment-268518251
 call deoplete#custom#source('ultisnips', 'matchers', ['matcher_fuzzy'])
+
+" Gutter Coverage
+let g:coverage_json_report_path = 'coverage/coverage-final.json'
 
 " Emmet
 let g:user_emmet_leader_key='<C-e>'
