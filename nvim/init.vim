@@ -616,7 +616,7 @@ nmap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 " Sort CSS styles inside {}
 noremap <F7> :g#\({\n\)\@<=#.,/}/sort<CR>
 " Sort selected lines
-noremap <leader>S :sort<CR>
+noremap <leader>S :sort -i<CR>
 " Show register (clipboard)
 map <leader>rr :reg<CR>
 " Move lines with alt + direction
@@ -668,8 +668,6 @@ map <leader>ff $zf%<CR>
 map <leader>re :%s/:\([^:]\+\):/\=emoji#for(submatch(1), submatch(0))/g<CR>
 " List all TODOs
 noremap <Leader>to :Ggrep TODO -- './*' ':(exclude)code' ':(exclude)docs' ':(exclude)DEVELOPMENT.md'<CR>:cw<CR>
-" Fix all ALE reported errors
-nmap <silent> <leader>af :ALEFix<cr>
 " Use tab as completion for deoplete
 "inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 " Source vimrc
@@ -679,8 +677,10 @@ nmap <leader>lr :TSRename<CR>
 nmap <leader>lf :TSRefs<CR>
 nmap <leader>ld :TSTypeDef<CR>
 nmap <leader>lds :TSDefPreview<CR>
-nmap <leader>ti :TSImport<CR>
+nmap <leader>ti :TSGetCodeFix<CR>
 " Ale
+" Fix all ALE reported errors
+nmap <silent> <leader>af :ALEFix<cr>
 nmap <silent> <leader>aj :ALENext<cr>
 nmap <silent> <leader>ak :ALEPrevious<cr>
 
