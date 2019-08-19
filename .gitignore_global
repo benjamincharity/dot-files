@@ -56,3 +56,7 @@ pickle-email-*.html
 # Node               #
 ######################
 node_modules
+
+# Editors               #
+#########################
+.idea/*
