@@ -22,12 +22,13 @@ end
 -- Single keybinding for app launch
 singleapps = {
   {'a', 'Atom'},
-  {'f', 'Firefox'},
+  {'b', 'Brave Browser'},
   {'c', 'Google Chrome'},
-  {'n', 'Notion'},
-  {'s', 'Sketch'},
+  {'f', 'Firefox'},
   {'l', 'Slack'},
   {'m', 'Spark'},
+  {'n', 'Notion'},
+  {'s', 'Sketch'},
   {'q', 'Quiver'},
   {'w', 'WebStorm'}
 }
