@@ -233,10 +233,20 @@ doGitWip(){
   then
     git add . && git commit -m "🚧 WIP: $msg [ci skip] 🚧" --no-verify
   else
-    git add . && git commit -m "🚧 WIP [ci skip] 🚧" --no-verify
+    git add . && git commit -m "🚧 WIP: [ci skip] 🚧" --no-verify
+  fi
+}
+doGitWipVerify(){
+  msg=$*
+  if [[ $msg ]]
+  then
+    git add . && git commit -m "WIP: $msg [ci skip]"
+  else
+    git add . && git commit -m "WIP: [ci skip]"
   fi
 }
 alias gwip=doGitWip
+alias gwipv=doGitWipVerify
 alias cleanorig="find . -name '*.orig' -delete"
 
 #
