@@ -24,11 +24,13 @@ singleapps = {
   {'a', 'Atom'},
   {'b', 'Brave Browser'},
   {'c', 'Google Chrome'},
+  {'d', 'Digital Color Meter'},
   {'f', 'Firefox'},
   {'l', 'Slack'},
   {'m', 'Spark'},
   {'n', 'Notion'},
   {'s', 'Sketch'},
+  {'p', 'Spotify'},
   {'q', 'Quiver'},
   {'w', 'WebStorm'}
 }
