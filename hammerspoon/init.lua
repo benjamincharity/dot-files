@@ -23,10 +23,12 @@ end
 singleapps = {
   {'a', 'Atom'},
   {'b', 'Brave Browser'},
-  {'c', 'Google Chrome'},
+  --{'c', 'Google Chrome'},
+  {'c', 'Sococo'},
   {'d', 'Digital Color Meter'},
   {'f', 'Firefox'},
   {'l', 'Slack'},
+  {'i', 'iTerm'},
   {'m', 'Spark'},
   {'n', 'Notion'},
   {'s', 'Sketch'},
