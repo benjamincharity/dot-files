@@ -1,0 +1,107 @@
+" source /Users/bc/.dot-files/nvim/init.vim
+
+" Use the system clipboard
+set clipboard+=unnamed
+
+"
+" Enable ideavim plugins
+set multiple-cursors
+" Emulate vim-surround
+set surround
+" Emulate commentary.vim
+set commentary
+" Show the current vim mode
+set showmode
+" highlight search terms
+set hlsearch
+" show search matches as you type
+set incsearch
+" Ignore casing when searching
+set ignorecase
+" Use casing in search when an uppercase character is used in a query
+set smartcase
+
+"
+" Multiple cursor support
+map <C-N>  <A-N>
+map <C-P>  <A-P>
+map <C-X>  <A-X>
+map g<C-N> g<A-N>
+
+" Cursor line/column
+" Show the cursor line
+set cursorline
+" Show the cursor column
+set cursorcolumn
+" Style the cursor line
+highlight cursorline term=NONE, cterm=NONE, ctermbg=238
+" Style the cursor column
+highlight cursorcolumn ctermbg=238
+
+" Allow backspacing over everything in insert mode
+set backspace=indent,eol,start
+
+" Remap the leader key to the spacebar
+map <SPACE> <leader>
+" Quit window/split/buffer
+nnoremap <Leader>q :q<CR>
+" Write/save
+nnoremap <Leader>w :w<CR>
+" Sort selected lines
+noremap <leader>S :sort -i<CR>
+" Easily move between splits/windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+" Allow cursor to move up/down to the next row (not just the next line)
+nnoremap j gj
+nnoremap k gk
+" Format long lines
+nmap <leader>gq :action com.andrewbrookins.idea.wrap.WrapAction<CR>
+" Refactor
+nmap <leader>rf :action RenameElement<CR>
+" Close all editors
+nnoremap <leader>clear :action CloseAllEditors<cr>
+" Show local history
+nnoremap <leader>gh :action LocalHistory.ShowHistory<cr>
+" Clear search highlights
+noremap <leader>l :noh<CR>
+
+" goto actions
+nnoremap gc :action GotoClass<CR>
+nnoremap gn :action GotoFile<CR>
+nnoremap gs :action GotoSymbol<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gu :action GotoSuperMethod<CR>
+nnoremap gf :action Forward<CR>
+nnoremap gb :action Back<CR>
+nnoremap gt :action GotoTest<CR>
+
+
+"
+" Overrides and Fallbacks
+" 'W' should be converted to 'w' if on the command line and not part of a word
+cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W'))
+" 'Wa' should be converted to 'wa' if on the command line and not part of a word
+cnoreabbrev <expr> Wa ((getcmdtype() is# ':' && getcmdline() is# 'Wa')?('wa'):('Wa'))
+" 'Qa' should be converted to 'qa' if on the command line and not part of a word
+cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('Qa'))
+
+
+"
+" Custom
+" Map `jk` to escape to make things easier for Brian M.
+imap jk <Esc>
+" Fix ESLint issues in page
+map <Leader>ee :action Javascript.Linters.EsLint.Fix<CR>
+" Fix ESLint & TSLint issues in page
+map <Leader>et :action Javascript.Linters.EsLint.Fix<CR>:action TsLintFileFixAction<CR>
+" Show current file in project explorer
+map <Leader>FF :action SelectInProjectView<CR>
+
+" vimrc
+nnoremap <leader>ev :e ~/.ideavimrc<cr>
+nnoremap <leader>sv :source ~/.ideavimrc<cr>
+
