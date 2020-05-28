@@ -24,7 +24,6 @@ singleapps = {
   {'a', 'Atom'},
   {'b', 'Brave Browser'},
   --{'c', 'Google Chrome'},
-  {'c', 'Sococo'},
   {'d', 'Digital Color Meter'},
   {'f', 'Firefox'},
   {'l', 'Slack'},
@@ -33,7 +32,7 @@ singleapps = {
   {'n', 'Notion'},
   {'s', 'Sketch'},
   {'p', 'Spotify'},
-  {'q', 'Quiver'},
+  --{'q', 'Quiver'},
   {'w', 'WebStorm'}
 }
 -- Loop through and bind each key to app
