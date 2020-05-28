@@ -1,7 +1,7 @@
 [user]
-	name = Benjamin Charity
-	email = ben@benjamincharity.com
-	signingkey = 45FE8D874C075B01
+    name = Benjamin Charity
+    email = ben@benjamincharity.com
+    signingkey = 45FE8D874C075B01
 [alias]
     ci = commit
     co = checkout
@@ -9,6 +9,7 @@
     dt = difftool
     st = status
     pr = pull-request -b master
+    co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
     lastchange = log -p --follow -n 1
     lg = "!f() { \
         git log -"$1" --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit; \
@@ -48,20 +49,20 @@
     interactive = auto
     status = auto
 [merge]
-    tool = opendiff
+	tool = opendiff
     keepBackup = false
 [diff]
     tool = meld
 [difftool]
     prompt = false
 ;[difftool "mvimdiff"]
-  ;cmd = mvim -d -f $LOCAL $REMOTE
+    ;cmd = mvim -d -f $LOCAL $REMOTE
 [heroku]
     account = personal
 [github]
     user = benjamincharity
 [push]
-	default = current
+    default = current
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
     path =
@@ -80,14 +81,16 @@
 [credential]
     helper = osxkeychain
 [filter "lfs"]
-	clean = git-lfs clean -- %f
+    clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-	required = true
+    required = true
 [gui]
     recentrepo = /Users/bc/Code/moment/moment-client
     recentrepo = /Users/bc/Code/moment/admin
 [grep]
     lineNumber = true
+[gpg]
+	program = /usr/local/bin/gpg
 [commit]
-	gpgsign = true
+    gpgsign = true
