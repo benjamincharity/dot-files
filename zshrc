@@ -329,7 +329,7 @@ alias cow='vaca'
 # SSH
 #
 # SSH into whatbox
-alias sshwhatbox='ssh benjamincharity@galileo.whatbox.ca'
+alias sshwhatbox='ssh benjamincharity@leda.whatbox.ca'
 # SSH into hassio
 alias sshhassio='ssh root@hassio.local'
 
