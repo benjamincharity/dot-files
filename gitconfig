@@ -1,7 +1,7 @@
 [user]
-    name = Benjamin Charity
-    email = ben@benjamincharity.com
-    signingkey = 45FE8D874C075B01
+	name = Benjamin Charity
+	email = ben@benjamincharity.com
+	signingkey = 167A331C12A80190
 [alias]
     ci = commit
     co = checkout
@@ -91,6 +91,6 @@
 [grep]
     lineNumber = true
 [gpg]
-	program = /usr/local/MacGPG2/bin/gpg
+	program = /opt/homebrew/bin/gpg
 [commit]
     gpgsign = true
