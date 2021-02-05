@@ -36,7 +36,7 @@ export ZSH_THEME="robbyrussell"
 #   /usr/local/Cellar/python@2/2.7.15/bin/python2
 #   $GOPATH/bin
 #   $PATH
-export PATH=~/.dot-files:/Applications/MacVim.app/Contents/bin:$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$GOPATH/bin:$PATH
+export PATH=$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:~/.dot-files:/Applications/MacVim.app/Contents/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$GOPATH/bin:$PATH
 # MacVim as the editor
 #export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
 export EDITOR=/usr/local/bin/nvim
