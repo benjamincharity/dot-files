@@ -93,4 +93,4 @@
 [gpg]
 	program = /opt/homebrew/bin/gpg
 [commit]
-    gpgsign = true
+	gpgsign = true

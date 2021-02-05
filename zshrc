@@ -2,7 +2,7 @@
 # Which plugins would you like to load?
 # Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(brew aws bower jsontools node npm sublime urltools zsh-syntax-highlighting zsh-history-substring-search git-it-on docker autoenv)
+plugins=(colors brew aws bower jsontools node npm sublime urltools zsh-syntax-highlighting zsh-history-substring-search git-it-on docker autoenv)
 
 
 #
@@ -521,6 +521,3 @@ else
 fi
 
 ###-end-ng-completion###
-
-
-source /Users/bc/code/open-source/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
