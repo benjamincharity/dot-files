@@ -145,9 +145,9 @@ set cursorline
 " Show the cursor column
 set cursorcolumn
 " Style the cursor line
-highlight cursorline term=NONE, cterm=NONE, guibg=#4444, ctermbg=235
+highlight cursorline term=NONE, cterm=NONE, ctermbg=235
 " Style the cursor column
-highlight cursorcolumn guibg=#4444, ctermbg=235
+highlight cursorcolumn ctermbg=235
 
 "
 " Show information about the current command in the bottom bar
