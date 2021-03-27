@@ -1,3 +1,7 @@
+# Needed for incorrect security issue:
+# https://github.com/ohmyzsh/ohmyzsh/issues/6835#issuecomment-400571406
+ZSH_DISABLE_COMPFIX=true
+
 #
 # Which plugins would you like to load?
 # Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
@@ -39,7 +43,7 @@ export ZSH_THEME="robbyrussell"
 export PATH=$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:~/.dot-files:/Applications/MacVim.app/Contents/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$GOPATH/bin:$PATH
 # MacVim as the editor
 #export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
-export EDITOR=/usr/local/bin/nvim
+# export EDITOR=/usr/local/bin/nvim
 #export NODE_PATH=$NODE_PATH:/Users/bc/n/lib/node_modules
 # Change python path
 export vi_cv_path_python=usr/local/Cellar/python
@@ -127,19 +131,11 @@ alias codedir='cd ~/Code/; ls -1F . | grep /'
 # Go to the projects directory
 alias projects='cd ~/Dropbox/Projects/; ls -1F . | grep /'
 # Go to the open source directory and list subfolders
-alias opensource='cd ~/Code/open-source/; ls -1F . | grep /'
-# Go to the design directory and list subfolders
-alias design='cd ~/Design/; ls -1F . | grep /'
+alias opensource='cd ~/code/open-source/; ls -1F . | grep /'
 # Go to KenzieLane directory and list subfolders
-alias kl='cd ~/Code/kenzielane/; ls -1F . | grep /'
-# Go to the Ripple directory and list subfolders
-alias moment='cd ~/Code/moment/; ls -1F . | grep /'
-# Go to the KnowMe directory and list subfolders
-alias knowme='cd ~/Code/knowme/; ls -1F . | grep /'
-# Go to the remedy code directory and list subfolders
-alias remedy='cd ~/Code/remedy/; ls -1F . | grep /'
+alias apiturecode='cd ~/code/apiture/; ls -1F . | grep /'
 # Go to the my personal site directory and list subfolders
-alias benjamin='cd ~/Code/benjamincharity/; ls -1F . | grep /'
+alias benjamin='cd ~/code/benjamincharity/; ls -1F . | grep /'
 # Go to my dot files
 alias dotfiles='cd ~/.dot-files; ls -1F . | grep /'
 # Go to ScreenFlow captures
@@ -156,9 +152,7 @@ alias edithammer='nvim ~/.hammerspoon/init.lua && nvim ~/.dot-files/hammerspoon/
 # Edit this file
 alias editzshrc='nvim ~/.zshrc'
 # Edit gitconfig
-alias editgitconfig='nvim /Users/bc/.dot-files/gitconfig'
-# Got to the Terminus directory and list subfolders
-alias terminus='cd ~/Code/Terminus/; ls -1F . | grep /'
+alias editgitconfig='nvim /Users/benjamin.charity/.dot-files/gitconfig'
 # Edit nvim config
 alias editnvim='nvim ~/.dot-files/nvim/init.vim'
 
@@ -172,7 +166,7 @@ alias vsc='/Applications/Visual\ Studio\ Code.app'
 alias vs='/Applications/Visual\ Studio\ Code.app'
 # Vim
 # Make sure the cli is using the lastest version of vim
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+# alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 #alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 # Atom Beta
 alias atom-beta='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
@@ -190,6 +184,8 @@ alias st="status"
 alias gs="git status"
 # Add all untracked files
 alias ga="git add -A :/"
+# List branches ordered by last commit
+alias gb="git branch --sort=-committerdate"
 # Stash, pull, pop
 alias spp="git stash && git pull && git stash pop"
 # Stash, pull, pop, start node
@@ -204,12 +200,8 @@ alias gpom="git push origin master"
 alias gpod="git push origin develop"
 # Git push heroku master
 alias gphm="git push heroku master"
-# Git push
-alias gp="git push"
 # Git push and open the PRs view
 alias gpp="git push && git prs"
-# Git pull
-alias gpl="git pull"
 # Git diff with NVim
 alias gd="git diff | nvim"
 # List view
@@ -248,7 +240,12 @@ doGitWipVerify(){
 alias gwip=doGitWip
 alias gwipv=doGitWipVerify
 alias cleanorig="find . -name '*.orig' -delete"
-
+# Open a new Apiture PR
+newpr(){
+  URL="https://bitbucket.org/APITURE/web/pull-requests/new?source=$(git rev-parse --abbrev-ref HEAD)&dest=develop&t=1";
+  echo "PR URL: $URL"
+  /usr/bin/open -a "/Applications/Brave Browser.app" "$URL"
+}
 #
 # Postgres
 #
