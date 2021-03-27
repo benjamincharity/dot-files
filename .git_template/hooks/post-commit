@@ -3,39 +3,39 @@
 # Mac monitor camera name: "FaceTime HD Camera (Display)" 
 # Laptop camera name: "FaceTime HD Camera"
 
-numberOfDevices=$(imagesnap -l | grep "FaceTime HD Camera (Display)" | wc -l | xargs echo -n)
-echo "Number of devices: ${numberOfDevices}"
-
-# If no display cameras were found, check for the native camera
-if [ "$numberOfDevices" == 0 ]; then
-	echo "FaceTime HD Camera (Display) was not found. Checking for standard camera..."
-    numberOfDevices=$(imagesnap -l | grep "FaceTime HD Camera" | wc -l | xargs echo -n)
-    echo "Number of devices: ${numberOfDevices}"
-fi
-
-# If no cameras were found, do nothing
-if [ "$numberOfDevices" == 0 ]; then
-	echo "No cameras were found :/"
-	exit 0
-fi
-
-# If we found multiple devices, use monitor's device
-if [ "$numberOfDevices" -gt 1 ]; then
-    device="FaceTime HD Camera (Display)"
-else
-    # Otherwise use the built in device
-    device="FaceTime HD Camera"
-fi
-
-echo "Device: ${device}"
-
-timestamp=$(date +%s)
-filePath="/Users/bc/Dropbox/gitshots/${timestamp}.jpg"
-
-echo "Taking capture into: ${filePath}"
-
-# Adding the '&' prevents lag
-# https://coderwall.com/p/xlatfq/take-a-photo-of-yourself-every-time-you-commit
-imagesnap -q -w 3 -d "${device}" $filePath &
-
-exit 0
+#numberOfDevices=$(imagesnap -l | grep "FaceTime HD Camera (Display)" | wc -l | xargs echo -n)
+#echo "Number of devices: ${numberOfDevices}"
+#
+## If no display cameras were found, check for the native camera
+#if [ "$numberOfDevices" == 0 ]; then
+#	echo "FaceTime HD Camera (Display) was not found. Checking for standard camera..."
+#    numberOfDevices=$(imagesnap -l | grep "FaceTime HD Camera" | wc -l | xargs echo -n)
+#    echo "Number of devices: ${numberOfDevices}"
+#fi
+#
+## If no cameras were found, do nothing
+#if [ "$numberOfDevices" == 0 ]; then
+#	echo "No cameras were found :/"
+#	exit 0
+#fi
+#
+## If we found multiple devices, use monitor's device
+#if [ "$numberOfDevices" -gt 1 ]; then
+#    device="FaceTime HD Camera (Display)"
+#else
+#    # Otherwise use the built in device
+#    device="FaceTime HD Camera"
+#fi
+#
+#echo "Device: ${device}"
+#
+#timestamp=$(date +%s)
+#filePath="/Users/bc/Dropbox/gitshots/${timestamp}.jpg"
+#
+#echo "Taking capture into: ${filePath}"
+#
+## Adding the '&' prevents lag
+## https://coderwall.com/p/xlatfq/take-a-photo-of-yourself-every-time-you-commit
+#imagesnap -q -w 3 -d "${device}" $filePath &
+#
+#exit 0
