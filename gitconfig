@@ -8,7 +8,6 @@
     br = branch
     dt = difftool
     st = status
-    pr = pull-request -b master
     co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
     lastchange = log -p --follow -n 1
     lg = "!f() { \
@@ -37,6 +36,8 @@
     grep-no-spec = "!f() { \
         git grep \"$1\" \"$2\" \":(exclude)*.spec.ts\"; \
     }; f"
+    # Which files are receiving the most "love"
+    churn = !git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print "count,file"} {print $1 "," $2}'
 [apply]
     whitespace = nowarn
 [core]
@@ -52,23 +53,27 @@
 	tool = opendiff
     keepBackup = false
 [diff]
-    tool = meld
+  tool = wstorm
 [difftool]
-    prompt = false
-;[difftool "mvimdiff"]
-    ;cmd = mvim -d -f $LOCAL $REMOTE
+  prompt = false
+[difftool.wstorm]
+  cmd = /usr/local/bin/wstorm diff "$LOCAL" "$REMOTE"
+[merge]
+  tool = wstorm
+[mergetool.wstorm]
+  cmd = /usr/local/bin/wstorm merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 [heroku]
     account = personal
 [github]
     user = benjamincharity
 [push]
     default = current
-[difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path =
-[mergetool "sourcetree"]
-    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
+; [difftool "sourcetree"]
+;     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+;     path =
+; [mergetool "sourcetree"]
+;     cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+;     trustExitCode = true
 [branch]
     autosetuprebase = always
 [pull]
@@ -85,12 +90,9 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
     required = true
-[gui]
-    recentrepo = /Users/bc/Code/moment/moment-client
-    recentrepo = /Users/bc/Code/moment/admin
 [grep]
     lineNumber = true
 [gpg]
-	program = /opt/homebrew/bin/gpg
+	program = /usr/local/bin/gpg
 [commit]
 	gpgsign = true
