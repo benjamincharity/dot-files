@@ -23,6 +23,7 @@ export ZSH_THEME="robbyrussell"
 # Items in path:
 #   ~/.dot-files
 #   /Applications/MacVim.app/Contents/bin
+#   /opt/homebrew/bin
 #   $N_PREFIX/bin
 #   $N_PREFIX/lib
 #   $N_PREFIX/include
@@ -40,7 +41,7 @@ export ZSH_THEME="robbyrussell"
 #   /usr/local/Cellar/python@2/2.7.15/bin/python2
 #   $GOPATH/bin
 #   $PATH
-export PATH=$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:~/.dot-files:/Applications/MacVim.app/Contents/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$GOPATH/bin:$PATH
+export PATH=$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:~/.dot-files:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$GOPATH/bin:$PATH
 # MacVim as the editor
 #export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
 # export EDITOR=/usr/local/bin/nvim
@@ -157,21 +158,18 @@ alias editgitconfig='nvim /Users/benjamin.charity/.dot-files/gitconfig'
 alias editnvim='nvim ~/.dot-files/nvim/init.vim'
 
 
-
 #
 # Apps
 #
-# Open Visual Studio Code
 alias vsc='/Applications/Visual\ Studio\ Code.app'
 alias vs='/Applications/Visual\ Studio\ Code.app'
-# Vim
 # Make sure the cli is using the lastest version of vim
 # alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
 #alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
-# Atom Beta
 alias atom-beta='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
 alias atomb='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
-
+alias ws='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/ch-0/211.7142.46/WebStorm.app'
+alias webstorm='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/ch-0/211.7142.46/WebStorm.app'
 
 
 #

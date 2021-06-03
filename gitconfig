@@ -80,6 +80,7 @@
     rebase = true
 [init]
     templatedir = ~/.dot-files/.git_template
+	defaultBranch = main
 [rerere]
     enabled = true
     autoupdate = true
@@ -93,6 +94,6 @@
 [grep]
     lineNumber = true
 [gpg]
-	program = /usr/local/bin/gpg
+	program = /opt/homebrew/bin/gpg
 [commit]
 	gpgsign = true
