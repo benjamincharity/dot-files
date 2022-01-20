@@ -75,7 +75,7 @@ Plugin 'tomtom/tlib_vim'
 "
 " UltiSnips
 " https://github.com/SirVer/ultisnips
-Plugin 'SirVer/ultisnips'
+"Plugin 'SirVer/ultisnips'
 
 "
 " Vim Surround - Surround selection with chosen characters
@@ -107,7 +107,7 @@ Plugin 'dkprice/vim-easygrep'
 " You Complete Me - Autocomplete for code
 " Needs MacVim with python 2.X support
 " Customization: _you_complete_me.vim
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 
 "
 " Tern - This is a Vim plugin that provides Tern-based JavaScript editing support.
@@ -202,7 +202,7 @@ Plugin 'leafgarland/typescript-vim'
 "
 " Angular CLI commands support for vim
 " https://github.com/bdauria/angular-cli.vim
-Plugin 'bdauria/angular-cli.vim'
+"Plugin 'bdauria/angular-cli.vim'
 
 "
 " GitHub extension for fugitive.vim

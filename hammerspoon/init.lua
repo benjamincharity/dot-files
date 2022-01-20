@@ -1,6 +1,12 @@
 -- NOTE: This file is for tracking changes ONLY. The file the hammerspoon actually reads is at `~/.hammerspoon/init.lua`
 -- Any changes made here should be copied to that file.
 
+-- If the work file is found, use work email - otherwise use personal
+local function determine_correct_mail_app()
+    local file = hs.fs.attributes("~/.hammerspoon/is-work.lua")
+    local app =  file and 'Canary Mail' or 'HEY'
+    return app
+end
 
 -- A global variable for the Hyper Mode
 k = hs.hotkey.modal.new({}, "F19")
@@ -22,17 +28,16 @@ end
 -- Single keybinding for app launch
 singleapps = {
   {'a', 'Atom'},
-  {'b', 'Brave Browser'},
-  --{'c', 'Google Chrome'},
+  {'b', 'Safari'},
   {'d', 'Digital Color Meter'},
   {'f', 'Firefox'},
   {'l', 'Slack'},
+  {'h', 'HEY'},
   {'i', 'iTerm'},
-  {'m', 'Spark'},
+  {'m', determine_correct_mail_app()},
   {'n', 'Notion'},
   {'s', 'Sketch'},
   {'p', 'Spotify'},
-  --{'q', 'Quiver'},
   {'w', 'WebStorm'}
 }
 -- Loop through and bind each key to app

@@ -22,6 +22,7 @@ export GOPATH="$HOME"
 export ZSH_THEME="robbyrussell"
 # Items in path:
 #   ~/.dot-files
+#   $HOME/.rvm/bin
 #   /Applications/MacVim.app/Contents/bin
 #   /opt/homebrew/bin
 #   $N_PREFIX/bin
@@ -35,13 +36,13 @@ export ZSH_THEME="robbyrussell"
 #   /usr/local/bin/npm
 #   ~/.npm-packages/bin
 #   /usr/local/heroku/bin
-#   ~/.rbenv/shims
-#   ~/.rbenv/bin
 #   $(yarn global bin)
 #   /usr/local/Cellar/python@2/2.7.15/bin/python2
+#   $HOME/.gem
 #   $GOPATH/bin
+#   /Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts
 #   $PATH
-export PATH=$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:~/.dot-files:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:~/.rbenv/shims:~/.rbenv/bin:$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$GOPATH/bin:$PATH
+export PATH=$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:~/.dot-files:$HOME/.rvm/bin:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin::$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$HOME/.gem:$GOPATH/bin:/Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts:$PATH
 # MacVim as the editor
 #export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
 # export EDITOR=/usr/local/bin/nvim
@@ -58,7 +59,6 @@ export GPG_TTY=`tty`
 # Auto update without a prompt
 DISABLE_UPDATE_PROMPT=true
 
-
 #
 # Set default command for FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -68,10 +68,6 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # preview
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
-
-#
-# Init rbenv
-eval "$(rbenv init -)"
 
 
 #
@@ -133,14 +129,14 @@ alias codedir='cd ~/Code/; ls -1F . | grep /'
 alias projects='cd ~/Dropbox/Projects/; ls -1F . | grep /'
 # Go to the open source directory and list subfolders
 alias opensource='cd ~/code/open-source/; ls -1F . | grep /'
-# Go to KenzieLane directory and list subfolders
-alias apiturecode='cd ~/code/apiture/; ls -1F . | grep /'
+# Go to FlowPath directory and list subfolders
+alias flowpath='cd ~/code/flowpath/; ls -1F . | grep /'
 # Go to the my personal site directory and list subfolders
 alias benjamin='cd ~/code/benjamincharity/; ls -1F . | grep /'
 # Go to my dot files
 alias dotfiles='cd ~/.dot-files; ls -1F . | grep /'
 # Go to ScreenFlow captures
-alias screenflow='cd ~/Dropbox/ScreenFlow'
+# alias screenflow='cd ~/Dropbox/ScreenFlow'
 # Create a directory and immediately cd into it
 # http://superuser.com/questions/152794/is-there-a-shortcut-to-mkdir-foo-and-immediately-cd-into-it
 function mkdircd {
@@ -168,8 +164,8 @@ alias vs='/Applications/Visual\ Studio\ Code.app'
 #alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias atom-beta='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
 alias atomb='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
-alias ws='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/ch-0/211.7142.46/WebStorm.app'
-alias webstorm='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/ch-0/211.7142.46/WebStorm.app'
+alias ws='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/**/WebStorm.app'
+# alias webstorm='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/ch-0/211.7142.46/WebStorm.app'
 
 
 #
@@ -239,11 +235,48 @@ alias gwip=doGitWip
 alias gwipv=doGitWipVerify
 alias cleanorig="find . -name '*.orig' -delete"
 # Open a new Apiture PR
-newpr(){
-  URL="https://bitbucket.org/APITURE/web/pull-requests/new?source=$(git rev-parse --abbrev-ref HEAD)&dest=develop&t=1";
-  echo "PR URL: $URL"
-  /usr/bin/open -a "/Applications/Brave Browser.app" "$URL"
+# newpr(){
+#   URL="https://bitbucket.org/APITURE/web/pull-requests/new?source=$(git rev-parse --abbrev-ref HEAD)&dest=develop&t=1";
+#   echo "PR URL: $URL"
+#   /usr/bin/open -a "/Applications/Brave Browser.app" "$URL"
+# }
+#
+# Revert the last commit to the FlowPath CMMS prod repo
+# Revert the last commit to the FlowPath CMMS prod repo
+rollbackCMMSProd(){
+  REPO_PATH="/Users/bc/code/flowpath/fp-cmms-heroku-deploy-prod"
+  # Number of commits to roll back - defaults to one
+  COUNT=${1:-1}
+  echo "Rolling back $COUNT commits.."
+  git -C "$REPO_PATH" pull
+  git -C "$REPO_PATH" revert HEAD~"$COUNT"..HEAD --no-edit
+  echo "Pushing updates.."
+  git -C "$REPO_PATH" push
 }
+alias rollbackCMMSProd=rollbackCMMSProd
+#
+# show commits from all branches for current git user.
+function my-commits-since() {
+    git log --all --author=$(git config user.email) --since=$@
+}
+# show commits from yesterday.
+# if none were found, assume it's Monday and show commits from Friday.
+function standupFunc() {
+    if [ -z "$(my-commits-since yesterday)" ]; then
+        my-commits-since last.friday.midnight $@;
+    else
+        my-commits-since yesterday $@;
+    fi
+}
+alias standup=standup
+# # inspired by https://gist.github.com/tinifni/3756796
+# # and https://stackoverflow.com/questions/24555358/git-log-only-show-yesterdays-commit
+# # git aliases (add to ~/.gitconfig under the [alias] section and run using `git standup`)
+# # dstandup checks date using http://www.gnu.org/software/coreutils/date rather than assuming it's monday if no commits are found from yesterday
+# mcs     = "!f() { git log --all --author=$(git config user.email) --since=$1; }; f"
+# standup = "!if [ -z $(git mcs yesterday.midnight) ]; then git mcs last.friday.midnight; else git mcs yesterday.midnight; fi;"
+# dstandup = "!if [ $(date +%u) -eq 1 ]; then git mcs last.friday.midnight; else git mcs yesterday.midnight; fi;"
+
 #
 # Postgres
 #
@@ -252,6 +285,11 @@ alias pgstart='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/serv
 # Stop
 alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 
+
+#
+# GPG
+#
+alias gpgverify='gpg --export-secret-keys -a 83275B30A10F5202 > /dev/null && echo OK'
 
 
 #
@@ -516,3 +554,6 @@ else
 fi
 
 ###-end-ng-completion###
+
+# Load RVM into a shell session *as a function*
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
