@@ -213,7 +213,7 @@ alias squash="unstageall && git add -A && gc"
 # Git log - oneline no-pager
 alias glnp="git --no-pager log --oneline -n30"
 # Helper function to do a WIP commit
-doGitWip(){
+function doGitWip {
   msg=$*
   if [[ $msg ]]
   then
@@ -222,7 +222,7 @@ doGitWip(){
     git add . && git commit -m "🚧 WIP: [ci skip] 🚧" --no-verify
   fi
 }
-doGitWipVerify(){
+function doGitWipVerify {
   msg=$*
   if [[ $msg ]]
   then
@@ -243,7 +243,7 @@ alias cleanorig="find . -name '*.orig' -delete"
 #
 # Revert the last commit to the FlowPath CMMS prod repo
 # Revert the last commit to the FlowPath CMMS prod repo
-rollbackCMMSProd(){
+function rollbackCMMSProd {
   REPO_PATH="/Users/bc/code/flowpath/fp-cmms-heroku-deploy-prod"
   # Number of commits to roll back - defaults to one
   COUNT=${1:-1}
@@ -256,12 +256,12 @@ rollbackCMMSProd(){
 alias rollbackCMMSProd=rollbackCMMSProd
 #
 # show commits from all branches for current git user.
-function my-commits-since() {
+function my-commits-since {
     git log --all --author=$(git config user.email) --since=$@
 }
 # show commits from yesterday.
 # if none were found, assume it's Monday and show commits from Friday.
-function standupFunc() {
+function standupFunc {
     if [ -z "$(my-commits-since yesterday)" ]; then
         my-commits-since last.friday.midnight $@;
     else
@@ -382,7 +382,7 @@ alias enableslackdarkmode="cd ~/code/open-source/slack-dark-mode && git pull && 
 #
 # Explore a webpack generated sourcemap
 #
-explore() {
+function explore {
   if [[ -n "$1" ]]; then
     source-map-explorer dist/vendor."$1".bundle.js dist/vendor."$1".bundle.js.map
   else
@@ -397,7 +397,7 @@ explore() {
 # NOTE: I removed the if/else catch for `--good` since without this parameter the quality is
 # terrible.
 #
-gifify() {
+function gifify {
   if [[ -n "$1" ]]; then
     ffmpeg -i $1 -r 10 -vcodec png out-static-%05d.png
     time convert -verbose +dither -layers Optimize -resize 600x600\> out-static*.png  GIF:- | gifsicle --colors 128 --delay=5 --loop --optimize=3 --multifile - > $1.gif
@@ -467,93 +467,6 @@ elif type compctl &>/dev/null; then
   compctl -K _npm_completion npm
 fi
 ###-end-npm-completion-###
-
-
-
-###-begin-ng-completion###
-#
-# ng command completion script
-#
-# Installation: ng completion 1>> ~/.bashrc 2>>&1
-#           or  ng completion 1>> ~/.zshrc 2>>&1
-#
-
-ng_opts='b build completion doc e2e g generate get github-pages:deploy gh-pages:deploy h help i init install lint make-this-awesome new s serve server set t test v version -h --help'
-
-build_opts='--aot --base-href --environment --output-path --suppress-sizes --target --watch --watcher -bh -dev -e -o -prod -t -w'
-generate_opts='class component directive enum module pipe route service c cl d e m p r s --help'
-github_pages_deploy_opts='--base-href --environment --gh-token --gh-username --message --skip-build --target --user-page -bh -e -t'
-help_opts='--json --verbose -v'
-init_opts='--dry-run inline-style inline-template --link-cli --mobile --name --prefix --routing --skip-bower --skip-npm --source-dir --style --verbose -d -is -it -lc -n -p -sb -sd -sn -v'
-new_opts='--directory --dry-run inline-style inline-template --link-cli --mobile --prefix --routing --skip-bower --skip-git --skip-npm --source-dir --style --verbose -d -dir -is -it -lc -p -sb -sd -sg -sn -v'
-serve_opts='--aot --environment --host --live-reload --live-reload-base-url --live-reload-host --live-reload-live-css --live-reload-port --open --port --proxy-config --ssl --ssl-cert --ssl-key --target --watcher -H -e -lr -lrbu -lrh -lrp -o -p -pc -t -w'
-set_opts='--global -g'
-test_opts='--browsers --build --colors --log-level --port --reporters --watch -w'
-version_opts='--verbose'
-
-if test ".$(type -t complete 2>/dev/null || true)" = ".builtin"; then
-  _ng_completion() {
-    local cword pword opts
-
-    COMPREPLY=()
-    cword=${COMP_WORDS[COMP_CWORD]}
-    pword=${COMP_WORDS[COMP_CWORD - 1]}
-
-    case ${pword} in
-      ng) opts=$ng_opts ;;
-      b|build) opts=$build_opts ;;
-      g|generate) opts=$generate_opts ;;
-      gh-pages:deploy|github-pages:deploy) opts=$github_pages_deploy_opts ;;
-      h|help|-h|--help) opts=$help_opts ;;
-      init) opts=$init_opts ;;
-      new) opts=$new_opts ;;
-      s|serve|server) opts=$serve_opts ;;
-      set) opts=$set_opts ;;
-      t|test) opts=$test_opts ;;
-      v|version) opts=$version_opts ;;
-      *) opts='' ;;
-    esac
-
-    COMPREPLY=( $(compgen -W '${opts}' -- $cword) )
-
-    return 0
-  }
-
-  complete -o default -F _ng_completion ng
-elif test ".$(type -w compctl 2>/dev/null || true)" = ".compctl: builtin" ; then
-  _ng_completion () {
-    local words cword opts
-    read -Ac words
-    read -cn cword
-    let cword-=1
-
-    case $words[cword] in
-      ng) opts=$ng_opts ;;
-      b|build) opts=$build_opts ;;
-      g|generate) opts=$generate_opts ;;
-      gh-pages:deploy|github-pages:deploy) opts=$github_pages_deploy_opts ;;
-      h|help|-h|--help) opts=$help_opts ;;
-      init) opts=$init_opts ;;
-      new) opts=$new_opts ;;
-      s|serve|server) opts=$serve_opts ;;
-      set) opts=$set_opts ;;
-      t|test) opts=$test_opts ;;
-      v|version) opts=$version_opts ;;
-      *) opts='' ;;
-    esac
-
-    setopt shwordsplit
-    reply=($opts)
-    unset shwordsplit
-  }
-
-  compctl -K _ng_completion ng
-else
-  echo "Shell builtin command 'complete' or 'compctl' is redefined; cannot perform ng completion."
-  return 1
-fi
-
-###-end-ng-completion###
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
