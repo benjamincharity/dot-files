@@ -127,7 +127,7 @@ alias ngrok='/Applications/ngrok'
 #
 # Go to the code directory
 # 'code' conflicts with vscode 'code .'
-alias codedir='cd ~/Code/; ls -1F . | grep /'
+alias code='cd ~/Code/; ls -1F . | grep /'
 # Go to the projects directory
 alias projects='cd ~/Dropbox/Projects/; ls -1F . | grep /'
 # Go to the open source directory and list subfolders
