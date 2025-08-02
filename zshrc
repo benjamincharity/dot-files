@@ -2,6 +2,9 @@
 # https://github.com/ohmyzsh/ohmyzsh/issues/6835#issuecomment-400571406
 ZSH_DISABLE_COMPFIX=true
 
+# Auto update without a prompt
+zstyle ':omz:update' mode auto
+
 #
 # Which plugins would you like to load?
 # Plugins can be found in ~/.oh-my-zsh/plugins/* or ~/.oh-my-zsh/custom/plugins/*
@@ -36,13 +39,13 @@ export ZSH_THEME="robbyrussell"
 #   /usr/local/bin/npm
 #   ~/.npm-packages/bin
 #   /usr/local/heroku/bin
-#   $(yarn global bin)
 #   /usr/local/Cellar/python@2/2.7.15/bin/python2
 #   $HOME/.gem
 #   $GOPATH/bin
+#   /Users/bc/.local/bin
 #   /Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts
 #   $PATH
-export PATH=$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:~/.dot-files:$HOME/.rvm/bin:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin::$(yarn global bin):/usr/local/Cellar/python@2/2.7.15/bin/python2:$HOME/.gem:$GOPATH/bin:/Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts:$PATH
+export PATH=$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:~/.dot-files:$HOME/.rvm/bin:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:/usr/local/Cellar/python@2/2.7.15/bin/python2:$HOME/.gem:$GOPATH/bin:/Users/bc/.local/bin:/Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts:$PATH
 # MacVim as the editor
 #export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
 # export EDITOR=/usr/local/bin/nvim
@@ -129,8 +132,6 @@ alias codedir='cd ~/Code/; ls -1F . | grep /'
 alias projects='cd ~/Dropbox/Projects/; ls -1F . | grep /'
 # Go to the open source directory and list subfolders
 alias opensource='cd ~/code/open-source/; ls -1F . | grep /'
-# Go to FlowPath directory and list subfolders
-alias flowpath='cd ~/code/flowpath/; ls -1F . | grep /'
 # Go to the my personal site directory and list subfolders
 alias benjamin='cd ~/code/benjamincharity/; ls -1F . | grep /'
 # Go to my dot files
@@ -188,12 +189,6 @@ alias spps="git stash && git pull && git stash pop && node index.js"
 alias gc="git commit -am"
 # Create and checkout new branch
 alias gcb="git checkout -b"
-# Git push origin master
-alias gpom="git push origin master"
-# Git push origin develop
-alias gpod="git push origin develop"
-# Git push heroku master
-alias gphm="git push heroku master"
 # Git push and open the PRs view
 alias gpp="git push && git prs"
 # Git diff with NVim
@@ -233,28 +228,6 @@ function doGitWipVerify {
 }
 alias gwip=doGitWip
 alias gwipv=doGitWipVerify
-alias cleanorig="find . -name '*.orig' -delete"
-# Open a new Apiture PR
-# newpr(){
-#   URL="https://bitbucket.org/APITURE/web/pull-requests/new?source=$(git rev-parse --abbrev-ref HEAD)&dest=develop&t=1";
-#   echo "PR URL: $URL"
-#   /usr/bin/open -a "/Applications/Brave Browser.app" "$URL"
-# }
-#
-# Revert the last commit to the FlowPath CMMS prod repo
-# Revert the last commit to the FlowPath CMMS prod repo
-function rollbackCMMSProd {
-  REPO_PATH="/Users/bc/code/flowpath/fp-cmms-heroku-deploy-prod"
-  # Number of commits to roll back - defaults to one
-  COUNT=${1:-1}
-  echo "Rolling back $COUNT commits.."
-  git -C "$REPO_PATH" pull
-  git -C "$REPO_PATH" revert HEAD~"$COUNT"..HEAD --no-edit
-  echo "Pushing updates.."
-  git -C "$REPO_PATH" push
-}
-alias rollbackCMMSProd=rollbackCMMSProd
-#
 # show commits from all branches for current git user.
 function my-commits-since {
     git log --all --author=$(git config user.email) --since=$@
@@ -269,13 +242,6 @@ function standupFunc {
     fi
 }
 alias standup=standup
-# # inspired by https://gist.github.com/tinifni/3756796
-# # and https://stackoverflow.com/questions/24555358/git-log-only-show-yesterdays-commit
-# # git aliases (add to ~/.gitconfig under the [alias] section and run using `git standup`)
-# # dstandup checks date using http://www.gnu.org/software/coreutils/date rather than assuming it's monday if no commits are found from yesterday
-# mcs     = "!f() { git log --all --author=$(git config user.email) --since=$1; }; f"
-# standup = "!if [ -z $(git mcs yesterday.midnight) ]; then git mcs last.friday.midnight; else git mcs yesterday.midnight; fi;"
-# dstandup = "!if [ $(date +%u) -eq 1 ]; then git mcs last.friday.midnight; else git mcs yesterday.midnight; fi;"
 
 #
 # Postgres
@@ -291,24 +257,6 @@ alias pgstop='pg_ctl -D /usr/local/var/postgres stop -s -m fast'
 #
 alias gpgverify='gpg --export-secret-keys -a 83275B30A10F5202 > /dev/null && echo OK'
 
-
-#
-# Mongo
-#
-# Start
-alias mongostart="launchctl start org.mongodb.mongod"
-# Stop
-alias mongostop="launchctl stop org.mongodb.mongod"
-
-
-
-#
-# MySQL
-#
-# Start
-alias mysqlstart='mysql.server start'
-# Stop
-alias mysqlstop='mysql.server stop'
 
 
 
@@ -372,11 +320,6 @@ alias sshhassio='ssh root@hassio.local'
 # https://github.com/ahmadassaf/code-notes
 #
 alias findnotes='notes -x node_modules/ -x .DS_Store'
-
-#
-# Enable Slack dark mode
-#
-alias enableslackdarkmode="cd ~/code/open-source/slack-dark-mode && git pull && chmod +x slack-dark-mode.sh && sudo ./slack-dark-mode.sh && cd -"
 
 
 #
@@ -470,3 +413,32 @@ fi
 
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
+
+# pnpm
+export PNPM_HOME="/Users/bc/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# bun completions
+[ -s "/Users/bc/.bun/_bun" ] && source "/Users/bc/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+
+# Herd injected PHP 8.4 configuration.
+export HERD_PHP_84_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/config/php/84/"
+
+
+# Herd injected PHP binary.
+export PATH="/Users/bc/Library/Application Support/Herd/bin/":$PATH

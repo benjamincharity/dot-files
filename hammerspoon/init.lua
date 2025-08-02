@@ -28,6 +28,7 @@ end
 -- Single keybinding for app launch
 singleapps = {
   {'a', 'Atom'},
+  {'c', 'Cursor'},
   {'b', 'Safari'},
   {'d', 'Digital Color Meter'},
   {'f', 'Firefox'},

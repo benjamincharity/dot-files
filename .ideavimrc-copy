@@ -93,11 +93,9 @@ cnoreabbrev <expr> Qa ((getcmdtype() is# ':' && getcmdline() is# 'Qa')?('qa'):('
 "
 " Custom
 " Map `jk` to escape to make things easier for Brian M.
-imap jk <Esc>
+"imap jk <Esc>
 " Fix ESLint issues in page
 map <Leader>ee :action Javascript.Linters.EsLint.Fix<CR>
-" Fix ESLint & TSLint issues in page
-map <Leader>et :action Javascript.Linters.EsLint.Fix<CR>:action TsLintFileFixAction<CR>
 " Show current file in project explorer
 map <Leader>FF :action SelectInProjectView<CR>
 
@@ -105,3 +103,5 @@ map <Leader>FF :action SelectInProjectView<CR>
 nnoremap <leader>ev :e ~/.ideavimrc<cr>
 nnoremap <leader>sv :source ~/.ideavimrc<cr>
 
+" custom surround for markdown bold
+vnoremap <Leader>** :s/\%V\(.\+\)\%V/**\1**/<CR>

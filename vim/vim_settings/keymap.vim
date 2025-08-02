@@ -162,5 +162,7 @@ cnoreabbrev <expr> Wa ((getcmdtype() is# ':' && getcmdline() is# 'Wa')?('wa'):('
 
 "
 " Map `jk` to escape to make things easier for Brian M.
-imap jk <Esc>
+"imap jk <Esc>
 
+" custom surround for markdown bold
+vnoremap <Leader>** :s/\%V\(.\+\)\%V/**\1**/<CR>
