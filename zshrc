@@ -16,22 +16,30 @@ plugins=(colors brew aws bower jsontools node npm sublime urltools zsh-syntax-hi
 #
 # EXPORTS/PATH
 #
-# Path to your oh-my-zsh configuration.
-export ZSH=$HOME/.oh-my-zsh
+
+# Oh My Zsh (only if installed)
+if [ -d "$HOME/.oh-my-zsh" ]; then
+  # Path to your oh-my-zsh configuration.
+  export ZSH=$HOME/.oh-my-zsh
+  # Define the theme to load
+  # Look in ~/.oh-my-zsh/themes/
+  export ZSH_THEME="robbyrussell"
+  source $ZSH/oh-my-zsh.sh
+fi
+
+# For `n` (define BEFORE using it in PATH)
+export N_PREFIX="$HOME/n"
+[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH="$N_PREFIX/bin:$PATH"
+
+
 # set GOPATH
 export GOPATH="$HOME"
-# Define the theme to load
-# Look in ~/.oh-my-zsh/themes/
-export ZSH_THEME="robbyrussell"
 # Items in path:
 #   ~/.dot-files
 #   $HOME/.rvm/bin
 #   /Applications/MacVim.app/Contents/bin
 #   /opt/homebrew/bin
 #   $N_PREFIX/bin
-#   $N_PREFIX/lib
-#   $N_PREFIX/include
-#   $N_PREFIX/share
 #   /usr/local/bin
 #   /usr/bin
 #   ~/.npm
@@ -39,24 +47,19 @@ export ZSH_THEME="robbyrussell"
 #   /usr/local/bin/npm
 #   ~/.npm-packages/bin
 #   /usr/local/heroku/bin
-#   /usr/local/Cellar/python@2/2.7.15/bin/python2
 #   $HOME/.gem
 #   $GOPATH/bin
 #   /Users/bc/.local/bin
 #   /Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts
 #   $PATH
-export PATH=$N_PREFIX/bin:$N_PREFIX/lib:$N_PREFIX/include:$N_PREFIX/share:~/.dot-files:$HOME/.rvm/bin:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:/usr/local/Cellar/python@2/2.7.15/bin/python2:$HOME/.gem:$GOPATH/bin:/Users/bc/.local/bin:/Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts:$PATH
+export PATH=$N_PREFIX/bin:~/.dot-files:$HOME/.rvm/bin:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:$HOME/.gem:$GOPATH/bin:/Users/bc/.local/bin:/Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts:$PATH
 # MacVim as the editor
 #export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
 # export EDITOR=/usr/local/bin/nvim
 #export NODE_PATH=$NODE_PATH:/Users/bc/n/lib/node_modules
-# Change python path
-export vi_cv_path_python=usr/local/Cellar/python
-# For `n`
-export N_PREFIX="$HOME/n";
- [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH="$N_PREFIX/bin:$PATH"
+
 # For GPG
-export GPG_TTY=`tty`
+export GPG_TTY=$(tty)
 
 #
 # Auto update without a prompt
@@ -79,7 +82,6 @@ export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
 
-source $ZSH/oh-my-zsh.sh
 
 #
 # ZSH History Substring Search
@@ -165,7 +167,7 @@ alias vs='/Applications/Visual\ Studio\ Code.app'
 #alias vi='/Applications/MacVim.app/Contents/MacOS/Vim'
 alias atom-beta='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
 alias atomb='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
-alias ws='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/**/WebStorm.app'
+alias ws="open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/**/WebStorm.app"
 # alias webstorm='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/ch-0/211.7142.46/WebStorm.app'
 
 
@@ -414,10 +416,6 @@ fi
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-
-# Load Angular CLI autocompletion.
-source <(ng completion script)
-
 # pnpm
 export PNPM_HOME="/Users/bc/Library/pnpm"
 case ":$PATH:" in
@@ -442,3 +440,10 @@ export HERD_PHP_84_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/conf
 
 # Herd injected PHP binary.
 export PATH="/Users/bc/Library/Application Support/Herd/bin/":$PATH
+
+
+# Herd injected NVM configuration
+export NVM_DIR="/Users/bc/Library/Application Support/Herd/config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+
+[[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
