@@ -51,8 +51,9 @@ export GOPATH="$HOME"
 #   $GOPATH/bin
 #   /Users/bc/.local/bin
 #   /Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts
+#   /Users/bc/Dropbox/Application\ Support/JetBrains/Toolbox
 #   $PATH
-export PATH=$N_PREFIX/bin:~/.dot-files:$HOME/.rvm/bin:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:$HOME/.gem:$GOPATH/bin:/Users/bc/.local/bin:/Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts:$PATH
+export PATH=$N_PREFIX/bin:~/.dot-files:$HOME/.rvm/bin:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:$HOME/.gem:$GOPATH/bin:/Users/bc/.local/bin:/Users/bc/Dropbox/Application\ Support/JetBrains/Toolbox:$PATH
 # MacVim as the editor
 #export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
 # export EDITOR=/usr/local/bin/nvim
@@ -120,8 +121,6 @@ alias cleanswap='find ~/.vim/swap_files -type f | xargs rm -f'
 alias cleannvimswap='find ~/.config/nvim/swap-files -type f | xargs rm -f'
 # Get the current IP address
 alias ipconfig='ifconfig | grep "inet " | grep -v 127.0.0.1'
-# Use ngrok
-alias ngrok='/Applications/ngrok'
 
 
 #
