@@ -29,44 +29,16 @@ fi
 
 # For `n` (define BEFORE using it in PATH)
 export N_PREFIX="$HOME/n"
-[[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH="$N_PREFIX/bin:$PATH"
-
 
 # set GOPATH
 export GOPATH="$HOME"
-# Items in path:
-#   ~/.dot-files
-#   $HOME/.rvm/bin
-#   /Applications/MacVim.app/Contents/bin
-#   /opt/homebrew/bin
-#   $N_PREFIX/bin
-#   /usr/local/bin
-#   /usr/bin
-#   ~/.npm
-#   /opt/local/bin
-#   /usr/local/bin/npm
-#   ~/.npm-packages/bin
-#   /usr/local/heroku/bin
-#   $HOME/.gem
-#   $GOPATH/bin
-#   /Users/bc/.local/bin
-#   /Users/bc/Dropbox/Application\ Support/WebStorm/Webstorm\ Scripts
-#   /Users/bc/Dropbox/Application\ Support/JetBrains/Toolbox
-#   $PATH
-export PATH=$N_PREFIX/bin:~/.dot-files:$HOME/.rvm/bin:/Applications/MacVim.app/Contents/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:~/.npm:/opt/local/bin:/usr/local/bin/npm:~/.npm-packages/bin:/usr/local/heroku/bin:$HOME/.gem:$GOPATH/bin:/Users/bc/.local/bin:/Users/bc/Dropbox/Application\ Support/JetBrains/Toolbox:$PATH
-# MacVim as the editor
-#export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
-# export EDITOR=/usr/local/bin/nvim
-#export NODE_PATH=$NODE_PATH:/Users/bc/n/lib/node_modules
 
 # For GPG
 export GPG_TTY=$(tty)
 
-#
 # Auto update without a prompt
 DISABLE_UPDATE_PROMPT=true
 
-#
 # Set default command for FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='ag --hidden --ignore .git -g ""'
@@ -76,13 +48,11 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_CTRL_T_OPTS="--preview '(highlight -O ansi -l {} 2> /dev/null || cat {} || tree -C {}) 2> /dev/null | head -200'"
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 
-
 #
 # Init hub completions
 # https://github.com/github/hub/blob/master/etc/README.md
 fpath=(~/.zsh/completions $fpath)
 autoload -U compinit && compinit
-
 
 #
 # ZSH History Substring Search
@@ -101,12 +71,53 @@ bindkey "$terminfo[kcud1]" history-substring-search-down
 # Commands history with dates
 alias h="fc -li 1"
 
-
-
 # Disable autocorrect
 unsetopt correct_all
 # Don't share history between windows
 unsetopt share_history
+
+#
+# PATH CONFIGURATION
+# Consolidated PATH exports to avoid conflicts
+#
+
+# Initialize PATH with system defaults
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+
+# Add custom paths in order of preference
+export PATH="$N_PREFIX/bin:$PATH"
+export PATH="$HOME/.dot-files:$PATH"
+export PATH="$HOME/.rvm/bin:$PATH"
+export PATH="/Applications/MacVim.app/Contents/bin:$PATH"
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="$HOME/.npm:$PATH"
+export PATH="/opt/local/bin:$PATH"
+export PATH="/usr/local/bin/npm:$PATH"
+export PATH="$HOME/.npm-packages/bin:$PATH"
+export PATH="/usr/local/heroku/bin:$PATH"
+export PATH="$HOME/.gem:$PATH"
+export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/Dropbox/Application Support/JetBrains/Toolbox:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/bc/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+
+# yarn
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Herd injected PHP binary
+export PATH="/Users/bc/Library/Application Support/Herd/bin/:$PATH"
+
+# MacVim as the editor
+#export EDITOR=/Applications/MacVim.app/Contents/bin/mvim
+# export EDITOR=/usr/local/bin/nvim
+#export NODE_PATH=$NODE_PATH:/Users/bc/n/lib/node_modules
 
 #
 # General Alias'
@@ -122,7 +133,6 @@ alias cleannvimswap='find ~/.config/nvim/swap-files -type f | xargs rm -f'
 # Get the current IP address
 alias ipconfig='ifconfig | grep "inet " | grep -v 127.0.0.1'
 
-
 #
 # Navigation
 #
@@ -137,8 +147,6 @@ alias opensource='cd ~/code/open-source/; ls -1F . | grep /'
 alias benjamin='cd ~/code/benjamincharity/; ls -1F . | grep /'
 # Go to my dot files
 alias dotfiles='cd ~/.dot-files; ls -1F . | grep /'
-# Go to ScreenFlow captures
-# alias screenflow='cd ~/Dropbox/ScreenFlow'
 # Create a directory and immediately cd into it
 # http://superuser.com/questions/152794/is-there-a-shortcut-to-mkdir-foo-and-immediately-cd-into-it
 function mkdircd {
@@ -155,7 +163,6 @@ alias editgitconfig='nvim /Users/benjamin.charity/.dot-files/gitconfig'
 # Edit nvim config
 alias editnvim='nvim ~/.dot-files/nvim/init.vim'
 
-
 #
 # Apps
 #
@@ -167,8 +174,6 @@ alias vs='/Applications/Visual\ Studio\ Code.app'
 alias atom-beta='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
 alias atomb='/Applications/Atom\ Beta.app/Contents/MacOS/Atom\ Beta'
 alias ws="open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/**/WebStorm.app"
-# alias webstorm='open -a ~/Library/Application\ Support/JetBrains/Toolbox/apps/WebStorm/ch-0/211.7142.46/WebStorm.app'
-
 
 #
 # GIT
@@ -229,6 +234,8 @@ function doGitWipVerify {
 }
 alias gwip=doGitWip
 alias gwipv=doGitWipVerify
+alias cleanorig="find . -name '*.orig' -delete"
+#
 # show commits from all branches for current git user.
 function my-commits-since {
     git log --all --author=$(git config user.email) --since=$@
@@ -415,34 +422,15 @@ fi
 # Load RVM into a shell session *as a function*
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-# pnpm
-export PNPM_HOME="/Users/bc/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # bun completions
 [ -s "/Users/bc/.bun/_bun" ] && source "/Users/bc/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-
 # Herd injected PHP 8.4 configuration.
 export HERD_PHP_84_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/config/php/84/"
-
-
-# Herd injected PHP binary.
-export PATH="/Users/bc/Library/Application Support/Herd/bin/":$PATH
-
 
 # Herd injected NVM configuration
 export NVM_DIR="/Users/bc/Library/Application Support/Herd/config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Load Herd shell configuration AFTER NVM is loaded
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
