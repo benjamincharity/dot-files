@@ -3,3 +3,4 @@ vim/swap_files
 vim/view
 node_modules
 .npm-packages
+.gitconfig-local

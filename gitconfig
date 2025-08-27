@@ -1,7 +1,9 @@
 [user]
 	name = Benjamin Charity
-	email = ben.charity@hey.com
-	signingkey = C8629CEF01294659A6B1943C2E282AF4BFB0B6D0
+
+[include]
+    path = ~/.gitconfig-local
+
 [alias]
     ci = commit
     co = checkout
@@ -42,7 +44,6 @@
     whitespace = nowarn
 [core]
     excludesfile = /Users/bc/.dot-files/.gitignore_global
-    pager = tee
     editor = vim
 [color]
     branch = auto
@@ -50,30 +51,23 @@
     interactive = auto
     status = auto
 [merge]
-	tool = opendiff
+	tool = fork
     keepBackup = false
 [diff]
-  tool = wstorm
+  tool = fork
 [difftool]
   prompt = false
-[difftool.wstorm]
-  cmd = /usr/local/bin/wstorm diff "$LOCAL" "$REMOTE"
-[merge]
-  tool = wstorm
-[mergetool.wstorm]
-  cmd = /usr/local/bin/wstorm merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
+[difftool.fork]
+  cmd = /Applications/Fork.app/Contents/Resources/git-diff "$LOCAL" "$REMOTE"
+[mergetool.fork]
+  cmd = /Applications/Fork.app/Contents/Resources/git-merge "$LOCAL" "$REMOTE" "$BASE" "$MERGED"
 [heroku]
     account = personal
 [github]
     user = benjamincharity
 [push]
     default = current
-; [difftool "sourcetree"]
-;     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-;     path =
-; [mergetool "sourcetree"]
-;     cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-;     trustExitCode = true
+
 [branch]
     autosetuprebase = always
 [pull]
