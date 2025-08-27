@@ -428,9 +428,10 @@ fi
 # Herd injected PHP 8.4 configuration.
 export HERD_PHP_84_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/config/php/84/"
 
-# Herd injected NVM configuration
-export NVM_DIR="/Users/bc/Library/Application Support/Herd/config/nvm"
+# NVM configuration
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# Load Herd shell configuration AFTER NVM is loaded
+# Load Herd shell configuration (now that NVM is available)
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"

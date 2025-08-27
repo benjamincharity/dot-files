@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(ls:*)",
+      "Bash(touch:*)",
+      "Bash(chmod:*)",
+      "Bash(mkdir:*)",
+      "Bash(/usr/local/bin/lastshot.sh:*)",
+      "Read(//Users/bc/Desktop/**)",
+      "Read(//usr/local/bin/**)",
+      "WebSearch"
+    ],
+    "deny": []
+  }
+}
