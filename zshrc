@@ -435,3 +435,4 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load Herd shell configuration (now that NVM is available)
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
