@@ -435,3 +435,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # Load Herd shell configuration (now that NVM is available)
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"
+
+
+# Herd injected PHP 8.5 configuration.
+export HERD_PHP_85_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/config/php/85/"
