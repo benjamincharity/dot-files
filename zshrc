@@ -33,6 +33,11 @@ export N_PREFIX="$HOME/n"
 # set GOPATH
 export GOPATH="$HOME"
 
+# NVM configuration - Load this early to ensure NVM functions are available
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
 # For GPG
 export GPG_TTY=$(tty)
 
@@ -427,11 +432,6 @@ fi
 
 # Herd injected PHP 8.4 configuration.
 export HERD_PHP_84_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/config/php/84/"
-
-# NVM configuration
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Load Herd shell configuration (now that NVM is available)
 [[ -f "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh" ]] && builtin source "/Applications/Herd.app/Contents/Resources/config/shell/zshrc.zsh"

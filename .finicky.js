@@ -1,5 +1,5 @@
 export default {
-  defaultBrowser: "Twilight",
+  defaultBrowser: "Arc",
   handlers: [
     {
       match: ["*helloremind*", "localhost*"],
