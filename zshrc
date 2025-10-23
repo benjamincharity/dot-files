@@ -334,6 +334,22 @@ alias sshhassio='ssh root@hassio.local'
 #
 alias findnotes='notes -x node_modules/ -x .DS_Store'
 
+#
+# Doppler
+#
+# Sync FROM Doppler (download latest)
+alias dsync='doppler secrets download --no-file
+--format env > .env && echo "✅ Synced from
+Doppler"'
+
+# Sync TO Doppler (upload local changes)
+alias dupload='doppler secrets upload .env && echo
+"✅ Uploaded to Doppler"'
+
+# Quick edit workflow
+alias dedit='code .env && doppler secrets upload
+.env && echo "✅ Changes backed up to Doppler"'
+
 
 #
 # Explore a webpack generated sourcemap
