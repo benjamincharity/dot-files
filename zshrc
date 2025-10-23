@@ -439,3 +439,7 @@ export HERD_PHP_84_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/conf
 
 # Herd injected PHP 8.5 configuration.
 export HERD_PHP_85_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/config/php/85/"
+
+# Herd injected PHP 8.3 configuration.
+export HERD_PHP_83_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/config/php/83/"
+export LESS="-FRX"
