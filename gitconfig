@@ -40,6 +40,7 @@
     }; f"
     # Which files are receiving the most "love"
     churn = !git log --all -M -C --name-only --format='format:' "$@" | sort | grep -v '^$' | uniq -c | sort | awk 'BEGIN {print "count,file"} {print $1 "," $2}'
+	past = "\\!f() { hours=${1:-4}; date=$(date -v -${hours}H \"+%Y-%m-%d %H:%M:%S\" 2>/dev/null || date -d \"$hours hours ago\" \"+%Y-%m-%d %H:%M:%S\"); shift; GIT_AUTHOR_DATE=\"$date\" GIT_COMMITTER_DATE=\"$date\" git commit \"$@\"; }; f"
 [apply]
     whitespace = nowarn
 [core]

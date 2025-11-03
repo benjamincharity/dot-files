@@ -456,6 +456,30 @@ export HERD_PHP_84_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/conf
 # Herd injected PHP 8.5 configuration.
 export HERD_PHP_85_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/config/php/85/"
 
+
+# Git commit with backdated timestamp (for personal projects during work hours)
+# Supports decimal hours like: gcp 3.5 -m "message"
+gcp() {
+    local hours=${1:-4}
+    shift
+    
+    # Convert decimal hours to minutes for better precision
+    local minutes=$(echo "$hours * 60" | bc)
+    local int_minutes=${minutes%.*}  # Remove decimal part
+    
+    # Calculate date (macOS uses minutes for better precision)
+    local commit_date=$(date -v -${int_minutes}M "+%Y-%m-%d %H:%M:%S" 2>/dev/null || date -d "$hours hours ago" "+%Y-%m-%d %H:%M:%S")
+    
+    echo "📅 Committing with date: $commit_date (${hours} hours ago)"
+    SKIP_BUSINESS_HOURS_CHECK=1 GIT_AUTHOR_DATE="$commit_date" GIT_COMMITTER_DATE="$commit_date" git commit "$@"
+}
+
+# Stage all and commit with backdated timestamp
+gcpa() {
+    git add .
+    gcp "$@"
+}
+
+
 # Herd injected PHP 8.3 configuration.
 export HERD_PHP_83_INI_SCAN_DIR="/Users/bc/Library/Application Support/Herd/config/php/83/"
-export LESS="-FRX"
